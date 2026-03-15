@@ -2,6 +2,7 @@
   "name": "MyRegApp — U.S. Banking Regulations",
   "short_name": "MyRegApp",
   "description": "A reference guide to U.S. banking capital and liquidity regulations.",
+  "id": "/",
   "start_url": "/",
   "display": "standalone",
   "background_color": "#0a0a0e",

@@ -26,4 +26,4 @@ const WC=[
 ];
 
 /* ST (status badges) defined here; G (glossary) defined in glossary.js */
-const ST={final:{bg:"rgba(34,197,94,.12)",bd:"rgba(34,197,94,.25)",tx:"#4ade80",lb:"FINAL RULE"},expected:{bg:"rgba(250,204,21,.08)",bd:"rgba(250,204,21,.2)",tx:"#facc15",lb:"EXPECTED"},deadline:{bg:"rgba(248,113,113,.08)",bd:"rgba(248,113,113,.2)",tx:"#f87171",lb:"DEADLINE"}};
+const ST={final:{bg:"rgba(34,197,94,.12)",bd:"rgba(34,197,94,.25)",tx:"#4ade80",lb:"FINAL RULE"},expected:{bg:"rgba(250,204,21,.08)",bd:"rgba(250,204,21,.2)",tx:"#facc15",lb:"EXPECTED"},deadline:{bg:"rgba(248,113,113,.08)",bd:"rgba(248,113,113,.2)",tx:"#f87171",lb:"DEADLINE"},proposed:{bg:"rgba(168,85,247,.08)",bd:"rgba(168,85,247,.2)",tx:"#a855f7",lb:"PROPOSED"},effective:{bg:"rgba(59,130,246,.08)",bd:"rgba(59,130,246,.2)",tx:"#3b82f6",lb:"EFFECTIVE"}};

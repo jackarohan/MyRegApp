@@ -77,7 +77,13 @@ table tbody tr:hover{background:var(--bg3)!important}
 <script src="data/regulations.js"></script>
 <script src="data/glossary.js"></script>
 <script src="data/whatschanging.js"></script>
+<script>
+if(typeof R==="undefined"||typeof G==="undefined"||typeof WC==="undefined"){
+  document.getElementById("root").innerHTML='<div style="display:flex;align-items:center;justify-content:center;height:100vh;font-family:system-ui;color:#f59e0b;text-align:center"><div><h2>Failed to load data</h2><p style="color:#999">One or more data files could not be loaded.</p><button onclick="location.reload()" style="margin-top:12px;padding:8px 20px;background:#f59e0b;color:#000;border:none;border-radius:6px;cursor:pointer;font-weight:600">Reload</button></div></div>';
+}
+</script>
 <script type="text/babel">
+if(typeof R==="undefined"||typeof G==="undefined"||typeof WC==="undefined") throw new Error("Data files not loaded");
 const {useState,useMemo,useEffect,useRef,useCallback}=React;
 
 /*═══════════════ PERSISTENCE ═══════════════*/
@@ -151,13 +157,14 @@ function copySubLink(regId,subIdx){
 }
 
 /* Print current regulation — renders all subsections for a complete printout */
+function safeURL(u){try{const url=new URL(u);return["http:","https:"].includes(url.protocol)?url.href:"#"}catch{return"#"}}
 function printRegulation(reg){
   const w=window.open("","_blank","width=800,height=900");
   if(!w)return showToast("Pop-up blocked");
   const subs=reg.subs.map((s,i)=>{
     const content=s.c.map(p=>"<p>"+p.replace(/\{\{ref:[^}]+\}\}/g,"").replace(/\{\{gl:[^}]+\}\}/g,m=>m.replace("{{gl:","").replace("}}",""))+"</p>").join("");
     const kps=s.kp&&s.kp.length?"<div class='kp-box'><h4>Key Points</h4><ul>"+s.kp.map(k=>"<li>"+k+"</li>").join("")+"</ul></div>":"";
-    const srcs=s.src&&s.src.length?"<div class='src-box'><h4>Source Documents</h4>"+s.src.map(d=>"<div class='src-item'><strong>"+d.t+"</strong> <span>("+d.d+")</span>"+(d.u?" &mdash; <a href='"+d.u+"'>"+d.u+"</a>":"")+"</div>").join("")+"</div>":"";
+    const srcs=s.src&&s.src.length?"<div class='src-box'><h4>Source Documents</h4>"+s.src.map(d=>"<div class='src-item'><strong>"+d.t+"</strong> <span>("+d.d+")</span>"+(d.u?" &mdash; <a href='"+safeURL(d.u)+"'>"+d.u+"</a>":"")+"</div>").join("")+"</div>":"";
     const cites=s.cite&&s.cite.length?"<div class='cite-box'><h4>Regulatory Authority</h4>"+s.cite.map(c=>"<div class='cite-item'>"+c.pin+"</div>").join("")+"</div>":"";
     const tbls=s.tables&&s.tables.length?s.tables.map(t=>{
       const hdr=t.headers?"<thead><tr>"+t.headers.map(h=>"<th>"+h+"</th>").join("")+"</tr></thead>":"";
@@ -292,7 +299,7 @@ function GlossaryTooltip({term,anchorEl,onClose}){
   const style=pos?{top:pos.top,left:pos.left}:{top:-9999,left:-9999,opacity:0};
   const arrowStyle=pos?{position:"absolute",left:pos.arrowLeft,transform:"translateX(-50%)",border:"6px solid transparent",width:0,height:0,...(pos.above?{top:"100%",borderTopColor:"var(--tooltip-bg)"}:{bottom:"100%",borderBottomColor:"var(--tooltip-bg)"})}:{display:"none"};
   return ReactDOM.createPortal(
-    <div ref={tipRef} className="tooltip" style={style} onClick={e=>e.stopPropagation()}>
+    <div ref={tipRef} className="tooltip" role="tooltip" id={"tip-"+term} style={style} onClick={e=>e.stopPropagation()}>
       <div className="tooltip-term">{term}</div>
       <div className="tooltip-def">{G[term]}</div>
       <span style={arrowStyle}/>
@@ -321,7 +328,7 @@ function SmartText({text,onNav,search}){
         const uid=i+"-"+m.index;
         out.push(
           <span key={"g"+uid} style={{position:"relative",display:"inline-block"}}>
-            <span className="gterm" tabIndex={0} role="button" onClick={e=>{e.stopPropagation();anchorRef.current=e.currentTarget;setTip(tip===uid?null:uid)}} onKeyDown={e=>{if(e.key==="Enter"||e.key===" "){e.preventDefault();e.stopPropagation();anchorRef.current=e.currentTarget;setTip(tip===uid?null:uid)}}}>{m[0]}</span>
+            <span className="gterm" tabIndex={0} role="button" aria-describedby={tip===uid?"tip-"+term:undefined} onClick={e=>{e.stopPropagation();anchorRef.current=e.currentTarget;setTip(tip===uid?null:uid)}} onKeyDown={e=>{if(e.key==="Enter"||e.key===" "){e.preventDefault();e.stopPropagation();anchorRef.current=e.currentTarget;setTip(tip===uid?null:uid)}}}>{m[0]}</span>
             {tip===uid&&<GlossaryTooltip term={term} anchorEl={anchorRef.current} onClose={()=>setTip(null)}/>}
           </span>
         );
@@ -346,11 +353,11 @@ function NavBar({view,setView,search,setSearch,theme,toggleTheme,fontSize,setFon
   useEffect(()=>{if(!settingsOpen)return;const h=e=>{if(settingsRef.current&&!settingsRef.current.contains(e.target))setSettingsOpen(false)};document.addEventListener("mousedown",h);return()=>document.removeEventListener("mousedown",h)},[settingsOpen]);
 
   if(isMob) return(
-  <nav data-noprint style={{position:"fixed",top:0,left:0,right:0,zIndex:100,background:"var(--nav-bg)",backdropFilter:"blur(24px)",WebkitBackdropFilter:"blur(24px)",borderBottom:"1px solid var(--border)",display:"flex",flexDirection:"column",padding:0,paddingTop:"env(safe-area-inset-top, 0px)"}}>
+  <nav data-noprint aria-label="Main navigation" style={{position:"fixed",top:0,left:0,right:0,zIndex:100,background:"var(--nav-bg)",backdropFilter:"blur(24px)",WebkitBackdropFilter:"blur(24px)",borderBottom:"1px solid var(--border)",display:"flex",flexDirection:"column",padding:0,paddingTop:"env(safe-area-inset-top, 0px)"}}>
     <div style={{display:"flex",alignItems:"center",padding:"8px 14px 4px",gap:8}}>
       <span style={{fontSize:15,fontWeight:800,letterSpacing:"-.4px",flexShrink:0}}>My<span style={{color:"var(--amber)"}}>Reg</span>App</span>
       <div style={{flex:1,position:"relative"}}>
-        <input ref={inp} type="text" placeholder="Search…" value={search} onChange={e=>setSearch(e.target.value)} className="search-input" style={{width:"100%",padding:"6px 28px 6px 30px",borderRadius:7,border:"1px solid var(--border2)",background:"var(--bg3)",color:"var(--text)",fontSize:"var(--text-sm)",outline:"none"}}/>
+        <input ref={inp} type="text" placeholder="Search…" aria-label="Search regulations" value={search} onChange={e=>setSearch(e.target.value)} className="search-input" style={{width:"100%",padding:"6px 28px 6px 30px",borderRadius:7,border:"1px solid var(--border2)",background:"var(--bg3)",color:"var(--text)",fontSize:"var(--text-sm)",outline:"none"}}/>
         <svg style={{position:"absolute",left:9,top:"50%",transform:"translateY(-50%)",pointerEvents:"none"}} width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="var(--text4)" strokeWidth="2.5" strokeLinecap="round"><circle cx="10.5" cy="10.5" r="7"/><line x1="15.5" y1="15.5" x2="21" y2="21"/></svg>
         {search&&<button onClick={()=>{setSearch("");inp.current?.focus()}} aria-label="Clear search" style={{position:"absolute",right:6,top:"50%",transform:"translateY(-50%)",color:"var(--text4)",fontSize:"var(--text-md)",lineHeight:1,padding:2}}>{"\u2715"}</button>}
       </div>
@@ -376,7 +383,7 @@ function NavBar({view,setView,search,setSearch,theme,toggleTheme,fontSize,setFon
   </nav>);
 
   return(
-  <nav data-noprint style={{position:"fixed",top:0,left:0,right:0,zIndex:100,background:"var(--nav-bg)",backdropFilter:"blur(24px)",WebkitBackdropFilter:"blur(24px)",borderBottom:"1px solid var(--border)",height:56,display:"flex",alignItems:"center",padding:"0 20px",gap:8}}>
+  <nav data-noprint aria-label="Main navigation" style={{position:"fixed",top:0,left:0,right:0,zIndex:100,background:"var(--nav-bg)",backdropFilter:"blur(24px)",WebkitBackdropFilter:"blur(24px)",borderBottom:"1px solid var(--border)",height:56,display:"flex",alignItems:"center",padding:"0 20px",gap:8}}>
     <div style={{display:"flex",alignItems:"center",gap:6,marginRight:4,flexShrink:0}}>
       <span style={{fontSize:17,fontWeight:800,letterSpacing:"-.4px"}}>My<span style={{color:"var(--amber)"}}>Reg</span>App</span>
     </div>
@@ -400,7 +407,7 @@ function NavBar({view,setView,search,setSearch,theme,toggleTheme,fontSize,setFon
       </div>}
     </div>
     <div style={{position:"relative",width:200,flexShrink:0}}>
-      <input ref={inp} type="text" placeholder="Search…" value={search} onChange={e=>setSearch(e.target.value)} className="search-input" style={{width:"100%",padding:"7px 30px 7px 32px",borderRadius:7,border:"1px solid var(--border2)",background:"var(--bg3)",color:"var(--text)",fontSize:"var(--text-md)",outline:"none"}}/>
+      <input ref={inp} type="text" placeholder="Search…" aria-label="Search regulations" value={search} onChange={e=>setSearch(e.target.value)} className="search-input" style={{width:"100%",padding:"7px 30px 7px 32px",borderRadius:7,border:"1px solid var(--border2)",background:"var(--bg3)",color:"var(--text)",fontSize:"var(--text-md)",outline:"none"}}/>
       <svg style={{position:"absolute",left:10,top:"50%",transform:"translateY(-50%)",pointerEvents:"none"}} width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="var(--text4)" strokeWidth="2.5" strokeLinecap="round"><circle cx="10.5" cy="10.5" r="7"/><line x1="15.5" y1="15.5" x2="21" y2="21"/></svg>
       {search&&<button onClick={()=>{setSearch("");inp.current?.focus()}} aria-label="Clear search" style={{position:"absolute",right:8,top:"50%",transform:"translateY(-50%)",color:"var(--text4)",fontSize:"var(--text-lg)",lineHeight:1,padding:2}}>{"\u2715"}</button>}
     </div>
@@ -748,7 +755,7 @@ function TimelineView({onNav}){
           <div className="tl-dot" style={{background:e.color,boxShadow:"0 0 0 2px var(--bg), 0 0 0 3px "+(e.isWC?e.color+"88":"var(--border)")}}></div>
           <div className="tl-date">{e.dateStr}{e.isWC&&e.wcStatus&&<span style={{marginLeft:6,fontSize:"var(--text-xs)",padding:"0 4px",borderRadius:3,background:ST[e.wcStatus]?.bg||"transparent",color:ST[e.wcStatus]?.tx||"var(--text4)",border:"1px solid "+(ST[e.wcStatus]?.bd||"var(--border)")}}>{ST[e.wcStatus]?.lb||""}</span>}</div>
           <div className="tl-title">{e.desc}</div>
-          {e.regId&&<span className="tl-reg" style={{borderLeft:"3px solid "+e.color}} onClick={()=>onNav&&onNav(e.regId)}>{e.regSt}</span>}
+          {e.regId&&<span className="tl-reg" tabIndex={0} role="button" style={{borderLeft:"3px solid "+e.color}} onClick={()=>onNav&&onNav(e.regId)} onKeyDown={ev=>{if(ev.key==="Enter"||ev.key===" "){ev.preventDefault();onNav&&onNav(e.regId)}}}>{e.regSt}</span>}
         </div>
       )}
       {filtered.length===0&&<p style={{color:"var(--text5)",fontSize:"var(--text-md)",padding:"20px 0"}}>No events match the current filters.</p>}
@@ -791,7 +798,7 @@ if("serviceWorker" in navigator){
 
 function StackBar({label,pct,color,sub,onClick}){
   return(
-  <div style={{display:"flex",alignItems:"center",gap:10,marginBottom:4,cursor:onClick?"pointer":"default"}} onClick={onClick}>
+  <div style={{display:"flex",alignItems:"center",gap:10,marginBottom:4,cursor:onClick?"pointer":"default"}} tabIndex={onClick?0:undefined} role={onClick?"button":undefined} onClick={onClick} onKeyDown={onClick?ev=>{if(ev.key==="Enter"||ev.key===" "){ev.preventDefault();onClick()}}:undefined}>
     <div style={{width:140,fontSize:"var(--text-sm)",fontWeight:600,color:"var(--text2)",textAlign:"right",flexShrink:0}}>{label}</div>
     <div style={{flex:1,height:26,background:"var(--bg3)",borderRadius:5,overflow:"hidden",position:"relative"}}>
       <div style={{height:"100%",width:pct+"%",background:color,borderRadius:5,transition:"width .5s ease"}}/>
