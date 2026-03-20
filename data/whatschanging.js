@@ -1,4 +1,4 @@
-/* MyRegApp v6.2 — What's Changing & Status Badges
+/* MyRegApp v6.3 — What's Changing & Status Badges
    Pending and upcoming regulatory changes.
    G (glossary) is defined in glossary.js; ST (status badges) defined here.
    Loaded by index.html via <script> tag. */
@@ -6,7 +6,7 @@
 const WC=[
 {date:"Apr 1, 2026",status:"final",title:"eSLR Recalibration Takes Effect",reg:"eslr",desc:"New buffer-based eSLR (3% + 50% of Method 1 surcharge) replaces fixed 5%/6% thresholds. TLAC leverage buffers conformed."},
 {date:"Apr 1, 2026",status:"final",title:"TLAC Leverage Buffers Conformed",reg:"tlac",desc:"TLAC and LTD leverage-based requirements aligned with recalibrated eSLR buffer structure."},
-{date:"Q1\u2013Q2 2026",status:"expected",title:"Basel III Endgame Re-Proposal",reg:"endgame",desc:"FDIC and OCC submitted draft rules to OMB on Feb 13, 2026. Bowman confirmed Mar 12, 2026 that proposals come \u2018in the coming weeks.\u2019 Expected to be \u2018capital-neutral,\u2019 with revised scope, AOCI, output floor, FRTB, and new MSR/mortgage risk weight treatment."},
+{date:"Mar 19, 2026",status:"proposed",title:"Basel III Endgame Re-Proposal Released",reg:"endgame",desc:"Joint NPR issued by Fed (6-1 vote, Barr dissenting), OCC, and FDIC on March 19, 2026. 90-day comment period closes June 18, 2026. Capital-neutral design: CET1 requirements estimated to decrease ~4.8% for Cat I/II, ~5.2% for Cat III/IV. Single-stack approach (ERBA for Cat I/II, revised Standardized for Cat III/IV). Narrowed scope excluding $100\u2013250B banks except for AOCI recognition. LTV-based mortgage risk weights, revised MSR treatment, and new operational risk framework."},
 {date:"2026",status:"expected",title:"SCB Averaging Finalization",reg:"scb",desc:"Two-year averaging proposed April 2025. Comment period closed June 2025. Finalization pending; original industry-supported Jan 1, 2026 effective date has passed."},
 {date:"2026",status:"expected",title:"Stress Test Transparency Reforms",reg:"stress-testing",desc:"Fed proposed publishing supervisory models (Oct 2025). Comment period extended to Feb 21, 2026. Final rule pending."},
 {date:"2026",status:"expected",title:"G-SIB Surcharge Methodology Review",reg:"gsib",desc:"Bowman confirmed (Mar 12, 2026) NPR coming 'in the coming weeks.' Proposed: daily averaging of systemic indicators, 10bps surcharge buckets, updated coefficients. Industry estimates ~1pp reduction."},
@@ -17,7 +17,7 @@ const WC=[
 {date:"2026",status:"expected",title:"CRA Rescission Finalization",reg:"cra",desc:"Agencies proposed rescinding the 2023 CRA modernization rule (Jul 2025). Comment period closed Aug 18, 2025. Finalization pending; expected to reinstate 1995 regulations."},
 {date:"Dec 2026",status:"deadline",title:"SEC Treasury Clearing Mandate (Phase 1)",reg:"eslr",desc:"First compliance date for mandatory central clearing of Treasury securities."},
 {date:"Jun 2027",status:"deadline",title:"SEC Treasury Clearing Mandate (Phase 2)",reg:"eslr",desc:"Second compliance date extending mandatory clearing to additional transactions."},
-{date:"2028\u20132029",status:"expected",title:"Basel III Endgame Implementation",reg:"endgame",desc:"Earliest potential effective date for the re-proposed Endgame rule, with multi-year phase-in expected."},
+{date:"2027\u20132030",status:"expected",title:"Basel III Endgame Implementation",reg:"endgame",desc:"With the comment period closing June 18, 2026 and potential finalization late 2026 or early 2027, implementation with a multi-year phase-in could begin 2027\u20132028. AOCI recognition phase-in proposed to start January 1, 2027 over 5 years."},
 {date:"2026",status:"expected",title:"Volcker Rule Simplification Proposals",reg:"volcker",desc:"Potential further easing of compliance requirements for less-active trading banks. No formal NPR yet, but the administration has signaled continued interest in streamlining."},
 {date:"2026",status:"expected",title:"SCCL Recalibration Discussion",reg:"sccl",desc:"Potential exposure measurement changes if Endgame re-proposal modifies SA-CCR methodology. Digital asset exposure treatment also under review."},
 {date:"2026",status:"expected",title:"IRRBB Supervisory Tightening",reg:"irrbb",desc:"Post-SVB heightened examination focus on unrealized losses, deposit modeling, and AOCI treatment. Basel Committee revised IRRBB shocks effective Jan 2026. U.S. formal rulemaking tied to Endgame AOCI opt-out decision."},

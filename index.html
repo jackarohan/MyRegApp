@@ -53,7 +53,7 @@ table tbody tr:hover{background:var(--bg3)!important}
 .tl-legend{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:12px}.tl-leg-item{display:flex;align-items:center;gap:4px;font-size:var(--text-xs);color:var(--text4)}.tl-leg-dot{width:8px;height:8px;border-radius:50%;flex-shrink:0}
 @media print{
   body{background:#fff!important;color:#1a1a1a!important;font-size:11pt!important}
-  nav,.nav-bar,.sidebar-col,.action-btn,.sub-badge,button,[data-noprint],footer{display:none!important}
+  nav,.nav-bar,.sidebar-col,.action-btn,.sub-badge,button,[data-noprint],footer,.b3e-search{display:none!important}
   main{padding:0!important;max-width:100%!important;margin:0!important}
   .detail-col{max-height:none!important;overflow:visible!important;padding:0!important}
   .print-header{display:block!important}
@@ -77,13 +77,14 @@ table tbody tr:hover{background:var(--bg3)!important}
 <script src="data/regulations.js"></script>
 <script src="data/glossary.js"></script>
 <script src="data/whatschanging.js"></script>
+<script src="data/basel3explorer.js"></script>
 <script>
-if(typeof R==="undefined"||typeof G==="undefined"||typeof WC==="undefined"){
+if(typeof R==="undefined"||typeof G==="undefined"||typeof WC==="undefined"||typeof B3E==="undefined"){
   document.getElementById("root").innerHTML='<div style="display:flex;align-items:center;justify-content:center;height:100vh;font-family:system-ui;color:#f59e0b;text-align:center"><div><h2>Failed to load data</h2><p style="color:#999">One or more data files could not be loaded.</p><button onclick="location.reload()" style="margin-top:12px;padding:8px 20px;background:#f59e0b;color:#000;border:none;border-radius:6px;cursor:pointer;font-weight:600">Reload</button></div></div>';
 }
 </script>
 <script type="text/babel">
-if(typeof R==="undefined"||typeof G==="undefined"||typeof WC==="undefined") throw new Error("Data files not loaded");
+if(typeof R==="undefined"||typeof G==="undefined"||typeof WC==="undefined"||typeof B3E==="undefined") throw new Error("Data files not loaded");
 const {useState,useMemo,useEffect,useRef,useCallback}=React;
 
 /*═══════════════ PERSISTENCE ═══════════════*/
@@ -349,7 +350,7 @@ function NavBar({view,setView,search,setSearch,theme,toggleTheme,fontSize,setFon
   const settingsRef=useRef(null);
   const isMob=useIsMobile();
   const fSizes=[{id:"sm",l:"A\u207B"},{id:"md",l:"A"},{id:"lg",l:"A\u207A"}];
-  const tabs=[{id:"start",l:"Start Here"},{id:"regulations",l:"Regulations"},{id:"changing",l:"What\u2019s Changing"},{id:"timeline",l:"Timeline"},{id:"glossary",l:"Glossary"}];
+  const tabs=[{id:"start",l:"Start Here"},{id:"regulations",l:"Regulations"},{id:"explorer",l:"B3E Explorer"},{id:"changing",l:"What\u2019s Changing"},{id:"timeline",l:"Timeline"},{id:"glossary",l:"Glossary"}];
   useEffect(()=>{if(!settingsOpen)return;const h=e=>{if(settingsRef.current&&!settingsRef.current.contains(e.target))setSettingsOpen(false)};document.addEventListener("mousedown",h);return()=>document.removeEventListener("mousedown",h)},[settingsOpen]);
 
   if(isMob) return(
@@ -517,7 +518,15 @@ function RegDetail({reg,detailRef,onNav,search,initialSub,onSubChange}){
       <h2 style={{fontSize:"var(--text-xl)",fontWeight:800,letterSpacing:"-.3px",margin:0,flex:1}}>{reg.title}</h2>
       <button className="action-btn" onClick={()=>printRegulation(reg)} title="Print this regulation" aria-label="Print this regulation">{"\uD83D\uDDA8\uFE0F"}</button>
     </div>
-    <p style={{fontSize:"var(--text-md)",color:"var(--text3)",lineHeight:1.55,marginBottom:24}}>{stripRefs(reg.sum)}</p>
+    <p style={{fontSize:"var(--text-md)",color:"var(--text3)",lineHeight:1.55,marginBottom:reg.id==="endgame"?12:24}}>{stripRefs(reg.sum)}</p>
+    {reg.id==="endgame"&&<button onClick={()=>{window.location.hash="#/explorer"}} aria-label="Open Basel III Endgame interactive explorer" style={{display:"flex",alignItems:"center",gap:10,width:"100%",padding:"12px 16px",borderRadius:9,border:"1px solid var(--amber-border)",background:"var(--amber-bg3)",marginBottom:16,textAlign:"left",cursor:"pointer",transition:"all .15s"}}>
+      <span style={{fontSize:20}}>{"\uD83D\uDD0D"}</span>
+      <div style={{flex:1}}>
+        <div style={{fontSize:"var(--text-md)",fontWeight:700,color:"var(--amber)"}}>B3E Explorer</div>
+        <div style={{fontSize:"var(--text-sm)",color:"var(--text3)"}}>Interactive deep-dive: 41 rule changes with before/after comparisons</div>
+      </div>
+      <span style={{color:"var(--amber)",fontSize:16}}>{"\u2192"}</span>
+    </button>}
     <div style={{display:"flex",alignItems:"center",gap:8,marginBottom:4}}>
       <div style={{flex:1}}><SubNav subs={reg.subs} idx={idx} onSelect={setIdx}/></div>
       <button className="action-btn" onClick={()=>copySubLink(reg.id,idx)} title="Copy link to this section" aria-label="Copy link to this section">{"\uD83D\uDD17"}</button>
@@ -540,7 +549,15 @@ function MobileRegDetail({reg,onBack,onNav,search,initialSub,pushHash}){
       <h2 style={{fontSize:"var(--text-xl)",fontWeight:800,letterSpacing:"-.3px",margin:0,flex:1}}>{reg.title}</h2>
       <button className="action-btn" onClick={()=>printRegulation(reg)} title="Print this regulation" aria-label="Print this regulation">{"\uD83D\uDDA8\uFE0F"}</button>
     </div>
-    <p style={{fontSize:"var(--text-md)",color:"var(--text3)",lineHeight:1.55,marginBottom:24}}>{stripRefs(reg.sum)}</p>
+    <p style={{fontSize:"var(--text-md)",color:"var(--text3)",lineHeight:1.55,marginBottom:reg.id==="endgame"?12:24}}>{stripRefs(reg.sum)}</p>
+    {reg.id==="endgame"&&<button onClick={()=>{window.location.hash="#/explorer"}} aria-label="Open Basel III Endgame interactive explorer" style={{display:"flex",alignItems:"center",gap:10,width:"100%",padding:"12px 16px",borderRadius:9,border:"1px solid var(--amber-border)",background:"var(--amber-bg3)",marginBottom:16,textAlign:"left",cursor:"pointer",transition:"all .15s"}}>
+      <span style={{fontSize:20}}>{"\uD83D\uDD0D"}</span>
+      <div style={{flex:1}}>
+        <div style={{fontSize:"var(--text-md)",fontWeight:700,color:"var(--amber)"}}>B3E Explorer</div>
+        <div style={{fontSize:"var(--text-sm)",color:"var(--text3)"}}>Interactive deep-dive: 41 rule changes with before/after comparisons</div>
+      </div>
+      <span style={{color:"var(--amber)",fontSize:16}}>{"\u2192"}</span>
+    </button>}
     <div style={{display:"flex",alignItems:"center",gap:8,marginBottom:4}}>
       <div style={{flex:1}}><SubNav subs={reg.subs} idx={idx} onSelect={i=>{setIdx(i);window.scrollTo(0,200)}}/></div>
       <button className="action-btn" onClick={()=>copySubLink(reg.id,idx)} title="Copy link to this section" aria-label="Copy link to this section">{"\uD83D\uDD17"}</button>
@@ -635,6 +652,7 @@ function WhatsChangingView({onNav}){
           <span style={{fontSize:"var(--text-xs)",fontWeight:700,padding:"2px 7px",borderRadius:4,background:s.bg,border:"1px solid "+s.bd,color:s.tx,letterSpacing:".3px"}}>{s.lb}</span>
           <span style={{fontSize:"var(--text-sm)",color:"var(--text4)",fontWeight:600}}>{item.date}</span>
           {linked&&<button onClick={()=>onNav(item.reg)} style={{fontSize:"var(--text-sm)",color:"var(--amber)",fontWeight:600,padding:0,borderBottom:"1px dashed var(--amber-dot)"}}>{linked.st} {"\u2192"}</button>}
+          {item.reg==="endgame"&&<button onClick={()=>{window.location.hash="#/explorer"}} style={{fontSize:"var(--text-sm)",color:"#4ECDC4",fontWeight:600,padding:0,borderBottom:"1px dashed rgba(78,205,196,.4)"}}>B3E Explorer {"\u2192"}</button>}
         </div>
         <h3 style={{fontSize:"var(--text-lg)",fontWeight:700,marginBottom:5}}>{item.title}</h3>
         <p style={{fontSize:"var(--text-md)",color:"var(--text3)",lineHeight:1.55,margin:0}}>{item.desc}</p>
@@ -662,6 +680,199 @@ function GlossaryView({search}){
       )}
     </div>
     {!entries.length&&<p style={{color:"var(--text4)",fontSize:13}}>{"🔍 "}No terms match your search.</p>}
+  </div>);
+}
+
+
+/*═══════════════ B3E EXPLORER VIEW ═══════════════*/
+
+function LtvChart({chart}){
+  const max=Math.max(...chart.current,...chart.std,...chart.erba);
+  return(
+  <div style={{marginTop:16,background:"var(--bg)",borderRadius:10,padding:"16px 18px",border:"1px solid var(--border)"}}>
+    <div style={{fontSize:11,fontWeight:700,letterSpacing:.8,color:"var(--text5)",marginBottom:14,textTransform:"uppercase"}}>{chart.title}</div>
+    <div style={{display:"flex",gap:6,marginBottom:10,fontSize:10,color:"var(--text4)"}}>
+      {[{c:"#777",l:"Current"},{c:"#4ECDC4",l:"Std (Cat III/IV)"},{c:"#A78BFA",l:"ERBA (Cat I/II)"}].map(k=>
+        <div key={k.l} style={{display:"flex",alignItems:"center",gap:4}}>
+          <div style={{width:10,height:4,borderRadius:2,background:k.c}}/>
+          <span>{k.l}</span>
+        </div>
+      )}
+    </div>
+    {chart.bands.map((band,i)=>
+      <div key={band} style={{marginBottom:10}}>
+        <div style={{fontSize:11,color:"var(--text5)",marginBottom:4,fontFamily:"'DM Mono',monospace"}}>LTV {band}</div>
+        {[{val:chart.current[i],color:"#777",label:"Current"},{val:chart.std[i],color:"#4ECDC4",label:"Std"},{val:chart.erba[i],color:"#A78BFA",label:"ERBA"}].map(row=>
+          <div key={row.label} style={{display:"flex",alignItems:"center",gap:8,marginBottom:2}}>
+            <div style={{width:36,fontSize:10,color:"var(--text5)",textAlign:"right",flexShrink:0}}>{row.val}%</div>
+            <div style={{flex:1,height:5,background:"var(--bg2)",borderRadius:3,overflow:"hidden"}} role="img" aria-label={row.label+" "+row.val+"%"}>
+              <div style={{height:5,borderRadius:3,background:row.color,width:(row.val/max)*100+"%",opacity:.85}}/>
+            </div>
+          </div>
+        )}
+      </div>
+    )}
+  </div>);
+}
+
+function B3eImpactSummary(){
+  const items=[
+    {label:"Residential Mortgages",val:-30.7},{label:"Securitizations",val:-18.8},{label:"Commitments (unused)",val:-13.0},
+    {label:"Retail Exposures",val:-10.0},{label:"Other Assets",val:-10.0},{label:"Other Corporate",val:-7.6},
+    {label:"CRE",val:-5.0},{label:"MSAs",val:0,note:"~0%"},{label:"AOCI Recognition",val:3.1,isCET1:true},
+  ];
+  return(
+  <div style={{background:"var(--bg2)",border:"1px solid var(--border)",borderRadius:10,padding:20,marginBottom:24}}>
+    <div style={{fontSize:12,fontWeight:700,letterSpacing:.8,color:"var(--text5)",marginBottom:16}}>ESTIMATED IMPACT — CAT III/IV HOLDING COMPANIES (STANDARDIZED)</div>
+    <div style={{display:"flex",gap:20,marginBottom:20,flexWrap:"wrap"}}>
+      {[{label:"Total RWA",value:"\u22129.5%",color:"#4ECDC4"},{label:"Net CET1",value:"\u22123.0%",color:"#60A5FA",sub:"after AOCI offset"},{label:"With Stress Tests",value:"\u22125.3%",color:"#A78BFA",sub:"incl. SCB changes"}].map((s,i)=>
+        <div key={i} style={{textAlign:"center",minWidth:100}}>
+          <div style={{fontSize:24,fontWeight:700,color:s.color,fontFamily:"'DM Mono',monospace"}}>{s.value}</div>
+          <div style={{fontSize:11,color:"var(--text4)",marginTop:2}}>{s.label}</div>
+          {s.sub&&<div style={{fontSize:10,color:"var(--text5)"}}>{s.sub}</div>}
+        </div>
+      )}
+    </div>
+    {items.map((d,i)=>{
+      const isPos=d.val>0,isZero=d.val===0;
+      const pct=isZero?0:(Math.abs(d.val)/35)*100;
+      const color=isZero?"#777":isPos?"#FF6B6B":"#4ECDC4";
+      return(
+      <div key={i} style={{marginBottom:8}}>
+        <div style={{display:"flex",justifyContent:"space-between",fontSize:11,color:"var(--text4)",marginBottom:3}}>
+          <span>{d.label}{d.isCET1?" (CET1 offset)":""}</span>
+          <span style={{fontWeight:700,color,fontFamily:"'DM Mono',monospace"}}>{isZero?(d.note||"0%"):(isPos?"+":"")+d.val+"%"}</span>
+        </div>
+        <div style={{height:5,background:"var(--bg3)",borderRadius:3}} role="img" aria-label={d.label+" "+(isZero?(d.note||"0%"):(isPos?"+":"")+d.val+"%")}>
+          <div style={{height:5,borderRadius:3,background:color,width:pct+"%",opacity:.7}}/>
+        </div>
+      </div>);
+    })}
+    <div style={{marginTop:14,paddingTop:10,borderTop:"1px solid var(--border)",fontSize:10,color:"var(--text5)",lineHeight:1.5}}>
+      Source: Federal Reserve Board / OCC / FDIC aggregate estimates based on Q2 2025 balance sheet data. All figures reflect agency-published reproposal impact analysis; not institution-specific.
+    </div>
+  </div>);
+}
+
+function B3eChangeCard({change,isExpanded,onToggle}){
+  const dir=B3E.DIR_META[change.direction];
+  const ref=useRef(null);
+  const[h,setH]=useState(0);
+  useEffect(()=>{if(ref.current)setH(isExpanded?ref.current.scrollHeight:0)},[isExpanded]);
+  const cardId="b3e-card-"+change.title.replace(/\W+/g,"-").toLowerCase();
+  const contentId=cardId+"-content";
+  const handleKeyDown=e=>{if(e.key==="Enter"||e.key===" "){e.preventDefault();onToggle()}if(e.key==="Escape"&&isExpanded){e.preventDefault();onToggle()}};
+  return(
+  <div style={{background:isExpanded?"var(--bg3)":"var(--bg2)",border:"1px solid "+(isExpanded?dir.color+"44":"var(--border)"),borderRadius:10,marginBottom:6,transition:"all 0.25s ease"}}>
+    <div id={cardId} role="button" tabIndex={0} aria-expanded={isExpanded} aria-controls={contentId} onClick={onToggle} onKeyDown={handleKeyDown} style={{padding:"14px 18px",display:"flex",alignItems:"center",gap:10,cursor:"pointer"}}>
+      <span style={{width:26,height:26,borderRadius:"50%",display:"flex",alignItems:"center",justifyContent:"center",fontSize:13,background:dir.color+"15",color:dir.color,flexShrink:0,fontWeight:700}} aria-label={dir.label}>{dir.icon}</span>
+      <div style={{flex:1,minWidth:0}}>
+        <div style={{fontSize:"var(--text-md)",fontWeight:600,color:"var(--text)",lineHeight:1.35}}>{change.title}</div>
+        <div style={{fontSize:11,color:dir.color,marginTop:2,fontWeight:500}}>{dir.label}</div>
+      </div>
+      {change.tags.includes("major")&&<span style={{fontSize:9,fontWeight:700,padding:"2px 7px",borderRadius:4,background:"#F7B73118",color:"#F7B731",letterSpacing:.5,flexShrink:0}}>KEY</span>}
+      {change.tags.includes("new")&&<span style={{fontSize:9,fontWeight:700,padding:"2px 7px",borderRadius:4,background:"#A78BFA18",color:"#A78BFA",letterSpacing:.5,flexShrink:0}}>NEW</span>}
+      <div style={{width:22,height:22,borderRadius:"50%",display:"flex",alignItems:"center",justifyContent:"center",fontSize:12,color:isExpanded?dir.color:"var(--text5)",background:isExpanded?dir.color+"18":"var(--bg3)",transition:"all 0.25s",transform:isExpanded?"rotate(180deg)":"rotate(0)",flexShrink:0}} aria-hidden="true">{"\u25BE"}</div>
+    </div>
+    <div id={contentId} role="region" aria-labelledby={cardId} style={{maxHeight:h,overflow:"hidden",transition:"max-height 0.35s cubic-bezier(0.22,1,0.36,1)"}}>
+      <div ref={ref} style={{padding:"0 18px 18px"}}>
+        <div style={{display:"grid",gridTemplateColumns:"repeat(auto-fit,minmax(220px,1fr))",gap:10,marginBottom:12}}>
+          <div style={{background:"var(--bg)",borderRadius:8,padding:14,borderTop:"2px solid var(--text5)"}}>
+            <div style={{fontSize:10,fontWeight:700,letterSpacing:.8,color:"var(--text5)",marginBottom:8}}>TODAY</div>
+            <div style={{fontSize:13,color:"var(--text3)",lineHeight:1.55}}>{change.today}</div>
+          </div>
+          <div style={{background:"var(--bg)",borderRadius:8,padding:14,borderTop:"2px solid "+dir.color}}>
+            <div style={{fontSize:10,fontWeight:700,letterSpacing:.8,color:dir.color,marginBottom:8}}>2026 RULE</div>
+            <div style={{fontSize:13,color:"var(--text2)",lineHeight:1.55}}>{change.newRule}</div>
+          </div>
+        </div>
+        <div style={{background:"var(--bg)",borderRadius:8,padding:12,borderLeft:"3px solid "+dir.color+"44"}}>
+          <div style={{fontSize:10,fontWeight:700,letterSpacing:.8,color:"var(--text5)",marginBottom:4}}>WHY IT MATTERS</div>
+          <div style={{fontSize:13,color:"var(--text4)",lineHeight:1.55}}>{change.why}</div>
+        </div>
+        {change.chart&&<LtvChart chart={change.chart}/>}
+      </div>
+    </div>
+  </div>);
+}
+
+function BaselExplorer({onNav}){
+  const[activeSection,setActiveSection]=useState("overview");
+  const[expandedId,setExpandedId]=useState(null);
+  const[search,setSearch]=useState("");
+  const tabsRef=useRef(null);
+
+  const section=B3E.SECTIONS.find(s=>s.id===activeSection);
+  const sectionChanges=B3E.CHANGES.filter(c=>{
+    if(c.section!==activeSection)return false;
+    if(search){const s=search.toLowerCase();return c.title.toLowerCase().includes(s)||c.today.toLowerCase().includes(s)||c.newRule.toLowerCase().includes(s)||c.why.toLowerCase().includes(s)}
+    return true;
+  });
+  const allFiltered=search?B3E.CHANGES.filter(c=>{const s=search.toLowerCase();return c.title.toLowerCase().includes(s)||c.today.toLowerCase().includes(s)||c.newRule.toLowerCase().includes(s)||c.why.toLowerCase().includes(s)}):null;
+
+  const handleTabKeyDown=e=>{
+    const tabs=tabsRef.current?.querySelectorAll('[role="tab"]');
+    if(!tabs||!tabs.length)return;
+    const idx=Array.from(tabs).indexOf(e.target);
+    if(idx<0)return;
+    let next=-1;
+    if(e.key==="ArrowRight")next=(idx+1)%tabs.length;
+    else if(e.key==="ArrowLeft")next=(idx-1+tabs.length)%tabs.length;
+    if(next>=0){e.preventDefault();tabs[next].focus();tabs[next].click()}
+  };
+
+  return(
+  <div className="fade-up" style={{maxWidth:900}}>
+    {/* Header */}
+    <div style={{marginBottom:16}}>
+      <div style={{display:"flex",alignItems:"center",gap:10,marginBottom:6}}>
+        <h2 style={{margin:0,fontSize:"var(--text-xl)",fontWeight:800,letterSpacing:"-.3px"}}>Basel III Endgame</h2>
+        <span style={{fontSize:10,fontWeight:600,padding:"2px 8px",borderRadius:4,background:"#4ECDC415",color:"#4ECDC4",letterSpacing:.5}}>2026</span>
+      </div>
+      <p style={{margin:0,fontSize:"var(--text-md)",color:"var(--text4)",lineHeight:1.5}}>
+        Current rule {"\u2192"} 2026 reproposal. Click any change to see the before/after and why it matters.
+      </p>
+    </div>
+
+    {/* Search */}
+    <div className="b3e-search" style={{marginBottom:8,position:"relative"}}>
+      <input type="text" placeholder="Search all provisions\u2026" value={search} onChange={e=>setSearch(e.target.value)} aria-label="Search Basel III Endgame provisions" className="search-input" style={{width:"100%",padding:"9px 30px 9px 14px",background:"var(--bg3)",border:"1px solid var(--border2)",borderRadius:8,color:"var(--text)",fontSize:"var(--text-md)",fontFamily:"inherit",outline:"none",boxSizing:"border-box"}}/>
+      {search&&<button onClick={()=>setSearch("")} aria-label="Clear search" style={{position:"absolute",right:8,top:"50%",transform:"translateY(-50%)",color:"var(--text4)",fontSize:"var(--text-md)",lineHeight:1,padding:2}}>{"\u2715"}</button>}
+    </div>
+
+    {/* Section Tabs */}
+    <div ref={tabsRef} role="tablist" aria-label="Rule categories" style={{display:"flex",gap:4,padding:"8px 0 20px",flexWrap:"wrap",opacity:search?.5:1,transition:"opacity 0.2s"}}>
+      {B3E.SECTIONS.map((s,si)=>{
+        const isActive=activeSection===s.id;
+        const matchCount=search?B3E.CHANGES.filter(c=>c.section===s.id&&(c.title.toLowerCase().includes(search.toLowerCase())||c.today.toLowerCase().includes(search.toLowerCase())||c.newRule.toLowerCase().includes(search.toLowerCase())||c.why.toLowerCase().includes(search.toLowerCase()))).length:null;
+        return(
+          <button key={s.id} id={"b3e-tab-"+s.id} role="tab" aria-selected={isActive} aria-controls={"b3e-panel-"+s.id} tabIndex={isActive?0:-1} onClick={()=>{setActiveSection(s.id);setExpandedId(null);if(search)setSearch("")}} onKeyDown={handleTabKeyDown} style={{padding:"7px 14px",borderRadius:8,fontSize:"var(--text-sm)",fontWeight:600,transition:"all 0.2s",background:isActive?"var(--bg3)":"transparent",color:isActive?"var(--text)":"var(--text5)"}}>
+            <span style={{marginRight:5}}>{s.icon}</span>{s.label}{search&&matchCount!==null?" ("+matchCount+")":""}
+          </button>
+        );
+      })}
+    </div>
+
+    {/* Live region for screen reader announcements */}
+    <div aria-live="polite" style={{position:"absolute",width:1,height:1,overflow:"hidden",clip:"rect(0,0,0,0)"}}>{search&&allFiltered?allFiltered.length+" result"+(allFiltered.length!==1?"s":""):""}</div>
+
+    {/* Content */}
+    {search&&allFiltered?(
+      <div role="tabpanel" aria-label="Search results" style={{paddingBottom:48,paddingTop:12}}>
+        <div style={{fontSize:12,color:"var(--text5)",marginBottom:12}}>{allFiltered.length} result{allFiltered.length!==1?"s":""}</div>
+        {allFiltered.map((c,i)=><B3eChangeCard key={i} change={c} isExpanded={expandedId==="s-"+i} onToggle={()=>setExpandedId(expandedId==="s-"+i?null:"s-"+i)}/>)}
+        {allFiltered.length===0&&<div style={{textAlign:"center",padding:40,color:"var(--text5)",fontSize:"var(--text-md)"}}>No provisions match your search.</div>}
+      </div>
+    ):(
+      <div id={"b3e-panel-"+activeSection} role="tabpanel" aria-labelledby={"b3e-tab-"+activeSection} style={{paddingBottom:48}}>
+        <div style={{marginBottom:20}}>
+          <h3 style={{margin:"0 0 4px",fontSize:18,fontWeight:700,color:"var(--text)"}}>{section.heading}</h3>
+          <p style={{margin:0,fontSize:"var(--text-md)",color:"var(--text4)",lineHeight:1.5,maxWidth:650}}>{section.intro}</p>
+        </div>
+        {activeSection==="overview"&&<B3eImpactSummary/>}
+        {sectionChanges.map((c,i)=><B3eChangeCard key={i} change={c} isExpanded={expandedId===activeSection+"-"+i} onToggle={()=>setExpandedId(expandedId===activeSection+"-"+i?null:activeSection+"-"+i)}/>)}
+      </div>
+    )}
   </div>);
 }
 
@@ -836,7 +1047,8 @@ function StartHereView({onNav}){
     {icon:"\u{1F30A}",title:"LCR & NSFR",desc:"Standardized liquidity ratios",id:"lcr"},
     {icon:"\u{1F6E1}\uFE0F",title:"TLAC & Resolution",desc:"Loss absorbency for orderly failure",id:"tlac"},
     {icon:"\u{1F4D0}",title:"Tailoring Framework",desc:"Category I\u2013IV requirements mapping",id:"tailoring"},
-    {icon:"\u{1F6D1}",title:"Basel III Endgame",desc:"Pending overhaul of risk-based capital",id:"endgame"},
+    {icon:"\u{1F6D1}",title:"Basel III Endgame",desc:"Reproposed overhaul of risk-based capital",id:"endgame"},
+    {icon:"\u{1F50D}",title:"B3E Explorer",desc:"Interactive deep-dive into 41 rule changes",id:"explorer",isView:true},
   ];
 
   return(
@@ -879,7 +1091,7 @@ function StartHereView({onNav}){
       <h3 style={{fontSize:"var(--text-lg)",fontWeight:700,marginBottom:12}}>Quick Links</h3>
       <div style={{display:"grid",gridTemplateColumns:"repeat(auto-fill,minmax(220px,1fr))",gap:10}}>
         {LINKS.map(lk=>
-          <button key={lk.id} onClick={()=>onNav(lk.id)} style={{display:"flex",gap:12,alignItems:"center",padding:"14px 16px",borderRadius:10,border:"1px solid var(--border)",background:"var(--bg2)",textAlign:"left",transition:"all .15s"}}>
+          <button key={lk.id} onClick={()=>lk.isView?window.location.hash="#/"+lk.id:onNav(lk.id)} style={{display:"flex",gap:12,alignItems:"center",padding:"14px 16px",borderRadius:10,border:"1px solid var(--border)",background:"var(--bg2)",textAlign:"left",transition:"all .15s"}}>
             <span style={{fontSize:22}}>{lk.icon}</span>
             <div>
               <div style={{fontSize:"var(--text-md)",fontWeight:700,color:"var(--text)"}}>{lk.title}</div>
@@ -942,7 +1154,7 @@ function App(){
   // Sync view from hash changes (back/forward)
   useEffect(()=>{
     if(route.view&&route.view!==view){
-      if(["start","regulations","changing","glossary","timeline"].includes(route.view))setView(route.view);
+      if(["start","regulations","explorer","changing","glossary","timeline"].includes(route.view))setView(route.view);
     }
   },[route.view]);
 
@@ -972,10 +1184,11 @@ function App(){
       {view==="regulations"&&<RegulationsView search={debouncedSearch} onNavigate={navTarget} navTick={navTick} hashRoute={route} pushHash={pushHash}/>}
       {view==="changing"&&<WhatsChangingView onNav={navToReg}/>}
       {view==="timeline"&&<TimelineView onNav={navToReg}/>}
+      {view==="explorer"&&<BaselExplorer onNav={navToReg}/>}
       {view==="glossary"&&<GlossaryView search={debouncedSearch}/>}
     </main>
     <footer data-noprint style={{textAlign:"center",padding:"20px 24px",borderTop:"1px solid var(--border)",color:"var(--text5)",fontSize:"var(--text-xs)"}}>
-      MyRegApp v6.2 {"\u2014"} Site by <a href="mailto:jackarohan@gmail.com" style={{color:"var(--text4)"}}>Jack Rohan</a> {"\u00b7"} Content current as of March 2026 {"\u00b7"} Not legal advice
+      MyRegApp v6.3 {"\u2014"} Site by <a href="mailto:jackarohan@gmail.com" style={{color:"var(--text4)"}}>Jack Rohan</a> {"\u00b7"} Content current as of March 2026 {"\u00b7"} Not legal advice
     </footer>
     <OfflineBanner/>
   </div>);
