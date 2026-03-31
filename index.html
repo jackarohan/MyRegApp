@@ -578,9 +578,10 @@ function WCPanel({regId}){
 function RegDetail({reg,detailRef,onNav,search,initialSub,onSubChange}){
   const safeInit=Math.max(0,Math.min(initialSub||0,reg.subs.length-1));
   const[idx,setIdx]=useState(safeInit);
+  const prevRegId=useRef(reg.id);
   useEffect(()=>{setIdx(Math.max(0,Math.min(initialSub||0,reg.subs.length-1)))},[reg.id,initialSub]);
   useEffect(()=>{if(detailRef.current)detailRef.current.scrollTop=0},[idx,reg.id]);
-  useEffect(()=>{lsSet("lastView",{r:reg.id,s:idx});onSubChange&&onSubChange(idx)},[reg.id,idx,onSubChange]);
+  useEffect(()=>{if(prevRegId.current!==reg.id){prevRegId.current=reg.id;return}lsSet("lastView",{r:reg.id,s:idx});onSubChange&&onSubChange(idx)},[reg.id,idx,onSubChange]);
   const sub=reg.subs[idx]||reg.subs[0];
   return(
   <div>
@@ -718,7 +719,7 @@ function RegulationsView({search,onNavigate,navTick,hashRoute,pushHash}){
     if(el)el.scrollIntoView({block:"nearest",behavior:"smooth"});
   },[activeId,isMob]);
 
-  useEffect(()=>{if(onNavigate.current){const t=onNavigate.current;onNavigate.current=null;setActiveId(t);if(isMob)setMobDetail(t)}},[navTick]);
+  useEffect(()=>{if(onNavigate.current){const t=onNavigate.current;onNavigate.current=null;setActiveId(t);setCurSub(0);if(isMob)setMobDetail(t)}},[navTick]);
   const navTo=useCallback(id=>{setActiveId(id);setCurSub(0);pushHash("regulations",id,0);if(isMob)setMobDetail(id);else if(detailRef.current)detailRef.current.scrollTop=0},[isMob,pushHash]);
 
   // Keyboard navigation
