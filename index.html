@@ -391,7 +391,7 @@ function NavBar({view,setView,search,setSearch,theme,toggleTheme,fontSize,setFon
   const settingsRef=useRef(null);
   const isMob=useIsMobile();
   const fSizes=[{id:"sm",l:"A\u207B"},{id:"md",l:"A"},{id:"lg",l:"A\u207A"}];
-  const tabs=[{id:"start",l:"Start Here"},{id:"regulations",l:"Regulations"},{id:"changing",l:"What\u2019s Changing"},{id:"timeline",l:"Timeline"},{id:"glossary",l:"Glossary"}];
+  const tabs=[{id:"regulations",l:"Regulations"},{id:"changing",l:"What\u2019s Changing"},{id:"timeline",l:"Timeline"},{id:"glossary",l:"Glossary"}];
   useEffect(()=>{if(!settingsOpen)return;const h=e=>{if(settingsRef.current&&!settingsRef.current.contains(e.target))setSettingsOpen(false)};document.addEventListener("mousedown",h);return()=>document.removeEventListener("mousedown",h)},[settingsOpen]);
 
   if(isMob) return(
@@ -673,12 +673,12 @@ function Breadcrumb({reg,subIdx}){
 }
 
 function RegulationsView({search,onNavigate,navTick,hashRoute,pushHash}){
-  const initReg=hashRoute?.regId||ls("lastView",{})?.r||R[0].id;
+  const initReg=hashRoute?.regId||ls("lastView",{})?.r||"__overview";
   const initSub=hashRoute?.subIdx;
   const[activeId,setActiveId]=useState(initReg);
   const[curSub,setCurSub]=useState(initSub||0);
   const[mobDetail,setMobDetail]=useState(null);
-  const[catCollapsed,setCatCollapsed]=usePersistedState("catCollapsed",{});
+  const[catCollapsed,setCatCollapsed]=usePersistedState("catCollapsed",{"Capital":true,"Liquidity":true,"Structural & Prudential":true,"Legislation & Community":true});
   const detailRef=useRef(null);
   const sidebarRef=useRef(null);
   const isMob=useIsMobile();
@@ -690,10 +690,26 @@ function RegulationsView({search,onNavigate,navTick,hashRoute,pushHash}){
     const q=search.toLowerCase();
     return RS.filter(r=>r.title.toLowerCase().includes(q)||r.sum.toLowerCase().includes(q)||r.subs.some(s=>s.t.toLowerCase().includes(q)||s.c.some(c=>c.toLowerCase().includes(q))||(s.kp&&s.kp.some(k=>k.toLowerCase().includes(q)))||(s.tables&&s.tables.some(t=>(t.title&&t.title.toLowerCase().includes(q))||t.rows.some(r=>r.some(c=>c.toLowerCase().includes(q))))))).sort((a,b)=>searchScore(b,search)-searchScore(a,search));
   },[search]);
-  const activeReg=R.find(r=>r.id===activeId)||filtered[0];
+  const activeReg=activeId==="__overview"?null:(R.find(r=>r.id===activeId)||filtered[0]);
+
+  // Sync from hash route changes (back/forward button)
+  useEffect(()=>{
+    if(hashRoute?.view==="regulations"){
+      if(!hashRoute.regId&&activeId!=="__overview"){setActiveId("__overview");setCurSub(0)}
+      else if(hashRoute.regId&&hashRoute.regId!==activeId){
+        setActiveId(hashRoute.regId);setCurSub(hashRoute.subIdx||0);
+        if(isMob)setMobDetail(hashRoute.regId);
+      } else if(hashRoute.regId===activeId&&hashRoute.subIdx!=null&&hashRoute.subIdx!==curSub){
+        setCurSub(hashRoute.subIdx);
+      }
+    }
+  },[hashRoute]);
 
   // Sync hash on reg/sub change
-  useEffect(()=>{if(activeReg)pushHash("regulations",activeReg.id,curSub)},[activeId,curSub]);
+  useEffect(()=>{
+    if(activeId==="__overview")pushHash("regulations");
+    else if(activeReg)pushHash("regulations",activeReg.id,curSub);
+  },[activeId,curSub]);
 
   // Scroll sidebar to keep active card visible
   useEffect(()=>{
@@ -720,8 +736,10 @@ function RegulationsView({search,onNavigate,navTick,hashRoute,pushHash}){
   },[activeId,curSub,activeReg]);
 
   if(isMob&&mobDetail){const reg=R.find(r=>r.id===mobDetail);if(reg)return <MobileRegDetail reg={reg} onBack={()=>setMobDetail(null)} onNav={navTo} search={search} initialSub={mobDetail===activeId?curSub:0} pushHash={pushHash}/>}
+  if(isMob&&activeId==="__overview") return <OverviewContent onNav={id=>{setActiveId(id);setCurSub(0);setMobDetail(id)}}/>;
   if(isMob) return(
     <div>
+      <button onClick={()=>{setActiveId("__overview");setCurSub(0)}} className="reg-card" style={{display:"block",width:"100%",textAlign:"left",padding:"12px 18px",borderRadius:10,marginBottom:10,border:activeId==="__overview"?"1px solid var(--amber-border2)":"1px solid var(--amber-border)",background:activeId==="__overview"?"var(--amber-bg2)":"var(--amber-bg)",fontWeight:700,color:"var(--amber)",fontSize:"var(--text-md)"}}>Overview</button>
       <h2 style={{fontSize:"var(--text-xs)",fontWeight:700,color:"var(--text4)",textTransform:"uppercase",letterSpacing:".8px",marginBottom:12}}>{filtered.length} Regulation{filtered.length!==1?"s":""}</h2>
       {(()=>{let lastCat=null;return filtered.map(r=>{
         const showHdr=r.cat!==lastCat;lastCat=r.cat;
@@ -738,6 +756,7 @@ function RegulationsView({search,onNavigate,navTick,hashRoute,pushHash}){
   return(
   <div style={{display:"flex",gap:isTablet?16:28,minHeight:"calc(100vh - 120px)"}}>
     <div ref={sidebarRef} data-noprint style={{width:isTablet?220:300,flexShrink:0,maxHeight:"calc(100vh - 120px)",overflowY:"auto",position:"sticky",top:76}}>
+      <button onClick={()=>{setActiveId("__overview");setCurSub(0)}} data-reg-active={activeId==="__overview"?"true":undefined} className="reg-card" style={{display:"block",width:"100%",textAlign:"left",padding:"12px 18px",borderRadius:10,marginBottom:10,border:activeId==="__overview"?"1px solid var(--amber-border2)":"1px solid var(--amber-border)",background:activeId==="__overview"?"var(--amber-bg2)":"var(--amber-bg)",fontWeight:700,color:"var(--amber)",fontSize:"var(--text-md)"}}>Overview</button>
       <h2 style={{fontSize:"var(--text-xs)",fontWeight:700,color:"var(--text4)",textTransform:"uppercase",letterSpacing:".8px",marginBottom:12}}>{filtered.length} Regulation{filtered.length!==1?"s":""}</h2>
       {(()=>{let lastCat=null;return filtered.map(r=>{
         const showHdr=r.cat!==lastCat;lastCat=r.cat;
@@ -751,6 +770,7 @@ function RegulationsView({search,onNavigate,navTick,hashRoute,pushHash}){
       </div>}
     </div>
     <div ref={detailRef} className="detail-col" style={{flex:1,minWidth:0,maxHeight:"calc(100vh - 120px)",overflowY:"auto",paddingRight:8}}>
+      {activeId==="__overview"&&<OverviewContent onNav={id=>{setActiveId(id);setCurSub(0)}}/>}
       {activeReg&&<Breadcrumb reg={activeReg} subIdx={curSub}/>}
       {activeReg&&<RegDetail reg={activeReg} detailRef={detailRef} onNav={navTo} search={search} initialSub={curSub} onSubChange={setCurSub}/>}
     </div>
@@ -1140,7 +1160,7 @@ function StackBar({label,pct,color,sub,onClick}){
   </div>);
 }
 
-function StartHereView({onNav,setView}){
+function OverviewContent({onNav}){
   const CATS=[
     {title:"Risk-Based Capital Stack",desc:"How much CET1 capital must a G-SIB hold?",color:"#f59e0b",
      layers:[
@@ -1172,38 +1192,13 @@ function StartHereView({onNav,setView}){
     {icon:"\u{1F6D1}",title:"Basel III Endgame",desc:"Reproposed overhaul of risk-based capital",id:"endgame"},
   ];
 
-  const[welcomed,setWelcomed]=usePersistedState("welcomed",false);
-
-  const PATHS=[
-    {title:"New to regulation?",desc:"Follow a guided path through the core framework",action:()=>{onNav("cap-adequacy")}},
-    {title:"Looking up a specific rule?",desc:"Jump straight to the full regulation list and search",action:()=>{if(setView)setView("regulations")}},
-    {title:"What's changing?",desc:"See upcoming deadlines and regulatory milestones",action:()=>{if(setView)setView("changing")}},
-  ];
-
   return(
   <div style={{maxWidth:800}} className="fade-up">
-    {!welcomed&&<div style={{marginBottom:24,padding:"16px 20px",borderRadius:10,border:"1px solid var(--amber-border)",background:"var(--amber-bg)",position:"relative"}}>
-      <button onClick={()=>setWelcomed(true)} aria-label="Dismiss welcome" style={{position:"absolute",top:10,right:14,color:"var(--text4)",fontSize:"var(--text-lg)"}}>{"\u2715"}</button>
-      <div style={{fontSize:"var(--text-md)",fontWeight:700,color:"var(--text)",marginBottom:6}}>Welcome to MyRegApp</div>
-      <p style={{fontSize:"var(--text-sm)",color:"var(--text3)",lineHeight:1.55,margin:0}}>
-        A free reference guide to the 20 key U.S. banking regulations covering capital, liquidity, and prudential requirements. Built for analysts, compliance officers, and anyone navigating the regulatory landscape. Browse by category below, or use the tabs above to explore.
-      </p>
-    </div>}
-
     <div style={{marginBottom:24}}>
-      <h2 style={{fontSize:22,fontWeight:800,letterSpacing:"-.3px",marginBottom:6}}>Start Here</h2>
+      <h2 style={{fontSize:22,fontWeight:800,letterSpacing:"-.3px",marginBottom:6}}>Overview</h2>
       <p style={{fontSize:"var(--text-md)",color:"var(--text3)",lineHeight:1.6}}>
         U.S. bank regulation rests on three pillars: <strong style={{color:"var(--text)"}}>capital adequacy</strong> (do you have enough loss-absorbing resources?), <strong style={{color:"var(--text)"}}>leverage limits</strong> (a non-risk-weighted backstop), and <strong style={{color:"var(--text)"}}>liquidity</strong> (can you meet obligations under stress?). Requirements scale by firm size and complexity through the <button onClick={()=>onNav("tailoring")} style={{color:"var(--amber)",fontWeight:700,padding:0,borderBottom:"1px dashed var(--amber-dot)"}}>tailoring framework</button> (Categories I–IV).
       </p>
-    </div>
-
-    <div style={{display:"grid",gridTemplateColumns:"repeat(auto-fill,minmax(200px,1fr))",gap:10,marginBottom:28}}>
-      {PATHS.map((p,i)=>
-        <button key={i} onClick={p.action} style={{padding:"14px 16px",borderRadius:10,border:"1px solid var(--border)",background:"var(--bg2)",textAlign:"left",transition:"all .15s"}}>
-          <div style={{fontSize:"var(--text-md)",fontWeight:700,color:"var(--amber)",marginBottom:4}}>{p.title}</div>
-          <div style={{fontSize:"var(--text-sm)",color:"var(--text3)",lineHeight:1.4}}>{p.desc}</div>
-        </button>
-      )}
     </div>
 
     {CATS.map((cat,ci)=>(
@@ -1292,7 +1287,7 @@ function useIsTablet(){
 
 function App(){
   const{route,push:pushHash}=useHashRoute();
-  const[view,setView]=useState(route.view||(ls("lastView",null)?"regulations":"start"));
+  const[view,setView]=useState(route.view==="start"?"regulations":(route.view||"regulations"));
   const[search,setSearch]=useState(route.q||"");
   const navTarget=useRef(null);
   const[navTick,setNavTick]=useState(0);
@@ -1313,7 +1308,8 @@ function App(){
   // Sync view from hash changes (back/forward)
   useEffect(()=>{
     if(route.view&&route.view!==view){
-      if(["start","regulations","explorer","changing","glossary","timeline"].includes(route.view))setView(route.view);
+      if(route.view==="start"){setView("regulations");pushHash("regulations")}
+      else if(["regulations","explorer","changing","glossary","timeline"].includes(route.view))setView(route.view);
     }
   },[route.view]);
 
@@ -1339,7 +1335,6 @@ function App(){
     <a className="skip-link" href="#main-content">Skip to content</a>
     <NavBar view={view} setView={handleSetView} search={search} setSearch={setSearch} theme={theme} toggleTheme={toggleTheme} fontSize={fontSize} setFontSize={setFontSize} searchRef={searchRef}/>
     <main id="main-content" style={{paddingTop:isMob?88:76,paddingBottom:40,paddingLeft:isMob?14:24,paddingRight:isMob?14:24,maxWidth:1120,margin:"0 auto"}}>
-      {view==="start"&&<StartHereView onNav={navToReg} setView={handleSetView}/>}
       {view==="regulations"&&<RegulationsView search={debouncedSearch} onNavigate={navTarget} navTick={navTick} hashRoute={route} pushHash={pushHash}/>}
       {view==="changing"&&<WhatsChangingView onNav={navToReg}/>}
       {view==="timeline"&&<TimelineView onNav={navToReg}/>}
@@ -1347,7 +1342,7 @@ function App(){
       {view==="glossary"&&<GlossaryView search={debouncedSearch} onNav={navToReg}/>}
     </main>
     <footer data-noprint style={{textAlign:"center",padding:"20px 24px",borderTop:"1px solid var(--border)",color:"var(--text5)",fontSize:"var(--text-xs)"}}>
-      MyRegApp v6.4.1 {"\u2014"} Site by <a href="mailto:jackarohan@gmail.com" style={{color:"var(--text3)",textDecoration:"underline",textUnderlineOffset:2}}>Jack Rohan</a> {"\u00b7"} Content current as of March 2026 {"\u00b7"} Not legal advice
+      MyRegApp v6.5 {"\u2014"} Site by <a href="mailto:jackarohan@gmail.com" style={{color:"var(--text3)",textDecoration:"underline",textUnderlineOffset:2}}>Jack Rohan</a> {"\u00b7"} Content current as of March 2026 {"\u00b7"} Not legal advice
     </footer>
     <OfflineBanner/>
   </div>);

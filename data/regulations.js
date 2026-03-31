@@ -1,4 +1,4 @@
-/* MyRegApp v6.4.1 — Regulation Data
+/* MyRegApp v6.5 — Regulation Data
    20 banking regulations with full subsection content.
    Loaded by index.html via <script> tag. */
 
@@ -907,4 +907,4 @@ kp:["No direct amendments pending","Stress test transparency proposal would affe
 ];
 
 const CAT_ORDER={"Capital":0,"Liquidity":1,"Structural & Prudential":2,"Legislation & Community":3};
-const RS=[...R].sort((a,b)=>(CAT_ORDER[a.cat]??99)-(CAT_ORDER[b.cat]??99));
+const RS=[...R].sort((a,b)=>{const c=(CAT_ORDER[a.cat]??99)-(CAT_ORDER[b.cat]??99);return c!==0?c:a.st.localeCompare(b.st)});
