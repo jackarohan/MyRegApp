@@ -1,4 +1,4 @@
-/* MyRegApp v6.4 — What's Changing & Status Badges
+/* MyRegApp v6.4.1 — What's Changing & Status Badges
    Pending and upcoming regulatory changes.
    G (glossary) is defined in glossary.js; ST (status badges) defined here.
    Loaded by index.html via <script> tag. */

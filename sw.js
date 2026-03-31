@@ -1,9 +1,9 @@
-/*  MyRegApp Service Worker — v6.4
+/*  MyRegApp Service Worker — v6.4.1
     NetworkFirst for HTML + data (fresh content on every online load)
     CacheFirst for CDN scripts + fonts (versioned/stable URLs)
     Bump CACHE_VERSION on every content update. */
 
-const CACHE_VERSION = 'mra-v6.4';
+const CACHE_VERSION = 'mra-v6.4.1';
 const APP_SHELL = [
   '/',
   '/index.html',
