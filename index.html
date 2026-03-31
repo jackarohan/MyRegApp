@@ -16,7 +16,7 @@
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700;9..40,800&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
 :root{--bg:#0a0a0e;--bg2:rgba(255,255,255,.015);--bg3:rgba(255,255,255,.04);--nav-bg:rgba(10,10,14,.88);--text:#e2e8f0;--text2:#cbd5e1;--text3:#94a3b8;--text4:#64748b;--text5:#475569;--border:rgba(255,255,255,.05);--border2:rgba(255,255,255,.07);--amber:#f59e0b;--amber2:#fbbf24;--amber-bg:rgba(245,158,11,.03);--amber-border:rgba(245,158,11,.1);--amber-bg2:rgba(245,158,11,.05);--amber-bg3:rgba(245,158,11,.12);--amber-bg4:rgba(245,158,11,.15);--amber-border2:rgba(245,158,11,.35);--amber-dot:rgba(245,158,11,.4);--tooltip-bg:#1e1e28;--shadow:rgba(0,0,0,.5);--sel:rgba(245,158,11,.3);--font-size:13.5px;--text-xs:0.83em;--text-sm:0.90em;--text-md:1.00em;--text-lg:1.04em;--text-xl:1.12em}
-[data-theme="light"]{--bg:#f5f5f0;--bg2:rgba(0,0,0,.03);--bg3:rgba(0,0,0,.04);--nav-bg:rgba(245,245,240,.92);--text:#1e293b;--text2:#334155;--text3:#64748b;--text4:#94a3b8;--text5:#b0b8c4;--border:rgba(0,0,0,.08);--border2:rgba(0,0,0,.1);--amber:#d97706;--amber2:#b45309;--amber-bg:rgba(217,119,6,.04);--amber-border:rgba(217,119,6,.15);--amber-bg2:rgba(217,119,6,.06);--amber-bg3:rgba(217,119,6,.1);--amber-bg4:rgba(217,119,6,.12);--amber-border2:rgba(217,119,6,.3);--amber-dot:rgba(217,119,6,.5);--tooltip-bg:#fff;--shadow:rgba(0,0,0,.12);--sel:rgba(217,119,6,.2)}
+[data-theme="light"]{--bg:#f5f5f0;--bg2:rgba(0,0,0,.03);--bg3:rgba(0,0,0,.04);--nav-bg:rgba(245,245,240,.92);--text:#1e293b;--text2:#334155;--text3:#64748b;--text4:#7c8ba3;--text5:#b0b8c4;--border:rgba(0,0,0,.08);--border2:rgba(0,0,0,.1);--amber:#a16207;--amber2:#854d0e;--amber-bg:rgba(161,98,7,.04);--amber-border:rgba(161,98,7,.15);--amber-bg2:rgba(161,98,7,.06);--amber-bg3:rgba(161,98,7,.1);--amber-bg4:rgba(161,98,7,.12);--amber-border2:rgba(161,98,7,.3);--amber-dot:rgba(161,98,7,.5);--tooltip-bg:#fff;--shadow:rgba(0,0,0,.12);--sel:rgba(161,98,7,.2)}
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 html{-webkit-text-size-adjust:100%;scroll-behavior:smooth}
 body{background:var(--bg);color:var(--text);font-family:'DM Sans',system-ui,sans-serif;font-size:var(--font-size);-webkit-font-smoothing:antialiased;overflow-x:hidden;transition:background .2s,color .2s}
@@ -43,6 +43,7 @@ a{color:var(--amber);text-decoration:none}a:hover{text-decoration:underline}
 .action-btn{display:inline-flex;align-items:center;justify-content:center;width:28px;height:28px;border-radius:6px;color:var(--text4);transition:all .12s;flex-shrink:0}.action-btn:hover{background:var(--bg3);color:var(--amber)}.action-btn:active{transform:scale(.92)}
 .wc-card{transition:border-color .15s,box-shadow .15s}.wc-card:hover{border-color:var(--amber-border);box-shadow:0 2px 12px var(--shadow)}
 .gl-card{transition:border-color .15s,box-shadow .15s}.gl-card:hover{border-color:var(--amber-border);box-shadow:0 2px 12px var(--shadow)}
+.reg-card{transition:border-color .15s,background .15s,box-shadow .15s}.reg-card:hover{border-color:var(--amber-border)!important;background:var(--amber-bg)!important;box-shadow:0 2px 8px var(--shadow)}
 table tbody tr:hover{background:var(--bg3)!important}
 .toast{position:fixed;bottom:28px;left:50%;transform:translateX(-50%) translateY(12px);background:var(--tooltip-bg);border:1px solid var(--amber-border);color:var(--text);font-size:var(--text-sm);font-weight:600;padding:8px 18px;border-radius:8px;z-index:9999;opacity:0;pointer-events:none;transition:opacity .2s,transform .2s;box-shadow:0 8px 24px var(--shadow)}.toast.show{opacity:1;transform:translateX(-50%) translateY(0)}
 .skip-link{position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden;z-index:10000}.skip-link:focus{position:fixed;top:8px;left:8px;width:auto;height:auto;padding:8px 16px;background:var(--amber);color:#000;font-weight:700;font-size:var(--text-md);border-radius:6px;text-decoration:none;z-index:10000;box-shadow:0 4px 12px var(--shadow)}
@@ -51,6 +52,7 @@ table tbody tr:hover{background:var(--bg3)!important}
 .tl-item{position:relative;padding:0 0 20px 20px}.tl-dot{position:absolute;left:-24px;top:4px;width:12px;height:12px;border-radius:50%;border:2px solid var(--bg);box-shadow:0 0 0 2px var(--border);transition:transform .15s}.tl-item:hover .tl-dot{transform:scale(1.3)}.tl-date{font-size:var(--text-xs);color:var(--text5);font-weight:600;letter-spacing:.3px}.tl-title{font-size:var(--text-md);color:var(--text);margin:2px 0 1px}.tl-reg{display:inline-block;font-size:var(--text-xs);padding:1px 6px;border-radius:4px;background:var(--bg3);color:var(--text3);cursor:pointer;margin-top:2px}
 .tl-filter{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:12px}.tl-chip{font-size:var(--text-xs);padding:3px 10px;border-radius:12px;border:1px solid var(--border);background:transparent;color:var(--text3);cursor:pointer;transition:all .15s}.tl-chip:hover{border-color:var(--text3)}.tl-chip:active{transform:scale(.96)}.tl-chip:focus-visible{outline:2px solid var(--amber);outline-offset:2px}.tl-chip.active{background:var(--amber);border-color:var(--amber);color:#000;font-weight:600}
 .tl-legend{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:12px}.tl-leg-item{display:flex;align-items:center;gap:4px;font-size:var(--text-xs);color:var(--text4)}.tl-leg-dot{width:8px;height:8px;border-radius:50%;flex-shrink:0}
+@media(max-width:767px){:root{--font-size:15px}}
 @media print{
   body{background:#fff!important;color:#1a1a1a!important;font-size:11pt!important}
   nav,.nav-bar,.sidebar-col,.action-btn,.sub-badge,button,[data-noprint],footer,.b3e-search{display:none!important}
@@ -208,9 +210,11 @@ function printRegulation(reg){
 
 function useHashRoute(){
   const parse=()=>{
-    const h=window.location.hash.replace(/^#\/?/,"");
-    const[view,regId,subStr]=h.split("/");
-    return{view:view||"regulations",regId:regId||null,subIdx:subStr!=null?parseInt(subStr,10):null};
+    const raw=window.location.hash.replace(/^#\/?/,"");
+    const[pathPart,queryPart]=raw.split("?");
+    const[view,regId,subStr]=pathPart.split("/");
+    const params=new URLSearchParams(queryPart||"");
+    return{view:view||"regulations",regId:regId||null,subIdx:subStr!=null?parseInt(subStr,10):null,q:params.get("q")||""};
   };
   const[route,setRoute]=useState(parse);
   useEffect(()=>{
@@ -218,13 +222,29 @@ function useHashRoute(){
     window.addEventListener("hashchange",handler);
     return()=>window.removeEventListener("hashchange",handler);
   },[]);
-  const push=(view,regId,subIdx)=>{
+  const push=(view,regId,subIdx,query)=>{
     let h="#/"+view;
     if(regId)h+="/"+regId;
     if(subIdx!=null)h+="/"+subIdx;
+    if(query)h+="?q="+encodeURIComponent(query);
     window.location.hash=h;
   };
   return{route,push};
+}
+
+// Search relevance scoring: title > summary > key points > content
+function searchScore(reg,q){
+  if(!q)return 0;
+  const lq=q.toLowerCase();
+  let score=0;
+  if(reg.title.toLowerCase().includes(lq))score+=100;
+  if(reg.st.toLowerCase().includes(lq))score+=80;
+  if(reg.sum.toLowerCase().includes(lq))score+=50;
+  reg.subs.forEach(s=>{
+    if(s.kp&&s.kp.some(k=>k.toLowerCase().includes(lq)))score+=30;
+    if(s.c.some(c=>c.toLowerCase().includes(lq)))score+=10;
+  });
+  return score;
 }
 
 // Search: find which subsection indices match for a given regulation
@@ -256,6 +276,27 @@ function stripRefs(text){return text.replace(/\{\{ref:[a-z0-9-]+\}\}/g,"").repla
 const GT=Object.keys(G).sort((a,b)=>b.length-a.length);
 const GRE=new RegExp("\\b("+GT.map(t=>t.replace(/[.*+?^${}()|[\]\\]/g,'\\$&')).join("|")+")\\b","g");
 const REF=/\{\{ref:([a-z0-9-]+)\}\}/g;
+
+// Build map of pending WC entries per regulation
+const WC_BY_REG={};
+WC.forEach(w=>{if(w.reg){if(!WC_BY_REG[w.reg])WC_BY_REG[w.reg]=[];WC_BY_REG[w.reg].push(w)}});
+
+// Build reverse cross-reference index (backlinks)
+const BACKLINKS={};
+R.forEach(reg=>{
+  const re=/\{\{ref:([a-z0-9-]+)\}\}/g;
+  reg.subs.forEach(sub=>{sub.c.forEach(p=>{let m;while((m=re.exec(p))!==null){const target=m[1];if(target!==reg.id){if(!BACKLINKS[target])BACKLINKS[target]=new Set();BACKLINKS[target].add(reg.id)}}})});
+});
+Object.keys(BACKLINKS).forEach(k=>{BACKLINKS[k]=[...BACKLINKS[k]]});
+
+// Build glossary term usage map (term → regulations that use it)
+const TERM_USAGE={};
+R.forEach(reg=>{
+  const allText=reg.subs.map(s=>s.c.join(" ")).join(" ").toLowerCase();
+  GT.forEach(term=>{if(allText.includes(term.toLowerCase())){if(!TERM_USAGE[term])TERM_USAGE[term]=[];TERM_USAGE[term].push({id:reg.id,st:reg.st})}});
+});
+
+// RS is defined in regulations.js (sorted by category order)
 
 /*═══════════════ SMART TEXT — glossary tooltips + cross-refs ═══════════════*/
 
@@ -350,7 +391,7 @@ function NavBar({view,setView,search,setSearch,theme,toggleTheme,fontSize,setFon
   const settingsRef=useRef(null);
   const isMob=useIsMobile();
   const fSizes=[{id:"sm",l:"A\u207B"},{id:"md",l:"A"},{id:"lg",l:"A\u207A"}];
-  const tabs=[{id:"start",l:"Start Here"},{id:"regulations",l:"Regulations"},{id:"explorer",l:"B3E Explorer"},{id:"changing",l:"What\u2019s Changing"},{id:"timeline",l:"Timeline"},{id:"glossary",l:"Glossary"}];
+  const tabs=[{id:"start",l:"Start Here"},{id:"regulations",l:"Regulations"},{id:"changing",l:"What\u2019s Changing"},{id:"timeline",l:"Timeline"},{id:"glossary",l:"Glossary"}];
   useEffect(()=>{if(!settingsOpen)return;const h=e=>{if(settingsRef.current&&!settingsRef.current.contains(e.target))setSettingsOpen(false)};document.addEventListener("mousedown",h);return()=>document.removeEventListener("mousedown",h)},[settingsOpen]);
 
   if(isMob) return(
@@ -360,10 +401,10 @@ function NavBar({view,setView,search,setSearch,theme,toggleTheme,fontSize,setFon
       <div style={{flex:1,position:"relative"}}>
         <input ref={inp} type="text" placeholder="Search…" aria-label="Search regulations" value={search} onChange={e=>setSearch(e.target.value)} className="search-input" style={{width:"100%",padding:"6px 28px 6px 30px",borderRadius:7,border:"1px solid var(--border2)",background:"var(--bg3)",color:"var(--text)",fontSize:"var(--text-sm)",outline:"none"}}/>
         <svg style={{position:"absolute",left:9,top:"50%",transform:"translateY(-50%)",pointerEvents:"none"}} width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="var(--text4)" strokeWidth="2.5" strokeLinecap="round"><circle cx="10.5" cy="10.5" r="7"/><line x1="15.5" y1="15.5" x2="21" y2="21"/></svg>
-        {search&&<button onClick={()=>{setSearch("");inp.current?.focus()}} aria-label="Clear search" style={{position:"absolute",right:6,top:"50%",transform:"translateY(-50%)",color:"var(--text4)",fontSize:"var(--text-md)",lineHeight:1,padding:2}}>{"\u2715"}</button>}
+        {search&&<button onClick={()=>{setSearch("");inp.current?.focus()}} aria-label="Clear search" style={{position:"absolute",right:2,top:"50%",transform:"translateY(-50%)",color:"var(--text4)",fontSize:"var(--text-md)",lineHeight:1,padding:8,minWidth:44,minHeight:44,display:"flex",alignItems:"center",justifyContent:"center"}}>{"\u2715"}</button>}
       </div>
       <div style={{position:"relative"}} ref={settingsRef}>
-        <button onClick={()=>setSettingsOpen(!settingsOpen)} title="Settings" aria-label="Settings" aria-expanded={settingsOpen} style={{fontSize:"var(--text-lg)",padding:"4px 6px",borderRadius:6,color:settingsOpen?"var(--amber)":"var(--text3)",background:settingsOpen?"var(--amber-bg3)":"transparent",transition:"all .15s"}}>{"\u2699\uFE0F"}</button>
+        <button onClick={()=>setSettingsOpen(!settingsOpen)} title="Settings" aria-label="Settings" aria-expanded={settingsOpen} style={{fontSize:"var(--text-lg)",padding:"10px 12px",minWidth:44,minHeight:44,borderRadius:6,color:settingsOpen?"var(--amber)":"var(--text3)",background:settingsOpen?"var(--amber-bg3)":"transparent",transition:"all .15s"}}>{"\u2699\uFE0F"}</button>
         {settingsOpen&&<div style={{position:"absolute",right:0,top:"calc(100% + 8px)",background:"var(--tooltip-bg)",border:"1px solid var(--border2)",borderRadius:10,padding:"12px 14px",boxShadow:"0 8px 24px var(--shadow)",zIndex:200,minWidth:160}} className="fade-in">
           <div style={{fontSize:"var(--text-xs)",fontWeight:700,color:"var(--text5)",textTransform:"uppercase",letterSpacing:".5px",marginBottom:8}}>Font Size</div>
           <div style={{display:"flex",gap:3,marginBottom:12}}>
@@ -378,7 +419,7 @@ function NavBar({view,setView,search,setSearch,theme,toggleTheme,fontSize,setFon
     </div>
     <div style={{display:"flex",gap:1,overflowX:"auto",WebkitOverflowScrolling:"touch",scrollbarWidth:"none",msOverflowStyle:"none",padding:"2px 14px 8px"}}>
       {tabs.map(tab=>
-        <button key={tab.id} onClick={()=>setView(tab.id)} title={tab.l} aria-current={view===tab.id?"page":undefined} style={{padding:"5px 10px",borderRadius:6,fontSize:"var(--text-sm)",fontWeight:600,transition:"all .15s",whiteSpace:"nowrap",background:view===tab.id?"var(--amber-bg3)":"transparent",color:view===tab.id?"var(--amber)":"var(--text3)"}}>{tab.l}</button>
+        <button key={tab.id} onClick={()=>setView(tab.id)} title={tab.l} aria-current={view===tab.id?"page":undefined} style={{padding:"8px 10px",minHeight:44,borderRadius:6,fontSize:"var(--text-sm)",fontWeight:600,transition:"all .15s",whiteSpace:"nowrap",background:view===tab.id?"var(--amber-bg3)":"transparent",color:view===tab.id?"var(--amber)":"var(--text3)"}}>{tab.l}</button>
       )}
     </div>
   </nav>);
@@ -410,7 +451,7 @@ function NavBar({view,setView,search,setSearch,theme,toggleTheme,fontSize,setFon
     <div style={{position:"relative",width:200,flexShrink:0}}>
       <input ref={inp} type="text" placeholder="Search…" aria-label="Search regulations" value={search} onChange={e=>setSearch(e.target.value)} className="search-input" style={{width:"100%",padding:"7px 30px 7px 32px",borderRadius:7,border:"1px solid var(--border2)",background:"var(--bg3)",color:"var(--text)",fontSize:"var(--text-md)",outline:"none"}}/>
       <svg style={{position:"absolute",left:10,top:"50%",transform:"translateY(-50%)",pointerEvents:"none"}} width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="var(--text4)" strokeWidth="2.5" strokeLinecap="round"><circle cx="10.5" cy="10.5" r="7"/><line x1="15.5" y1="15.5" x2="21" y2="21"/></svg>
-      {search&&<button onClick={()=>{setSearch("");inp.current?.focus()}} aria-label="Clear search" style={{position:"absolute",right:8,top:"50%",transform:"translateY(-50%)",color:"var(--text4)",fontSize:"var(--text-lg)",lineHeight:1,padding:2}}>{"\u2715"}</button>}
+      {search&&<button onClick={()=>{setSearch("");inp.current?.focus()}} aria-label="Clear search" style={{position:"absolute",right:2,top:"50%",transform:"translateY(-50%)",color:"var(--text4)",fontSize:"var(--text-lg)",lineHeight:1,padding:8,minWidth:44,minHeight:44,display:"flex",alignItems:"center",justifyContent:"center"}}>{"\u2715"}</button>}
     </div>
   </nav>);
 }
@@ -418,11 +459,15 @@ function NavBar({view,setView,search,setSearch,theme,toggleTheme,fontSize,setFon
 function RegCard({reg,active,onClick,search}){
   const hits=useMemo(()=>search?matchedSubs(reg,search):[],[reg,search]);
   const snippet=useMemo(()=>searchSnippet(reg,search),[reg,search]);
+  const wcCount=WC_BY_REG[reg.id]?WC_BY_REG[reg.id].length:0;
   return(
-  <button onClick={onClick} data-reg-active={active?"true":undefined} style={{display:"block",width:"100%",textAlign:"left",padding:"16px 18px",borderRadius:10,marginBottom:6,border:active?"1px solid var(--amber-border2)":"1px solid var(--border)",background:active?"var(--amber-bg2)":"var(--bg2)",transition:"all .15s"}}>
+  <button onClick={onClick} data-reg-active={active?"true":undefined} aria-label={reg.title} className="reg-card" style={{display:"block",width:"100%",textAlign:"left",padding:"16px 18px",borderRadius:10,marginBottom:6,border:active?"1px solid var(--amber-border2)":"1px solid var(--border)",background:active?"var(--amber-bg2)":"var(--bg2)"}}>
     <div style={{display:"flex",alignItems:"center",gap:10,marginBottom:6}}>
       <span style={{fontSize:18}}>{reg.icon}</span>
-      <span style={{fontSize:"var(--text-lg)",fontWeight:700,color:active?"var(--amber2)":"var(--text)"}}>{reg.st}</span>
+      <span style={{fontSize:"var(--text-lg)",fontWeight:700,color:active?"var(--amber2)":"var(--text)",flex:1}}>{reg.st}</span>
+      {reg.crossCutting&&<span style={{fontSize:9,padding:"2px 6px",borderRadius:3,background:"rgba(139,92,246,.1)",color:"#a78bfa",fontWeight:700,letterSpacing:".3px",whiteSpace:"nowrap",flexShrink:0}}>CROSS-CUTTING</span>}
+      {reg.tag&&<span style={{fontSize:9,padding:"2px 6px",borderRadius:3,background:"rgba(6,182,212,.1)",color:"#22d3ee",fontWeight:700,letterSpacing:".3px",whiteSpace:"nowrap",flexShrink:0}}>{reg.tag.toUpperCase()}</span>}
+      {wcCount>0&&<span style={{fontSize:"var(--text-xs)",padding:"2px 7px",borderRadius:4,background:ST.expected.bg,color:ST.expected.tx,fontWeight:700,whiteSpace:"nowrap",flexShrink:0}}>{wcCount} pending</span>}
     </div>
     <p style={{fontSize:"var(--text-sm)",color:"var(--text3)",lineHeight:1.45,margin:0,display:"-webkit-box",WebkitLineClamp:2,WebkitBoxOrient:"vertical",overflow:"hidden"}}>{stripRefs(reg.sum)}</p>
     {snippet&&<div style={{marginTop:6,padding:"6px 10px",borderRadius:6,background:"var(--bg3)",fontSize:"var(--text-sm)",color:"var(--text3)",lineHeight:1.4}}>
@@ -439,8 +484,8 @@ const SUB_BADGES={"Current Requirements":{lb:"FINAL RULE",bg:"rgba(34,197,94,.1)
 
 function SubNav({subs,idx,onSelect}){
   return(
-  <div style={{display:"flex",gap:3,flexWrap:"wrap",marginBottom:20}}>
-    {subs.map((s,i)=>{const badge=SUB_BADGES[s.t];return <button key={i} onClick={()=>onSelect(i)} style={{padding:"5px 12px",borderRadius:6,fontSize:"var(--text-sm)",fontWeight:600,transition:"all .12s",background:idx===i?"var(--amber-bg4)":"var(--bg3)",color:idx===i?"var(--amber)":"var(--text3)",borderBottom:idx===i?"2px solid var(--amber)":"2px solid transparent",display:"flex",alignItems:"center",gap:5}}>
+  <div role="tablist" aria-label="Subsections" style={{display:"flex",gap:3,flexWrap:"wrap",marginBottom:20}}>
+    {subs.map((s,i)=>{const badge=SUB_BADGES[s.t];return <button key={i} role="tab" aria-selected={idx===i} onClick={()=>onSelect(i)} style={{padding:"5px 12px",borderRadius:6,fontSize:"var(--text-sm)",fontWeight:600,transition:"all .12s",background:idx===i?"var(--amber-bg4)":"var(--bg3)",color:idx===i?"var(--amber)":"var(--text3)",borderBottom:idx===i?"2px solid var(--amber)":"2px solid transparent",display:"flex",alignItems:"center",gap:5}}>
       {s.t}
       {badge&&<span style={{fontSize:"var(--text-xs)",fontWeight:700,padding:"1px 5px",borderRadius:3,background:badge.bg,border:"1px solid "+badge.bd,color:badge.tx,letterSpacing:".3px"}}>{badge.lb}</span>}
     </button>})}
@@ -459,13 +504,15 @@ function Sources({src}){
 
 function DataTable({table}){
   const isComp=table.type==="comparison";
+  const isMob=useIsMobile();
+  const stickyFirst=isComp||isMob;
   return(
-  <div style={{margin:"18px 0",borderRadius:9,border:"1px solid var(--border2)",overflow:"hidden"}}>
+  <div style={{margin:"18px 0",borderRadius:9,border:"1px solid var(--border2)",overflow:"hidden",position:"relative"}}>
     {table.title&&<div style={{padding:"10px 16px",background:"var(--bg3)",borderBottom:"1px solid var(--border)",fontSize:"var(--text-sm)",fontWeight:700,color:"var(--text)"}}>{table.title}</div>}
     <div style={{overflowX:"auto"}}>
       <table style={{width:"100%",borderCollapse:"collapse",fontSize:"var(--text-sm)"}}>
         {table.headers&&<thead><tr>
-          {table.headers.map((h,i)=><th key={i} style={{padding:"8px 12px",textAlign:i===0?"left":"right",fontWeight:700,fontSize:"var(--text-xs)",color:"var(--text4)",textTransform:"uppercase",letterSpacing:".4px",borderBottom:"2px solid var(--border2)",background:"var(--bg2)",whiteSpace:"nowrap",position:isComp&&i===0?"sticky":"static",left:0,zIndex:isComp&&i===0?1:0}}>{h}</th>)}
+          {table.headers.map((h,i)=><th key={i} style={{padding:"8px 12px",textAlign:i===0?"left":"right",fontWeight:700,fontSize:"var(--text-xs)",color:"var(--text4)",textTransform:"uppercase",letterSpacing:".4px",borderBottom:"2px solid var(--border2)",background:"var(--bg2)",whiteSpace:"nowrap",position:stickyFirst&&i===0?"sticky":"static",left:0,zIndex:stickyFirst&&i===0?1:0}}>{h}</th>)}
         </tr></thead>}
         <tbody>
           {(()=>{let dri=0;return table.rows.map((row,ri)=>{
@@ -473,7 +520,7 @@ function DataTable({table}){
             if(isGroup){dri=0;return <tr key={ri}><td colSpan={table.headers?table.headers.length:row.length} style={{padding:"8px 12px",fontWeight:700,fontSize:"var(--text-xs)",color:"var(--amber)",textTransform:"uppercase",letterSpacing:".4px",background:"var(--amber-bg)",borderBottom:"1px solid var(--border)"}}>{row[0]}</td></tr>}
             const even=dri%2===0;dri++;
             return <tr key={ri} style={{background:even?"transparent":"var(--bg2)"}}>
-              {row.map((cell,ci)=><td key={ci} style={{padding:"7px 12px",textAlign:ci===0?"left":"right",color:ci===0?"var(--text2)":"var(--text3)",borderBottom:"1px solid var(--border)",whiteSpace:ci>0?"nowrap":"normal",fontFamily:ci>0&&ci<row.length-1?"'DM Mono',monospace":"inherit",position:isComp&&ci===0?"sticky":"static",left:0,background:isComp&&ci===0?(even?"var(--bg)":"var(--bg2)"):"transparent",zIndex:isComp&&ci===0?1:0}}>{cell}</td>)}
+              {row.map((cell,ci)=><td key={ci} style={{padding:"7px 12px",textAlign:ci===0?"left":"right",color:ci===0?"var(--text2)":"var(--text3)",borderBottom:"1px solid var(--border)",whiteSpace:ci>0?"nowrap":"normal",fontFamily:ci>0&&ci<row.length-1?"'DM Mono',monospace":"inherit",position:stickyFirst&&ci===0?"sticky":"static",left:0,background:stickyFirst&&ci===0?(even?"var(--bg)":"var(--bg2)"):"transparent",zIndex:stickyFirst&&ci===0?1:0}}>{cell}</td>)}
             </tr>})})()}
         </tbody>
       </table>
@@ -485,7 +532,8 @@ function DataTable({table}){
 function SubContent({sub,onNav,search}){
   if(!sub)return null;
   return(
-  <div className="fade-in">
+  <div className="fade-in" role="tabpanel">
+    <h3 style={{position:"absolute",width:1,height:1,overflow:"hidden",clip:"rect(0,0,0,0)",whiteSpace:"nowrap",border:0}}>{sub.t}</h3>
     {sub.kp&&sub.kp.length>0&&(
       <div style={{marginBottom:20,padding:"16px 20px",borderRadius:9,background:"var(--amber-bg)",border:"1px solid var(--amber-border)"}}>
         <h4 style={{fontSize:"var(--text-xs)",fontWeight:700,color:"var(--amber)",marginBottom:10,textTransform:"uppercase",letterSpacing:".6px"}}>Key Points</h4>
@@ -504,6 +552,29 @@ function SubContent({sub,onNav,search}){
   </div>);
 }
 
+function WCPanel({regId}){
+  const items=WC_BY_REG[regId];
+  const[open,setOpen]=useState(false);
+  if(!items||!items.length)return null;
+  return(
+  <div style={{marginBottom:16,borderRadius:9,border:"1px solid "+ST.expected.bg,background:ST.expected.bg+"22",overflow:"hidden"}}>
+    <button onClick={()=>setOpen(!open)} style={{display:"flex",alignItems:"center",gap:8,width:"100%",padding:"10px 14px",textAlign:"left",fontSize:"var(--text-sm)",fontWeight:700,color:ST.expected.tx}}>
+      <span>{open?"\u25BC":"\u25B6"}</span>
+      <span>{items.length} Pending Change{items.length!==1?"s":""}</span>
+    </button>
+    {open&&<div style={{padding:"0 14px 12px"}}>
+      {items.map((w,i)=>{const s=ST[w.status];return <div key={i} style={{padding:"8px 0",borderTop:i?"1px solid var(--border)":"none"}}>
+        <div style={{display:"flex",alignItems:"center",gap:8,marginBottom:4}}>
+          <span style={{fontSize:"var(--text-xs)",fontWeight:700,padding:"1px 6px",borderRadius:3,background:s.bg,color:s.tx}}>{s.lb}</span>
+          <span style={{fontSize:"var(--text-xs)",color:"var(--text4)"}}>{w.date}</span>
+        </div>
+        <div style={{fontSize:"var(--text-sm)",fontWeight:600,color:"var(--text)",marginBottom:2}}>{w.title}</div>
+        <div style={{fontSize:"var(--text-sm)",color:"var(--text3)",lineHeight:1.45}}>{w.desc}</div>
+      </div>})}
+    </div>}
+  </div>);
+}
+
 function RegDetail({reg,detailRef,onNav,search,initialSub,onSubChange}){
   const safeInit=Math.max(0,Math.min(initialSub||0,reg.subs.length-1));
   const[idx,setIdx]=useState(safeInit);
@@ -516,9 +587,12 @@ function RegDetail({reg,detailRef,onNav,search,initialSub,onSubChange}){
     <div style={{display:"flex",alignItems:"center",gap:12,marginBottom:6}}>
       <span style={{fontSize:28}}>{reg.icon}</span>
       <h2 style={{fontSize:"var(--text-xl)",fontWeight:800,letterSpacing:"-.3px",margin:0,flex:1}}>{reg.title}</h2>
+      {reg.crossCutting&&<span style={{fontSize:10,padding:"3px 8px",borderRadius:4,background:"rgba(139,92,246,.1)",color:"#a78bfa",fontWeight:700,letterSpacing:".3px"}}>CROSS-CUTTING</span>}
+      {reg.tag&&<span style={{fontSize:10,padding:"3px 8px",borderRadius:4,background:"rgba(6,182,212,.1)",color:"#22d3ee",fontWeight:700,letterSpacing:".3px"}}>{reg.tag.toUpperCase()}</span>}
       <button className="action-btn" onClick={()=>printRegulation(reg)} title="Print this regulation" aria-label="Print this regulation">{"\uD83D\uDDA8\uFE0F"}</button>
     </div>
     <p style={{fontSize:"var(--text-md)",color:"var(--text3)",lineHeight:1.55,marginBottom:reg.id==="endgame"?12:24}}>{stripRefs(reg.sum)}</p>
+    <WCPanel regId={reg.id}/>
     {reg.id==="endgame"&&<button onClick={()=>{window.location.hash="#/explorer"}} aria-label="Open Basel III Endgame interactive explorer" style={{display:"flex",alignItems:"center",gap:10,width:"100%",padding:"12px 16px",borderRadius:9,border:"1px solid var(--amber-border)",background:"var(--amber-bg3)",marginBottom:16,textAlign:"left",cursor:"pointer",transition:"all .15s"}}>
       <span style={{fontSize:20}}>{"\uD83D\uDD0D"}</span>
       <div style={{flex:1}}>
@@ -532,6 +606,14 @@ function RegDetail({reg,detailRef,onNav,search,initialSub,onSubChange}){
       <button className="action-btn" onClick={()=>copySubLink(reg.id,idx)} title="Copy link to this section" aria-label="Copy link to this section">{"\uD83D\uDD17"}</button>
     </div>
     <SubContent sub={sub} onNav={onNav} search={search} key={reg.id+"-"+idx}/>
+    {BACKLINKS[reg.id]&&BACKLINKS[reg.id].length>0&&(
+      <div style={{marginTop:24,padding:"14px 18px",borderRadius:9,border:"1px solid var(--border)",background:"var(--bg2)"}}>
+        <div style={{fontSize:"var(--text-xs)",fontWeight:700,color:"var(--text5)",textTransform:"uppercase",letterSpacing:".5px",marginBottom:8}}>Referenced By</div>
+        <div style={{display:"flex",gap:6,flexWrap:"wrap"}}>
+          {BACKLINKS[reg.id].map(srcId=>{const src=R.find(r=>r.id===srcId);return src?<button key={srcId} onClick={()=>onNav(srcId)} style={{padding:"4px 10px",borderRadius:5,border:"1px solid var(--border)",background:"var(--bg3)",fontSize:"var(--text-sm)",fontWeight:600,color:"var(--amber)",cursor:"pointer",transition:"all .12s"}}>{src.icon} {src.st}</button>:null})}
+        </div>
+      </div>
+    )}
   </div>);
 }
 
@@ -547,9 +629,12 @@ function MobileRegDetail({reg,onBack,onNav,search,initialSub,pushHash}){
     <div style={{display:"flex",alignItems:"center",gap:12,marginBottom:6}}>
       <span style={{fontSize:28}}>{reg.icon}</span>
       <h2 style={{fontSize:"var(--text-xl)",fontWeight:800,letterSpacing:"-.3px",margin:0,flex:1}}>{reg.title}</h2>
+      {reg.crossCutting&&<span style={{fontSize:10,padding:"3px 8px",borderRadius:4,background:"rgba(139,92,246,.1)",color:"#a78bfa",fontWeight:700,letterSpacing:".3px"}}>CROSS-CUTTING</span>}
+      {reg.tag&&<span style={{fontSize:10,padding:"3px 8px",borderRadius:4,background:"rgba(6,182,212,.1)",color:"#22d3ee",fontWeight:700,letterSpacing:".3px"}}>{reg.tag.toUpperCase()}</span>}
       <button className="action-btn" onClick={()=>printRegulation(reg)} title="Print this regulation" aria-label="Print this regulation">{"\uD83D\uDDA8\uFE0F"}</button>
     </div>
     <p style={{fontSize:"var(--text-md)",color:"var(--text3)",lineHeight:1.55,marginBottom:reg.id==="endgame"?12:24}}>{stripRefs(reg.sum)}</p>
+    <WCPanel regId={reg.id}/>
     {reg.id==="endgame"&&<button onClick={()=>{window.location.hash="#/explorer"}} aria-label="Open Basel III Endgame interactive explorer" style={{display:"flex",alignItems:"center",gap:10,width:"100%",padding:"12px 16px",borderRadius:9,border:"1px solid var(--amber-border)",background:"var(--amber-bg3)",marginBottom:16,textAlign:"left",cursor:"pointer",transition:"all .15s"}}>
       <span style={{fontSize:20}}>{"\uD83D\uDD0D"}</span>
       <div style={{flex:1}}>
@@ -563,6 +648,27 @@ function MobileRegDetail({reg,onBack,onNav,search,initialSub,pushHash}){
       <button className="action-btn" onClick={()=>copySubLink(reg.id,idx)} title="Copy link to this section" aria-label="Copy link to this section">{"\uD83D\uDD17"}</button>
     </div>
     <SubContent sub={sub} onNav={onNav} search={search} key={reg.id+"-"+idx}/>
+    {BACKLINKS[reg.id]&&BACKLINKS[reg.id].length>0&&(
+      <div style={{marginTop:24,padding:"14px 18px",borderRadius:9,border:"1px solid var(--border)",background:"var(--bg2)"}}>
+        <div style={{fontSize:"var(--text-xs)",fontWeight:700,color:"var(--text5)",textTransform:"uppercase",letterSpacing:".5px",marginBottom:8}}>Referenced By</div>
+        <div style={{display:"flex",gap:6,flexWrap:"wrap"}}>
+          {BACKLINKS[reg.id].map(srcId=>{const src=R.find(r=>r.id===srcId);return src?<button key={srcId} onClick={()=>onNav(srcId)} style={{padding:"4px 10px",borderRadius:5,border:"1px solid var(--border)",background:"var(--bg3)",fontSize:"var(--text-sm)",fontWeight:600,color:"var(--amber)",cursor:"pointer",transition:"all .12s"}}>{src.icon} {src.st}</button>:null})}
+        </div>
+      </div>
+    )}
+  </div>);
+}
+
+function Breadcrumb({reg,subIdx}){
+  if(!reg)return null;
+  const sub=reg.subs[subIdx]||reg.subs[0];
+  return(
+  <div data-noprint style={{position:"sticky",top:0,zIndex:10,background:"var(--nav-bg)",backdropFilter:"blur(24px)",WebkitBackdropFilter:"blur(24px)",borderBottom:"1px solid var(--border)",padding:"6px 0",marginBottom:12,fontSize:"var(--text-xs)",color:"var(--text4)",display:"flex",alignItems:"center",gap:4,flexWrap:"wrap"}}>
+    <span style={{fontWeight:600}}>{reg.cat}</span>
+    <span style={{color:"var(--text5)"}}>{"\u203A"}</span>
+    <span style={{color:"var(--amber)",fontWeight:600}}>{reg.st}</span>
+    <span style={{color:"var(--text5)"}}>{"\u203A"}</span>
+    <span>{sub.t} ({subIdx+1} of {reg.subs.length})</span>
   </div>);
 }
 
@@ -572,13 +678,17 @@ function RegulationsView({search,onNavigate,navTick,hashRoute,pushHash}){
   const[activeId,setActiveId]=useState(initReg);
   const[curSub,setCurSub]=useState(initSub||0);
   const[mobDetail,setMobDetail]=useState(null);
+  const[catCollapsed,setCatCollapsed]=usePersistedState("catCollapsed",{});
   const detailRef=useRef(null);
   const sidebarRef=useRef(null);
   const isMob=useIsMobile();
+  const isTablet=useIsTablet();
+  const toggleCat=useCallback(cat=>setCatCollapsed(prev=>({...prev,[cat]:!prev[cat]})),[setCatCollapsed]);
+  const isCollapsed=useCallback(cat=>!search.trim()&&catCollapsed[cat],[search,catCollapsed]);
   const filtered=useMemo(()=>{
     if(!search.trim())return RS;
     const q=search.toLowerCase();
-    return RS.filter(r=>r.title.toLowerCase().includes(q)||r.sum.toLowerCase().includes(q)||r.subs.some(s=>s.t.toLowerCase().includes(q)||s.c.some(c=>c.toLowerCase().includes(q))||(s.kp&&s.kp.some(k=>k.toLowerCase().includes(q)))||(s.tables&&s.tables.some(t=>(t.title&&t.title.toLowerCase().includes(q))||t.rows.some(r=>r.some(c=>c.toLowerCase().includes(q)))))));
+    return RS.filter(r=>r.title.toLowerCase().includes(q)||r.sum.toLowerCase().includes(q)||r.subs.some(s=>s.t.toLowerCase().includes(q)||s.c.some(c=>c.toLowerCase().includes(q))||(s.kp&&s.kp.some(k=>k.toLowerCase().includes(q)))||(s.tables&&s.tables.some(t=>(t.title&&t.title.toLowerCase().includes(q))||t.rows.some(r=>r.some(c=>c.toLowerCase().includes(q))))))).sort((a,b)=>searchScore(b,search)-searchScore(a,search));
   },[search]);
   const activeReg=R.find(r=>r.id===activeId)||filtered[0];
 
@@ -593,7 +703,7 @@ function RegulationsView({search,onNavigate,navTick,hashRoute,pushHash}){
   },[activeId,isMob]);
 
   useEffect(()=>{if(onNavigate.current){const t=onNavigate.current;onNavigate.current=null;setActiveId(t);if(isMob)setMobDetail(t)}},[navTick]);
-  const navTo=useCallback(id=>{setActiveId(id);setCurSub(0);if(isMob)setMobDetail(id);else if(detailRef.current)detailRef.current.scrollTop=0},[isMob]);
+  const navTo=useCallback(id=>{setActiveId(id);setCurSub(0);pushHash("regulations",id,0);if(isMob)setMobDetail(id);else if(detailRef.current)detailRef.current.scrollTop=0},[isMob,pushHash]);
 
   // Keyboard navigation
   useEffect(()=>{
@@ -612,29 +722,36 @@ function RegulationsView({search,onNavigate,navTick,hashRoute,pushHash}){
   if(isMob&&mobDetail){const reg=R.find(r=>r.id===mobDetail);if(reg)return <MobileRegDetail reg={reg} onBack={()=>setMobDetail(null)} onNav={navTo} search={search} initialSub={mobDetail===activeId?curSub:0} pushHash={pushHash}/>}
   if(isMob) return(
     <div>
-      <h3 style={{fontSize:"var(--text-xs)",fontWeight:700,color:"var(--text4)",textTransform:"uppercase",letterSpacing:".8px",marginBottom:12}}>{filtered.length} Regulation{filtered.length!==1?"s":""}</h3>
+      <h2 style={{fontSize:"var(--text-xs)",fontWeight:700,color:"var(--text4)",textTransform:"uppercase",letterSpacing:".8px",marginBottom:12}}>{filtered.length} Regulation{filtered.length!==1?"s":""}</h2>
       {(()=>{let lastCat=null;return filtered.map(r=>{
         const showHdr=r.cat!==lastCat;lastCat=r.cat;
         return <React.Fragment key={r.id}>
-          {showHdr&&<div style={{fontSize:"var(--text-xs)",fontWeight:700,color:"var(--text5)",textTransform:"uppercase",letterSpacing:".8px",padding:"12px 0 4px",borderTop:r===filtered[0]?"none":"1px solid var(--border)",marginTop:r===filtered[0]?0:8}}>{r.cat}</div>}
-          <RegCard reg={r} active={false} onClick={()=>setMobDetail(r.id)} search={search}/>
+          {showHdr&&<button onClick={()=>toggleCat(r.cat)} style={{display:"flex",alignItems:"center",gap:6,width:"100%",fontSize:"var(--text-xs)",fontWeight:700,color:"var(--text5)",textTransform:"uppercase",letterSpacing:".8px",padding:"12px 0 4px",borderTop:r===filtered[0]?"none":"1px solid var(--border)",marginTop:r===filtered[0]?0:8,textAlign:"left"}}><span style={{fontSize:8,transition:"transform .15s",transform:isCollapsed(r.cat)?"rotate(-90deg)":"rotate(0deg)"}}>{"\u25BC"}</span>{r.cat}</button>}
+          {!isCollapsed(r.cat)&&<RegCard reg={r} active={false} onClick={()=>{setMobDetail(r.id);setCurSub(search?matchedSubs(r,search)[0]||0:0)}} search={search}/>}
         </React.Fragment>})})()}
-      {!filtered.length&&<p style={{color:"var(--text4)",fontSize:13}}>{"🔍 "}No regulations match your search.</p>}
+      {!filtered.length&&<div style={{color:"var(--text4)",fontSize:13}}>
+        <p>{"🔍 "}No regulations match your search.</p>
+        {(()=>{const gMatch=GT.find(t=>t.toLowerCase()===search.trim().toLowerCase())||GT.find(t=>t.toLowerCase().includes(search.trim().toLowerCase()));return gMatch?<p style={{marginTop:8}}>Did you mean <button onClick={()=>{window.location.hash="#/glossary"}} style={{color:"var(--amber)",fontWeight:600,padding:0,fontSize:"inherit"}}>{gMatch}</button> (glossary term)?</p>:null})()}
+      </div>}
     </div>);
 
   return(
-  <div style={{display:"flex",gap:28,minHeight:"calc(100vh - 120px)"}}>
-    <div ref={sidebarRef} data-noprint style={{width:300,flexShrink:0,maxHeight:"calc(100vh - 120px)",overflowY:"auto",position:"sticky",top:76}}>
-      <h3 style={{fontSize:"var(--text-xs)",fontWeight:700,color:"var(--text4)",textTransform:"uppercase",letterSpacing:".8px",marginBottom:12}}>{filtered.length} Regulation{filtered.length!==1?"s":""}</h3>
+  <div style={{display:"flex",gap:isTablet?16:28,minHeight:"calc(100vh - 120px)"}}>
+    <div ref={sidebarRef} data-noprint style={{width:isTablet?220:300,flexShrink:0,maxHeight:"calc(100vh - 120px)",overflowY:"auto",position:"sticky",top:76}}>
+      <h2 style={{fontSize:"var(--text-xs)",fontWeight:700,color:"var(--text4)",textTransform:"uppercase",letterSpacing:".8px",marginBottom:12}}>{filtered.length} Regulation{filtered.length!==1?"s":""}</h2>
       {(()=>{let lastCat=null;return filtered.map(r=>{
         const showHdr=r.cat!==lastCat;lastCat=r.cat;
         return <React.Fragment key={r.id}>
-          {showHdr&&<div style={{fontSize:"var(--text-xs)",fontWeight:700,color:"var(--text5)",textTransform:"uppercase",letterSpacing:".8px",padding:"12px 0 4px",borderTop:r===filtered[0]?"none":"1px solid var(--border)",marginTop:r===filtered[0]?0:8}}>{r.cat}</div>}
-          <RegCard reg={r} active={activeReg&&activeReg.id===r.id} onClick={()=>{setActiveId(r.id);setCurSub(0)}} search={search}/>
+          {showHdr&&<button onClick={()=>toggleCat(r.cat)} style={{display:"flex",alignItems:"center",gap:6,width:"100%",fontSize:"var(--text-xs)",fontWeight:700,color:"var(--text5)",textTransform:"uppercase",letterSpacing:".8px",padding:"12px 0 4px",borderTop:r===filtered[0]?"none":"1px solid var(--border)",marginTop:r===filtered[0]?0:8,textAlign:"left"}}><span style={{fontSize:8,transition:"transform .15s",transform:isCollapsed(r.cat)?"rotate(-90deg)":"rotate(0deg)"}}>{"\u25BC"}</span>{r.cat}</button>}
+          {!isCollapsed(r.cat)&&<RegCard reg={r} active={activeReg&&activeReg.id===r.id} onClick={()=>{setActiveId(r.id);setCurSub(search?matchedSubs(r,search)[0]||0:0)}} search={search}/>}
         </React.Fragment>})})()}
-      {!filtered.length&&<p style={{color:"var(--text4)",fontSize:13}}>{"🔍 "}No regulations match your search.</p>}
+      {!filtered.length&&<div style={{color:"var(--text4)",fontSize:13}}>
+        <p>{"🔍 "}No regulations match your search.</p>
+        {(()=>{const gMatch=GT.find(t=>t.toLowerCase()===search.trim().toLowerCase())||GT.find(t=>t.toLowerCase().includes(search.trim().toLowerCase()));return gMatch?<p style={{marginTop:8}}>Did you mean <button onClick={()=>{window.location.hash="#/glossary"}} style={{color:"var(--amber)",fontWeight:600,padding:0,fontSize:"inherit"}}>{gMatch}</button> (glossary term)?</p>:null})()}
+      </div>}
     </div>
     <div ref={detailRef} className="detail-col" style={{flex:1,minWidth:0,maxHeight:"calc(100vh - 120px)",overflowY:"auto",paddingRight:8}}>
+      {activeReg&&<Breadcrumb reg={activeReg} subIdx={curSub}/>}
       {activeReg&&<RegDetail reg={activeReg} detailRef={detailRef} onNav={navTo} search={search} initialSub={curSub} onSubChange={setCurSub}/>}
     </div>
   </div>);
@@ -660,7 +777,7 @@ function WhatsChangingView({onNav}){
   </div>);
 }
 
-function GlossaryView({search}){
+function GlossaryView({search,onNav}){
   const entries=useMemo(()=>{
     const all=Object.entries(G).sort((a,b)=>a[0].localeCompare(b[0]));
     if(!search.trim())return all;
@@ -672,12 +789,17 @@ function GlossaryView({search}){
     <h2 style={{fontSize:"var(--text-xl)",fontWeight:800,letterSpacing:"-.3px",marginBottom:6}}>Glossary</h2>
     <p style={{fontSize:"var(--text-md)",color:"var(--text3)",marginBottom:28}}>{entries.length} term{entries.length!==1?"s":""} covering capital, liquidity, stress testing, and regulatory concepts.</p>
     <div style={{columnCount:2,columnGap:14,columnWidth:300}}>
-      {entries.map(([term,def])=>
-        <div key={term} className="gl-card" style={{breakInside:"avoid",padding:"14px 18px",borderRadius:9,marginBottom:10,border:"1px solid var(--border)",background:"var(--bg2)"}}>
+      {entries.map(([term,def])=>{
+        const usage=TERM_USAGE[term];
+        return <div key={term} className="gl-card" style={{breakInside:"avoid",padding:"14px 18px",borderRadius:9,marginBottom:10,border:"1px solid var(--border)",background:"var(--bg2)"}}>
           <span style={{fontSize:"var(--text-md)",fontWeight:700,color:"var(--amber2)",fontFamily:"'DM Mono',monospace"}}>{term}</span>
           <p style={{fontSize:"var(--text-sm)",color:"var(--text3)",lineHeight:1.5,margin:"5px 0 0"}}>{def}</p>
-        </div>
-      )}
+          {usage&&usage.length>0&&<div style={{marginTop:6,fontSize:"var(--text-xs)",color:"var(--text4)"}}>
+            <span style={{fontWeight:600}}>Used in: </span>
+            {usage.slice(0,3).map((u,i)=><React.Fragment key={u.id}>{i>0&&", "}<button onClick={()=>onNav(u.id)} style={{color:"var(--amber)",fontWeight:600,padding:0,fontSize:"inherit"}}>{u.st}</button></React.Fragment>)}
+            {usage.length>3&&<span> +{usage.length-3} more</span>}
+          </div>}
+        </div>})}
     </div>
     {!entries.length&&<p style={{color:"var(--text4)",fontSize:13}}>{"🔍 "}No terms match your search.</p>}
   </div>);
@@ -1018,7 +1140,7 @@ function StackBar({label,pct,color,sub,onClick}){
   </div>);
 }
 
-function StartHereView({onNav}){
+function StartHereView({onNav,setView}){
   const CATS=[
     {title:"Risk-Based Capital Stack",desc:"How much CET1 capital must a G-SIB hold?",color:"#f59e0b",
      layers:[
@@ -1048,16 +1170,40 @@ function StartHereView({onNav}){
     {icon:"\u{1F6E1}\uFE0F",title:"TLAC & Resolution",desc:"Loss absorbency for orderly failure",id:"tlac"},
     {icon:"\u{1F4D0}",title:"Tailoring Framework",desc:"Category I\u2013IV requirements mapping",id:"tailoring"},
     {icon:"\u{1F6D1}",title:"Basel III Endgame",desc:"Reproposed overhaul of risk-based capital",id:"endgame"},
-    {icon:"\u{1F50D}",title:"B3E Explorer",desc:"Interactive deep-dive into 41 rule changes",id:"explorer",isView:true},
+  ];
+
+  const[welcomed,setWelcomed]=usePersistedState("welcomed",false);
+
+  const PATHS=[
+    {title:"New to regulation?",desc:"Follow a guided path through the core framework",action:()=>{onNav("cap-adequacy")}},
+    {title:"Looking up a specific rule?",desc:"Jump straight to the full regulation list and search",action:()=>{if(setView)setView("regulations")}},
+    {title:"What's changing?",desc:"See upcoming deadlines and regulatory milestones",action:()=>{if(setView)setView("changing")}},
   ];
 
   return(
   <div style={{maxWidth:800}} className="fade-up">
-    <div style={{marginBottom:32}}>
+    {!welcomed&&<div style={{marginBottom:24,padding:"16px 20px",borderRadius:10,border:"1px solid var(--amber-border)",background:"var(--amber-bg)",position:"relative"}}>
+      <button onClick={()=>setWelcomed(true)} aria-label="Dismiss welcome" style={{position:"absolute",top:10,right:14,color:"var(--text4)",fontSize:"var(--text-lg)"}}>{"\u2715"}</button>
+      <div style={{fontSize:"var(--text-md)",fontWeight:700,color:"var(--text)",marginBottom:6}}>Welcome to MyRegApp</div>
+      <p style={{fontSize:"var(--text-sm)",color:"var(--text3)",lineHeight:1.55,margin:0}}>
+        A free reference guide to the 20 key U.S. banking regulations covering capital, liquidity, and prudential requirements. Built for analysts, compliance officers, and anyone navigating the regulatory landscape. Browse by category below, or use the tabs above to explore.
+      </p>
+    </div>}
+
+    <div style={{marginBottom:24}}>
       <h2 style={{fontSize:22,fontWeight:800,letterSpacing:"-.3px",marginBottom:6}}>Start Here</h2>
       <p style={{fontSize:"var(--text-md)",color:"var(--text3)",lineHeight:1.6}}>
         U.S. bank regulation rests on three pillars: <strong style={{color:"var(--text)"}}>capital adequacy</strong> (do you have enough loss-absorbing resources?), <strong style={{color:"var(--text)"}}>leverage limits</strong> (a non-risk-weighted backstop), and <strong style={{color:"var(--text)"}}>liquidity</strong> (can you meet obligations under stress?). Requirements scale by firm size and complexity through the <button onClick={()=>onNav("tailoring")} style={{color:"var(--amber)",fontWeight:700,padding:0,borderBottom:"1px dashed var(--amber-dot)"}}>tailoring framework</button> (Categories I–IV).
       </p>
+    </div>
+
+    <div style={{display:"grid",gridTemplateColumns:"repeat(auto-fill,minmax(200px,1fr))",gap:10,marginBottom:28}}>
+      {PATHS.map((p,i)=>
+        <button key={i} onClick={p.action} style={{padding:"14px 16px",borderRadius:10,border:"1px solid var(--border)",background:"var(--bg2)",textAlign:"left",transition:"all .15s"}}>
+          <div style={{fontSize:"var(--text-md)",fontWeight:700,color:"var(--amber)",marginBottom:4}}>{p.title}</div>
+          <div style={{fontSize:"var(--text-sm)",color:"var(--text3)",lineHeight:1.4}}>{p.desc}</div>
+        </button>
+      )}
     </div>
 
     {CATS.map((cat,ci)=>(
@@ -1138,11 +1284,16 @@ function useIsMobile(){
   useEffect(()=>{const h=()=>setM(window.innerWidth<768);window.addEventListener("resize",h);return()=>window.removeEventListener("resize",h)},[]);
   return m;
 }
+function useIsTablet(){
+  const[t,setT]=useState(window.innerWidth>=768&&window.innerWidth<1024);
+  useEffect(()=>{const h=()=>setT(window.innerWidth>=768&&window.innerWidth<1024);window.addEventListener("resize",h);return()=>window.removeEventListener("resize",h)},[]);
+  return t;
+}
 
 function App(){
   const{route,push:pushHash}=useHashRoute();
   const[view,setView]=useState(route.view||(ls("lastView",null)?"regulations":"start"));
-  const[search,setSearch]=useState("");
+  const[search,setSearch]=useState(route.q||"");
   const navTarget=useRef(null);
   const[navTick,setNavTick]=useState(0);
   const searchRef=useRef(null);
@@ -1150,6 +1301,14 @@ function App(){
   const{sz:fontSize,setSz:setFontSize}=useFontSize();
   const isMob=useIsMobile();
   const debouncedSearch=useDebounce(search,200);
+
+  // Persist search query in URL hash (debounced)
+  const debouncedSearchForHash=useDebounce(search,300);
+  useEffect(()=>{
+    if(view!=="regulations")return;
+    if(debouncedSearchForHash)pushHash("regulations",route.regId,route.subIdx,debouncedSearchForHash);
+    else if(route.q)pushHash("regulations",route.regId,route.subIdx);
+  },[debouncedSearchForHash,view]);
 
   // Sync view from hash changes (back/forward)
   useEffect(()=>{
@@ -1161,7 +1320,7 @@ function App(){
   const handleSetView=useCallback(v=>{
     setView(v);
     if(v!=="regulations")pushHash(v);
-  },[]);
+  },[pushHash]);
 
   const navToReg=useCallback(id=>{navTarget.current=id;setNavTick(t=>t+1);setView("regulations");setSearch("")},[]);
 
@@ -1180,15 +1339,15 @@ function App(){
     <a className="skip-link" href="#main-content">Skip to content</a>
     <NavBar view={view} setView={handleSetView} search={search} setSearch={setSearch} theme={theme} toggleTheme={toggleTheme} fontSize={fontSize} setFontSize={setFontSize} searchRef={searchRef}/>
     <main id="main-content" style={{paddingTop:isMob?88:76,paddingBottom:40,paddingLeft:isMob?14:24,paddingRight:isMob?14:24,maxWidth:1120,margin:"0 auto"}}>
-      {view==="start"&&<StartHereView onNav={navToReg}/>}
+      {view==="start"&&<StartHereView onNav={navToReg} setView={handleSetView}/>}
       {view==="regulations"&&<RegulationsView search={debouncedSearch} onNavigate={navTarget} navTick={navTick} hashRoute={route} pushHash={pushHash}/>}
       {view==="changing"&&<WhatsChangingView onNav={navToReg}/>}
       {view==="timeline"&&<TimelineView onNav={navToReg}/>}
       {view==="explorer"&&<BaselExplorer onNav={navToReg}/>}
-      {view==="glossary"&&<GlossaryView search={debouncedSearch}/>}
+      {view==="glossary"&&<GlossaryView search={debouncedSearch} onNav={navToReg}/>}
     </main>
     <footer data-noprint style={{textAlign:"center",padding:"20px 24px",borderTop:"1px solid var(--border)",color:"var(--text5)",fontSize:"var(--text-xs)"}}>
-      MyRegApp v6.3 {"\u2014"} Site by <a href="mailto:jackarohan@gmail.com" style={{color:"var(--text4)"}}>Jack Rohan</a> {"\u00b7"} Content current as of March 2026 {"\u00b7"} Not legal advice
+      MyRegApp v6.4 {"\u2014"} Site by <a href="mailto:jackarohan@gmail.com" style={{color:"var(--text3)",textDecoration:"underline",textUnderlineOffset:2}}>Jack Rohan</a> {"\u00b7"} Content current as of March 2026 {"\u00b7"} Not legal advice
     </footer>
     <OfflineBanner/>
   </div>);

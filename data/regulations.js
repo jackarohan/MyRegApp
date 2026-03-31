@@ -1,4 +1,4 @@
-/* MyRegApp v6.3 — Regulation Data
+/* MyRegApp v6.4 — Regulation Data
    20 banking regulations with full subsection content.
    Loaded by index.html via <script> tag. */
 
@@ -49,7 +49,7 @@ kp:["Three agencies: Fed (BHCs), OCC (national banks), FDIC (state banks)","Join
 {t:"Compliance & Supervision",c:[
 "Banks report capital ratios quarterly on the FR Y-9C (BHCs) and Call Report / FFIEC 031/041 (insured depository institutions). These filings are publicly available via the FFIEC Central Data Repository.",
 "The PCA framework, mandated by FDICIA, classifies insured depository institutions into five categories: Well Capitalized, Adequately Capitalized, Undercapitalized, Significantly Undercapitalized, and Critically Undercapitalized. Each tier triggers escalating mandatory and discretionary supervisory actions.",
-"Supervisory examination evaluates capital adequacy as the \u2018C\u2019 component of the CAMELS rating system. Examiners assess not only compliance with numerical minimums but also the quality and composition of capital, concentration risk, growth plans, and earnings capacity to replenish capital.",
+"Supervisory examination evaluates capital adequacy as the \u2018C\u2019 component of the CAMELS rating system. Examiners assess not only compliance with numerical minimums but also the quality and composition of capital, concentration risk, growth plans, and earnings capacity to replenish capital. The Fed\u2019s expectations for how large banks plan and maintain capital are set forth in {{ref:sr1519}}, which establishes a six-pillar framework for governance, risk management, and capital policy.",
 "Buffer breaches do not trigger PCA but impose automatic restrictions on capital distributions and discretionary bonus payments. Firms must submit a capital conservation plan to their primary regulator within five business days of a breach."],
 kp:["FR Y-9C (quarterly) is the primary capital reporting form for BHCs","PCA framework: five tiers from Well Capitalized to Critically Undercapitalized","CAMELS \u2018C\u2019 rating assesses capital quality beyond ratio compliance","Buffer breach \u2192 automatic distribution restrictions + capital conservation plan"]},
 {t:"Pending Changes",c:[
@@ -366,7 +366,7 @@ kp:["Joint NPR released March 19, 2026; comment period closes June 18, 2026","Ca
 {t:"Basel III Endgame NPR (88 FR 64028)",d:"Jul 2023",u:"https://www.federalregister.gov/documents/2023/09/18/2023-19200/regulatory-capital-rule-large-banking-organizations"},
 {t:"BCBS: Basel III Finalising Post-Crisis Reforms",d:"Dec 2017",u:"https://www.bis.org/bcbs/publ/d424.htm"},
 {t:"Vice Chair Barr: The Next Steps on Capital",d:"Sep 2024",u:"https://www.federalreserve.gov/newsevents/speech/barr20240910a.htm"}]}]},
-{id:"tlac",cat:"Capital",title:"TLAC & Long-Term Debt",st:"TLAC & LTD",icon:"\u{1F6E1}\uFE0F",
+{id:"tlac",cat:"Resolution & Failure Management",title:"TLAC & Long-Term Debt",st:"TLAC & LTD",icon:"\u{1F6E1}\uFE0F",
 sum:"Requires U.S. G-SIBs to maintain sufficient total loss-absorbing capacity and long-term debt to support orderly resolution without taxpayer bailout. Recently conformed to eSLR recalibration.",
 subs:[
 {t:"Overview",c:[
@@ -403,7 +403,7 @@ kp:["Leverage TLAC conformed to eSLR recalibration (Nov 2025)","Risk-based TLAC 
 {t:"TLAC and LTD Final Rule (82 FR 8266)",d:"Dec 2016",u:"https://www.federalregister.gov/documents/2017/01/24/2017-00431/total-loss-absorbing-capacity-long-term-debt-and-clean-holding-company-requirements"},
 {t:"FSB: TLAC Principles and Term Sheet",d:"Nov 2015",u:"https://www.fsb.org/2015/11/total-loss-absorbing-capacity-tlac-principles-and-term-sheet/"},
 {t:"eSLR Recalibration (TLAC Conformance)",d:"Nov 2025",u:"https://www.federalreserve.gov/newsevents/pressreleases/bcreg20251125b.htm"}]}]},
-{id:"resolution",cat:"Structural & Prudential",title:"Resolution Planning",st:"Resolution Planning",icon:"\u{1F4CB}",
+{id:"resolution",cat:"Resolution & Failure Management",title:"Resolution Planning",st:"Resolution Planning",icon:"\u{1F4CB}",
 sum:"U.S. G-SIBs and large banks must submit credible plans for orderly resolution under bankruptcy. Living wills demonstrate how a firm can be resolved without taxpayer support or systemic disruption.",
 subs:[
 {t:"Overview",c:[
@@ -419,7 +419,7 @@ kp:["Title I plans: BHCs \u2265$250B (raised from $50B by EGRRCPA)","G-SIBs: two
 
 {t:"Current Requirements",c:[
 "Submission Cycle: G-SIBs file on a two-year alternating cycle \u2014 full plans and targeted/interim plans in alternating years. Category II/III firms file less frequently (generally every three years).",
-"Key elements required: corporate governance and resolution governance, resolution strategy, operational continuity, financial interconnections, shared services, derivatives and trading portfolios, payment clearing and settlement activities, and public section summary.",
+"Key elements required: corporate governance and resolution governance, resolution strategy, operational continuity, financial interconnections, shared services, derivatives and trading portfolios, payment clearing and settlement activities, and public section summary. Plans must also demonstrate that the firm can maintain sufficient liquidity through resolution, including compliance with {{ref:lcr}} and {{ref:nsfr}} requirements at material operating subsidiaries.",
 "The agencies evaluate plans for \u2018obstacles to rapid and orderly resolution.\u2019 Credibility depends on demonstrating that {{ref:tlac}} is sufficient, critical operations continue, and systemic disruption is minimized."],
 kp:["G-SIBs: two-year filing cycle (full and targeted/interim)","Category II/III: generally every three years","Plans must address governance, strategy, operational continuity","Credibility assessed against obstacles to orderly resolution"],
 cite:[{type:"requirement",auth:"DFA",pin:"Dodd-Frank Act §165(d) (resolution plan requirement)"},{type:"requirement",auth:"FR",pin:"84 FR 21600 (Resolution planning guidance, 2019)"}],
@@ -501,7 +501,7 @@ cite:[{type:"requirement",auth:"SR",pin:"SR 10-1 (Interagency advisory on intere
 },
 {t:"Key Concepts",c:[
 "Duration Gap: The difference between the weighted average duration of assets and liabilities. A positive gap (longer asset duration) means the bank\u2019s economic value falls when rates rise \u2014 the classic IRRBB vulnerability exposed in 2023.",
-"Non-Maturity Deposit (NMD) Modeling: Checking and savings accounts have no contractual maturity, so banks model their \u2018behavioral\u2019 duration based on historical depositor behavior. Post-2023, supervisors scrutinize assumptions about deposit stability, especially for uninsured and rate-sensitive deposits.",
+"Non-Maturity Deposit (NMD) Modeling: Checking and savings accounts have no contractual maturity, so banks model their \u2018behavioral\u2019 duration based on historical depositor behavior. Post-2023, supervisors scrutinize assumptions about deposit stability, especially for uninsured and rate-sensitive deposits. NMD assumptions also drive deposit outflow rates under the {{ref:lcr}} and available stable funding calculations under the {{ref:nsfr}}, creating a direct link between IRRBB modeling and liquidity regulation.",
 "AOCI and HTM Treatment: Under U.S. GAAP, unrealized losses on available-for-sale (AFS) securities flow through Accumulated Other Comprehensive Income (AOCI). HTM securities are carried at amortized cost, masking economic losses. SVB\u2019s HTM portfolio had $15B+ in unrealized losses that were not reflected in regulatory capital.",
 "Repricing Risk vs. Basis Risk: Repricing risk arises from timing differences in when assets and liabilities reprice. Basis risk arises when instruments reprice at different reference rates (e.g., SOFR vs. prime) even at the same time, causing NIM compression.",
 "Optionality Risk: The risk from embedded options in banking products \u2014 mortgage prepayments accelerate when rates fall (shortening asset duration), while depositors move funds to higher-yielding alternatives when rates rise (shortening liability duration)."],
@@ -518,7 +518,7 @@ kp:["Heightened post-2023 exam focus: deposit concentration, unrealized losses",
 {t:"Joint Policy Statement on Interest Rate Risk (SR 96-13)",d:"Jun 1996",u:"https://www.federalreserve.gov/boarddocs/srletters/1996/sr9613.htm"},
 {t:"Basel IRRBB Standard (BCBS 368)",d:"Apr 2016",u:"https://www.bis.org/bcbs/publ/d368.pdf"},
 {t:"FDIC Interest Rate Risk Resources",d:"Ongoing",u:"https://www.fdic.gov/capital-markets/interest-rate-risk"}]}]},
-{id:"tailoring",cat:"Structural & Prudential",title:"Tailoring Framework",st:"Tailoring",icon:"\u{1F4D0}",
+{id:"tailoring",cat:"Structural & Prudential",title:"Tailoring Framework",st:"Tailoring",icon:"\u{1F4D0}",crossCutting:true,
 sum:"The 2019 tailoring rules organize U.S. large bank regulation into four categories (I\u2013IV) based on size and risk indicators, scaling prudential requirements proportionally. The architecture of the modern framework.",
 subs:[
 {t:"Overview",c:[
@@ -734,7 +734,7 @@ kp:["BHCs/SLHCs \u2265$250B and FBOs \u2265$250B (+ IHCs \u2265$50B)","15% limit
 {t:"Current Requirements",c:[
 "General limit: A covered company may not have aggregate net credit exposure to any single counterparty exceeding 25% of its Tier 1 capital.",
 "Major counterparty limit: A U.S. G-SIB\u2019s aggregate net credit exposure to another G-SIB, major FBO, or FSOC-designated non-bank SIFI may not exceed 15% of Tier 1 capital. This stricter limit addresses systemic interconnectedness.",
-"Credit exposure measurement: The rule covers loans, deposits, debt and equity securities, derivatives (using SA-CCR or internal models), securities financing transactions, guarantees, and commitments. Eligible collateral and guarantees reduce gross exposure to net exposure.",
+"Credit exposure measurement: The rule covers loans, deposits, debt and equity securities, derivatives (using SA-CCR or internal models), securities financing transactions, guarantees, and commitments. Eligible collateral and guarantees reduce gross exposure to net exposure. The {{ref:endgame}} re-proposal would make SA-CCR mandatory for ERBA banks and optionally available for standardized banks, which will affect how derivative exposures are measured for SCCL purposes.",
 "Counterparty aggregation: When net exposure to a counterparty exceeds 5% of Tier 1 capital, the firm must assess economic interdependence and control relationships to determine if counterparties should be aggregated. Economically interdependent counterparties are treated as one."],
 kp:["25% of Tier 1 capital general limit","15% of Tier 1 capital between G-SIBs / major counterparties","SA-CCR or internal models for derivatives exposure","5% threshold triggers counterparty aggregation assessment"],
 cite:[{type:"requirement",auth:"CFR",pin:"12 CFR 252.70–252.78 (SCCL requirements)"},{type:"requirement",auth:"DFA",pin:"Dodd-Frank Act §165(e) (statutory authority)"}],
@@ -751,13 +751,47 @@ kp:["U.S. government and zero-risk-weight sovereign exposures exempt","Economic 
 "Industry participants have raised questions about how digital asset and stablecoin exposures should be treated under the SCCL framework, particularly given the GENIUS Act\u2019s new stablecoin issuer category."],
 kp:["No pending SCCL rulemaking","Endgame may indirectly affect exposure measurement via SA-CCR","Digital asset/stablecoin exposure treatment under discussion","Rule has been stable since 2019 tailoring adjustments"]},
 {t:"Key Dates",c:["Jul 2010: Dodd-Frank Section 165(e) enacted \u00b7 Apr 2014: Basel Large Exposures Framework published \u00b7 Mar 2016: SCCL re-proposal \u00b7 Jun 2018: SCCL final rule adopted (83 FR 38460) \u00b7 Nov 2019: Tailoring amendments applied to SCCL \u00b7 Jan 2020: SCCL effective for U.S. G-SIBs \u00b7 Mar 2020: First FR 2590 reporting date"],kp:[]},
+{t:"How It's Calculated",c:[
+"The SCCL measurement framework aggregates all credit exposures to a single counterparty and compares the net total to the applicable limit (25% of Tier 1 capital, or 15% between major firms). The calculation involves identifying seven types of gross exposures, applying collateral and netting reductions, and then assessing whether counterparties should be treated as a single obligor based on control relationships and economic interdependence.",
+"Gross credit exposure includes: (1) on-balance sheet loans and deposits; (2) debt and equity securities; (3) derivatives exposures measured using the Standardized Approach for Counterparty Credit Risk (SA-CCR), where Exposure at Default = 1.4 \u00d7 (Replacement Cost + Potential Future Exposure); (4) securities financing transactions (repos and reverse repos); (5) unfunded loan commitments and credit facilities, weighted by credit conversion factors (20% for commitments \u226412 months, 50% for >12 months, 100% for financial standby letters of credit); (6) guarantees and credit enhancements issued; and (7) other contingent exposures. Each category is measured on a gross basis before any reductions.",
+"Collateral and netting treatments follow a risk-shifting principle: eligible collateral (cash, government securities, investment-grade corporate debt) reduces exposure to the original counterparty, but simultaneously increases the exposure to the collateral issuer. Guarantees from third parties similarly reduce exposure to the obligor but add exposure to the guarantor. For derivatives, netting may apply under qualified master netting agreements (QMNAs), but only if the agreements are legally enforceable and the bank has controls in place to enforce them under distress scenarios. The {{ref:lcr}} and {{ref:nsfr}} regulations similarly treat netting with care; SCCL follows a parallel but independent netting framework.",
+"Once gross exposures are calculated and collateral/netting reductions applied, the bank aggregates exposure across all single obligors. When a single obligor relationship reaches or exceeds 5% of Tier 1 capital, the firm must conduct a counterparty aggregation assessment. Two counterparties are treated as one obligor if: (1) one holds \u226525% of voting securities or controls the election of a majority of directors (a control relationship), or (2) financial distress at one would likely cause distress at the other (economic interdependence, typically defined as \u226550% revenue dependence or \u226550% of exposure backed by the same guarantor). This ensures that contagion risk is properly captured.",
+"The net credit exposure to each aggregated obligor is then compared against the applicable limit. The general limit is 25% of Tier 1 capital. The stricter 15% limit applies to exposures between a covered institution and a major counterparty (a U.S. G-SIB, major FBO, or FSOC-designated non-bank SIFI). The rule requires daily compliance for G-SIBs and quarterly compliance for other covered firms. Breaches must be remedied within the next business day (for G-SIBs) or shortly after discovery."],
+kp:[
+"Seven exposure types: loans, deposits, securities, derivatives (SA-CCR), SFTs, commitments (20%/50%/100% CCF), guarantees",
+"SA-CCR formula: EAD = 1.4 \u00d7 (RC + PFE); netting under QMNAs only if enforceable under stress",
+"Collateral reduces counterparty exposure but adds exposure to collateral issuer (risk-shifting principle)",
+"Aggregation triggers: \u226525% voting control or economic interdependence (\u226550% revenue/guarantees)",
+"25% of Tier 1 limit (general); 15% of Tier 1 limit (G-SIB to major counterparty)",
+"Daily compliance for G-SIBs; quarterly for others; breaches remedied next business day"],
+calc:{
+title:"SCCL Net Credit Exposure Calculation",
+steps:[
+"1. Identify and classify all exposures to the counterparty across seven categories.",
+"2. Measure each exposure: on-balance sheet at book value; derivatives via SA-CCR; commitments using CCF (20%/50%/100%).",
+"3. Sum gross exposures across all seven categories.",
+"4. Reduce gross exposure by eligible collateral and apply netting where QMNAs are in place and enforceable.",
+"5. Assess whether the counterparty should be aggregated with affiliated or economically dependent entities (\u226525% voting control or \u226550% revenue dependence).",
+"6. Compare net credit exposure to the applicable limit (25% or 15% of Tier 1 capital)."],
+example:{
+title:"G-SIB with $50B Tier 1 Capital Exposed to a Major Counterparty",
+headers:["Exposure Category","Gross Exposure ($ billions)","Collateral/Netting Reduction","Net Exposure ($ billions)"],
+rows:[
+["1. On-balance sheet loans and advances","2.8","(0.2 eligible collateral)","2.6"],
+["2. Deposits with counterparty","1.2","\u2014","1.2"],
+["3. Debt and equity securities held","0.9","\u2014","0.9"],
+["4. Derivatives (SA-CCR: RC=$0.6B, PFE=$1.2B; EAD=1.4\u00d71.8=$2.52B)","2.5","(0.3 QMNA netting)","2.2"],
+["5. Securities financing transactions (repos)","1.1","\u2014","1.1"],
+["6. Unfunded commitments: $2.0B at >12mo \u2192 50% CCF","1.0","\u2014","1.0"],
+["7. Guarantees and letters of credit","0.3","\u2014","0.3"]],
+note:"Total net credit exposure: $9.3B. Applicable limit for major counterparty (15% of $50B Tier 1): $7.5B. Result: Exposure exceeds limit by $1.8B. The bank must reduce its exposure to the counterparty by selling loans, unwinding derivatives, or reducing commitments to bring net exposure below $7.5B. If this were a non-major counterparty, the limit would be 25% ($12.5B), and the bank would be in compliance. The calculation demonstrates why the 15% G-SIB-to-G-SIB limit is more restrictive and why measurement precision matters in derivative netting."}}},
 {t:"Source Documents",c:[],kp:[],src:[
 {t:"SCCL Final Rule (83 FR 38460)",d:"Aug 2018",u:"https://www.federalregister.gov/documents/2018/08/06/2018-16133/single-counterparty-credit-limits-for-bank-holding-companies-and-foreign-banking-organizations"},
 {t:"12 CFR 252 Subpart Q (SCCL for FBOs)",d:"Ongoing",u:"https://www.ecfr.gov/current/title-12/chapter-II/subchapter-A/part-252/subpart-Q"},
 {t:"FR 2590 Reporting Form",d:"Ongoing",u:"https://www.federalreserve.gov/apps/reportingforms/Report/Index/FR_2590"},
 {t:"Basel Large Exposures Framework",d:"Apr 2014",u:"https://www.bis.org/publ/bcbs283.htm"}]}]},
 
-{id:"genius-act",cat:"Legislation & Community",title:"GENIUS Act (Stablecoin Framework)",st:"GENIUS Act",icon:"\u{1F4B1}",
+{id:"genius-act",cat:"Legislation & Community",title:"GENIUS Act (Stablecoin Framework)",st:"GENIUS Act",icon:"\u{1F4B1}",tag:"Digital Assets",
 sum:"The GENIUS Act (July 2025) establishes the first comprehensive federal framework for payment stablecoins, requiring 1:1 reserve backing, federal or state licensing, and monthly attestations. Implementation ongoing through 2026\u20132027.",
 subs:[
 {t:"Overview",c:[
@@ -768,7 +802,7 @@ kp:["Signed July 18, 2025 with bipartisan support","First comprehensive federal 
 {t:"Scope & Applicability",c:[
 "The GENIUS Act applies to any entity seeking to issue payment stablecoins in or to persons in the United States. Three categories of permitted issuers: (1) subsidiaries of insured depository institutions, (2) federal-qualified nonbank issuers (OCC-supervised), and (3) state-qualified issuers under certified state regimes.",
 "State vs. federal regime: Issuers with \u2264$10B in outstanding stablecoins may opt for state regulation if the state\u2019s framework is certified as \u2018substantially similar\u2019 by the SCRC. Above $10B, federal supervision is mandatory.",
-"Banking entities considering stablecoin activities should evaluate implications across the capital, liquidity, and activity restriction frameworks: potential impacts on capital adequacy, LCR/NSFR, Volcker Rule compliance, and SCCL exposure measurement. Banks issuing stablecoins should also consider {{ref:cra}} implications, as stablecoin activities could affect assessment area determinations and digital delivery channel analysis."],
+"Banking entities considering stablecoin activities should evaluate implications across the capital, liquidity, and activity restriction frameworks: potential impacts on {{ref:cap-adequacy}}, LCR/NSFR, Volcker Rule compliance, and {{ref:sccl}} exposure measurement. Banks issuing stablecoins should also consider {{ref:cra}} implications, as stablecoin activities could affect assessment area determinations and digital delivery channel analysis."],
 kp:["Three categories of permitted issuers","$10B threshold for state vs. federal regulation","Banks may issue through approved subsidiaries","Cross-cutting implications for capital, liquidity, and Volcker"]},
 
 {t:"Current Requirements",c:[
@@ -843,5 +877,5 @@ kp:["No direct amendments pending","Stress test transparency proposal would affe
 
 ];
 
-const CAT_ORDER={"Capital":0,"Liquidity":1,"Structural & Prudential":2,"Legislation & Community":3};
+const CAT_ORDER={"Capital":0,"Liquidity":1,"Resolution & Failure Management":2,"Structural & Prudential":3,"Legislation & Community":4};
 const RS=[...R].sort((a,b)=>(CAT_ORDER[a.cat]??99)-(CAT_ORDER[b.cat]??99));
