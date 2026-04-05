@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-<meta name="description" content="MyRegApp — A reference guide to U.S. banking capital and liquidity regulations. Current as of March 2026.">
+<meta name="description" content="MyRegApp — A reference guide to U.S. banking capital and liquidity regulations. Current as of April 2026.">
 <meta name="theme-color" content="#0a0a0e">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
@@ -34,6 +34,8 @@ nav div::-webkit-scrollbar{display:none}
 .fade-up{animation:fadeUp .3s ease both}.fade-in{animation:fadeIn .2s ease both}
 a{color:var(--amber);text-decoration:none}a:hover{text-decoration:underline}
 .gterm{color:var(--text);border-bottom:1px dotted var(--amber-dot);cursor:help;-webkit-tap-highlight-color:transparent}.gterm:hover{color:var(--amber2)}
+@media(pointer:coarse){.gterm{padding:4px 0;min-height:44px;display:inline-flex;align-items:center}.tl-reg{min-height:44px;padding:8px 12px;display:inline-flex;align-items:center}}
+[role="button"]:focus-visible{outline:2px solid var(--amber);outline-offset:2px;border-radius:4px}
 .tooltip{position:fixed;background:var(--tooltip-bg);border:1px solid var(--amber-border);border-radius:8px;padding:10px 14px;width:280px;max-width:calc(100vw - 32px);z-index:9000;box-shadow:0 8px 24px var(--shadow);pointer-events:auto;animation:fadeIn .12s ease both}
 .tooltip-term{font-size:var(--text-sm);font-weight:700;color:var(--amber);font-family:'DM Mono',monospace;margin-bottom:4px}.tooltip-def{font-size:var(--text-xs);color:var(--text2);line-height:1.45}
 .ref-link{color:var(--amber);font-weight:600;cursor:pointer;border-bottom:1px dashed var(--amber-dot)}.ref-link:hover{border-bottom-color:var(--amber)}
@@ -745,7 +747,7 @@ function RegulationsView({search,onNavigate,navTick,hashRoute,pushHash}){
       {(()=>{let lastCat=null;return filtered.map(r=>{
         const showHdr=r.cat!==lastCat;lastCat=r.cat;
         return <React.Fragment key={r.id}>
-          {showHdr&&<button onClick={()=>toggleCat(r.cat)} style={{display:"flex",alignItems:"center",gap:6,width:"100%",fontSize:"var(--text-xs)",fontWeight:700,color:"var(--text5)",textTransform:"uppercase",letterSpacing:".8px",padding:"12px 0 4px",borderTop:r===filtered[0]?"none":"1px solid var(--border)",marginTop:r===filtered[0]?0:8,textAlign:"left"}}><span style={{fontSize:8,transition:"transform .15s",transform:isCollapsed(r.cat)?"rotate(-90deg)":"rotate(0deg)"}}>{"\u25BC"}</span>{r.cat}</button>}
+          {showHdr&&<button aria-expanded={!isCollapsed(r.cat)} onClick={()=>toggleCat(r.cat)} style={{display:"flex",alignItems:"center",gap:6,width:"100%",fontSize:"var(--text-xs)",fontWeight:700,color:"var(--text5)",textTransform:"uppercase",letterSpacing:".8px",padding:"12px 0 4px",borderTop:r===filtered[0]?"none":"1px solid var(--border)",marginTop:r===filtered[0]?0:8,textAlign:"left"}}><span style={{fontSize:8,transition:"transform .15s",transform:isCollapsed(r.cat)?"rotate(-90deg)":"rotate(0deg)"}}>{"\u25BC"}</span>{r.cat}</button>}
           {!isCollapsed(r.cat)&&<RegCard reg={r} active={false} onClick={()=>{setMobDetail(r.id);setCurSub(search?matchedSubs(r,search)[0]||0:0)}} search={search}/>}
         </React.Fragment>})})()}
       {!filtered.length&&<div style={{color:"var(--text4)",fontSize:13}}>
@@ -762,7 +764,7 @@ function RegulationsView({search,onNavigate,navTick,hashRoute,pushHash}){
       {(()=>{let lastCat=null;return filtered.map(r=>{
         const showHdr=r.cat!==lastCat;lastCat=r.cat;
         return <React.Fragment key={r.id}>
-          {showHdr&&<button onClick={()=>toggleCat(r.cat)} style={{display:"flex",alignItems:"center",gap:6,width:"100%",fontSize:"var(--text-xs)",fontWeight:700,color:"var(--text5)",textTransform:"uppercase",letterSpacing:".8px",padding:"12px 0 4px",borderTop:r===filtered[0]?"none":"1px solid var(--border)",marginTop:r===filtered[0]?0:8,textAlign:"left"}}><span style={{fontSize:8,transition:"transform .15s",transform:isCollapsed(r.cat)?"rotate(-90deg)":"rotate(0deg)"}}>{"\u25BC"}</span>{r.cat}</button>}
+          {showHdr&&<button aria-expanded={!isCollapsed(r.cat)} onClick={()=>toggleCat(r.cat)} style={{display:"flex",alignItems:"center",gap:6,width:"100%",fontSize:"var(--text-xs)",fontWeight:700,color:"var(--text5)",textTransform:"uppercase",letterSpacing:".8px",padding:"12px 0 4px",borderTop:r===filtered[0]?"none":"1px solid var(--border)",marginTop:r===filtered[0]?0:8,textAlign:"left"}}><span style={{fontSize:8,transition:"transform .15s",transform:isCollapsed(r.cat)?"rotate(-90deg)":"rotate(0deg)"}}>{"\u25BC"}</span>{r.cat}</button>}
           {!isCollapsed(r.cat)&&<RegCard reg={r} active={activeReg&&activeReg.id===r.id} onClick={()=>{setActiveId(r.id);setCurSub(search?matchedSubs(r,search)[0]||0:0)}} search={search}/>}
         </React.Fragment>})})()}
       {!filtered.length&&<div style={{color:"var(--text4)",fontSize:13}}>
@@ -1343,7 +1345,7 @@ function App(){
       {view==="glossary"&&<GlossaryView search={debouncedSearch} onNav={navToReg}/>}
     </main>
     <footer data-noprint style={{textAlign:"center",padding:"20px 24px",borderTop:"1px solid var(--border)",color:"var(--text5)",fontSize:"var(--text-xs)"}}>
-      MyRegApp v6.5 {"\u2014"} Site by <a href="mailto:jackarohan@gmail.com" style={{color:"var(--text3)",textDecoration:"underline",textUnderlineOffset:2}}>Jack Rohan</a> {"\u00b7"} Content current as of March 2026 {"\u00b7"} Not legal advice
+      MyRegApp v7.0 {"\u2014"} Site by <a href="mailto:jackarohan@gmail.com" style={{color:"var(--text3)",textDecoration:"underline",textUnderlineOffset:2}}>Jack Rohan</a> {"\u00b7"} Content current as of April 2026 {"\u00b7"} Not legal advice
     </footer>
     <OfflineBanner/>
   </div>);

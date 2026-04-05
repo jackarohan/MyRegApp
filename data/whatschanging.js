@@ -1,15 +1,15 @@
-/* MyRegApp v6.5 — What's Changing & Status Badges
+/* MyRegApp v7.0 — What's Changing & Status Badges
    Pending and upcoming regulatory changes.
    G (glossary) is defined in glossary.js; ST (status badges) defined here.
    Loaded by index.html via <script> tag. */
 
 const WC=[
-{date:"Apr 1, 2026",status:"final",title:"eSLR Recalibration Takes Effect",reg:"eslr",desc:"New buffer-based eSLR (3% + 50% of Method 1 surcharge) replaces fixed 5%/6% thresholds. TLAC leverage buffers conformed."},
-{date:"Apr 1, 2026",status:"final",title:"TLAC Leverage Buffers Conformed",reg:"tlac",desc:"TLAC and LTD leverage-based requirements aligned with recalibrated eSLR buffer structure."},
+{date:"Apr 1, 2026",status:"effective",title:"eSLR Recalibration Takes Effect",reg:"eslr",desc:"New buffer-based eSLR (3% + 50% of Method 1 surcharge) replaces fixed 5%/6% thresholds. TLAC leverage buffers conformed. Effective April 1, 2026."},
+{date:"Apr 1, 2026",status:"effective",title:"TLAC Leverage Buffers Conformed",reg:"tlac",desc:"TLAC and LTD leverage-based requirements aligned with recalibrated eSLR buffer structure. Effective April 1, 2026."},
 {date:"Mar 19, 2026",status:"proposed",title:"Basel III Endgame Re-Proposal Released",reg:"endgame",desc:"Joint NPR issued by Fed (6-1 vote, Barr dissenting), OCC, and FDIC on March 19, 2026. 90-day comment period closes June 18, 2026. Capital-neutral design: CET1 requirements estimated to decrease ~4.8% for Cat I/II, ~5.2% for Cat III/IV. Single-stack approach (ERBA for Cat I/II, revised Standardized for Cat III/IV). Narrowed scope excluding $100\u2013250B banks except for AOCI recognition. LTV-based mortgage risk weights, revised MSR treatment, and new operational risk framework."},
 {date:"2026",status:"expected",title:"SCB Averaging Finalization",reg:"scb",desc:"Two-year averaging proposed April 2025. Comment period closed June 2025. Finalization pending; original industry-supported Jan 1, 2026 effective date has passed."},
 {date:"2026",status:"expected",title:"Stress Test Transparency Reforms",reg:"stress-testing",desc:"Fed proposed publishing supervisory models (Oct 2025). Comment period extended to Feb 21, 2026. Final rule pending."},
-{date:"2026",status:"expected",title:"G-SIB Surcharge Methodology Review",reg:"gsib",desc:"Bowman confirmed (Mar 12, 2026) NPR coming 'in the coming weeks.' Proposed: daily averaging of systemic indicators, 10bps surcharge buckets, updated coefficients. Industry estimates ~1pp reduction."},
+{date:"Mar 19, 2026",status:"proposed",title:"G-SIB Surcharge Methodology NPR Released",reg:"gsib",desc:"NPR issued March 19, 2026 (Federal Register March 23, Vol. 91 No. 55). Comment period closes June 18, 2026. Proposed: daily averaging of systemic indicators, 10bps surcharge buckets, updated coefficients. Industry estimates ~1pp reduction."},
 {date:"2026",status:"expected",title:"FDIC LTD Proposal for Large Non-G-SIBs",reg:"resolution",desc:"FDIC proposed long-term debt requirement for Category II/III banks. Not yet finalized."},
 {date:"Jul 2026",status:"deadline",title:"G-SIB Resolution Plan Submissions",reg:"resolution",desc:"Major G-SIBs (Cohort 3) full-plan submissions due Jul 1, 2026 under updated 2024 guidance. FDIC modified content requirements in Apr 2025, waiving speculative analysis."},
 {date:"Jul 18, 2026",status:"deadline",title:"GENIUS Act Implementing Regulations Due",reg:"genius-act",desc:"Federal banking agencies must adopt capital, liquidity, and governance rules for stablecoin issuers under the GENIUS Act."},
@@ -21,8 +21,11 @@ const WC=[
 {date:"2026",status:"expected",title:"Volcker Rule Simplification Proposals",reg:"volcker",desc:"Potential further easing of compliance requirements for less-active trading banks. No formal NPR yet, but the administration has signaled continued interest in streamlining."},
 {date:"2026",status:"expected",title:"SCCL Recalibration Discussion",reg:"sccl",desc:"Potential exposure measurement changes if Endgame re-proposal modifies SA-CCR methodology. Digital asset exposure treatment also under review."},
 {date:"2026",status:"expected",title:"IRRBB Supervisory Tightening",reg:"irrbb",desc:"Post-SVB heightened examination focus on unrealized losses, deposit modeling, and AOCI treatment. Basel Committee revised IRRBB shocks effective Jan 2026. U.S. formal rulemaking tied to Endgame AOCI opt-out decision."},
-{date:"2026",status:"expected",title:"Tailoring Category Recalibration",reg:"tailoring",desc:"Endgame re-proposal may adjust requirements for Category III/IV banks. Post-2023 bank failures fueled debate over whether mid-sized banks warrant stricter standards."},
-{date:"2026",status:"expected",title:"Capital Planning Supervisory Tightening",reg:"sr1519",desc:"Post-2023 heightened examination focus on capital planning governance, model risk, and effective challenge. Fed issued new supervisory operating principles (Nov 2025) focusing examiners on material financial risks."}
+{date:"Mar 19, 2026",status:"proposed",title:"Tailoring Category Recalibration",reg:"tailoring",desc:"March 19, 2026 Endgame re-proposal narrows scope, excluding $100–250B banks from most new requirements except AOCI recognition. Post-2023 bank failures fueled debate over whether mid-sized banks warrant stricter standards."},
+{date:"2026",status:"expected",title:"Capital Planning Supervisory Tightening",reg:"sr1519",desc:"Post-2023 heightened examination focus on capital planning governance, model risk, and effective challenge. Fed issued new supervisory operating principles (Nov 2025) focusing examiners on material financial risks."},
+{date:"Feb 4, 2026",status:"final",title:"2026 Stress Test Scenarios Finalized",reg:"stress-testing",desc:"Federal Reserve published 2026 supervisory stress test scenarios on February 4, 2026, including severely adverse and baseline scenarios for the annual DFAST/CCAR cycle."},
+{date:"May 18, 2026",status:"proposed",title:"FDIC Stablecoin Application Framework",reg:"genius-act",desc:"FDIC proposed procedures for state-chartered banks seeking to engage in stablecoin-related activities. Comment period closes May 18, 2026."},
+{date:"Jun 2, 2026",status:"proposed",title:"Treasury GENIUS Act State Regime Principles",reg:"genius-act",desc:"Treasury issued proposed principles for evaluating state stablecoin regulatory regimes under the GENIUS Act. Comment period closes June 2, 2026."}
 ];
 
 /* ST (status badges) defined here; G (glossary) defined in glossary.js */
