@@ -3,7 +3,7 @@
     CacheFirst for CDN scripts + fonts (versioned/stable URLs)
     Bump CACHE_VERSION on every content update. */
 
-const CACHE_VERSION = 'mra-v7.0.1';
+const CACHE_VERSION = 'mra-v7.0.3';
 const APP_SHELL = [
   '/',
   '/index.html',

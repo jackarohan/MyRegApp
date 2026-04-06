@@ -37,23 +37,23 @@ a{color:var(--amber);text-decoration:none}a:hover{text-decoration:underline}
 .gterm{color:var(--text);border-bottom:1px dotted var(--amber-dot);cursor:help;-webkit-tap-highlight-color:transparent}.gterm:hover{color:var(--amber2)}
 @media(pointer:coarse){.gterm{padding:4px 0;min-height:44px;display:inline-flex;align-items:center}.tl-reg{min-height:44px;padding:8px 12px;display:inline-flex;align-items:center}}
 [role="button"]:focus-visible{outline:2px solid var(--amber);outline-offset:2px;border-radius:4px}
-.tooltip{position:fixed;background:var(--tooltip-bg);border:1px solid var(--amber-border);border-radius:8px;padding:10px 14px;width:280px;max-width:calc(100vw - 32px);z-index:9000;box-shadow:0 8px 24px var(--shadow);pointer-events:auto;animation:fadeIn .12s ease both}
+.tooltip{position:fixed;background:var(--tooltip-bg);border:1px solid var(--amber-border);border-radius:8px;padding:10px 14px;width:280px;max-width:calc(100vw - 32px);max-height:min(320px,60vh);overflow-y:auto;z-index:9000;box-shadow:0 8px 24px var(--shadow);pointer-events:auto;animation:fadeIn .12s ease both}
 .tooltip-term{font-size:var(--text-sm);font-weight:700;color:var(--amber);font-family:'DM Mono',monospace;margin-bottom:4px}.tooltip-def{font-size:var(--text-xs);color:var(--text2);line-height:1.45}
 .ref-link{color:var(--amber);font-weight:600;cursor:pointer;border-bottom:1px dashed var(--amber-dot)}.ref-link:hover{border-bottom-color:var(--amber)}
 .src-link{display:flex;gap:10px;padding:10px 14px;border-radius:7px;margin-bottom:6px;border:1px solid var(--border);background:var(--bg2);transition:all .15s;text-decoration:none}.src-link:hover{border-color:var(--amber-border);background:var(--amber-bg);text-decoration:none}
 .sh{background:var(--sel);border-radius:2px;padding:0 1px}
 .sub-badge{font-size:var(--text-xs);padding:1px 5px;border-radius:3px;background:var(--amber-bg3);color:var(--amber);font-weight:600;white-space:nowrap}
-.action-btn{display:inline-flex;align-items:center;justify-content:center;width:28px;height:28px;border-radius:6px;color:var(--text4);transition:all .12s;flex-shrink:0}.action-btn:hover{background:var(--bg3);color:var(--amber)}.action-btn:active{transform:scale(.92)}
+.action-btn{display:inline-flex;align-items:center;justify-content:center;width:44px;height:44px;border-radius:8px;color:var(--text4);transition:all .12s;flex-shrink:0;position:relative}.action-btn:hover{background:var(--bg3);color:var(--amber)}.action-btn:active{transform:scale(.92)}@media(pointer:fine){.action-btn::after{content:attr(data-tooltip);position:absolute;bottom:-26px;left:50%;transform:translateX(-50%);font-size:10px;white-space:nowrap;padding:2px 8px;border-radius:4px;background:var(--tooltip-bg);border:1px solid var(--border);color:var(--text3);opacity:0;pointer-events:none;transition:opacity .15s;z-index:10}.action-btn:hover::after{opacity:1}}
 .wc-card{transition:border-color .15s,box-shadow .15s}.wc-card:hover{border-color:var(--amber-border);box-shadow:0 2px 12px var(--shadow)}
 .gl-card{transition:border-color .15s,box-shadow .15s}.gl-card:hover{border-color:var(--amber-border);box-shadow:0 2px 12px var(--shadow)}
-.reg-card{transition:border-color .15s,background .15s,box-shadow .15s}.reg-card:hover{border-color:var(--amber-border)!important;background:var(--amber-bg)!important;box-shadow:0 2px 8px var(--shadow)}
+.reg-card{transition:border-color .15s,background .15s,box-shadow .15s,transform .15s}.reg-card:hover{border-color:var(--amber-border)!important;background:var(--amber-bg)!important;box-shadow:0 2px 8px var(--shadow);transform:translateY(-1px)}
 table tbody tr:hover{background:var(--bg3)!important}
 .toast{position:fixed;bottom:28px;left:50%;transform:translateX(-50%) translateY(12px);background:var(--tooltip-bg);border:1px solid var(--amber-border);color:var(--text);font-size:var(--text-sm);font-weight:600;padding:8px 18px;border-radius:8px;z-index:9999;opacity:0;pointer-events:none;transition:opacity .2s,transform .2s;box-shadow:0 8px 24px var(--shadow)}.toast.show{opacity:1;transform:translateX(-50%) translateY(0)}
 .skip-link{position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden;z-index:10000}.skip-link:focus{position:fixed;top:8px;left:8px;width:auto;height:auto;padding:8px 16px;background:var(--amber);color:#000;font-weight:700;font-size:var(--text-md);border-radius:6px;text-decoration:none;z-index:10000;box-shadow:0 4px 12px var(--shadow)}
 .offline-bar{position:fixed;bottom:0;left:0;right:0;z-index:9998;background:rgba(245,158,11,.12);border-top:1px solid rgba(245,158,11,.25);padding:6px 16px calc(6px + env(safe-area-inset-bottom, 0px));text-align:center;font-size:var(--text-xs);font-weight:600;color:var(--amber);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);transform:translateY(100%);transition:transform .3s ease}.offline-bar.show{transform:translateY(0)}
 .tl-wrap{position:relative;padding-left:28px;margin-top:16px}.tl-wrap::before{content:'';position:absolute;left:8px;top:0;bottom:0;width:2px;background:var(--border)}
 .tl-item{position:relative;padding:0 0 20px 20px}.tl-dot{position:absolute;left:-24px;top:4px;width:12px;height:12px;border-radius:50%;border:2px solid var(--bg);box-shadow:0 0 0 2px var(--border);transition:transform .15s}.tl-item:hover .tl-dot{transform:scale(1.3)}.tl-date{font-size:var(--text-xs);color:var(--text5);font-weight:600;letter-spacing:.3px}.tl-title{font-size:var(--text-md);color:var(--text);margin:2px 0 1px}.tl-reg{display:inline-block;font-size:var(--text-xs);padding:1px 6px;border-radius:4px;background:var(--bg3);color:var(--text3);cursor:pointer;margin-top:2px}
-.tl-filter{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:12px}.tl-chip{font-size:var(--text-xs);padding:3px 10px;border-radius:12px;border:1px solid var(--border);background:transparent;color:var(--text3);cursor:pointer;transition:all .15s}.tl-chip:hover{border-color:var(--text3)}.tl-chip:active{transform:scale(.96)}.tl-chip:focus-visible{outline:2px solid var(--amber);outline-offset:2px}.tl-chip.active{background:var(--amber);border-color:var(--amber);color:#000;font-weight:600}
+.tl-filter{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:12px}.tl-chip{font-size:var(--text-xs);padding:8px 14px;border-radius:16px;border:1px solid var(--border);background:transparent;color:var(--text3);cursor:pointer;transition:all .15s;min-height:44px;display:inline-flex;align-items:center}.tl-chip:hover{border-color:var(--text3)}.tl-chip:active{transform:scale(.96)}.tl-chip:focus-visible{outline:2px solid var(--amber);outline-offset:2px}.tl-chip.active{background:var(--amber);border-color:var(--amber);color:#000;font-weight:600}
 .tl-legend{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:12px}.tl-leg-item{display:flex;align-items:center;gap:4px;font-size:var(--text-xs);color:var(--text4)}.tl-leg-dot{width:8px;height:8px;border-radius:50%;flex-shrink:0}
 @media(max-width:767px){:root{--font-size:15px}}
 @media print{
@@ -408,7 +408,7 @@ function NavBar({view,setView,search,setSearch,theme,toggleTheme,fontSize,setFon
 
   if(isMob) return(
   <nav ref={navRef} data-noprint aria-label="Main navigation" style={{position:"fixed",top:0,left:0,right:0,zIndex:100,background:"var(--nav-bg)",backdropFilter:"blur(24px)",WebkitBackdropFilter:"blur(24px)",borderBottom:"1px solid var(--border)",display:"flex",flexDirection:"column",padding:0,paddingTop:"env(safe-area-inset-top, 0px)"}}>
-    <div style={{display:"flex",alignItems:"center",padding:"8px 14px 4px",gap:8}}>
+    <div style={{display:"flex",alignItems:"center",padding:"8px 16px 4px",gap:8}}>
       <span style={{fontSize:15,fontWeight:800,letterSpacing:"-.4px",flexShrink:0}}>My<span style={{color:"var(--amber)"}}>Reg</span>App</span>
       <div style={{flex:1,position:"relative"}}>
         <input ref={inp} type="text" placeholder="Search…" aria-label="Search regulations" value={search} onChange={e=>setSearch(e.target.value)} className="search-input" style={{width:"100%",padding:"6px 28px 6px 30px",borderRadius:7,border:"1px solid var(--border2)",background:"var(--bg3)",color:"var(--text)",fontSize:"var(--text-sm)",outline:"none"}}/>
@@ -420,18 +420,18 @@ function NavBar({view,setView,search,setSearch,theme,toggleTheme,fontSize,setFon
         {settingsOpen&&<div style={{position:"absolute",right:0,top:"calc(100% + 8px)",background:"var(--tooltip-bg)",border:"1px solid var(--border2)",borderRadius:10,padding:"12px 14px",boxShadow:"0 8px 24px var(--shadow)",zIndex:200,minWidth:160}} className="fade-in">
           <div style={{fontSize:"var(--text-xs)",fontWeight:700,color:"var(--text5)",textTransform:"uppercase",letterSpacing:".5px",marginBottom:8}}>Font Size</div>
           <div style={{display:"flex",gap:3,marginBottom:12}}>
-            {fSizes.map(f=><button key={f.id} onClick={()=>setFontSize(f.id)} style={{padding:"5px 10px",borderRadius:5,fontSize:"var(--text-sm)",fontWeight:700,background:fontSize===f.id?"var(--amber-bg3)":"var(--bg3)",color:fontSize===f.id?"var(--amber)":"var(--text4)",transition:"all .12s",flex:1}}>{f.l}</button>)}
+            {fSizes.map(f=><button key={f.id} onClick={()=>setFontSize(f.id)} style={{padding:"8px 10px",borderRadius:5,fontSize:"var(--text-sm)",fontWeight:700,background:fontSize===f.id?"var(--amber-bg3)":"var(--bg3)",color:fontSize===f.id?"var(--amber)":"var(--text4)",transition:"all .12s",flex:1,minHeight:40}}>{f.l}</button>)}
           </div>
           <div style={{fontSize:"var(--text-xs)",fontWeight:700,color:"var(--text5)",textTransform:"uppercase",letterSpacing:".5px",marginBottom:8}}>Theme</div>
-          <button onClick={()=>{toggleTheme();setSettingsOpen(false)}} style={{width:"100%",padding:"6px 10px",borderRadius:5,fontSize:"var(--text-sm)",fontWeight:600,background:"var(--bg3)",color:"var(--text3)",textAlign:"left"}}>
+          <button onClick={()=>{toggleTheme();setSettingsOpen(false)}} style={{width:"100%",padding:"8px 10px",borderRadius:5,fontSize:"var(--text-sm)",fontWeight:600,background:"var(--bg3)",color:"var(--text3)",textAlign:"left",minHeight:40}}>
             {theme==="dark"?"\u2600\uFE0F Switch to Light":"\u{1F319} Switch to Dark"}
           </button>
         </div>}
       </div>
     </div>
-    <div style={{display:"flex",gap:1,overflowX:"auto",WebkitOverflowScrolling:"touch",scrollbarWidth:"none",msOverflowStyle:"none",padding:"2px 14px 8px"}}>
+    <div style={{display:"flex",gap:1,overflowX:"auto",WebkitOverflowScrolling:"touch",scrollbarWidth:"none",msOverflowStyle:"none",padding:"2px 16px 8px"}}>
       {tabs.map(tab=>
-        <button key={tab.id} onClick={()=>setView(tab.id)} title={tab.l} aria-current={view===tab.id?"page":undefined} style={{padding:"8px 10px",minHeight:44,borderRadius:6,fontSize:"var(--text-sm)",fontWeight:600,transition:"all .15s",whiteSpace:"nowrap",background:view===tab.id?"var(--amber-bg3)":"transparent",color:view===tab.id?"var(--amber)":"var(--text3)"}}>{tab.l}</button>
+        <button key={tab.id} onClick={()=>setView(tab.id)} title={tab.l} aria-current={view===tab.id?"page":undefined} style={{padding:"8px 10px",minHeight:44,borderRadius:6,fontSize:"var(--text-sm)",fontWeight:600,transition:"all .15s",whiteSpace:"nowrap",background:view===tab.id?"var(--amber-bg3)":"transparent",color:view===tab.id?"var(--amber)":"var(--text3)",borderBottom:view===tab.id?"2px solid var(--amber)":"2px solid transparent"}}>{tab.l}</button>
       )}
     </div>
   </nav>);
@@ -443,24 +443,24 @@ function NavBar({view,setView,search,setSearch,theme,toggleTheme,fontSize,setFon
     </div>
     <div style={{display:"flex",gap:2,overflowX:"auto",WebkitOverflowScrolling:"touch",scrollbarWidth:"none",msOverflowStyle:"none"}}>
       {tabs.map(tab=>
-        <button key={tab.id} onClick={()=>setView(tab.id)} title={tab.l} aria-current={view===tab.id?"page":undefined} style={{padding:"7px 12px",borderRadius:7,fontSize:"var(--text-md)",fontWeight:600,transition:"all .15s",whiteSpace:"nowrap",background:view===tab.id?"var(--amber-bg3)":"transparent",color:view===tab.id?"var(--amber)":"var(--text3)"}}>{tab.l}</button>
+        <button key={tab.id} onClick={()=>setView(tab.id)} title={tab.l} aria-current={view===tab.id?"page":undefined} style={{padding:"7px 12px",borderRadius:7,fontSize:"var(--text-md)",fontWeight:600,transition:"all .15s",whiteSpace:"nowrap",background:view===tab.id?"var(--amber-bg3)":"transparent",color:view===tab.id?"var(--amber)":"var(--text3)",borderBottom:view===tab.id?"2px solid var(--amber)":"2px solid transparent"}}>{tab.l}</button>
       )}
     </div>
     <div style={{flex:1}}/>
     <div style={{position:"relative"}} ref={settingsRef}>
-      <button onClick={()=>setSettingsOpen(!settingsOpen)} title="Settings" aria-label="Settings" aria-expanded={settingsOpen} style={{fontSize:15,padding:"5px 7px",borderRadius:6,color:settingsOpen?"var(--amber)":"var(--text3)",background:settingsOpen?"var(--amber-bg3)":"transparent",transition:"all .15s"}}>{"\u2699\uFE0F"}</button>
+      <button onClick={()=>setSettingsOpen(!settingsOpen)} title="Settings" aria-label="Settings" aria-expanded={settingsOpen} style={{fontSize:15,padding:"5px 7px",borderRadius:6,minWidth:44,minHeight:44,display:"flex",alignItems:"center",justifyContent:"center",color:settingsOpen?"var(--amber)":"var(--text3)",background:settingsOpen?"var(--amber-bg3)":"transparent",transition:"all .15s"}}>{"\u2699\uFE0F"}</button>
       {settingsOpen&&<div style={{position:"absolute",right:0,top:"calc(100% + 8px)",background:"var(--tooltip-bg)",border:"1px solid var(--border2)",borderRadius:10,padding:"12px 14px",boxShadow:"0 8px 24px var(--shadow)",zIndex:200,minWidth:160}} className="fade-in">
         <div style={{fontSize:"var(--text-xs)",fontWeight:700,color:"var(--text5)",textTransform:"uppercase",letterSpacing:".5px",marginBottom:8}}>Font Size</div>
         <div style={{display:"flex",gap:3,marginBottom:12}}>
-          {fSizes.map(f=><button key={f.id} onClick={()=>setFontSize(f.id)} style={{padding:"5px 10px",borderRadius:5,fontSize:"var(--text-sm)",fontWeight:700,background:fontSize===f.id?"var(--amber-bg3)":"var(--bg3)",color:fontSize===f.id?"var(--amber)":"var(--text4)",transition:"all .12s",flex:1}}>{f.l}</button>)}
+          {fSizes.map(f=><button key={f.id} onClick={()=>setFontSize(f.id)} style={{padding:"8px 10px",borderRadius:5,fontSize:"var(--text-sm)",fontWeight:700,background:fontSize===f.id?"var(--amber-bg3)":"var(--bg3)",color:fontSize===f.id?"var(--amber)":"var(--text4)",transition:"all .12s",flex:1,minHeight:40}}>{f.l}</button>)}
         </div>
         <div style={{fontSize:"var(--text-xs)",fontWeight:700,color:"var(--text5)",textTransform:"uppercase",letterSpacing:".5px",marginBottom:8}}>Theme</div>
-        <button onClick={()=>{toggleTheme();setSettingsOpen(false)}} style={{width:"100%",padding:"6px 10px",borderRadius:5,fontSize:"var(--text-sm)",fontWeight:600,background:"var(--bg3)",color:"var(--text3)",textAlign:"left"}}>
+        <button onClick={()=>{toggleTheme();setSettingsOpen(false)}} style={{width:"100%",padding:"8px 10px",borderRadius:5,fontSize:"var(--text-sm)",fontWeight:600,background:"var(--bg3)",color:"var(--text3)",textAlign:"left",minHeight:40}}>
           {theme==="dark"?"\u2600\uFE0F Switch to Light":"\u{1F319} Switch to Dark"}
         </button>
       </div>}
     </div>
-    <div style={{position:"relative",width:200,flexShrink:0}}>
+    <div style={{position:"relative",width:"clamp(160px, 18vw, 220px)",flexShrink:0}}>
       <input ref={inp} type="text" placeholder="Search…" aria-label="Search regulations" value={search} onChange={e=>setSearch(e.target.value)} className="search-input" style={{width:"100%",padding:"7px 30px 7px 32px",borderRadius:7,border:"1px solid var(--border2)",background:"var(--bg3)",color:"var(--text)",fontSize:"var(--text-md)",outline:"none"}}/>
       <svg style={{position:"absolute",left:10,top:"50%",transform:"translateY(-50%)",pointerEvents:"none"}} width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="var(--text4)" strokeWidth="2.5" strokeLinecap="round"><circle cx="10.5" cy="10.5" r="7"/><line x1="15.5" y1="15.5" x2="21" y2="21"/></svg>
       {search&&<button onClick={()=>{setSearch("");inp.current?.focus()}} aria-label="Clear search" style={{position:"absolute",right:2,top:"50%",transform:"translateY(-50%)",color:"var(--text4)",fontSize:"var(--text-lg)",lineHeight:1,padding:8,minWidth:44,minHeight:44,display:"flex",alignItems:"center",justifyContent:"center"}}>{"\u2715"}</button>}
@@ -497,16 +497,29 @@ const SUB_BADGES={"Current Requirements":{lb:"FINAL RULE",bg:"rgba(34,197,94,.1)
 function SubNav({subs,idx,onSelect}){
   const isMob=useIsMobile();
   const activeRef=useRef(null);
-  useEffect(()=>{if(isMob&&activeRef.current)activeRef.current.scrollIntoView({inline:"center",block:"nearest",behavior:"smooth"})},[idx,isMob]);
+  const scrollRef=useRef(null);
+  const[showLeftFade,setShowLeftFade]=useState(false);
+  const[showRightFade,setShowRightFade]=useState(false);
+  const checkFades=useCallback(()=>{
+    const el=scrollRef.current;if(!el||!isMob)return;
+    setShowLeftFade(el.scrollLeft>4);
+    setShowRightFade(el.scrollLeft<el.scrollWidth-el.clientWidth-4);
+  },[isMob]);
+  useEffect(()=>{if(isMob&&activeRef.current)activeRef.current.scrollIntoView({inline:"center",block:"nearest",behavior:"smooth"});setTimeout(checkFades,100)},[idx,isMob,checkFades]);
+  useEffect(()=>{checkFades();window.addEventListener("resize",checkFades);return()=>window.removeEventListener("resize",checkFades)},[subs.length,checkFades]);
   const cStyle=isMob
     ?{display:"flex",gap:3,overflowX:"auto",flexWrap:"nowrap",WebkitOverflowScrolling:"touch",scrollbarWidth:"none",msOverflowStyle:"none",marginBottom:20,paddingBottom:2}
     :{display:"flex",gap:3,flexWrap:"wrap",marginBottom:20};
   return(
-  <div role="tablist" aria-label="Subsections" className={isMob?"subnav-scroll":""} style={cStyle}>
-    {subs.map((s,i)=>{const badge=SUB_BADGES[s.t];return <button key={i} ref={idx===i?activeRef:undefined} role="tab" aria-selected={idx===i} onClick={()=>onSelect(i)} style={{padding:"5px 12px",borderRadius:6,fontSize:"var(--text-sm)",fontWeight:600,transition:"all .12s",whiteSpace:"nowrap",flexShrink:0,background:idx===i?"var(--amber-bg4)":"var(--bg3)",color:idx===i?"var(--amber)":"var(--text3)",borderBottom:idx===i?"2px solid var(--amber)":"2px solid transparent",display:"flex",alignItems:"center",gap:5}}>
-      {s.t}
-      {badge&&<span style={{fontSize:"var(--text-xs)",fontWeight:700,padding:"1px 5px",borderRadius:3,background:badge.bg,border:"1px solid "+badge.bd,color:badge.tx,letterSpacing:".3px"}}>{badge.lb}</span>}
-    </button>})}
+  <div style={{position:"relative"}}>
+    {isMob&&showLeftFade&&<div style={{position:"absolute",left:0,top:0,bottom:0,width:28,background:"linear-gradient(to right, var(--bg), transparent)",zIndex:2,pointerEvents:"none",borderRadius:"6px 0 0 6px"}}/>}
+    {isMob&&showRightFade&&<div style={{position:"absolute",right:0,top:0,bottom:0,width:28,background:"linear-gradient(to left, var(--bg), transparent)",zIndex:2,pointerEvents:"none",borderRadius:"0 6px 6px 0"}}/>}
+    <div ref={scrollRef} role="tablist" aria-label="Subsections" className={isMob?"subnav-scroll":""} style={cStyle} onScroll={checkFades}>
+      {subs.map((s,i)=>{const badge=SUB_BADGES[s.t];return <button key={i} ref={idx===i?activeRef:undefined} role="tab" aria-selected={idx===i} onClick={()=>onSelect(i)} style={{padding:"8px 14px",borderRadius:6,fontSize:"var(--text-sm)",fontWeight:600,transition:"all .12s",whiteSpace:"nowrap",flexShrink:0,minHeight:44,background:idx===i?"var(--amber-bg4)":"var(--bg3)",color:idx===i?"var(--amber)":"var(--text3)",borderBottom:idx===i?"2px solid var(--amber)":"2px solid transparent",display:"flex",alignItems:"center",gap:5}}>
+        {s.t}
+        {badge&&<span style={{fontSize:"var(--text-xs)",fontWeight:700,padding:"1px 5px",borderRadius:3,background:badge.bg,border:"1px solid "+badge.bd,color:badge.tx,letterSpacing:".3px"}}>{badge.lb}</span>}
+      </button>})}
+    </div>
   </div>);
 }
 
@@ -524,10 +537,19 @@ function DataTable({table}){
   const isComp=table.type==="comparison";
   const isMob=useIsMobile();
   const stickyFirst=isComp||isMob;
+  const scrollWrapRef=useRef(null);
+  const[canScrollRight,setCanScrollRight]=useState(false);
+  const checkTableScroll=useCallback(()=>{
+    const el=scrollWrapRef.current;if(!el)return;
+    setCanScrollRight(el.scrollWidth>el.clientWidth+4&&el.scrollLeft<el.scrollWidth-el.clientWidth-4);
+  },[]);
+  useEffect(()=>{checkTableScroll();window.addEventListener("resize",checkTableScroll);return()=>window.removeEventListener("resize",checkTableScroll)},[checkTableScroll]);
   return(
   <div style={{margin:"18px 0",borderRadius:9,border:"1px solid var(--border2)",overflow:"hidden",position:"relative"}}>
     {table.title&&<div style={{padding:"10px 16px",background:"var(--bg3)",borderBottom:"1px solid var(--border)",fontSize:"var(--text-sm)",fontWeight:700,color:"var(--text)"}}>{table.title}</div>}
-    <div style={{overflowX:"auto"}}>
+    <div style={{position:"relative"}}>
+      {canScrollRight&&<div style={{position:"absolute",right:0,top:0,bottom:0,width:24,background:"linear-gradient(to left, var(--bg), transparent)",zIndex:2,pointerEvents:"none"}}/>}
+    <div ref={scrollWrapRef} style={{overflowX:"auto"}} onScroll={checkTableScroll} role="region" aria-label={table.title||"Data table"} tabIndex={0}>
       <table style={{width:"100%",borderCollapse:"collapse",fontSize:"var(--text-sm)"}}>
         {table.headers&&<thead><tr>
           {table.headers.map((h,i)=><th key={i} style={{padding:"8px 12px",textAlign:i===0?"left":"right",fontWeight:700,fontSize:"var(--text-xs)",color:"var(--text4)",textTransform:"uppercase",letterSpacing:".4px",borderBottom:"2px solid var(--border2)",background:"var(--bg2)",whiteSpace:"nowrap",position:stickyFirst&&i===0?"sticky":"static",left:0,zIndex:stickyFirst&&i===0?1:0}}>{h}</th>)}
@@ -542,6 +564,7 @@ function DataTable({table}){
             </tr>})})()}
         </tbody>
       </table>
+    </div>
     </div>
     {table.footnote&&<div style={{padding:"8px 16px",borderTop:"1px solid var(--border)",fontSize:"var(--text-xs)",color:"var(--text5)",fontStyle:"italic"}}>{table.footnote}</div>}
   </div>);
@@ -576,7 +599,7 @@ function WCPanel({regId}){
   if(!items||!items.length)return null;
   return(
   <div style={{marginBottom:16,borderRadius:9,border:"1px solid "+ST.expected.bg,background:ST.expected.bg+"22",overflow:"hidden"}}>
-    <button onClick={()=>setOpen(!open)} style={{display:"flex",alignItems:"center",gap:8,width:"100%",padding:"10px 14px",textAlign:"left",fontSize:"var(--text-sm)",fontWeight:700,color:ST.expected.tx}}>
+    <button onClick={()=>setOpen(!open)} style={{display:"flex",alignItems:"center",gap:8,width:"100%",padding:"10px 14px",minHeight:44,textAlign:"left",fontSize:"var(--text-sm)",fontWeight:700,color:ST.expected.tx}}>
       <span>{open?"\u25BC":"\u25B6"}</span>
       <span>{items.length} Pending Change{items.length!==1?"s":""}</span>
     </button>
@@ -608,7 +631,7 @@ function RegDetail({reg,detailRef,onNav,search,initialSub,onSubChange}){
       <h2 style={{fontSize:"var(--text-xl)",fontWeight:800,letterSpacing:"-.3px",margin:0,flex:1}}>{reg.title}</h2>
       {reg.crossCutting&&<span style={{fontSize:10,padding:"3px 8px",borderRadius:4,background:"rgba(139,92,246,.1)",color:"#a78bfa",fontWeight:700,letterSpacing:".3px"}}>CROSS-CUTTING</span>}
       {reg.tag&&<span style={{fontSize:10,padding:"3px 8px",borderRadius:4,background:"rgba(6,182,212,.1)",color:"#22d3ee",fontWeight:700,letterSpacing:".3px"}}>{reg.tag.toUpperCase()}</span>}
-      <button className="action-btn" onClick={()=>printRegulation(reg)} title="Print this regulation" aria-label="Print this regulation">{"\uD83D\uDDA8\uFE0F"}</button>
+      <button className="action-btn" onClick={()=>printRegulation(reg)} data-tooltip="Print" aria-label="Print this regulation">{"\uD83D\uDDA8\uFE0F"}</button>
     </div>
     <p style={{fontSize:"var(--text-md)",color:"var(--text3)",lineHeight:1.55,marginBottom:reg.id==="endgame"?12:24}}>{stripRefs(reg.sum)}</p>
     <WCPanel regId={reg.id}/>
@@ -622,14 +645,14 @@ function RegDetail({reg,detailRef,onNav,search,initialSub,onSubChange}){
     </button>}
     <div style={{display:"flex",alignItems:"center",gap:8,marginBottom:4}}>
       <div style={{flex:1}}><SubNav subs={reg.subs} idx={idx} onSelect={setIdx}/></div>
-      <button className="action-btn" onClick={()=>copySubLink(reg.id,idx)} title="Copy link to this section" aria-label="Copy link to this section">{"\uD83D\uDD17"}</button>
+      <button className="action-btn" onClick={()=>copySubLink(reg.id,idx)} data-tooltip="Copy link" aria-label="Copy link to this section">{"\uD83D\uDD17"}</button>
     </div>
     <SubContent sub={sub} onNav={onNav} search={search} key={reg.id+"-"+idx}/>
     {BACKLINKS[reg.id]&&BACKLINKS[reg.id].length>0&&(
       <div style={{marginTop:24,padding:"14px 18px",borderRadius:9,border:"1px solid var(--border)",background:"var(--bg2)"}}>
         <div style={{fontSize:"var(--text-xs)",fontWeight:700,color:"var(--text5)",textTransform:"uppercase",letterSpacing:".5px",marginBottom:8}}>Referenced By</div>
         <div style={{display:"flex",gap:6,flexWrap:"wrap"}}>
-          {BACKLINKS[reg.id].map(srcId=>{const src=R.find(r=>r.id===srcId);return src?<button key={srcId} onClick={()=>onNav(srcId)} style={{padding:"4px 10px",borderRadius:5,border:"1px solid var(--border)",background:"var(--bg3)",fontSize:"var(--text-sm)",fontWeight:600,color:"var(--amber)",cursor:"pointer",transition:"all .12s"}}>{src.icon} {src.st}</button>:null})}
+          {BACKLINKS[reg.id].map(srcId=>{const src=R.find(r=>r.id===srcId);return src?<button key={srcId} onClick={()=>onNav(srcId)} style={{padding:"8px 14px",borderRadius:5,border:"1px solid var(--border)",background:"var(--bg3)",fontSize:"var(--text-sm)",fontWeight:600,color:"var(--amber)",cursor:"pointer",transition:"all .12s",minHeight:44,display:"inline-flex",alignItems:"center"}}>{src.icon} {src.st}</button>:null})}
         </div>
       </div>
     )}
@@ -650,6 +673,19 @@ function MobileDrawer({open,onClose,currentId,onSelect}){
     const h=e=>{if(e.key==="Escape")onClose()};
     window.addEventListener("keydown",h);return()=>window.removeEventListener("keydown",h);
   },[open,onClose]);
+  useEffect(()=>{
+    if(!open)return;
+    const panel=panelRef.current;if(!panel)return;
+    const handler=e=>{
+      if(e.key!=="Tab")return;
+      const focusable=panel.querySelectorAll('button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])');
+      if(!focusable.length)return;
+      const first=focusable[0],last=focusable[focusable.length-1];
+      if(e.shiftKey&&document.activeElement===first){e.preventDefault();last.focus()}
+      else if(!e.shiftKey&&document.activeElement===last){e.preventDefault();first.focus()}
+    };
+    window.addEventListener("keydown",handler);return()=>window.removeEventListener("keydown",handler);
+  },[open]);
   let lastCat=null;
   return(<>
     <div className={"drawer-overlay"+(open?" active":"")} onClick={onClose}/>
@@ -659,14 +695,14 @@ function MobileDrawer({open,onClose,currentId,onSelect}){
       onTouchEnd={()=>{touchX.current=null}}>
       <div style={{display:"flex",alignItems:"center",justifyContent:"space-between",padding:"16px 18px 12px",borderBottom:"1px solid var(--border)"}}>
         <span style={{fontSize:"var(--text-lg)",fontWeight:800,letterSpacing:"-.3px"}}>Regulations</span>
-        <button onClick={onClose} aria-label="Close navigation" style={{fontSize:18,padding:"4px 8px",color:"var(--text3)"}}>{"\u2715"}</button>
+        <button onClick={onClose} aria-label="Close navigation" style={{fontSize:18,padding:"8px 12px",minWidth:44,minHeight:44,display:"flex",alignItems:"center",justifyContent:"center",borderRadius:6,color:"var(--text3)"}}>{"\u2715"}</button>
       </div>
-      <div style={{padding:"8px 14px 24px"}}>
+      <div style={{padding:"8px 16px 24px"}}>
         {R.map(r=>{
           const showHdr=r.cat!==lastCat;lastCat=r.cat;
           return <React.Fragment key={r.id}>
             {showHdr&&<div style={{fontSize:"var(--text-xs)",fontWeight:700,color:"var(--text5)",textTransform:"uppercase",letterSpacing:".8px",padding:"14px 0 6px",borderTop:r===R[0]?"none":"1px solid var(--border)",marginTop:r===R[0]?0:4}}>{r.cat}</div>}
-            <button onClick={()=>onSelect(r.id)} style={{display:"flex",alignItems:"center",gap:10,width:"100%",padding:"10px 12px",borderRadius:8,marginBottom:2,textAlign:"left",background:r.id===currentId?"var(--amber-bg3)":"transparent",color:r.id===currentId?"var(--amber)":"var(--text2)",fontWeight:r.id===currentId?700:500,fontSize:"var(--text-md)",transition:"all .12s"}}>
+            <button onClick={()=>onSelect(r.id)} style={{display:"flex",alignItems:"center",gap:10,width:"100%",padding:"10px 12px",minHeight:44,borderRadius:8,marginBottom:2,textAlign:"left",background:r.id===currentId?"var(--amber-bg3)":"transparent",color:r.id===currentId?"var(--amber)":"var(--text2)",fontWeight:r.id===currentId?700:500,fontSize:"var(--text-md)",transition:"all .12s"}}>
               <span style={{fontSize:16,flexShrink:0}}>{r.icon}</span>
               {r.st}
             </button>
@@ -684,16 +720,17 @@ function MobileRegDetail({reg,onBack,onNav,search,initialSub,pushHash,onOpenDraw
   const sub=reg.subs[idx]||reg.subs[0];
   return(
   <div className="fade-up">
-    <div style={{display:"flex",alignItems:"center",gap:8,marginBottom:16}}>
+    <div style={{display:"flex",alignItems:"center",gap:8,marginBottom:8}}>
       <button onClick={onOpenDrawer} aria-label="Open regulation list" style={{fontSize:20,padding:"6px 8px",color:"var(--text3)",minWidth:44,minHeight:44,display:"flex",alignItems:"center",justifyContent:"center",borderRadius:6}}>{"\u2630"}</button>
-      <button onClick={onBack} aria-label="Back to all regulations" style={{display:"flex",alignItems:"center",gap:6,color:"var(--amber)",fontSize:"var(--text-md)",fontWeight:600,padding:"4px 0"}}><span style={{fontSize:16}}>{"\u2190"}</span> All Regulations</button>
+      <button onClick={onBack} aria-label="Back to all regulations" style={{display:"flex",alignItems:"center",gap:6,color:"var(--amber)",fontSize:"var(--text-md)",fontWeight:600,padding:"4px 0",minHeight:44}}><span style={{fontSize:16}}>{"\u2190"}</span> All Regulations</button>
     </div>
+    <Breadcrumb reg={reg} subIdx={idx}/>
     <div style={{display:"flex",alignItems:"center",gap:12,marginBottom:6}}>
       <span style={{fontSize:28}}>{reg.icon}</span>
       <h2 style={{fontSize:"var(--text-xl)",fontWeight:800,letterSpacing:"-.3px",margin:0,flex:1}}>{reg.title}</h2>
       {reg.crossCutting&&<span style={{fontSize:10,padding:"3px 8px",borderRadius:4,background:"rgba(139,92,246,.1)",color:"#a78bfa",fontWeight:700,letterSpacing:".3px"}}>CROSS-CUTTING</span>}
       {reg.tag&&<span style={{fontSize:10,padding:"3px 8px",borderRadius:4,background:"rgba(6,182,212,.1)",color:"#22d3ee",fontWeight:700,letterSpacing:".3px"}}>{reg.tag.toUpperCase()}</span>}
-      <button className="action-btn" onClick={()=>printRegulation(reg)} title="Print this regulation" aria-label="Print this regulation">{"\uD83D\uDDA8\uFE0F"}</button>
+      <button className="action-btn" onClick={()=>printRegulation(reg)} data-tooltip="Print" aria-label="Print this regulation">{"\uD83D\uDDA8\uFE0F"}</button>
     </div>
     <p style={{fontSize:"var(--text-md)",color:"var(--text3)",lineHeight:1.55,marginBottom:reg.id==="endgame"?12:24}}>{stripRefs(reg.sum)}</p>
     <WCPanel regId={reg.id}/>
@@ -707,14 +744,14 @@ function MobileRegDetail({reg,onBack,onNav,search,initialSub,pushHash,onOpenDraw
     </button>}
     <div style={{display:"flex",alignItems:"center",gap:8,marginBottom:4}}>
       <div style={{flex:1}}><SubNav subs={reg.subs} idx={idx} onSelect={i=>{setIdx(i);window.scrollTo(0,200)}}/></div>
-      <button className="action-btn" onClick={()=>copySubLink(reg.id,idx)} title="Copy link to this section" aria-label="Copy link to this section">{"\uD83D\uDD17"}</button>
+      <button className="action-btn" onClick={()=>copySubLink(reg.id,idx)} data-tooltip="Copy link" aria-label="Copy link to this section">{"\uD83D\uDD17"}</button>
     </div>
     <SubContent sub={sub} onNav={onNav} search={search} key={reg.id+"-"+idx}/>
     {BACKLINKS[reg.id]&&BACKLINKS[reg.id].length>0&&(
       <div style={{marginTop:24,padding:"14px 18px",borderRadius:9,border:"1px solid var(--border)",background:"var(--bg2)"}}>
         <div style={{fontSize:"var(--text-xs)",fontWeight:700,color:"var(--text5)",textTransform:"uppercase",letterSpacing:".5px",marginBottom:8}}>Referenced By</div>
         <div style={{display:"flex",gap:6,flexWrap:"wrap"}}>
-          {BACKLINKS[reg.id].map(srcId=>{const src=R.find(r=>r.id===srcId);return src?<button key={srcId} onClick={()=>onNav(srcId)} style={{padding:"4px 10px",borderRadius:5,border:"1px solid var(--border)",background:"var(--bg3)",fontSize:"var(--text-sm)",fontWeight:600,color:"var(--amber)",cursor:"pointer",transition:"all .12s"}}>{src.icon} {src.st}</button>:null})}
+          {BACKLINKS[reg.id].map(srcId=>{const src=R.find(r=>r.id===srcId);return src?<button key={srcId} onClick={()=>onNav(srcId)} style={{padding:"8px 14px",borderRadius:5,border:"1px solid var(--border)",background:"var(--bg3)",fontSize:"var(--text-sm)",fontWeight:600,color:"var(--amber)",cursor:"pointer",transition:"all .12s",minHeight:44,display:"inline-flex",alignItems:"center"}}>{src.icon} {src.st}</button>:null})}
         </div>
       </div>
     )}
@@ -734,7 +771,7 @@ function Breadcrumb({reg,subIdx}){
   </div>);
 }
 
-function RegulationsView({search,onNavigate,navTick,hashRoute,pushHash}){
+function RegulationsView({search,onNavigate,navTick,hashRoute,pushHash,navHeight}){
   const initReg=hashRoute?.regId||ls("lastView",{})?.r||"__overview";
   const initSub=hashRoute?.subIdx;
   const[activeId,setActiveId]=useState(initReg);
@@ -804,32 +841,40 @@ function RegulationsView({search,onNavigate,navTick,hashRoute,pushHash}){
     </div>
     <MobileDrawer open={drawerOpen} onClose={()=>setDrawerOpen(false)} currentId={mobDetail} onSelect={id=>{setMobDetail(id);setActiveId(id);setCurSub(0);setDrawerOpen(false)}}/>
   </>)}
-  if(isMob&&activeId==="__overview") return <OverviewContent onNav={id=>{setActiveId(id);setCurSub(0);setMobDetail(id)}}/>;
-  if(isMob) return(
+  if(isMob&&activeId==="__overview") return(<>
+    <OverviewContent onNav={id=>{setActiveId(id);setCurSub(0);setMobDetail(id)}}/>
+    <MobileDrawer open={drawerOpen} onClose={()=>setDrawerOpen(false)} currentId={activeId} onSelect={id=>{setMobDetail(id);setActiveId(id);setCurSub(0);setDrawerOpen(false)}}/>
+  </>);
+  if(isMob) return(<>
     <div>
-      <button onClick={()=>{setActiveId("__overview");setCurSub(0)}} className="reg-card" style={{display:"block",width:"100%",textAlign:"left",padding:"12px 18px",borderRadius:10,marginBottom:10,border:activeId==="__overview"?"1px solid var(--amber-border2)":"1px solid var(--amber-border)",background:activeId==="__overview"?"var(--amber-bg2)":"var(--amber-bg)",fontWeight:700,color:"var(--amber)",fontSize:"var(--text-md)"}}>Overview</button>
+      <div style={{display:"flex",alignItems:"center",gap:8,marginBottom:12}}>
+        <button onClick={()=>{setActiveId("__overview");setCurSub(0)}} className="reg-card" style={{display:"block",flex:1,textAlign:"left",padding:"12px 18px",borderRadius:10,border:activeId==="__overview"?"1px solid var(--amber-border2)":"1px solid var(--amber-border)",background:activeId==="__overview"?"var(--amber-bg2)":"var(--amber-bg)",fontWeight:700,color:"var(--amber)",fontSize:"var(--text-md)"}}>Overview</button>
+        <button onClick={()=>setDrawerOpen(true)} aria-label="Browse all regulations" style={{padding:"10px 14px",borderRadius:10,border:"1px solid var(--border)",background:"var(--bg2)",fontSize:"var(--text-sm)",fontWeight:600,color:"var(--text3)",minHeight:44,display:"flex",alignItems:"center",gap:6,flexShrink:0,transition:"all .15s"}}>{"\u2630"} Browse</button>
+      </div>
       <h2 style={{fontSize:"var(--text-xs)",fontWeight:700,color:"var(--text4)",textTransform:"uppercase",letterSpacing:".8px",marginBottom:12}}>{filtered.length} Regulation{filtered.length!==1?"s":""}</h2>
       {(()=>{let lastCat=null;return filtered.map(r=>{
         const showHdr=r.cat!==lastCat;lastCat=r.cat;
         return <React.Fragment key={r.id}>
-          {showHdr&&<button aria-expanded={!isCollapsed(r.cat)} onClick={()=>toggleCat(r.cat)} style={{display:"flex",alignItems:"center",gap:6,width:"100%",fontSize:"var(--text-xs)",fontWeight:700,color:"var(--text5)",textTransform:"uppercase",letterSpacing:".8px",padding:"12px 0 4px",borderTop:r===filtered[0]?"none":"1px solid var(--border)",marginTop:r===filtered[0]?0:8,textAlign:"left"}}><span style={{fontSize:8,transition:"transform .15s",transform:isCollapsed(r.cat)?"rotate(-90deg)":"rotate(0deg)"}}>{"\u25BC"}</span>{r.cat}</button>}
+          {showHdr&&<button aria-expanded={!isCollapsed(r.cat)} onClick={()=>toggleCat(r.cat)} style={{display:"flex",alignItems:"center",gap:6,width:"100%",fontSize:"var(--text-xs)",fontWeight:700,color:"var(--text5)",textTransform:"uppercase",letterSpacing:".8px",padding:"14px 0 8px",minHeight:44,borderTop:r===filtered[0]?"none":"1px solid var(--border)",marginTop:r===filtered[0]?0:8,textAlign:"left"}}><span style={{fontSize:8,transition:"transform .15s",transform:isCollapsed(r.cat)?"rotate(-90deg)":"rotate(0deg)"}}>{"\u25BC"}</span>{r.cat}</button>}
           {!isCollapsed(r.cat)&&<RegCard reg={r} active={false} onClick={()=>{setMobDetail(r.id);setCurSub(search?matchedSubs(r,search)[0]||0:0)}} search={search}/>}
         </React.Fragment>})})()}
       {!filtered.length&&<div style={{color:"var(--text4)",fontSize:13}}>
         <p>{"🔍 "}No regulations match your search.</p>
         {(()=>{const gMatch=GT.find(t=>t.toLowerCase()===search.trim().toLowerCase())||GT.find(t=>t.toLowerCase().includes(search.trim().toLowerCase()));return gMatch?<p style={{marginTop:8}}>Did you mean <button onClick={()=>{window.location.hash="#/glossary"}} style={{color:"var(--amber)",fontWeight:600,padding:0,fontSize:"inherit"}}>{gMatch}</button> (glossary term)?</p>:null})()}
       </div>}
-    </div>);
+    </div>
+    <MobileDrawer open={drawerOpen} onClose={()=>setDrawerOpen(false)} currentId={activeId} onSelect={id=>{setMobDetail(id);setActiveId(id);setCurSub(0);setDrawerOpen(false)}}/>
+  </>);
 
   return(
-  <div style={{display:"flex",gap:isTablet?16:28,minHeight:"calc(100vh - 120px)"}}>
-    <div ref={sidebarRef} data-noprint style={{width:isTablet?220:300,flexShrink:0,maxHeight:"calc(100vh - 120px)",overflowY:"auto",position:"sticky",top:76}}>
+  <div style={{display:"flex",gap:isTablet?20:24,minHeight:"calc(100vh - "+((navHeight||76)+64)+"px)"}}>
+    <div ref={sidebarRef} data-noprint style={{width:isTablet?220:300,flexShrink:0,maxHeight:"calc(100vh - "+((navHeight||76)+44)+"px)",overflowY:"auto",position:"sticky",top:(navHeight||76)+20}}>
       <button onClick={()=>{setActiveId("__overview");setCurSub(0)}} data-reg-active={activeId==="__overview"?"true":undefined} className="reg-card" style={{display:"block",width:"100%",textAlign:"left",padding:"12px 18px",borderRadius:10,marginBottom:10,border:activeId==="__overview"?"1px solid var(--amber-border2)":"1px solid var(--amber-border)",background:activeId==="__overview"?"var(--amber-bg2)":"var(--amber-bg)",fontWeight:700,color:"var(--amber)",fontSize:"var(--text-md)"}}>Overview</button>
       <h2 style={{fontSize:"var(--text-xs)",fontWeight:700,color:"var(--text4)",textTransform:"uppercase",letterSpacing:".8px",marginBottom:12}}>{filtered.length} Regulation{filtered.length!==1?"s":""}</h2>
       {(()=>{let lastCat=null;return filtered.map(r=>{
         const showHdr=r.cat!==lastCat;lastCat=r.cat;
         return <React.Fragment key={r.id}>
-          {showHdr&&<button aria-expanded={!isCollapsed(r.cat)} onClick={()=>toggleCat(r.cat)} style={{display:"flex",alignItems:"center",gap:6,width:"100%",fontSize:"var(--text-xs)",fontWeight:700,color:"var(--text5)",textTransform:"uppercase",letterSpacing:".8px",padding:"12px 0 4px",borderTop:r===filtered[0]?"none":"1px solid var(--border)",marginTop:r===filtered[0]?0:8,textAlign:"left"}}><span style={{fontSize:8,transition:"transform .15s",transform:isCollapsed(r.cat)?"rotate(-90deg)":"rotate(0deg)"}}>{"\u25BC"}</span>{r.cat}</button>}
+          {showHdr&&<button aria-expanded={!isCollapsed(r.cat)} onClick={()=>toggleCat(r.cat)} style={{display:"flex",alignItems:"center",gap:6,width:"100%",fontSize:"var(--text-xs)",fontWeight:700,color:"var(--text5)",textTransform:"uppercase",letterSpacing:".8px",padding:"14px 0 8px",minHeight:44,borderTop:r===filtered[0]?"none":"1px solid var(--border)",marginTop:r===filtered[0]?0:8,textAlign:"left"}}><span style={{fontSize:8,transition:"transform .15s",transform:isCollapsed(r.cat)?"rotate(-90deg)":"rotate(0deg)"}}>{"\u25BC"}</span>{r.cat}</button>}
           {!isCollapsed(r.cat)&&<RegCard reg={r} active={activeReg&&activeReg.id===r.id} onClick={()=>{setActiveId(r.id);setCurSub(search?matchedSubs(r,search)[0]||0:0)}} search={search}/>}
         </React.Fragment>})})()}
       {!filtered.length&&<div style={{color:"var(--text4)",fontSize:13}}>
@@ -837,7 +882,7 @@ function RegulationsView({search,onNavigate,navTick,hashRoute,pushHash}){
         {(()=>{const gMatch=GT.find(t=>t.toLowerCase()===search.trim().toLowerCase())||GT.find(t=>t.toLowerCase().includes(search.trim().toLowerCase()));return gMatch?<p style={{marginTop:8}}>Did you mean <button onClick={()=>{window.location.hash="#/glossary"}} style={{color:"var(--amber)",fontWeight:600,padding:0,fontSize:"inherit"}}>{gMatch}</button> (glossary term)?</p>:null})()}
       </div>}
     </div>
-    <div ref={detailRef} className="detail-col" style={{flex:1,minWidth:0,maxHeight:"calc(100vh - 120px)",overflowY:"auto",paddingRight:8}}>
+    <div ref={detailRef} className="detail-col" style={{flex:1,minWidth:0,maxHeight:"calc(100vh - "+((navHeight||76)+44)+"px)",overflowY:"auto",paddingRight:8}}>
       {activeId==="__overview"&&<OverviewContent onNav={id=>{setActiveId(id);setCurSub(0)}}/>}
       {activeReg&&<Breadcrumb reg={activeReg} subIdx={curSub}/>}
       {activeReg&&<RegDetail reg={activeReg} detailRef={detailRef} onNav={navTo} search={search} initialSub={curSub} onSubChange={setCurSub}/>}
@@ -856,8 +901,8 @@ function WhatsChangingView({onNav}){
         <div style={{display:"flex",alignItems:"center",gap:10,marginBottom:8,flexWrap:"wrap"}}>
           <span style={{fontSize:"var(--text-xs)",fontWeight:700,padding:"2px 7px",borderRadius:4,background:s.bg,border:"1px solid "+s.bd,color:s.tx,letterSpacing:".3px"}}>{s.lb}</span>
           <span style={{fontSize:"var(--text-sm)",color:"var(--text4)",fontWeight:600}}>{item.date}</span>
-          {linked&&<button onClick={()=>onNav(item.reg)} style={{fontSize:"var(--text-sm)",color:"var(--amber)",fontWeight:600,padding:0,borderBottom:"1px dashed var(--amber-dot)"}}>{linked.st} {"\u2192"}</button>}
-          {item.reg==="endgame"&&<button onClick={()=>{window.location.hash="#/explorer"}} style={{fontSize:"var(--text-sm)",color:"var(--dir-decrease)",fontWeight:600,padding:0,borderBottom:"1px dashed var(--dir-decrease)"}}>B3E Explorer {"\u2192"}</button>}
+          {linked&&<button onClick={()=>onNav(item.reg)} style={{fontSize:"var(--text-sm)",color:"var(--amber)",fontWeight:600,padding:"4px 0",minHeight:44,display:"inline-flex",alignItems:"center",borderBottom:"1px dashed var(--amber-dot)"}}>{linked.st} {"\u2192"}</button>}
+          {item.reg==="endgame"&&<button onClick={()=>{window.location.hash="#/explorer"}} style={{fontSize:"var(--text-sm)",color:"var(--dir-decrease)",fontWeight:600,padding:"4px 0",minHeight:44,display:"inline-flex",alignItems:"center",borderBottom:"1px dashed var(--dir-decrease)"}}>B3E Explorer {"\u2192"}</button>}
         </div>
         <h3 style={{fontSize:"var(--text-lg)",fontWeight:700,marginBottom:5}}>{item.title}</h3>
         <p style={{fontSize:"var(--text-md)",color:"var(--text3)",lineHeight:1.55,margin:0}}>{item.desc}</p>
@@ -876,7 +921,7 @@ function GlossaryView({search,onNav}){
   <div style={{maxWidth:740}} className="fade-up">
     <h2 style={{fontSize:"var(--text-xl)",fontWeight:800,letterSpacing:"-.3px",marginBottom:6}}>Glossary</h2>
     <p style={{fontSize:"var(--text-md)",color:"var(--text3)",marginBottom:28}}>{entries.length} term{entries.length!==1?"s":""} covering capital, liquidity, stress testing, and regulatory concepts.</p>
-    <div style={{columnCount:2,columnGap:14,columnWidth:300}}>
+    <div style={{columnCount:2,columnGap:16,columnWidth:300}}>
       {entries.map(([term,def])=>{
         const usage=TERM_USAGE[term];
         return <div key={term} className="gl-card" style={{breakInside:"avoid",padding:"14px 18px",borderRadius:9,marginBottom:10,border:"1px solid var(--border)",background:"var(--bg2)"}}>
@@ -1098,12 +1143,12 @@ function BaselExplorer({onNav}){
     </div>
 
     {/* Section Tabs */}
-    <div ref={tabsRef} role="tablist" aria-label="Rule categories" style={{display:"flex",gap:4,padding:"8px 0 20px",flexWrap:"wrap",opacity:search?.5:1,transition:"opacity 0.2s"}}>
+    <div ref={tabsRef} role="tablist" aria-label="Rule categories" style={{display:"flex",gap:4,padding:"8px 0 20px",opacity:search?.5:1,transition:"opacity 0.2s",...(isMob?{overflowX:"auto",flexWrap:"nowrap",WebkitOverflowScrolling:"touch",scrollbarWidth:"none",msOverflowStyle:"none"}:{flexWrap:"wrap"})}}>
       {B3E.SECTIONS.map((s,si)=>{
         const isActive=activeSection===s.id;
         const matchCount=search?B3E.CHANGES.filter(c=>{const q=search.toLowerCase();return c.section===s.id&&(c.title.toLowerCase().includes(q)||c.today.toLowerCase().includes(q)||c.newRule.toLowerCase().includes(q)||c.why.toLowerCase().includes(q)||c.tags.some(t=>t.includes(q)))}).length:null;
         return(
-          <button key={s.id} id={"b3e-tab-"+s.id} role="tab" aria-selected={isActive} aria-controls={"b3e-panel-"+s.id} tabIndex={isActive?0:-1} onClick={()=>{setActiveSection(s.id);setExpandedId(null);if(search)setSearch("")}} onKeyDown={handleTabKeyDown} style={{padding:isMob?"10px 12px":"9px 14px",borderRadius:8,fontSize:"var(--text-sm)",fontWeight:600,transition:"all 0.2s",background:isActive?"var(--bg3)":"transparent",color:isActive?"var(--text)":"var(--text4)",minHeight:44}}>
+          <button key={s.id} id={"b3e-tab-"+s.id} role="tab" aria-selected={isActive} aria-controls={"b3e-panel-"+s.id} tabIndex={isActive?0:-1} onClick={()=>{setActiveSection(s.id);setExpandedId(null);if(search)setSearch("")}} onKeyDown={handleTabKeyDown} style={{padding:isMob?"10px 12px":"9px 14px",borderRadius:8,fontSize:"var(--text-sm)",fontWeight:600,transition:"all 0.2s",background:isActive?"var(--bg3)":"transparent",color:isActive?"var(--text)":"var(--text4)",minHeight:44,whiteSpace:"nowrap",flexShrink:0}}>
             <span style={{marginRight:5}}>{s.icon}</span>{s.label}{search&&matchCount!==null&&!isMob?" ("+matchCount+")":""}
           </button>
         );
@@ -1196,7 +1241,7 @@ function TimelineView({onNav}){
   });
 
   return(
-  <div style={{maxWidth:720}}>
+  <div style={{maxWidth:720}} className="fade-up">
     <h2 style={{fontSize:"var(--text-xl)",fontWeight:700,marginBottom:4}}>Regulatory Timeline</h2>
     <p style={{color:"var(--text4)",fontSize:12,marginBottom:16}}>Key dates across all {R.length} regulations and pending changes. {allEvents.length} events total.</p>
 
@@ -1266,9 +1311,10 @@ if("serviceWorker" in navigator){
 /*═══════════════ START HERE ═══════════════*/
 
 function StackBar({label,pct,color,sub,onClick}){
+  const isMob=useIsMobile();
   return(
   <div style={{display:"flex",alignItems:"center",gap:10,marginBottom:4,cursor:onClick?"pointer":"default"}} tabIndex={onClick?0:undefined} role={onClick?"button":undefined} onClick={onClick} onKeyDown={onClick?ev=>{if(ev.key==="Enter"||ev.key===" "){ev.preventDefault();onClick()}}:undefined}>
-    <div style={{width:140,fontSize:"var(--text-sm)",fontWeight:600,color:"var(--text2)",textAlign:"right",flexShrink:0}}>{label}</div>
+    <div style={{width:isMob?100:140,fontSize:"var(--text-sm)",fontWeight:600,color:"var(--text2)",textAlign:"right",flexShrink:0,overflow:"hidden",textOverflow:"ellipsis",whiteSpace:"nowrap"}}>{label}</div>
     <div style={{flex:1,height:26,background:"var(--bg3)",borderRadius:5,overflow:"hidden",position:"relative"}}>
       <div style={{height:"100%",width:pct+"%",background:color,borderRadius:5,transition:"width .5s ease"}}/>
       <span style={{position:"absolute",right:8,top:"50%",transform:"translateY(-50%)",fontSize:"var(--text-xs)",fontWeight:700,color:"var(--text)"}}>{sub}</span>
@@ -1438,6 +1484,7 @@ function App(){
 
   const handleSetView=useCallback(v=>{
     setView(v);
+    window.scrollTo(0,0);
     if(v!=="regulations")pushHash(v);
   },[pushHash]);
 
@@ -1457,15 +1504,15 @@ function App(){
   <div style={{minHeight:"100vh"}}>
     <a className="skip-link" href="#main-content">Skip to content</a>
     <NavBar view={view} setView={handleSetView} search={search} setSearch={setSearch} theme={theme} toggleTheme={toggleTheme} fontSize={fontSize} setFontSize={setFontSize} searchRef={searchRef} navRef={navRef}/>
-    <main id="main-content" style={{paddingTop:isMob?navHeight:76,paddingBottom:40,paddingLeft:isMob?14:24,paddingRight:isMob?14:24,maxWidth:1120,margin:"0 auto"}}>
-      {view==="regulations"&&<RegulationsView search={debouncedSearch} onNavigate={navTarget} navTick={navTick} hashRoute={route} pushHash={pushHash}/>}
+    <main id="main-content" style={{paddingTop:navHeight+20,paddingBottom:40,paddingLeft:isMob?16:24,paddingRight:isMob?16:24,maxWidth:1120,margin:"0 auto"}}>
+      {view==="regulations"&&<RegulationsView search={debouncedSearch} onNavigate={navTarget} navTick={navTick} hashRoute={route} pushHash={pushHash} navHeight={navHeight}/>}
       {view==="changing"&&<WhatsChangingView onNav={navToReg}/>}
       {view==="timeline"&&<TimelineView onNav={navToReg}/>}
       {view==="explorer"&&<BaselExplorer onNav={navToReg}/>}
       {view==="glossary"&&<GlossaryView search={debouncedSearch} onNav={navToReg}/>}
     </main>
     <footer data-noprint style={{textAlign:"center",padding:"20px 24px",borderTop:"1px solid var(--border)",color:"var(--text5)",fontSize:"var(--text-xs)"}}>
-      MyRegApp v7.0 {"\u2014"} Site by <a href="mailto:jackarohan@gmail.com" style={{color:"var(--text3)",textDecoration:"underline",textUnderlineOffset:2}}>Jack Rohan</a> {"\u00b7"} Content current as of April 2026 {"\u00b7"} Not legal advice
+      MyRegApp v7.0.1 {"\u2014"} Site by <a href="mailto:jackarohan@gmail.com" style={{color:"var(--text3)",textDecoration:"underline",textUnderlineOffset:2}}>Jack Rohan</a> {"\u00b7"} Content current as of April 2026 {"\u00b7"} Not legal advice
     </footer>
     <OfflineBanner/>
   </div>);
