@@ -867,22 +867,28 @@ function RegulationsView({search,onNavigate,navTick,hashRoute,pushHash,navHeight
     return()=>window.removeEventListener("keydown",handler);
   },[activeId,curSub,activeReg]);
 
+  if(isMob&&mobDetail==="__overview") return(<>
+    <div style={{marginBottom:8}}>
+      <button onClick={()=>{setMobDetail(null);setActiveId("__overview")}} aria-label="Back to all regulations" style={{display:"flex",alignItems:"center",gap:6,color:"var(--amber)",fontSize:"var(--text-md)",fontWeight:600,padding:"4px 0",minHeight:44}}>← All Regulations</button>
+    </div>
+    <OverviewContent onNav={id=>{setActiveId(id);setCurSub(0);setMobDetail(id)}}/>
+  </>);
   if(isMob&&mobDetail){const reg=R.find(r=>r.id===mobDetail);if(reg)return(<>
     <div aria-hidden={drawerOpen||undefined}>
       <MobileRegDetail reg={reg} onBack={()=>setMobDetail(null)} onNav={navTo} search={search} initialSub={mobDetail===activeId?curSub:0} pushHash={pushHash} onOpenDrawer={()=>setDrawerOpen(true)} navHeight={navHeight}/>
     </div>
     <MobileDrawer open={drawerOpen} onClose={()=>setDrawerOpen(false)} currentId={mobDetail} onSelect={id=>{setMobDetail(id);setActiveId(id);setCurSub(0);setDrawerOpen(false)}}/>
   </>)}
-  if(isMob&&activeId==="__overview") return(<>
-    <OverviewContent onNav={id=>{setActiveId(id);setCurSub(0);setMobDetail(id)}}/>
-    <MobileDrawer open={drawerOpen} onClose={()=>setDrawerOpen(false)} currentId={activeId} onSelect={id=>{setMobDetail(id);setActiveId(id);setCurSub(0);setDrawerOpen(false)}}/>
-  </>);
   if(isMob) return(<>
     <div>
-      <div style={{display:"flex",alignItems:"center",gap:8,marginBottom:12}}>
-        <button onClick={()=>{setActiveId("__overview");setCurSub(0)}} className="reg-card" style={{display:"block",flex:1,textAlign:"left",padding:"12px 18px",borderRadius:10,border:activeId==="__overview"?"1px solid var(--amber-border2)":"1px solid var(--amber-border)",background:activeId==="__overview"?"var(--amber-bg2)":"var(--amber-bg)",fontWeight:700,color:"var(--amber)",fontSize:"var(--text-md)"}}>Overview</button>
-        <button onClick={()=>setDrawerOpen(true)} aria-label="Browse all regulations" style={{padding:"10px 14px",borderRadius:10,border:"1px solid var(--border)",background:"var(--bg2)",fontSize:"var(--text-sm)",fontWeight:600,color:"var(--text3)",minHeight:44,display:"flex",alignItems:"center",gap:6,flexShrink:0,transition:"all .15s"}}>{"\u2630"} Browse</button>
-      </div>
+      {!search.trim()&&<button onClick={()=>{setActiveId("__overview");setCurSub(0);setMobDetail("__overview")}} className="overview-card" aria-label="Overview — capital stacks, deep dives, and quick links">
+        <div style={{display:"flex",alignItems:"center",gap:8,marginBottom:4}}>
+          <span style={{fontSize:16}}>🏦</span>
+          <span style={{fontWeight:800,color:"var(--amber)",fontSize:"var(--text-md)",flex:1}}>Overview</span>
+          <span style={{fontSize:"var(--text-sm)",color:"var(--amber)",opacity:.7}}>→</span>
+        </div>
+        <div style={{fontSize:"var(--text-sm)",color:"var(--text3)",lineHeight:1.4}}>Capital stacks, calculation deep dives, and quick links to key regulations</div>
+      </button>}
       <h2 style={{fontSize:"var(--text-xs)",fontWeight:700,color:"var(--text4)",textTransform:"uppercase",letterSpacing:".8px",marginBottom:12}}>{filtered.length} Regulation{filtered.length!==1?"s":""}</h2>
       {(()=>{let lastCat=null;return filtered.map(r=>{
         const showHdr=r.cat!==lastCat;lastCat=r.cat;
