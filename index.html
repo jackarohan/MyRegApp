@@ -1562,7 +1562,8 @@ function App(){
   const{sz:fontSize,setSz:setFontSize}=useFontSize();
   const isMob=useIsMobile();
   const navRef=useRef(null);
-  const[navHeight,setNavHeight]=useState(88);
+  const[moreOpen,setMoreOpen]=useState(false);
+  const[navHeight,setNavHeight]=useState(isMob?48:88);
   useEffect(()=>{
     if(!navRef.current)return;
     const ro=new ResizeObserver(entries=>{for(const e of entries){const h=e.borderBoxSize?.[0]?.blockSize??e.target.getBoundingClientRect().height;if(h>0)setNavHeight(h)}});
@@ -1588,6 +1589,7 @@ function App(){
 
   const handleSetView=useCallback(v=>{
     setView(v);
+    setMoreOpen(false);
     window.scrollTo(0,0);
     if(v!=="regulations")pushHash(v);
   },[pushHash]);
@@ -1608,7 +1610,7 @@ function App(){
   <div style={{minHeight:"100vh"}}>
     <a className="skip-link" href="#main-content">Skip to content</a>
     <NavBar view={view} setView={handleSetView} search={search} setSearch={setSearch} theme={theme} toggleTheme={toggleTheme} fontSize={fontSize} setFontSize={setFontSize} searchRef={searchRef} navRef={navRef}/>
-    <main id="main-content" style={{paddingTop:navHeight+20,paddingBottom:40,paddingLeft:isMob?16:24,paddingRight:isMob?16:24,maxWidth:1120,margin:"0 auto"}}>
+    <main id="main-content" style={{paddingTop:navHeight+20,paddingBottom:isMob?100:40,paddingLeft:isMob?16:24,paddingRight:isMob?16:24,maxWidth:1120,margin:"0 auto"}}>
       {view==="regulations"&&<RegulationsView search={debouncedSearch} onNavigate={navTarget} navTick={navTick} hashRoute={route} pushHash={pushHash} navHeight={navHeight}/>}
       {view==="changing"&&<WhatsChangingView onNav={navToReg}/>}
       {view==="timeline"&&<TimelineView onNav={navToReg}/>}
@@ -1619,6 +1621,8 @@ function App(){
       MyRegApp v7.0.1 {"\u2014"} Site by <a href="mailto:jackarohan@gmail.com" style={{color:"var(--text3)",textDecoration:"underline",textUnderlineOffset:2}}>Jack Rohan</a> {"\u00b7"} Content current as of April 2026 {"\u00b7"} Not legal advice
     </footer>
     <OfflineBanner/>
+    {isMob&&<BottomTabBar view={view} setView={handleSetView} onMoreTap={()=>setMoreOpen(true)}/>}
+    {isMob&&<MoreSheet open={moreOpen} onClose={()=>setMoreOpen(false)} onNavigate={handleSetView} theme={theme} toggleTheme={toggleTheme} fontSize={fontSize} setFontSize={setFontSize}/>}
   </div>);
 }
 
