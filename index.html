@@ -417,35 +417,28 @@ function NavBar({view,setView,search,setSearch,theme,toggleTheme,fontSize,setFon
   const tabs=[{id:"regulations",l:"Regulations"},{id:"changing",l:"What\u2019s Changing"},{id:"timeline",l:"Timeline"},{id:"glossary",l:"Glossary"}];
   useEffect(()=>{if(!settingsOpen)return;const h=e=>{if(settingsRef.current&&!settingsRef.current.contains(e.target))setSettingsOpen(false)};document.addEventListener("mousedown",h);return()=>document.removeEventListener("mousedown",h)},[settingsOpen]);
 
-  if(isMob) return(
-  <nav ref={navRef} data-noprint aria-label="Main navigation" style={{position:"fixed",top:0,left:0,right:0,zIndex:100,background:"var(--nav-bg)",backdropFilter:"blur(24px)",WebkitBackdropFilter:"blur(24px)",borderBottom:"1px solid var(--border)",display:"flex",flexDirection:"column",padding:0,paddingTop:"env(safe-area-inset-top, 0px)"}}>
-    <div style={{display:"flex",alignItems:"center",padding:"8px 16px 4px",gap:8}}>
-      <span style={{fontSize:15,fontWeight:800,letterSpacing:"-.4px",flexShrink:0}}>My<span style={{color:"var(--amber)"}}>Reg</span>App</span>
-      <div style={{flex:1,position:"relative"}}>
-        <input ref={inp} type="text" placeholder="Search…" aria-label="Search regulations" value={search} onChange={e=>setSearch(e.target.value)} className="search-input" style={{width:"100%",padding:"7px 30px 7px 32px",borderRadius:8,border:"1px solid var(--border2)",background:"var(--bg3)",color:"var(--text)",fontSize:"var(--text-sm)",outline:"none"}}/>
-        <svg style={{position:"absolute",left:10,top:"50%",transform:"translateY(-50%)",pointerEvents:"none"}} width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="var(--text4)" strokeWidth="2.5" strokeLinecap="round"><circle cx="10.5" cy="10.5" r="7"/><line x1="15.5" y1="15.5" x2="21" y2="21"/></svg>
-        {search&&<button onClick={()=>{setSearch("");inp.current?.focus()}} aria-label="Clear search" style={{position:"absolute",right:2,top:"50%",transform:"translateY(-50%)",color:"var(--text4)",fontSize:"var(--text-md)",lineHeight:1,padding:8,minWidth:44,minHeight:44,display:"flex",alignItems:"center",justifyContent:"center"}}>{"\u2715"}</button>}
-      </div>
-      <div style={{position:"relative"}} ref={settingsRef}>
-        <button onClick={()=>setSettingsOpen(!settingsOpen)} title="Settings" aria-label="Settings" aria-expanded={settingsOpen} style={{fontSize:"var(--text-lg)",padding:"10px 12px",minWidth:44,minHeight:44,borderRadius:6,color:settingsOpen?"var(--amber)":"var(--text3)",background:settingsOpen?"var(--amber-bg3)":"transparent",transition:"all .15s"}}>{"\u2699\uFE0F"}</button>
-        {settingsOpen&&<div style={{position:"absolute",right:0,top:"calc(100% + 8px)",background:"var(--tooltip-bg)",border:"1px solid var(--border2)",borderRadius:10,padding:"12px 14px",boxShadow:"0 8px 24px var(--shadow)",zIndex:200,minWidth:160}} className="fade-in">
-          <div style={{fontSize:"var(--text-xs)",fontWeight:700,color:"var(--text5)",textTransform:"uppercase",letterSpacing:".5px",marginBottom:8}}>Font Size</div>
-          <div style={{display:"flex",gap:3,marginBottom:12}}>
-            {fSizes.map(f=><button key={f.id} onClick={()=>setFontSize(f.id)} style={{padding:"8px 10px",borderRadius:6,fontSize:"var(--text-sm)",fontWeight:700,background:fontSize===f.id?"var(--amber-bg3)":"var(--bg3)",color:fontSize===f.id?"var(--amber)":"var(--text4)",transition:"all .12s",flex:1,minHeight:40}}>{f.l}</button>)}
+  if(isMob){
+    const[searchOpen,setSearchOpen]=useState(false);
+    const openSearch=()=>{setSearchOpen(true);setTimeout(()=>inp.current?.focus(),60)};
+    const closeSearch=()=>{setSearchOpen(false)};
+    return(
+    <nav ref={navRef} data-noprint aria-label="Main navigation" style={{position:"fixed",top:0,left:0,right:0,zIndex:100,background:"var(--nav-bg)",backdropFilter:"blur(24px)",WebkitBackdropFilter:"blur(24px)",borderBottom:"1px solid var(--border)",padding:0,paddingTop:"env(safe-area-inset-top, 0px)"}}>
+      <div style={{display:"flex",alignItems:"center",padding:"8px 16px",gap:8,minHeight:44}}>
+        {searchOpen?<>
+          <button onClick={closeSearch} aria-label="Close search" style={{color:"var(--amber)",fontSize:18,padding:"4px 8px",minWidth:44,minHeight:44,display:"flex",alignItems:"center",justifyContent:"center"}}>←</button>
+          <div style={{flex:1,position:"relative"}}>
+            <input ref={inp} type="text" placeholder="Search regulations…" aria-label="Search regulations" value={search} onChange={e=>setSearch(e.target.value)} onKeyDown={e=>{if(e.key==="Escape")closeSearch()}} className="search-input" style={{width:"100%",padding:"8px 30px 8px 12px",borderRadius:8,border:"1px solid var(--amber-border2)",background:"var(--bg3)",color:"var(--text)",fontSize:"var(--text-sm)",outline:"none"}}/>
+            {search&&<button onClick={()=>{setSearch("");inp.current?.focus()}} aria-label="Clear search" style={{position:"absolute",right:2,top:"50%",transform:"translateY(-50%)",color:"var(--text4)",fontSize:"var(--text-md)",lineHeight:1,padding:8,minWidth:44,minHeight:44,display:"flex",alignItems:"center",justifyContent:"center"}}>✕</button>}
           </div>
-          <div style={{fontSize:"var(--text-xs)",fontWeight:700,color:"var(--text5)",textTransform:"uppercase",letterSpacing:".5px",marginBottom:8}}>Theme</div>
-          <button onClick={()=>{toggleTheme();setSettingsOpen(false)}} style={{width:"100%",padding:"8px 10px",borderRadius:6,fontSize:"var(--text-sm)",fontWeight:600,background:"var(--bg3)",color:"var(--text3)",textAlign:"left",minHeight:40}}>
-            {theme==="dark"?"\u2600\uFE0F Switch to Light":"\u{1F319} Switch to Dark"}
+        </>:<>
+          <span style={{fontSize:15,fontWeight:800,letterSpacing:"-.4px",flex:1}}>My<span style={{color:"var(--amber)"}}>Reg</span>App</span>
+          <button onClick={openSearch} aria-label="Search" style={{width:36,height:36,borderRadius:8,background:"var(--bg3)",display:"flex",alignItems:"center",justifyContent:"center",flexShrink:0}}>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--text4)" strokeWidth="2.5" strokeLinecap="round"><circle cx="10.5" cy="10.5" r="7"/><line x1="15.5" y1="15.5" x2="21" y2="21"/></svg>
           </button>
-        </div>}
+        </>}
       </div>
-    </div>
-    <div style={{display:"flex",gap:1,overflowX:"auto",WebkitOverflowScrolling:"touch",scrollbarWidth:"none",msOverflowStyle:"none",padding:"2px 16px 8px"}}>
-      {tabs.map(tab=>
-        <button key={tab.id} onClick={()=>setView(tab.id)} title={tab.l} aria-current={view===tab.id?"page":undefined} style={{padding:"8px 10px",minHeight:44,borderRadius:6,fontSize:"var(--text-sm)",fontWeight:600,transition:"all .15s",whiteSpace:"nowrap",background:view===tab.id?"var(--amber-bg3)":"transparent",color:view===tab.id?"var(--amber)":"var(--text3)",borderBottom:view===tab.id?"2px solid var(--amber)":"2px solid transparent"}}>{tab.l}</button>
-      )}
-    </div>
-  </nav>);
+    </nav>);
+  }
 
   return(
   <nav data-noprint aria-label="Main navigation" style={{position:"fixed",top:0,left:0,right:0,zIndex:100,background:"var(--nav-bg)",backdropFilter:"blur(24px)",WebkitBackdropFilter:"blur(24px)",borderBottom:"1px solid var(--border)",height:56,display:"flex",alignItems:"center",padding:"0 20px",gap:8}}>
