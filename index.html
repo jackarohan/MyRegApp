@@ -19,8 +19,9 @@
 :root{color-scheme:dark;--bg:#0a0a0e;--bg2:rgba(255,255,255,.015);--bg3:rgba(255,255,255,.04);--nav-bg:rgba(10,10,14,.88);--text:#e2e8f0;--text2:#cbd5e1;--text3:#94a3b8;--text4:#64748b;--text5:#475569;--border:rgba(255,255,255,.05);--border2:rgba(255,255,255,.07);--amber:#f59e0b;--amber2:#fbbf24;--amber-bg:rgba(245,158,11,.03);--amber-border:rgba(245,158,11,.1);--amber-bg2:rgba(245,158,11,.05);--amber-bg3:rgba(245,158,11,.12);--amber-bg4:rgba(245,158,11,.15);--amber-border2:rgba(245,158,11,.35);--amber-dot:rgba(245,158,11,.4);--tooltip-bg:#1e1e28;--shadow:rgba(0,0,0,.5);--sel:rgba(245,158,11,.3);--font-size:13.5px;--text-xs:0.83em;--text-sm:0.90em;--text-md:1.00em;--text-lg:1.04em;--text-xl:1.12em;--dir-decrease:#4ECDC4;--dir-increase:#FF6B6B;--dir-mixed:#F7B731;--dir-new:#A78BFA;--dir-simplification:#60A5FA;--dir-neutral:#9CA3AF}
 [data-theme="light"]{--bg:#f5f5f0;--bg2:rgba(0,0,0,.03);--bg3:rgba(0,0,0,.04);--nav-bg:rgba(245,245,240,.92);--text:#1e293b;--text2:#334155;--text3:#526070;--text4:#576371;--text5:#5a6876;--border:rgba(0,0,0,.08);--border2:rgba(0,0,0,.1);--amber:#92530a;--amber2:#7e3f06;--amber-bg:rgba(146,83,10,.04);--amber-border:rgba(146,83,10,.15);--amber-bg2:rgba(146,83,10,.06);--amber-bg3:rgba(146,83,10,.1);--amber-bg4:rgba(146,83,10,.12);--amber-border2:rgba(146,83,10,.3);--amber-dot:rgba(146,83,10,.5);--tooltip-bg:#fff;--shadow:rgba(0,0,0,.12);--sel:rgba(146,83,10,.2);--dir-increase:#dc2626;--dir-decrease:#0d9488;--dir-mixed:#b45309;--dir-new:#7c3aed;--dir-simplification:#2563eb;--dir-neutral:#576371;color-scheme:light}
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-html{-webkit-text-size-adjust:100%;scroll-behavior:smooth;background:var(--bg);min-height:100%;min-height:-webkit-fill-available}
-body{background:var(--bg);color:var(--text);font-family:'DM Sans',system-ui,sans-serif;font-size:var(--font-size);-webkit-font-smoothing:antialiased;overflow-x:hidden;transition:background .2s,color .2s}
+html{-webkit-text-size-adjust:100%;scroll-behavior:smooth;background:var(--bg);height:100%;min-height:-webkit-fill-available}
+body{background:var(--bg);color:var(--text);font-family:'DM Sans',system-ui,sans-serif;font-size:var(--font-size);-webkit-font-smoothing:antialiased;overflow-x:hidden;min-height:100%}
+body.ready{transition:background .2s,color .2s}
 ::selection{background:var(--sel)}
 input::placeholder{color:var(--text5)}
 button{font-family:inherit;border:none;background:none;cursor:pointer;color:inherit}
@@ -29,6 +30,7 @@ input:focus-visible{outline:2px solid var(--amber);outline-offset:1px}
 .gterm:focus-visible{outline:2px solid var(--amber);outline-offset:2px;border-radius:2px}
 .search-input:focus-visible{border-color:var(--amber-border2)!important;box-shadow:0 0 0 3px var(--amber-bg3)}
 ::-webkit-scrollbar{width:5px}::-webkit-scrollbar-track{background:transparent}::-webkit-scrollbar-thumb{background:var(--border2);border-radius:3px}
+.nav-bar::before{content:'';position:absolute;inset:0;background:var(--nav-bg);backdrop-filter:blur(24px);-webkit-backdrop-filter:blur(24px);z-index:-1}
 nav div::-webkit-scrollbar{display:none}
 .subnav-scroll::-webkit-scrollbar{display:none}
 @keyframes fadeUp{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
@@ -84,7 +86,7 @@ button,a,input,[role="button"],.gterm,.tl-reg,.ref-link{touch-action:manipulatio
 .drawer-overlay{position:fixed;inset:0;background:rgba(0,0,0,.5);z-index:150;opacity:0;pointer-events:none;transition:opacity .3s ease}.drawer-overlay.active{opacity:1;pointer-events:auto}
 .drawer-panel{position:fixed;top:0;left:0;bottom:0;width:80vw;max-width:360px;z-index:151;background:var(--bg);border-right:1px solid var(--border);overflow-y:auto;overscroll-behavior:contain;transform:translateX(-100%);transition:transform .3s cubic-bezier(.4,0,.2,1);padding-top:env(safe-area-inset-top,0px)}.drawer-panel.active{transform:translateX(0)}
 .drawer-panel::-webkit-scrollbar{display:none}
-.bottom-tab-bar{position:fixed;bottom:0;left:0;right:0;z-index:142;background:var(--nav-bg);backdrop-filter:blur(24px);-webkit-backdrop-filter:blur(24px);border-top:1px solid var(--border);display:flex;padding:6px 0 calc(6px + env(safe-area-inset-bottom, 0px))}
+.bottom-tab-bar{position:fixed;bottom:0;left:0;right:0;z-index:142;background:var(--bg);border-top:1px solid var(--border);display:flex;padding:6px 0 calc(6px + env(safe-area-inset-bottom, 0px))}.bottom-tab-bar::before{content:'';position:absolute;inset:0;background:var(--nav-bg);backdrop-filter:blur(24px);-webkit-backdrop-filter:blur(24px);z-index:-1}
 .bottom-tab-bar button{flex:1;display:flex;flex-direction:column;align-items:center;gap:1px;padding:4px 0;min-height:44px;justify-content:center;background:none;border:none;cursor:pointer;-webkit-tap-highlight-color:transparent}
 .bottom-tab-bar .tab-icon{font-size:18px;line-height:1}
 .bottom-tab-bar .tab-label{font-size:9px;font-weight:600;color:var(--text4)}
@@ -95,6 +97,9 @@ button,a,input,[role="button"],.gterm,.tl-reg,.ref-link{touch-action:manipulatio
 .more-sheet-panel{position:fixed;bottom:0;left:0;right:0;z-index:141;background:var(--bg);border-top-left-radius:16px;border-top-right-radius:16px;border-top:1px solid var(--border2);box-shadow:0 -8px 30px var(--shadow);transform:translateY(100%);transition:transform .3s cubic-bezier(.4,0,.2,1);padding-bottom:calc(56px + env(safe-area-inset-bottom, 0px));overscroll-behavior:contain}.more-sheet-panel.active{transform:translateY(0)}
 .overview-card{display:block;width:100%;text-align:left;padding:14px 16px;border-radius:10px;border:1px solid var(--amber-border2);background:linear-gradient(135deg,rgba(245,158,11,.06),rgba(245,158,11,.01));margin-bottom:12px;transition:border-color .15s,background .15s;-webkit-tap-highlight-color:transparent}.overview-card:hover{border-color:var(--amber);background:linear-gradient(135deg,rgba(245,158,11,.1),rgba(245,158,11,.03))}
 </style>
+<script>
+(function(){try{var t=JSON.parse(localStorage.getItem("mra_theme"));if(t==="light"||t==="dark"){document.documentElement.setAttribute("data-theme",t);var c=t==="dark"?"#0a0a0e":"#f5f5f0";document.querySelectorAll('meta[name="theme-color"]').forEach(function(m){m.setAttribute("content",c)})}}catch(e){}})();
+</script>
 </head>
 <body>
 <div id="root"></div>
@@ -425,7 +430,7 @@ function NavBar({view,setView,search,setSearch,theme,toggleTheme,fontSize,setFon
     const openSearch=()=>{setSearchOpen(true);setTimeout(()=>inp.current?.focus(),60)};
     const closeSearch=()=>{setSearchOpen(false)};
     return(
-    <nav ref={navRef} data-noprint aria-label="Main navigation" style={{position:"fixed",top:0,left:0,right:0,zIndex:100,background:"var(--nav-bg)",backdropFilter:"blur(24px)",WebkitBackdropFilter:"blur(24px)",borderBottom:"1px solid var(--border)",padding:0,paddingTop:"env(safe-area-inset-top, 0px)"}}>
+    <nav ref={navRef} data-noprint aria-label="Main navigation" className="nav-bar" style={{position:"fixed",top:0,left:0,right:0,zIndex:100,background:"var(--bg)",borderBottom:"1px solid var(--border)",padding:0,paddingTop:"env(safe-area-inset-top, 0px)"}}>
       <div style={{display:"flex",alignItems:"center",padding:"8px 16px",gap:8,minHeight:44}}>
         {searchOpen?<>
           <button onClick={closeSearch} aria-label="Close search" style={{color:"var(--amber)",fontSize:18,padding:"4px 8px",minWidth:44,minHeight:44,display:"flex",alignItems:"center",justifyContent:"center"}}>←</button>
@@ -444,7 +449,7 @@ function NavBar({view,setView,search,setSearch,theme,toggleTheme,fontSize,setFon
   }
 
   return(
-  <nav data-noprint aria-label="Main navigation" style={{position:"fixed",top:0,left:0,right:0,zIndex:100,background:"var(--nav-bg)",backdropFilter:"blur(24px)",WebkitBackdropFilter:"blur(24px)",borderBottom:"1px solid var(--border)",height:56,display:"flex",alignItems:"center",padding:"0 20px",gap:8}}>
+  <nav data-noprint aria-label="Main navigation" className="nav-bar" style={{position:"fixed",top:0,left:0,right:0,zIndex:100,background:"var(--bg)",borderBottom:"1px solid var(--border)",minHeight:56,display:"flex",alignItems:"center",padding:"0 20px",paddingTop:"env(safe-area-inset-top, 0px)",gap:8}}>
     <div style={{display:"flex",alignItems:"center",gap:6,marginRight:4,flexShrink:0}}>
       <span style={{fontSize:17,fontWeight:800,letterSpacing:"-.4px"}}>My<span style={{color:"var(--amber)"}}>Reg</span>App</span>
     </div>
@@ -1616,6 +1621,7 @@ function App(){
 }
 
 ReactDOM.createRoot(document.getElementById("root")).render(<ErrorBoundary><App/></ErrorBoundary>);
+requestAnimationFrame(()=>document.body.classList.add("ready"));
 </script>
 </body>
 </html>
