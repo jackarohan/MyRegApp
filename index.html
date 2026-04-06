@@ -15,8 +15,8 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700;9..40,800&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
-:root{--bg:#0a0a0e;--bg2:rgba(255,255,255,.015);--bg3:rgba(255,255,255,.04);--nav-bg:rgba(10,10,14,.88);--text:#e2e8f0;--text2:#cbd5e1;--text3:#94a3b8;--text4:#64748b;--text5:#475569;--border:rgba(255,255,255,.05);--border2:rgba(255,255,255,.07);--amber:#f59e0b;--amber2:#fbbf24;--amber-bg:rgba(245,158,11,.03);--amber-border:rgba(245,158,11,.1);--amber-bg2:rgba(245,158,11,.05);--amber-bg3:rgba(245,158,11,.12);--amber-bg4:rgba(245,158,11,.15);--amber-border2:rgba(245,158,11,.35);--amber-dot:rgba(245,158,11,.4);--tooltip-bg:#1e1e28;--shadow:rgba(0,0,0,.5);--sel:rgba(245,158,11,.3);--font-size:13.5px;--text-xs:0.83em;--text-sm:0.90em;--text-md:1.00em;--text-lg:1.04em;--text-xl:1.12em;--dir-decrease:#4ECDC4;--dir-increase:#FF6B6B;--dir-mixed:#F7B731;--dir-new:#A78BFA;--dir-simplification:#60A5FA;--dir-neutral:#9CA3AF}
-[data-theme="light"]{--bg:#f5f5f0;--bg2:rgba(0,0,0,.03);--bg3:rgba(0,0,0,.04);--nav-bg:rgba(245,245,240,.92);--text:#1e293b;--text2:#334155;--text3:#64748b;--text4:#6b7280;--text5:#9ca3af;--border:rgba(0,0,0,.08);--border2:rgba(0,0,0,.1);--amber:#a16207;--amber2:#854d0e;--amber-bg:rgba(161,98,7,.04);--amber-border:rgba(161,98,7,.15);--amber-bg2:rgba(161,98,7,.06);--amber-bg3:rgba(161,98,7,.1);--amber-bg4:rgba(161,98,7,.12);--amber-border2:rgba(161,98,7,.3);--amber-dot:rgba(161,98,7,.5);--tooltip-bg:#fff;--shadow:rgba(0,0,0,.12);--sel:rgba(161,98,7,.2);--dir-increase:#dc2626;--dir-decrease:#0d9488;--dir-mixed:#b45309;--dir-new:#7c3aed;--dir-simplification:#2563eb;--dir-neutral:#6b7280}
+:root{color-scheme:dark;--bg:#0a0a0e;--bg2:rgba(255,255,255,.015);--bg3:rgba(255,255,255,.04);--nav-bg:rgba(10,10,14,.88);--text:#e2e8f0;--text2:#cbd5e1;--text3:#94a3b8;--text4:#64748b;--text5:#475569;--border:rgba(255,255,255,.05);--border2:rgba(255,255,255,.07);--amber:#f59e0b;--amber2:#fbbf24;--amber-bg:rgba(245,158,11,.03);--amber-border:rgba(245,158,11,.1);--amber-bg2:rgba(245,158,11,.05);--amber-bg3:rgba(245,158,11,.12);--amber-bg4:rgba(245,158,11,.15);--amber-border2:rgba(245,158,11,.35);--amber-dot:rgba(245,158,11,.4);--tooltip-bg:#1e1e28;--shadow:rgba(0,0,0,.5);--sel:rgba(245,158,11,.3);--font-size:13.5px;--text-xs:0.83em;--text-sm:0.90em;--text-md:1.00em;--text-lg:1.04em;--text-xl:1.12em;--dir-decrease:#4ECDC4;--dir-increase:#FF6B6B;--dir-mixed:#F7B731;--dir-new:#A78BFA;--dir-simplification:#60A5FA;--dir-neutral:#9CA3AF}
+[data-theme="light"]{--bg:#f5f5f0;--bg2:rgba(0,0,0,.03);--bg3:rgba(0,0,0,.04);--nav-bg:rgba(245,245,240,.92);--text:#1e293b;--text2:#334155;--text3:#526070;--text4:#576371;--text5:#5a6876;--border:rgba(0,0,0,.08);--border2:rgba(0,0,0,.1);--amber:#92530a;--amber2:#7e3f06;--amber-bg:rgba(146,83,10,.04);--amber-border:rgba(146,83,10,.15);--amber-bg2:rgba(146,83,10,.06);--amber-bg3:rgba(146,83,10,.1);--amber-bg4:rgba(146,83,10,.12);--amber-border2:rgba(146,83,10,.3);--amber-dot:rgba(146,83,10,.5);--tooltip-bg:#fff;--shadow:rgba(0,0,0,.12);--sel:rgba(146,83,10,.2);--dir-increase:#dc2626;--dir-decrease:#0d9488;--dir-mixed:#b45309;--dir-new:#7c3aed;--dir-simplification:#2563eb;--dir-neutral:#576371;color-scheme:light}
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 html{-webkit-text-size-adjust:100%;scroll-behavior:smooth}
 body{background:var(--bg);color:var(--text);font-family:'DM Sans',system-ui,sans-serif;font-size:var(--font-size);-webkit-font-smoothing:antialiased;overflow-x:hidden;transition:background .2s,color .2s}
@@ -26,7 +26,7 @@ button{font-family:inherit;border:none;background:none;cursor:pointer;color:inhe
 button:focus-visible{outline:2px solid var(--amber);outline-offset:2px;border-radius:6px}
 input:focus-visible{outline:2px solid var(--amber);outline-offset:1px}
 .gterm:focus-visible{outline:2px solid var(--amber);outline-offset:2px;border-radius:2px}
-.search-input:focus{border-color:var(--amber-border2)!important;box-shadow:0 0 0 3px var(--amber-bg3)}
+.search-input:focus-visible{border-color:var(--amber-border2)!important;box-shadow:0 0 0 3px var(--amber-bg3)}
 ::-webkit-scrollbar{width:5px}::-webkit-scrollbar-track{background:transparent}::-webkit-scrollbar-thumb{background:var(--border2);border-radius:3px}
 nav div::-webkit-scrollbar{display:none}
 .subnav-scroll::-webkit-scrollbar{display:none}
@@ -41,10 +41,10 @@ a{color:var(--amber);text-decoration:none}a:hover{text-decoration:underline}
 .tooltip{position:fixed;background:var(--tooltip-bg);border:1px solid var(--amber-border);border-radius:8px;padding:10px 14px;width:280px;max-width:calc(100vw - 32px);max-height:min(320px,60vh);overflow-y:auto;z-index:9000;box-shadow:0 8px 24px var(--shadow);pointer-events:auto;animation:fadeIn .12s ease both}
 .tooltip-term{font-size:var(--text-sm);font-weight:700;color:var(--amber);font-family:'DM Mono',monospace;margin-bottom:4px}.tooltip-def{font-size:var(--text-xs);color:var(--text2);line-height:1.45}
 .ref-link{color:var(--amber);font-weight:600;cursor:pointer;border-bottom:1px dashed var(--amber-dot)}.ref-link:hover{border-bottom-color:var(--amber)}
-.src-link{display:flex;gap:10px;padding:10px 14px;border-radius:7px;margin-bottom:6px;border:1px solid var(--border);background:var(--bg2);transition:all .15s;text-decoration:none}.src-link:hover{border-color:var(--amber-border);background:var(--amber-bg);text-decoration:none}
+.src-link{display:flex;gap:10px;padding:10px 14px;border-radius:7px;margin-bottom:6px;border:1px solid var(--border);background:var(--bg2);transition:border-color .15s,background .15s;text-decoration:none}.src-link:hover{border-color:var(--amber-border);background:var(--amber-bg);text-decoration:none}
 .sh{background:var(--sel);border-radius:2px;padding:0 1px}
 .sub-badge{font-size:var(--text-xs);padding:1px 5px;border-radius:3px;background:var(--amber-bg3);color:var(--amber);font-weight:600;white-space:nowrap}
-.action-btn{display:inline-flex;align-items:center;justify-content:center;width:44px;height:44px;border-radius:8px;color:var(--text4);transition:all .12s;flex-shrink:0;position:relative}.action-btn:hover{background:var(--bg3);color:var(--amber)}.action-btn:active{transform:scale(.92)}@media(pointer:fine){.action-btn::after{content:attr(data-tooltip);position:absolute;bottom:-26px;left:50%;transform:translateX(-50%);font-size:10px;white-space:nowrap;padding:2px 8px;border-radius:4px;background:var(--tooltip-bg);border:1px solid var(--border);color:var(--text3);opacity:0;pointer-events:none;transition:opacity .15s;z-index:10}.action-btn:hover::after{opacity:1}}
+.action-btn{display:inline-flex;align-items:center;justify-content:center;width:44px;height:44px;border-radius:8px;color:var(--text4);transition:background .12s,color .12s,transform .12s;flex-shrink:0;position:relative}.action-btn:hover{background:var(--bg3);color:var(--amber)}.action-btn:active{transform:scale(.92)}@media(pointer:fine){.action-btn::after{content:attr(data-tooltip);position:absolute;bottom:-26px;left:50%;transform:translateX(-50%);font-size:10px;white-space:nowrap;padding:2px 8px;border-radius:4px;background:var(--tooltip-bg);border:1px solid var(--border);color:var(--text3);opacity:0;pointer-events:none;transition:opacity .15s;z-index:10}.action-btn:hover::after{opacity:1}}
 .wc-card{transition:border-color .15s,box-shadow .15s,transform .15s}.wc-card:hover{border-color:var(--amber-border);box-shadow:0 2px 12px var(--shadow);transform:translateY(-1px)}
 .gl-card{transition:border-color .15s,box-shadow .15s,transform .15s}.gl-card:hover{border-color:var(--amber-border);box-shadow:0 2px 12px var(--shadow);transform:translateY(-1px)}
 .reg-card{transition:border-color .15s,background .15s,box-shadow .15s,transform .15s}.reg-card:hover{border-color:var(--amber-border)!important;background:var(--amber-bg)!important;box-shadow:0 2px 8px var(--shadow);transform:translateY(-1px)}
@@ -53,9 +53,11 @@ table tbody tr:hover{background:var(--bg3)!important}
 .skip-link{position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden;z-index:10000}.skip-link:focus{position:fixed;top:8px;left:8px;width:auto;height:auto;padding:8px 16px;background:var(--amber);color:#000;font-weight:700;font-size:var(--text-md);border-radius:6px;text-decoration:none;z-index:10000;box-shadow:0 4px 12px var(--shadow)}
 .tl-wrap{position:relative;padding-left:28px;margin-top:16px}.tl-wrap::before{content:'';position:absolute;left:8px;top:0;bottom:0;width:2px;background:var(--border)}
 .tl-item{position:relative;padding:0 0 20px 20px}.tl-dot{position:absolute;left:-24px;top:4px;width:12px;height:12px;border-radius:50%;border:2px solid var(--bg);box-shadow:0 0 0 2px var(--border);transition:transform .15s}.tl-item:hover .tl-dot{transform:scale(1.3)}.tl-date{font-size:var(--text-xs);color:var(--text5);font-weight:600;letter-spacing:.3px}.tl-title{font-size:var(--text-md);color:var(--text);margin:2px 0 1px}.tl-reg{display:inline-block;font-size:var(--text-xs);padding:1px 6px;border-radius:4px;background:var(--bg3);color:var(--text3);cursor:pointer;margin-top:2px}
-.tl-filter{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:12px}.tl-chip{font-size:var(--text-xs);padding:8px 14px;border-radius:16px;border:1px solid var(--border);background:transparent;color:var(--text3);cursor:pointer;transition:all .15s;min-height:44px;display:inline-flex;align-items:center}.tl-chip:hover{border-color:var(--text3)}.tl-chip:active{transform:scale(.96)}.tl-chip:focus-visible{outline:2px solid var(--amber);outline-offset:2px}.tl-chip.active{background:var(--amber);border-color:var(--amber);color:#000;font-weight:600}
+.tl-filter{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:12px}.tl-chip{font-size:var(--text-xs);padding:8px 14px;border-radius:16px;border:1px solid var(--border);background:transparent;color:var(--text3);cursor:pointer;transition:border-color .15s,background .15s,color .15s,transform .15s;min-height:44px;display:inline-flex;align-items:center}.tl-chip:hover{border-color:var(--text3)}.tl-chip:active{transform:scale(.96)}.tl-chip:focus-visible{outline:2px solid var(--amber);outline-offset:2px}.tl-chip.active{background:var(--amber);border-color:var(--amber);color:#000;font-weight:600}
 .tl-legend{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:12px}.tl-leg-item{display:flex;align-items:center;gap:4px;font-size:var(--text-xs);color:var(--text4)}.tl-leg-dot{width:8px;height:8px;border-radius:50%;flex-shrink:0}
 @media(max-width:767px){:root{--font-size:15px}}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:0.01ms!important;animation-iteration-count:1!important;transition-duration:0.01ms!important;scroll-behavior:auto!important}}
+button,a,input,[role="button"],.gterm,.tl-reg,.ref-link{touch-action:manipulation}
 @media print{
   body{background:#fff!important;color:#1a1a1a!important;font-size:11pt!important}
   nav,.nav-bar,.sidebar-col,.action-btn,.sub-badge,button,[data-noprint],footer,.b3e-search,.bottom-tab-bar,.more-sheet-overlay,.more-sheet-panel{display:none!important}
@@ -79,7 +81,7 @@ table tbody tr:hover{background:var(--bg3)!important}
   @page{margin:0.75in;size:letter}
 }
 .drawer-overlay{position:fixed;inset:0;background:rgba(0,0,0,.5);z-index:150;opacity:0;pointer-events:none;transition:opacity .3s ease}.drawer-overlay.active{opacity:1;pointer-events:auto}
-.drawer-panel{position:fixed;top:0;left:0;bottom:0;width:80vw;max-width:360px;z-index:151;background:var(--bg);border-right:1px solid var(--border);overflow-y:auto;transform:translateX(-100%);transition:transform .3s cubic-bezier(.4,0,.2,1);padding-top:env(safe-area-inset-top,0px)}.drawer-panel.active{transform:translateX(0)}
+.drawer-panel{position:fixed;top:0;left:0;bottom:0;width:80vw;max-width:360px;z-index:151;background:var(--bg);border-right:1px solid var(--border);overflow-y:auto;overscroll-behavior:contain;transform:translateX(-100%);transition:transform .3s cubic-bezier(.4,0,.2,1);padding-top:env(safe-area-inset-top,0px)}.drawer-panel.active{transform:translateX(0)}
 .drawer-panel::-webkit-scrollbar{display:none}
 .bottom-tab-bar{position:fixed;bottom:0;left:0;right:0;z-index:142;background:var(--nav-bg);backdrop-filter:blur(24px);-webkit-backdrop-filter:blur(24px);border-top:1px solid var(--border);display:flex;padding:6px 0 calc(6px + env(safe-area-inset-bottom, 0px))}
 .bottom-tab-bar button{flex:1;display:flex;flex-direction:column;align-items:center;gap:1px;padding:4px 0;min-height:44px;justify-content:center;background:none;border:none;cursor:pointer;-webkit-tap-highlight-color:transparent}
@@ -89,8 +91,8 @@ table tbody tr:hover{background:var(--bg3)!important}
 .bottom-tab-bar .tab-active .tab-icon{filter:none}
 .bottom-tab-bar .tab-inactive .tab-icon{opacity:.5}
 .more-sheet-overlay{position:fixed;inset:0;z-index:140;background:rgba(0,0,0,.5);opacity:0;pointer-events:none;transition:opacity .3s ease}.more-sheet-overlay.active{opacity:1;pointer-events:auto}
-.more-sheet-panel{position:fixed;bottom:0;left:0;right:0;z-index:141;background:var(--bg);border-top-left-radius:16px;border-top-right-radius:16px;border-top:1px solid var(--border2);box-shadow:0 -8px 30px var(--shadow);transform:translateY(100%);transition:transform .3s cubic-bezier(.4,0,.2,1);padding-bottom:calc(56px + env(safe-area-inset-bottom, 0px))}.more-sheet-panel.active{transform:translateY(0)}
-.overview-card{display:block;width:100%;text-align:left;padding:14px 16px;border-radius:10px;border:1px solid var(--amber-border2);background:linear-gradient(135deg,rgba(245,158,11,.06),rgba(245,158,11,.01));margin-bottom:12px;transition:all .15s;-webkit-tap-highlight-color:transparent}.overview-card:hover{border-color:var(--amber);background:linear-gradient(135deg,rgba(245,158,11,.1),rgba(245,158,11,.03))}
+.more-sheet-panel{position:fixed;bottom:0;left:0;right:0;z-index:141;background:var(--bg);border-top-left-radius:16px;border-top-right-radius:16px;border-top:1px solid var(--border2);box-shadow:0 -8px 30px var(--shadow);transform:translateY(100%);transition:transform .3s cubic-bezier(.4,0,.2,1);padding-bottom:calc(56px + env(safe-area-inset-bottom, 0px));overscroll-behavior:contain}.more-sheet-panel.active{transform:translateY(0)}
+.overview-card{display:block;width:100%;text-align:left;padding:14px 16px;border-radius:10px;border:1px solid var(--amber-border2);background:linear-gradient(135deg,rgba(245,158,11,.06),rgba(245,158,11,.01));margin-bottom:12px;transition:border-color .15s,background .15s;-webkit-tap-highlight-color:transparent}.overview-card:hover{border-color:var(--amber);background:linear-gradient(135deg,rgba(245,158,11,.1),rgba(245,158,11,.03))}
 </style>
 </head>
 <body>
@@ -381,7 +383,7 @@ function SmartText({text,onNav,search}){
   for(let i=0;i<parts.length;i++){
     if(i%2===1){
       const reg=R.find(r=>r.id===parts[i]);
-      if(reg) out.push(<span key={"r"+i} className="ref-link" onClick={e=>{e.stopPropagation();onNav&&onNav(parts[i])}}>{reg.st}</span>);
+      if(reg) out.push(<a key={"r"+i} className="ref-link" href={"#/regulations/"+parts[i]} onClick={e=>{e.preventDefault();e.stopPropagation();onNav&&onNav(parts[i])}}>{reg.st}</a>);
       else out.push(null);
     } else {
       if(!parts[i]){continue}
@@ -413,7 +415,7 @@ function NavBar({view,setView,search,setSearch,theme,toggleTheme,fontSize,setFon
   const[searchOpen,setSearchOpen]=useState(false);
   const settingsRef=useRef(null);
   const isMob=useIsMobile();
-  const fSizes=[{id:"sm",l:"A\u207B"},{id:"md",l:"A"},{id:"lg",l:"A\u207A"}];
+  const fSizes=[{id:"sm",l:"A\u207B",al:"A\u207B Small font size"},{id:"md",l:"A",al:"A Medium font size"},{id:"lg",l:"A\u207A",al:"A\u207A Large font size"}];
   const tabs=[{id:"regulations",l:"Regulations"},{id:"changing",l:"What\u2019s Changing"},{id:"timeline",l:"Timeline"},{id:"glossary",l:"Glossary"}];
   useEffect(()=>{if(!settingsOpen)return;const h=e=>{if(settingsRef.current&&!settingsRef.current.contains(e.target))setSettingsOpen(false)};document.addEventListener("mousedown",h);return()=>document.removeEventListener("mousedown",h)},[settingsOpen]);
 
@@ -426,7 +428,7 @@ function NavBar({view,setView,search,setSearch,theme,toggleTheme,fontSize,setFon
         {searchOpen?<>
           <button onClick={closeSearch} aria-label="Close search" style={{color:"var(--amber)",fontSize:18,padding:"4px 8px",minWidth:44,minHeight:44,display:"flex",alignItems:"center",justifyContent:"center"}}>←</button>
           <div style={{flex:1,position:"relative"}}>
-            <input ref={inp} type="text" placeholder="Search regulations…" aria-label="Search regulations" value={search} onChange={e=>setSearch(e.target.value)} onKeyDown={e=>{if(e.key==="Escape")closeSearch()}} className="search-input" style={{width:"100%",padding:"8px 30px 8px 12px",borderRadius:8,border:"1px solid var(--amber-border2)",background:"var(--bg3)",color:"var(--text)",fontSize:"var(--text-sm)",outline:"none"}}/>
+            <input ref={inp} type="search" autoComplete="off" placeholder="Search regulations…" aria-label="Search regulations" value={search} onChange={e=>setSearch(e.target.value)} onKeyDown={e=>{if(e.key==="Escape")closeSearch()}} className="search-input" style={{width:"100%",padding:"8px 30px 8px 12px",borderRadius:8,border:"1px solid var(--amber-border2)",background:"var(--bg3)",color:"var(--text)",fontSize:"var(--text-sm)",outline:"revert"}}/>
             {search&&<button onClick={()=>{setSearch("");inp.current?.focus()}} aria-label="Clear search" style={{position:"absolute",right:2,top:"50%",transform:"translateY(-50%)",color:"var(--text4)",fontSize:"var(--text-md)",lineHeight:1,padding:8,minWidth:44,minHeight:44,display:"flex",alignItems:"center",justifyContent:"center"}}>✕</button>}
           </div>
         </>:<>
@@ -446,16 +448,16 @@ function NavBar({view,setView,search,setSearch,theme,toggleTheme,fontSize,setFon
     </div>
     <div style={{display:"flex",gap:2,overflowX:"auto",WebkitOverflowScrolling:"touch",scrollbarWidth:"none",msOverflowStyle:"none"}}>
       {tabs.map(tab=>
-        <button key={tab.id} onClick={()=>setView(tab.id)} title={tab.l} aria-current={view===tab.id?"page":undefined} style={{padding:"7px 12px",borderRadius:8,fontSize:"var(--text-md)",fontWeight:600,transition:"all .15s",whiteSpace:"nowrap",background:view===tab.id?"var(--amber-bg3)":"transparent",color:view===tab.id?"var(--amber)":"var(--text3)",borderBottom:view===tab.id?"2px solid var(--amber)":"2px solid transparent"}}>{tab.l}</button>
+        <button key={tab.id} onClick={()=>setView(tab.id)} title={tab.l} aria-current={view===tab.id?"page":undefined} style={{padding:"7px 12px",borderRadius:8,fontSize:"var(--text-md)",fontWeight:600,transition:"border-color .15s,background .15s,color .15s",whiteSpace:"nowrap",background:view===tab.id?"var(--amber-bg3)":"transparent",color:view===tab.id?"var(--amber)":"var(--text3)",borderBottom:view===tab.id?"2px solid var(--amber)":"2px solid transparent"}}>{tab.l}</button>
       )}
     </div>
     <div style={{flex:1}}/>
     <div style={{position:"relative"}} ref={settingsRef}>
-      <button onClick={()=>setSettingsOpen(!settingsOpen)} title="Settings" aria-label="Settings" aria-expanded={settingsOpen} style={{fontSize:15,padding:"5px 7px",borderRadius:6,minWidth:44,minHeight:44,display:"flex",alignItems:"center",justifyContent:"center",color:settingsOpen?"var(--amber)":"var(--text3)",background:settingsOpen?"var(--amber-bg3)":"transparent",transition:"all .15s"}}>{"\u2699\uFE0F"}</button>
+      <button onClick={()=>setSettingsOpen(!settingsOpen)} title="Settings" aria-label="Settings" aria-expanded={settingsOpen} style={{fontSize:15,padding:"5px 7px",borderRadius:6,minWidth:44,minHeight:44,display:"flex",alignItems:"center",justifyContent:"center",color:settingsOpen?"var(--amber)":"var(--text3)",background:settingsOpen?"var(--amber-bg3)":"transparent",transition:"border-color .15s,background .15s,color .15s"}}>{"\u2699\uFE0F"}</button>
       {settingsOpen&&<div style={{position:"absolute",right:0,top:"calc(100% + 8px)",background:"var(--tooltip-bg)",border:"1px solid var(--border2)",borderRadius:10,padding:"12px 14px",boxShadow:"0 8px 24px var(--shadow)",zIndex:200,minWidth:160}} className="fade-in">
         <div style={{fontSize:"var(--text-xs)",fontWeight:700,color:"var(--text5)",textTransform:"uppercase",letterSpacing:".5px",marginBottom:8}}>Font Size</div>
         <div style={{display:"flex",gap:3,marginBottom:12}}>
-          {fSizes.map(f=><button key={f.id} onClick={()=>setFontSize(f.id)} style={{padding:"8px 10px",borderRadius:6,fontSize:"var(--text-sm)",fontWeight:700,background:fontSize===f.id?"var(--amber-bg3)":"var(--bg3)",color:fontSize===f.id?"var(--amber)":"var(--text4)",transition:"all .12s",flex:1,minHeight:40}}>{f.l}</button>)}
+          {fSizes.map(f=><button key={f.id} aria-label={f.al} onClick={()=>setFontSize(f.id)} style={{padding:"8px 10px",borderRadius:6,fontSize:"var(--text-sm)",fontWeight:700,background:fontSize===f.id?"var(--amber-bg3)":"var(--bg3)",color:fontSize===f.id?"var(--amber)":"var(--text4)",transition:"border-color .12s,background .12s,color .12s",flex:1,minHeight:40}}>{f.l}</button>)}
         </div>
         <div style={{fontSize:"var(--text-xs)",fontWeight:700,color:"var(--text5)",textTransform:"uppercase",letterSpacing:".5px",marginBottom:8}}>Theme</div>
         <button onClick={()=>{toggleTheme();setSettingsOpen(false)}} style={{width:"100%",padding:"8px 10px",borderRadius:6,fontSize:"var(--text-sm)",fontWeight:600,background:"var(--bg3)",color:"var(--text3)",textAlign:"left",minHeight:40}}>
@@ -464,7 +466,7 @@ function NavBar({view,setView,search,setSearch,theme,toggleTheme,fontSize,setFon
       </div>}
     </div>
     <div style={{position:"relative",width:"clamp(160px, 18vw, 220px)",flexShrink:0}}>
-      <input ref={inp} type="text" placeholder="Search…" aria-label="Search regulations" value={search} onChange={e=>setSearch(e.target.value)} className="search-input" style={{width:"100%",padding:"7px 30px 7px 32px",borderRadius:8,border:"1px solid var(--border2)",background:"var(--bg3)",color:"var(--text)",fontSize:"var(--text-md)",outline:"none"}}/>
+      <input ref={inp} type="search" autoComplete="off" placeholder="Search…" aria-label="Search regulations" value={search} onChange={e=>setSearch(e.target.value)} className="search-input" style={{width:"100%",padding:"7px 30px 7px 32px",borderRadius:8,border:"1px solid var(--border2)",background:"var(--bg3)",color:"var(--text)",fontSize:"var(--text-md)",outline:"revert"}}/>
       <svg style={{position:"absolute",left:10,top:"50%",transform:"translateY(-50%)",pointerEvents:"none"}} width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="var(--text4)" strokeWidth="2.5" strokeLinecap="round"><circle cx="10.5" cy="10.5" r="7"/><line x1="15.5" y1="15.5" x2="21" y2="21"/></svg>
       {search&&<button onClick={()=>{setSearch("");inp.current?.focus()}} aria-label="Clear search" style={{position:"absolute",right:2,top:"50%",transform:"translateY(-50%)",color:"var(--text4)",fontSize:"var(--text-lg)",lineHeight:1,padding:8,minWidth:44,minHeight:44,display:"flex",alignItems:"center",justifyContent:"center"}}>{"\u2715"}</button>}
     </div>
@@ -476,13 +478,13 @@ function RegCard({reg,active,onClick,search}){
   const snippet=useMemo(()=>searchSnippet(reg,search),[reg,search]);
   const wcCount=WC_BY_REG[reg.id]?WC_BY_REG[reg.id].length:0;
   return(
-  <button onClick={onClick} data-reg-active={active?"true":undefined} aria-label={reg.title} className="reg-card" style={{display:"block",width:"100%",textAlign:"left",padding:"16px 18px",borderRadius:10,marginBottom:6,border:active?"1px solid var(--amber-border2)":"1px solid var(--border)",background:active?"var(--amber-bg2)":"var(--bg2)"}}>
+  <button onClick={onClick} data-reg-active={active?"true":undefined} className="reg-card" style={{display:"block",width:"100%",textAlign:"left",padding:"16px 18px",borderRadius:10,marginBottom:6,border:active?"1px solid var(--amber-border2)":"1px solid var(--border)",background:active?"var(--amber-bg2)":"var(--bg2)"}}>
     <div style={{display:"flex",alignItems:"center",gap:10,marginBottom:6}}>
       <span style={{fontSize:18}}>{reg.icon}</span>
       <span style={{fontSize:"var(--text-lg)",fontWeight:700,color:active?"var(--amber2)":"var(--text)",flex:1}}>{reg.st}</span>
       {reg.crossCutting&&<span style={{fontSize:9,padding:"2px 6px",borderRadius:3,background:"rgba(139,92,246,.1)",color:"#a78bfa",fontWeight:700,letterSpacing:".3px",whiteSpace:"nowrap",flexShrink:0}}>CROSS-CUTTING</span>}
       {reg.tag&&<span style={{fontSize:9,padding:"2px 6px",borderRadius:3,background:"rgba(6,182,212,.1)",color:"#22d3ee",fontWeight:700,letterSpacing:".3px",whiteSpace:"nowrap",flexShrink:0}}>{reg.tag.toUpperCase()}</span>}
-      {wcCount>0&&<span style={{fontSize:"var(--text-xs)",padding:"2px 7px",borderRadius:4,background:ST.expected.bg,color:ST.expected.tx,fontWeight:700,whiteSpace:"nowrap",flexShrink:0}}>{wcCount} pending</span>}
+      {wcCount>0&&<span style={{fontSize:"var(--text-xs)",padding:"2px 7px",borderRadius:4,background:"var(--amber-bg3)",color:"var(--amber)",fontWeight:700,whiteSpace:"nowrap",flexShrink:0}}>{wcCount} pending</span>}
     </div>
     <p style={{fontSize:"var(--text-sm)",color:"var(--text3)",lineHeight:1.45,margin:0,display:"-webkit-box",WebkitLineClamp:2,WebkitBoxOrient:"vertical",overflow:"hidden"}}>{stripRefs(reg.sum)}</p>
     {snippet&&<div style={{marginTop:6,padding:"6px 10px",borderRadius:6,background:"var(--bg3)",fontSize:"var(--text-sm)",color:"var(--text3)",lineHeight:1.4}}>
@@ -522,7 +524,7 @@ function SubNav({subs,idx,onSelect}){
     };
     return(
     <div ref={wrapRef} style={{position:"relative",marginBottom:20}} onKeyDown={handleKey}>
-      <button onClick={()=>setOpen(!open)} aria-expanded={open} aria-haspopup="listbox" style={{display:"flex",alignItems:"center",justifyContent:"space-between",width:"100%",padding:"12px 16px",minHeight:44,borderRadius:10,background:"var(--bg3)",border:"1px solid var(--border2)",cursor:"pointer",transition:"all .15s"}}>
+      <button onClick={()=>setOpen(!open)} aria-expanded={open} aria-haspopup="listbox" style={{display:"flex",alignItems:"center",justifyContent:"space-between",width:"100%",padding:"12px 16px",minHeight:44,borderRadius:10,background:"var(--bg3)",border:"1px solid var(--border2)",cursor:"pointer",transition:"border-color .15s,background .15s,color .15s"}}>
         <span style={{fontFamily:"'DM Mono',monospace",fontSize:"var(--text-sm)",color:"var(--text4)",flexShrink:0}}>{idx+1}/{subs.length}</span>
         <span style={{fontWeight:600,color:"var(--amber)",fontSize:"var(--text-md)",textAlign:"center",flex:1,padding:"0 8px"}}>
           {cur.t}
@@ -534,7 +536,7 @@ function SubNav({subs,idx,onSelect}){
       {open&&(
       <div ref={dropRef} role="listbox" aria-label="Subsections" className="drop-slide" style={{position:"absolute",top:"calc(100% + 6px)",left:0,right:0,zIndex:100,borderRadius:10,background:"var(--bg2)",border:"1px solid var(--border2)",boxShadow:"0 8px 24px rgba(0,0,0,0.25)",maxHeight:"60vh",overflowY:"auto",scrollbarWidth:"thin"}}>
         {subs.map((s,i)=>{const b=SUB_BADGES[s.t];const isActive=i===idx;return(
-          <button key={i} role="option" aria-selected={isActive} data-active={isActive} onClick={()=>{onSelect(i);setOpen(false)}} style={{display:"flex",alignItems:"center",gap:10,width:"100%",padding:"10px 14px",minHeight:44,background:isActive?"var(--amber-bg3)":"transparent",borderLeft:isActive?"3px solid var(--amber)":"3px solid transparent",borderBottom:i<subs.length-1?"1px solid var(--border)":"none",transition:"all .1s",textAlign:"left"}}>
+          <button key={i} role="option" aria-selected={isActive} data-active={isActive} onClick={()=>{onSelect(i);setOpen(false)}} style={{display:"flex",alignItems:"center",gap:10,width:"100%",padding:"10px 14px",minHeight:44,background:isActive?"var(--amber-bg3)":"transparent",borderLeft:isActive?"3px solid var(--amber)":"3px solid transparent",borderBottom:i<subs.length-1?"1px solid var(--border)":"none",transition:"border-color .1s,background .1s,color .1s",textAlign:"left"}}>
             <span style={{fontFamily:"'DM Mono',monospace",fontSize:"var(--text-sm)",color:"var(--text4)",width:24,flexShrink:0}}>{i+1}</span>
             <span style={{flex:1,fontWeight:600,fontSize:"var(--text-sm)",color:isActive?"var(--amber)":"var(--text2)"}}>{s.t}</span>
             {b&&<span style={{fontSize:"var(--text-xs)",fontWeight:700,padding:"1px 5px",borderRadius:3,background:b.bg,border:"1px solid "+b.bd,color:b.tx,letterSpacing:".3px"}}>{b.lb}</span>}
@@ -546,7 +548,7 @@ function SubNav({subs,idx,onSelect}){
   return(
   <div style={{position:"relative"}}>
     <div role="tablist" aria-label="Subsections" style={cStyle}>
-      {subs.map((s,i)=>{const badge=SUB_BADGES[s.t];return <button key={i} role="tab" aria-selected={idx===i} onClick={()=>onSelect(i)} style={{padding:"8px 14px",borderRadius:6,fontSize:"var(--text-sm)",fontWeight:600,transition:"all .12s",whiteSpace:"nowrap",flexShrink:0,minHeight:44,background:idx===i?"var(--amber-bg4)":"var(--bg3)",color:idx===i?"var(--amber)":"var(--text3)",borderBottom:idx===i?"2px solid var(--amber)":"2px solid transparent",display:"flex",alignItems:"center",gap:5}}>
+      {subs.map((s,i)=>{const badge=SUB_BADGES[s.t];return <button key={i} id={"sub-tab-"+i} role="tab" aria-selected={idx===i} aria-controls="sub-tabpanel" onClick={()=>onSelect(i)} style={{padding:"8px 14px",borderRadius:6,fontSize:"var(--text-sm)",fontWeight:600,transition:"border-color .12s,background .12s,color .12s",whiteSpace:"nowrap",flexShrink:0,minHeight:44,background:idx===i?"var(--amber-bg4)":"var(--bg3)",color:idx===i?"var(--amber)":"var(--text3)",borderBottom:idx===i?"2px solid var(--amber)":"2px solid transparent",display:"flex",alignItems:"center",gap:5}}>
         {s.t}
         {badge&&<span style={{fontSize:"var(--text-xs)",fontWeight:700,padding:"1px 5px",borderRadius:3,background:badge.bg,border:"1px solid "+badge.bd,color:badge.tx,letterSpacing:".3px"}}>{badge.lb}</span>}
       </button>})}
@@ -601,10 +603,10 @@ function DataTable({table}){
   </div>);
 }
 
-function SubContent({sub,onNav,search}){
+function SubContent({sub,onNav,search,subIdx}){
   if(!sub)return null;
   return(
-  <div className="fade-in" role="tabpanel">
+  <div className="fade-in" role="tabpanel" id="sub-tabpanel" aria-labelledby={"sub-tab-"+(subIdx||0)}>
     <h3 style={{position:"absolute",width:1,height:1,overflow:"hidden",clip:"rect(0,0,0,0)",whiteSpace:"nowrap",border:0}}>{sub.t}</h3>
     {sub.kp&&sub.kp.length>0&&(
       <div style={{marginBottom:20,padding:"16px 20px",borderRadius:10,background:"var(--amber-bg)",border:"1px solid var(--amber-border)"}}>
@@ -630,7 +632,7 @@ function WCPanel({regId}){
   if(!items||!items.length)return null;
   return(
   <div style={{marginBottom:16,borderRadius:10,border:"1px solid "+ST.expected.bg,background:ST.expected.bg+"22",overflow:"hidden"}}>
-    <button onClick={()=>setOpen(!open)} style={{display:"flex",alignItems:"center",gap:8,width:"100%",padding:"10px 14px",minHeight:44,textAlign:"left",fontSize:"var(--text-sm)",fontWeight:700,color:ST.expected.tx}}>
+    <button onClick={()=>setOpen(!open)} style={{display:"flex",alignItems:"center",gap:8,width:"100%",padding:"10px 14px",minHeight:44,textAlign:"left",fontSize:"var(--text-sm)",fontWeight:700,color:"var(--amber)"}}>
       <span>{open?"\u25BC":"\u25B6"}</span>
       <span>{items.length} Pending Change{items.length!==1?"s":""}</span>
     </button>
@@ -666,7 +668,7 @@ function RegDetail({reg,detailRef,onNav,search,initialSub,onSubChange}){
     </div>
     <p style={{fontSize:"var(--text-md)",color:"var(--text3)",lineHeight:1.55,marginBottom:reg.id==="endgame"?12:24}}>{stripRefs(reg.sum)}</p>
     <WCPanel regId={reg.id}/>
-    {reg.id==="endgame"&&<button onClick={()=>{window.location.hash="#/explorer"}} aria-label="Open Basel III Endgame interactive explorer" style={{display:"flex",alignItems:"center",gap:10,width:"100%",padding:"12px 16px",borderRadius:10,border:"1px solid var(--amber-border)",background:"var(--amber-bg3)",marginBottom:16,textAlign:"left",cursor:"pointer",transition:"all .15s"}}>
+    {reg.id==="endgame"&&<button onClick={()=>{window.location.hash="#/explorer"}} aria-label="Open Basel III Endgame interactive explorer" style={{display:"flex",alignItems:"center",gap:10,width:"100%",padding:"12px 16px",borderRadius:10,border:"1px solid var(--amber-border)",background:"var(--amber-bg3)",marginBottom:16,textAlign:"left",cursor:"pointer",transition:"border-color .15s,background .15s,color .15s"}}>
       <span style={{fontSize:20}}>{"\uD83D\uDD0D"}</span>
       <div style={{flex:1}}>
         <div style={{fontSize:"var(--text-md)",fontWeight:700,color:"var(--amber)"}}>B3E Explorer</div>
@@ -678,12 +680,12 @@ function RegDetail({reg,detailRef,onNav,search,initialSub,onSubChange}){
       <div style={{flex:1}}><SubNav subs={reg.subs} idx={idx} onSelect={setIdx}/></div>
       <button className="action-btn" onClick={()=>copySubLink(reg.id,idx)} data-tooltip="Copy link" aria-label="Copy link to this section">{"\uD83D\uDD17"}</button>
     </div>
-    <SubContent sub={sub} onNav={onNav} search={search} key={reg.id+"-"+idx}/>
+    <SubContent sub={sub} onNav={onNav} search={search} subIdx={idx} key={reg.id+"-"+idx}/>
     {BACKLINKS[reg.id]&&BACKLINKS[reg.id].length>0&&(
       <div style={{marginTop:24,padding:"14px 18px",borderRadius:10,border:"1px solid var(--border)",background:"var(--bg2)"}}>
         <div style={{fontSize:"var(--text-xs)",fontWeight:700,color:"var(--text5)",textTransform:"uppercase",letterSpacing:".5px",marginBottom:8}}>Referenced By</div>
         <div style={{display:"flex",gap:6,flexWrap:"wrap"}}>
-          {BACKLINKS[reg.id].map(srcId=>{const src=R.find(r=>r.id===srcId);return src?<button key={srcId} onClick={()=>onNav(srcId)} style={{padding:"8px 14px",borderRadius:5,border:"1px solid var(--border)",background:"var(--bg3)",fontSize:"var(--text-sm)",fontWeight:600,color:"var(--amber)",cursor:"pointer",transition:"all .12s",minHeight:44,display:"inline-flex",alignItems:"center"}}>{src.icon} {src.st}</button>:null})}
+          {BACKLINKS[reg.id].map(srcId=>{const src=R.find(r=>r.id===srcId);return src?<button key={srcId} onClick={()=>onNav(srcId)} style={{padding:"8px 14px",borderRadius:5,border:"1px solid var(--border)",background:"var(--bg3)",fontSize:"var(--text-sm)",fontWeight:600,color:"var(--amber)",cursor:"pointer",transition:"border-color .12s,background .12s,color .12s",minHeight:44,display:"inline-flex",alignItems:"center"}}>{src.icon} {src.st}</button>:null})}
         </div>
       </div>
     )}
@@ -733,7 +735,7 @@ function MobileDrawer({open,onClose,currentId,onSelect}){
           const showHdr=r.cat!==lastCat;lastCat=r.cat;
           return <React.Fragment key={r.id}>
             {showHdr&&<div style={{fontSize:"var(--text-xs)",fontWeight:700,color:"var(--text5)",textTransform:"uppercase",letterSpacing:".8px",padding:"14px 0 6px",borderTop:r===R[0]?"none":"1px solid var(--border)",marginTop:r===R[0]?0:4}}>{r.cat}</div>}
-            <button onClick={()=>onSelect(r.id)} style={{display:"flex",alignItems:"center",gap:10,width:"100%",padding:"10px 12px",minHeight:44,borderRadius:8,marginBottom:2,textAlign:"left",background:r.id===currentId?"var(--amber-bg3)":"transparent",color:r.id===currentId?"var(--amber)":"var(--text2)",fontWeight:r.id===currentId?700:500,fontSize:"var(--text-md)",transition:"all .12s"}}>
+            <button onClick={()=>onSelect(r.id)} style={{display:"flex",alignItems:"center",gap:10,width:"100%",padding:"10px 12px",minHeight:44,borderRadius:8,marginBottom:2,textAlign:"left",background:r.id===currentId?"var(--amber-bg3)":"transparent",color:r.id===currentId?"var(--amber)":"var(--text2)",fontWeight:r.id===currentId?700:500,fontSize:"var(--text-md)",transition:"border-color .12s,background .12s,color .12s"}}>
               <span style={{fontSize:16,flexShrink:0}}>{r.icon}</span>
               {r.st}
             </button>
@@ -765,7 +767,7 @@ function MobileRegDetail({reg,onBack,onNav,search,initialSub,pushHash,onOpenDraw
     </div>
     <p style={{fontSize:"var(--text-md)",color:"var(--text3)",lineHeight:1.55,marginBottom:reg.id==="endgame"?12:24}}>{stripRefs(reg.sum)}</p>
     <WCPanel regId={reg.id}/>
-    {reg.id==="endgame"&&<button onClick={()=>{window.location.hash="#/explorer"}} aria-label="Open Basel III Endgame interactive explorer" style={{display:"flex",alignItems:"center",gap:10,width:"100%",padding:"12px 16px",borderRadius:10,border:"1px solid var(--amber-border)",background:"var(--amber-bg3)",marginBottom:16,textAlign:"left",cursor:"pointer",transition:"all .15s"}}>
+    {reg.id==="endgame"&&<button onClick={()=>{window.location.hash="#/explorer"}} aria-label="Open Basel III Endgame interactive explorer" style={{display:"flex",alignItems:"center",gap:10,width:"100%",padding:"12px 16px",borderRadius:10,border:"1px solid var(--amber-border)",background:"var(--amber-bg3)",marginBottom:16,textAlign:"left",cursor:"pointer",transition:"border-color .15s,background .15s,color .15s"}}>
       <span style={{fontSize:20}}>{"\uD83D\uDD0D"}</span>
       <div style={{flex:1}}>
         <div style={{fontSize:"var(--text-md)",fontWeight:700,color:"var(--amber)"}}>B3E Explorer</div>
@@ -777,12 +779,12 @@ function MobileRegDetail({reg,onBack,onNav,search,initialSub,pushHash,onOpenDraw
       <div style={{flex:1}}><SubNav subs={reg.subs} idx={idx} onSelect={i=>{setIdx(i);window.scrollTo(0,200)}}/></div>
       <button className="action-btn" onClick={()=>copySubLink(reg.id,idx)} data-tooltip="Copy link" aria-label="Copy link to this section">{"\uD83D\uDD17"}</button>
     </div>
-    <SubContent sub={sub} onNav={onNav} search={search} key={reg.id+"-"+idx}/>
+    <SubContent sub={sub} onNav={onNav} search={search} subIdx={idx} key={reg.id+"-"+idx}/>
     {BACKLINKS[reg.id]&&BACKLINKS[reg.id].length>0&&(
       <div style={{marginTop:24,padding:"14px 18px",borderRadius:10,border:"1px solid var(--border)",background:"var(--bg2)"}}>
         <div style={{fontSize:"var(--text-xs)",fontWeight:700,color:"var(--text5)",textTransform:"uppercase",letterSpacing:".5px",marginBottom:8}}>Referenced By</div>
         <div style={{display:"flex",gap:6,flexWrap:"wrap"}}>
-          {BACKLINKS[reg.id].map(srcId=>{const src=R.find(r=>r.id===srcId);return src?<button key={srcId} onClick={()=>onNav(srcId)} style={{padding:"8px 14px",borderRadius:5,border:"1px solid var(--border)",background:"var(--bg3)",fontSize:"var(--text-sm)",fontWeight:600,color:"var(--amber)",cursor:"pointer",transition:"all .12s",minHeight:44,display:"inline-flex",alignItems:"center"}}>{src.icon} {src.st}</button>:null})}
+          {BACKLINKS[reg.id].map(srcId=>{const src=R.find(r=>r.id===srcId);return src?<button key={srcId} onClick={()=>onNav(srcId)} style={{padding:"8px 14px",borderRadius:5,border:"1px solid var(--border)",background:"var(--bg3)",fontSize:"var(--text-sm)",fontWeight:600,color:"var(--amber)",cursor:"pointer",transition:"border-color .12s,background .12s,color .12s",minHeight:44,display:"inline-flex",alignItems:"center"}}>{src.icon} {src.st}</button>:null})}
         </div>
       </div>
     )}
@@ -880,7 +882,7 @@ function RegulationsView({search,onNavigate,navTick,hashRoute,pushHash,navHeight
   </>)}
   if(isMob) return(<>
     <div>
-      {!search.trim()&&<button onClick={()=>{setActiveId("__overview");setCurSub(0);setMobDetail("__overview")}} className="overview-card" aria-label="Overview — capital stacks, deep dives, and quick links">
+      {!search.trim()&&<button onClick={()=>{setActiveId("__overview");setCurSub(0);setMobDetail("__overview")}} className="overview-card">
         <div style={{display:"flex",alignItems:"center",gap:8,marginBottom:4}}>
           <span style={{fontSize:16}}>🏦</span>
           <span style={{fontWeight:800,color:"var(--amber)",fontSize:"var(--text-md)",flex:1}}>Overview</span>
@@ -888,7 +890,7 @@ function RegulationsView({search,onNavigate,navTick,hashRoute,pushHash,navHeight
         </div>
         <div style={{fontSize:"var(--text-sm)",color:"var(--text3)",lineHeight:1.4}}>Capital stacks, calculation deep dives, and quick links to key regulations</div>
       </button>}
-      <h2 style={{fontSize:"var(--text-xs)",fontWeight:700,color:"var(--text4)",textTransform:"uppercase",letterSpacing:".8px",marginBottom:12}}>{filtered.length} Regulation{filtered.length!==1?"s":""}</h2>
+      <h2 aria-live="polite" style={{fontSize:"var(--text-xs)",fontWeight:700,color:"var(--text4)",textTransform:"uppercase",letterSpacing:".8px",marginBottom:12}}>{filtered.length} Regulation{filtered.length!==1?"s":""}</h2>
       {(()=>{let lastCat=null;return filtered.map(r=>{
         const showHdr=r.cat!==lastCat;lastCat=r.cat;
         return <React.Fragment key={r.id}>
@@ -907,7 +909,7 @@ function RegulationsView({search,onNavigate,navTick,hashRoute,pushHash,navHeight
   <div style={{display:"flex",gap:isTablet?20:24,minHeight:"calc(100vh - "+((navHeight||76)+64)+"px)"}}>
     <div ref={sidebarRef} data-noprint style={{width:isTablet?220:300,flexShrink:0,maxHeight:"calc(100vh - "+((navHeight||76)+44)+"px)",overflowY:"auto",position:"sticky",top:(navHeight||76)+20}}>
       <button onClick={()=>{setActiveId("__overview");setCurSub(0)}} data-reg-active={activeId==="__overview"?"true":undefined} className="reg-card" style={{display:"block",width:"100%",textAlign:"left",padding:"12px 18px",borderRadius:10,marginBottom:10,border:activeId==="__overview"?"1px solid var(--amber-border2)":"1px solid var(--amber-border)",background:activeId==="__overview"?"var(--amber-bg2)":"var(--amber-bg)",fontWeight:700,color:"var(--amber)",fontSize:"var(--text-md)"}}>Overview</button>
-      <h2 style={{fontSize:"var(--text-xs)",fontWeight:700,color:"var(--text4)",textTransform:"uppercase",letterSpacing:".8px",marginBottom:12}}>{filtered.length} Regulation{filtered.length!==1?"s":""}</h2>
+      <h2 aria-live="polite" style={{fontSize:"var(--text-xs)",fontWeight:700,color:"var(--text4)",textTransform:"uppercase",letterSpacing:".8px",marginBottom:12}}>{filtered.length} Regulation{filtered.length!==1?"s":""}</h2>
       {(()=>{let lastCat=null;return filtered.map(r=>{
         const showHdr=r.cat!==lastCat;lastCat=r.cat;
         return <React.Fragment key={r.id}>
@@ -981,7 +983,8 @@ function GlossaryView({search,onNav}){
 
 /* Read CSS custom property value at runtime (for themed inline styles) */
 const _DIR_FALLBACK={"--dir-decrease":"#4ECDC4","--dir-increase":"#FF6B6B","--dir-mixed":"#F7B731","--dir-new":"#A78BFA","--dir-simplification":"#60A5FA","--dir-neutral":"#9CA3AF"};
-function cssVar(name){const v=getComputedStyle(document.documentElement).getPropertyValue(name).trim();return v||_DIR_FALLBACK[name]||"#777"}
+const _cssVarCache={};let _cssVarTheme=null;
+function cssVar(name){const curTheme=document.documentElement.getAttribute("data-theme")||"dark";if(_cssVarTheme!==curTheme){_cssVarTheme=curTheme;for(const k in _cssVarCache)delete _cssVarCache[k]}if(_cssVarCache[name])return _cssVarCache[name];const v=getComputedStyle(document.documentElement).getPropertyValue(name).trim();return _cssVarCache[name]=v||_DIR_FALLBACK[name]||"#777"}
 
 function LtvChart({chart}){
   const max=Math.max(...chart.current,...chart.std,...chart.erba);
@@ -1070,7 +1073,7 @@ function B3eChangeCard({change,isExpanded,onToggle}){
   const contentId=cardId+"-content";
   const handleKeyDown=e=>{if(e.key==="Enter"||e.key===" "){e.preventDefault();onToggle()}if(e.key==="Escape"&&isExpanded){e.preventDefault();onToggle()}};
   return(
-  <div style={{background:isExpanded?"var(--bg3)":"var(--bg2)",border:"1px solid "+(isExpanded?dirColor+"44":"var(--border)"),borderRadius:10,marginBottom:6,transition:"all 0.25s ease"}}>
+  <div style={{background:isExpanded?"var(--bg3)":"var(--bg2)",border:"1px solid "+(isExpanded?dirColor+"44":"var(--border)"),borderRadius:10,marginBottom:6,transition:"border-color 0.25s ease,background 0.25s ease"}}>
     <div id={cardId} role="button" tabIndex={0} aria-expanded={isExpanded} aria-controls={contentId} onClick={onToggle} onKeyDown={handleKeyDown} style={{padding:"16px 18px",display:"flex",alignItems:"center",gap:10,cursor:"pointer",minHeight:48}}>
       <span style={{width:30,height:30,borderRadius:"50%",display:"flex",alignItems:"center",justifyContent:"center",fontSize:14,background:dirColor+"15",color:dirColor,flexShrink:0,fontWeight:700}} aria-label={dirMeta.label}>{dirMeta.icon}</span>
       <div style={{flex:1,minWidth:0}}>
@@ -1079,7 +1082,7 @@ function B3eChangeCard({change,isExpanded,onToggle}){
       </div>
       {change.tags.includes("major")&&<span style={{fontSize:9,fontWeight:700,padding:"2px 7px",borderRadius:4,background:mixedColor+"18",color:mixedColor,letterSpacing:.5,flexShrink:0}}>KEY</span>}
       {change.tags.includes("new")&&<span style={{fontSize:9,fontWeight:700,padding:"2px 7px",borderRadius:4,background:newColor+"18",color:newColor,letterSpacing:.5,flexShrink:0}}>NEW</span>}
-      <div style={{width:28,height:28,borderRadius:"50%",display:"flex",alignItems:"center",justifyContent:"center",fontSize:12,color:isExpanded?dirColor:"var(--text4)",background:isExpanded?dirColor+"18":"var(--bg3)",transition:"all 0.25s",transform:isExpanded?"rotate(180deg)":"rotate(0)",flexShrink:0}} aria-hidden="true">{"\u25BE"}</div>
+      <div style={{width:28,height:28,borderRadius:"50%",display:"flex",alignItems:"center",justifyContent:"center",fontSize:12,color:isExpanded?dirColor:"var(--text4)",background:isExpanded?dirColor+"18":"var(--bg3)",transition:"color 0.25s,background 0.25s,transform 0.25s",transform:isExpanded?"rotate(180deg)":"rotate(0)",flexShrink:0}} aria-hidden="true">{"\u25BE"}</div>
     </div>
     <div id={contentId} role="region" aria-labelledby={cardId} style={{maxHeight:h,overflow:"hidden",transition:"max-height 0.35s cubic-bezier(0.22,1,0.36,1)"}}>
       <div ref={ref} style={{padding:"0 18px 18px"}}>
@@ -1176,7 +1179,7 @@ function BaselExplorer({onNav}){
 
     {/* Search */}
     <div className="b3e-search" style={{marginBottom:8,position:"relative"}}>
-      <input type="text" placeholder="Search all provisions (try 'major', 'new')\u2026" value={search} onChange={e=>setSearch(e.target.value)} aria-label="Search Basel III Endgame provisions" className="search-input" style={{width:"100%",padding:"11px 30px 11px 14px",background:"var(--bg3)",minHeight:44,border:"1px solid var(--border2)",borderRadius:8,color:"var(--text)",fontSize:"var(--text-md)",fontFamily:"inherit",outline:"none",boxSizing:"border-box"}}/>
+      <input type="search" autoComplete="off" placeholder="Search all provisions (try 'major', 'new')…" value={search} onChange={e=>setSearch(e.target.value)} aria-label="Search Basel III Endgame provisions" className="search-input" style={{width:"100%",padding:"11px 30px 11px 14px",background:"var(--bg3)",minHeight:44,border:"1px solid var(--border2)",borderRadius:8,color:"var(--text)",fontSize:"var(--text-md)",fontFamily:"inherit",outline:"revert",boxSizing:"border-box"}}/>
       {search&&<button onClick={()=>setSearch("")} aria-label="Clear search" style={{position:"absolute",right:8,top:"50%",transform:"translateY(-50%)",color:"var(--text4)",fontSize:"var(--text-md)",lineHeight:1,padding:8,minWidth:44,minHeight:44,display:"flex",alignItems:"center",justifyContent:"center"}}>{"\u2715"}</button>}
     </div>
 
@@ -1299,7 +1302,7 @@ function TimelineView({onNav}){
       </div>
     </div>
 
-    <div style={{fontSize:"var(--text-sm)",color:"var(--text4)",marginBottom:8}}>{filtered.length} event{filtered.length!==1?"s":""} shown</div>
+    <div aria-live="polite" style={{fontSize:"var(--text-sm)",color:"var(--text4)",marginBottom:8}}>{filtered.length} event{filtered.length!==1?"s":""} shown</div>
 
     <div className="tl-wrap">
       {filtered.map((e,i)=>
@@ -1399,7 +1402,7 @@ function OverviewContent({onNav}){
       <p style={{fontSize:"var(--text-sm)",color:"var(--text4)",marginBottom:12}}>Worked examples showing exactly how the key ratios and buffers are calculated.</p>
       <div style={{display:"grid",gridTemplateColumns:"repeat(auto-fill,minmax(220px,1fr))",gap:10}}>
         {[{id:"cap-adequacy",title:"RWA & Capital Ratios",desc:"Risk weights, CCFs, and a worked CET1 ratio"},{id:"lcr",title:"LCR",desc:"HQLA haircuts, outflow rates, trapped liquidity"},{id:"gsib",title:"G-SIB Surcharge",desc:"Method 1 vs. Method 2 scoring"},{id:"scb",title:"Stress Capital Buffer",desc:"DFAST-to-SCB pipeline and CET1 stack"}].map(c=>
-          <button key={c.id} onClick={()=>onNav(c.id)} style={{padding:"12px 14px",borderRadius:8,border:"1px solid rgba(6,182,212,.15)",background:"rgba(6,182,212,.03)",textAlign:"left",transition:"all .15s"}}>
+          <button key={c.id} onClick={()=>onNav(c.id)} style={{padding:"12px 14px",borderRadius:8,border:"1px solid rgba(6,182,212,.15)",background:"rgba(6,182,212,.03)",textAlign:"left",transition:"border-color .15s,background .15s,color .15s"}}>
             <div style={{fontSize:"var(--text-sm)",fontWeight:700,color:"var(--text)",marginBottom:2}}>{c.title}</div>
             <div style={{fontSize:"var(--text-xs)",color:"var(--text4)",lineHeight:1.4}}>{c.desc}</div>
             <span style={{fontSize:"var(--text-xs)",fontWeight:700,color:"#22d3ee",marginTop:4,display:"inline-block"}}>{"\u{1F4D0}"} CALC</span>
@@ -1412,7 +1415,7 @@ function OverviewContent({onNav}){
       <h3 style={{fontSize:"var(--text-lg)",fontWeight:700,marginBottom:12}}>Quick Links</h3>
       <div style={{display:"grid",gridTemplateColumns:"repeat(auto-fill,minmax(220px,1fr))",gap:10}}>
         {LINKS.map(lk=>
-          <button key={lk.id} onClick={()=>lk.isView?window.location.hash="#/"+lk.id:onNav(lk.id)} style={{display:"flex",gap:12,alignItems:"center",padding:"14px 16px",borderRadius:10,border:"1px solid var(--border)",background:"var(--bg2)",textAlign:"left",transition:"all .15s"}}>
+          <button key={lk.id} onClick={()=>lk.isView?window.location.hash="#/"+lk.id:onNav(lk.id)} style={{display:"flex",gap:12,alignItems:"center",padding:"14px 16px",borderRadius:10,border:"1px solid var(--border)",background:"var(--bg2)",textAlign:"left",transition:"border-color .15s,background .15s,color .15s"}}>
             <span style={{fontSize:22}}>{lk.icon}</span>
             <div>
               <div style={{fontSize:"var(--text-md)",fontWeight:700,color:"var(--text)"}}>{lk.title}</div>
@@ -1486,9 +1489,9 @@ function MoreSheet({open,onClose,onNavigate,theme,toggleTheme,fontSize,setFontSi
     const h=e=>{if(e.key==="Escape")onClose()};
     window.addEventListener("keydown",h);return()=>window.removeEventListener("keydown",h);
   },[open,onClose]);
-  const fSizes=[{id:"sm",l:"A⁻"},{id:"md",l:"A"},{id:"lg",l:"A⁺"}];
+  const fSizes=[{id:"sm",l:"A⁻",al:"A⁻ Small font size"},{id:"md",l:"A",al:"A Medium font size"},{id:"lg",l:"A⁺",al:"A⁺ Large font size"}];
   const items=[
-    {id:"glossary",icon:"📖",label:"Glossary",desc:"87 regulatory terms defined"},
+    {id:"glossary",icon:"📖",label:"Glossary",desc:Object.keys(G).length+" regulatory terms defined"},
     {id:"explorer",icon:"🧮",label:"Basel III Explorer",desc:"Interactive B3E impact analysis"},
   ];
   return(<>
@@ -1511,7 +1514,7 @@ function MoreSheet({open,onClose,onNavigate,theme,toggleTheme,fontSize,setFontSi
         <div style={{marginTop:16}}>
           <div style={{fontSize:"var(--text-xs)",fontWeight:700,color:"var(--text5)",textTransform:"uppercase",letterSpacing:".5px",marginBottom:8}}>Font Size</div>
           <div style={{display:"flex",gap:3,marginBottom:12}}>
-            {fSizes.map(f=><button key={f.id} onClick={()=>setFontSize(f.id)} style={{padding:"8px 10px",borderRadius:6,fontSize:"var(--text-sm)",fontWeight:700,background:fontSize===f.id?"var(--amber-bg3)":"var(--bg3)",color:fontSize===f.id?"var(--amber)":"var(--text4)",transition:"all .12s",flex:1,minHeight:44}}>{f.l}</button>)}
+            {fSizes.map(f=><button key={f.id} aria-label={f.al} onClick={()=>setFontSize(f.id)} style={{padding:"8px 10px",borderRadius:6,fontSize:"var(--text-sm)",fontWeight:700,background:fontSize===f.id?"var(--amber-bg3)":"var(--bg3)",color:fontSize===f.id?"var(--amber)":"var(--text4)",transition:"border-color .12s,background .12s,color .12s",flex:1,minHeight:44}}>{f.l}</button>)}
           </div>
           <div style={{fontSize:"var(--text-xs)",fontWeight:700,color:"var(--text5)",textTransform:"uppercase",letterSpacing:".5px",marginBottom:8}}>Theme</div>
           <button onClick={()=>{toggleTheme();onClose()}} style={{width:"100%",padding:"8px 10px",borderRadius:6,fontSize:"var(--text-sm)",fontWeight:600,background:"var(--bg3)",color:"var(--text3)",textAlign:"left",minHeight:44}}>
