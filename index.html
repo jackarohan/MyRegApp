@@ -1474,6 +1474,27 @@ class ErrorBoundary extends React.Component{
   }
 }
 
+function BottomTabBar({view,setView,onMoreTap}){
+  const isMoreView=view==="glossary"||view==="explorer";
+  const tabs=[
+    {id:"regulations",icon:"📑",label:"Regs"},
+    {id:"changing",icon:"🔔",label:"Changes"},
+    {id:"timeline",icon:"⏳",label:"Timeline"},
+    {id:"__more",icon:"•••",label:"More"},
+  ];
+  return(
+  <div className="bottom-tab-bar" data-noprint>
+    {tabs.map(tab=>{
+      const isActive=tab.id==="__more"?isMoreView:(view===tab.id);
+      return(
+      <button key={tab.id} onClick={()=>tab.id==="__more"?onMoreTap():setView(tab.id)} aria-label={tab.label} aria-current={isActive?"page":undefined} className={isActive?"tab-active":"tab-inactive"}>
+        <span className="tab-icon">{tab.icon}</span>
+        <span className="tab-label">{tab.label}</span>
+      </button>);
+    })}
+  </div>);
+}
+
 /*═══════════════ APP ═══════════════*/
 
 function useIsMobile(){
