@@ -33,6 +33,7 @@ nav div::-webkit-scrollbar{display:none}
 @keyframes fadeUp{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
 @keyframes fadeIn{from{opacity:0}to{opacity:1}}
 .fade-up{animation:fadeUp .3s ease both}.fade-in{animation:fadeIn .2s ease both}
+@keyframes dropSlide{from{opacity:0;transform:translateY(-8px)}to{opacity:1;transform:translateY(0)}}.drop-slide{animation:dropSlide .15s ease-out both}
 a{color:var(--amber);text-decoration:none}a:hover{text-decoration:underline}
 .gterm{color:var(--text);border-bottom:1px dotted var(--amber-dot);cursor:help;-webkit-tap-highlight-color:transparent}.gterm:hover{color:var(--amber2)}
 @media(pointer:coarse){.gterm{padding:4px 0;min-height:44px;display:inline-flex;align-items:center}.tl-reg{min-height:44px;padding:8px 12px;display:inline-flex;align-items:center}}
@@ -496,26 +497,54 @@ const SUB_BADGES={"Current Requirements":{lb:"FINAL RULE",bg:"rgba(34,197,94,.1)
 
 function SubNav({subs,idx,onSelect}){
   const isMob=useIsMobile();
-  const activeRef=useRef(null);
-  const scrollRef=useRef(null);
-  const[showLeftFade,setShowLeftFade]=useState(false);
-  const[showRightFade,setShowRightFade]=useState(false);
-  const checkFades=useCallback(()=>{
-    const el=scrollRef.current;if(!el||!isMob)return;
-    setShowLeftFade(el.scrollLeft>4);
-    setShowRightFade(el.scrollLeft<el.scrollWidth-el.clientWidth-4);
-  },[isMob]);
-  useEffect(()=>{if(isMob&&activeRef.current)activeRef.current.scrollIntoView({inline:"center",block:"nearest",behavior:"smooth"});setTimeout(checkFades,100)},[idx,isMob,checkFades]);
-  useEffect(()=>{checkFades();window.addEventListener("resize",checkFades);return()=>window.removeEventListener("resize",checkFades)},[subs.length,checkFades]);
-  const cStyle=isMob
-    ?{display:"flex",gap:3,overflowX:"auto",flexWrap:"nowrap",WebkitOverflowScrolling:"touch",scrollbarWidth:"none",msOverflowStyle:"none",marginBottom:20,paddingBottom:2}
-    :{display:"flex",gap:3,flexWrap:"wrap",marginBottom:20};
+  const[open,setOpen]=useState(false);
+  const dropRef=useRef(null);
+  const wrapRef=useRef(null);
+  useEffect(()=>{setOpen(false)},[idx]);
+  useEffect(()=>{
+    if(!open)return;
+    const h=e=>{if(wrapRef.current&&!wrapRef.current.contains(e.target))setOpen(false)};
+    document.addEventListener("mousedown",h);return()=>document.removeEventListener("mousedown",h);
+  },[open]);
+  useEffect(()=>{
+    if(open&&dropRef.current){const el=dropRef.current.querySelector('[data-active="true"]');if(el)el.scrollIntoView({block:"nearest"})}
+  },[open]);
+  if(isMob){
+    const cur=subs[idx];const badge=SUB_BADGES[cur.t];
+    const handleKey=e=>{
+      if(e.key==="Escape"){setOpen(false);return}
+      if(!open)return;
+      if(e.key==="ArrowDown"){e.preventDefault();const n=Math.min(idx+1,subs.length-1);onSelect(n)}
+      if(e.key==="ArrowUp"){e.preventDefault();const n=Math.max(idx-1,0);onSelect(n)}
+      if(e.key==="Enter"){setOpen(false)}
+    };
+    return(
+    <div ref={wrapRef} style={{position:"relative",marginBottom:20}} onKeyDown={handleKey}>
+      <button onClick={()=>setOpen(!open)} aria-expanded={open} aria-haspopup="listbox" style={{display:"flex",alignItems:"center",justifyContent:"space-between",width:"100%",padding:"12px 16px",minHeight:44,borderRadius:10,background:"var(--bg3)",border:"1px solid var(--border2)",cursor:"pointer",transition:"all .15s"}}>
+        <span style={{fontFamily:"'DM Mono',monospace",fontSize:"var(--text-sm)",color:"var(--text4)",flexShrink:0}}>{idx+1}/{subs.length}</span>
+        <span style={{fontWeight:600,color:"var(--amber)",fontSize:"var(--text-md)",textAlign:"center",flex:1,padding:"0 8px"}}>
+          {cur.t}
+          {badge&&<span style={{fontSize:"var(--text-xs)",fontWeight:700,padding:"1px 5px",borderRadius:3,background:badge.bg,border:"1px solid "+badge.bd,color:badge.tx,letterSpacing:".3px",marginLeft:6}}>{badge.lb}</span>}
+        </span>
+        <span style={{color:"var(--text4)",fontSize:10,flexShrink:0,transition:"transform .15s",transform:open?"rotate(180deg)":"rotate(0deg)"}}>▼</span>
+      </button>
+      {open&&<div onClick={()=>setOpen(false)} style={{position:"fixed",inset:0,zIndex:99,background:"transparent"}}/>}
+      {open&&(
+      <div ref={dropRef} role="listbox" aria-label="Subsections" className="drop-slide" style={{position:"absolute",top:"calc(100% + 6px)",left:0,right:0,zIndex:100,borderRadius:10,background:"var(--bg2)",border:"1px solid var(--border2)",boxShadow:"0 8px 24px rgba(0,0,0,0.25)",maxHeight:"60vh",overflowY:"auto",scrollbarWidth:"thin"}}>
+        {subs.map((s,i)=>{const b=SUB_BADGES[s.t];const isActive=i===idx;return(
+          <button key={i} role="option" aria-selected={isActive} data-active={isActive} onClick={()=>{onSelect(i);setOpen(false)}} style={{display:"flex",alignItems:"center",gap:10,width:"100%",padding:"10px 14px",minHeight:44,background:isActive?"var(--amber-bg3)":"transparent",borderLeft:isActive?"3px solid var(--amber)":"3px solid transparent",borderBottom:i<subs.length-1?"1px solid var(--border)":"none",transition:"all .1s",textAlign:"left"}}>
+            <span style={{fontFamily:"'DM Mono',monospace",fontSize:"var(--text-sm)",color:"var(--text4)",width:24,flexShrink:0}}>{i+1}</span>
+            <span style={{flex:1,fontWeight:600,fontSize:"var(--text-sm)",color:isActive?"var(--amber)":"var(--text2)"}}>{s.t}</span>
+            {b&&<span style={{fontSize:"var(--text-xs)",fontWeight:700,padding:"1px 5px",borderRadius:3,background:b.bg,border:"1px solid "+b.bd,color:b.tx,letterSpacing:".3px"}}>{b.lb}</span>}
+          </button>)})}
+      </div>)}
+    </div>);
+  }
+  const cStyle={display:"flex",gap:3,flexWrap:"wrap",marginBottom:20};
   return(
   <div style={{position:"relative"}}>
-    {isMob&&showLeftFade&&<div style={{position:"absolute",left:0,top:0,bottom:0,width:28,background:"linear-gradient(to right, var(--bg), transparent)",zIndex:2,pointerEvents:"none",borderRadius:"6px 0 0 6px"}}/>}
-    {isMob&&showRightFade&&<div style={{position:"absolute",right:0,top:0,bottom:0,width:28,background:"linear-gradient(to left, var(--bg), transparent)",zIndex:2,pointerEvents:"none",borderRadius:"0 6px 6px 0"}}/>}
-    <div ref={scrollRef} role="tablist" aria-label="Subsections" className={isMob?"subnav-scroll":""} style={cStyle} onScroll={checkFades}>
-      {subs.map((s,i)=>{const badge=SUB_BADGES[s.t];return <button key={i} ref={idx===i?activeRef:undefined} role="tab" aria-selected={idx===i} onClick={()=>onSelect(i)} style={{padding:"8px 14px",borderRadius:6,fontSize:"var(--text-sm)",fontWeight:600,transition:"all .12s",whiteSpace:"nowrap",flexShrink:0,minHeight:44,background:idx===i?"var(--amber-bg4)":"var(--bg3)",color:idx===i?"var(--amber)":"var(--text3)",borderBottom:idx===i?"2px solid var(--amber)":"2px solid transparent",display:"flex",alignItems:"center",gap:5}}>
+    <div role="tablist" aria-label="Subsections" style={cStyle}>
+      {subs.map((s,i)=>{const badge=SUB_BADGES[s.t];return <button key={i} role="tab" aria-selected={idx===i} onClick={()=>onSelect(i)} style={{padding:"8px 14px",borderRadius:6,fontSize:"var(--text-sm)",fontWeight:600,transition:"all .12s",whiteSpace:"nowrap",flexShrink:0,minHeight:44,background:idx===i?"var(--amber-bg4)":"var(--bg3)",color:idx===i?"var(--amber)":"var(--text3)",borderBottom:idx===i?"2px solid var(--amber)":"2px solid transparent",display:"flex",alignItems:"center",gap:5}}>
         {s.t}
         {badge&&<span style={{fontSize:"var(--text-xs)",fontWeight:700,padding:"1px 5px",borderRadius:3,background:badge.bg,border:"1px solid "+badge.bd,color:badge.tx,letterSpacing:".3px"}}>{badge.lb}</span>}
       </button>})}
