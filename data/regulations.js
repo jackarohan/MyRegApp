@@ -110,7 +110,7 @@ cite:[{type:"reg",auth:"Fed/OCC/FDIC",pin:"12 CFR Part 217 \u00a7 217.10 \u2014 
 "The agencies characterized the eSLR reform as a \u2018first step\u2019 in a broader capital framework review. The {{ref:gsib}}, {{ref:scb}}, and Basel III Endgame are all expected to follow.",
 "Overall capital for G-SIB HCs expected to remain similar despite eSLR reduction, since risk-based requirements will become the binding constraint."],
 kp:["Treasury/reserve SLR exclusion not adopted but under active discussion","SEC Treasury clearing mandate (Dec 2026/Jun 2027) adds urgency","eSLR described as \u2018first step\u2019 \u2014 further reforms expected"]},
-{t:"Key Dates",c:["Apr 2014: SLR and eSLR final rules \u00b7 Apr 2020: Temporary SLR relief (expired Mar 2021) \u00b7 Jun 2025: Recalibration proposed \u00b7 Nov 25, 2025: Recalibration finalized \u00b7 Jan 1, 2026: Early adoption \u00b7 Apr 1, 2026: Effective date \u00b7 Dec 2026/Jun 2027: SEC Treasury clearing mandate"],kp:[]},
+{t:"Key Dates",c:["Apr 2014: SLR and eSLR final rules \u00b7 Apr 2020: Temporary SLR relief (expired Mar 2021) \u00b7 Jun 2025: Recalibration proposed \u00b7 Nov 25, 2025: Recalibration finalized \u00b7 Jan 1, 2026: Early adoption"],kp:[]},
 {t:"Source Documents",c:[],kp:[],src:[
 {t:"eSLR Recalibration Final Rule",d:"Nov 2025",u:"https://www.federalreserve.gov/newsevents/pressreleases/bcreg20251125b.htm"},
 {t:"eSLR Recalibration Proposed Rule",d:"Jun 2025",u:"https://www.federalreserve.gov/newsevents/pressreleases/bcreg20250627a.htm"},
@@ -158,7 +158,7 @@ kp:["Method 2 fixed denominators cause systematic score inflation","Method 1 use
 "Industry groups estimate correcting the fixed-denominator issue could reduce surcharges by ~1 percentage point, expanding lending and market-making capacity by over $1 trillion.",
 "The {{ref:eslr}} final rule now uses Method 1 surcharges to calibrate the leverage buffer \u2014 any Method 1 changes would flow through to eSLR. The November 2025 FSB G-SIB list moved Bank of America from Bucket 2 to Bucket 3, which may increase its U.S. G-SIB surcharge."],
 kp:["G-SIB surcharge NPR released March 19, 2026; comment period closes June 18, 2026","Industry estimates ~1pp reduction if denominators updated","eSLR now tied to Method 1 \u2014 new interdependency"]},
-{t:"Key Dates",c:["Jul 2015: G-SIB surcharge final rule \u00b7 Jan 2016\u20132019: Phased in from 50% to 100% \u00b7 Nov 2025: eSLR ties leverage buffer to Method 1 surcharge \u00b7 Nov 2025: FSB moves BofA to higher bucket \u00b7 Mar 19, 2026: G-SIB surcharge methodology NPR released · Jun 18, 2026: Comment period closes"],kp:[]},
+{t:"Key Dates",c:["Jul 2015: G-SIB surcharge final rule \u00b7 Jan 2016\u20132019: Phased in from 50% to 100% \u00b7 Nov 2025: eSLR ties leverage buffer to Method 1 surcharge \u00b7 Nov 2025: FSB moves BofA to higher bucket"],kp:[]},
 {t:"Source Documents",c:[],kp:[],src:[
 {t:"G-SIB Surcharge Final Rule (80 FR 49082)",d:"Jul 2015",u:"https://www.federalregister.gov/documents/2015/08/14/2015-18702/regulatory-capital-rules-implementation-of-risk-based-capital-surcharges-for-global-systemically"},
 {t:"Federal Reserve: G-SIB Surcharge Overview",d:"Ongoing",u:"https://www.federalreserve.gov/supervisionreg/global-systemically-important-banks.htm"},
@@ -207,7 +207,7 @@ kp:["Stress capital decline = peak-to-trough CET1 drop under severely adverse","
 "Comments due June 23, 2025; awaiting finalization. First averaged SCB would use 2025+2026 {{ref:stress-testing}} results.",
 "This addresses industry criticism that SCB volatility is driven by scenario/model changes, not actual changes in bank risk profiles."],
 kp:["Two-year averaging proposed to reduce volatility","Effective date shift: Oct 1 \u2192 Jan 1","Comment period closed June 2025; awaiting finalization"]},
-{t:"Key Dates",c:["Mar 2020: SCB final rule \u00b7 Oct 2020: First SCBs effective \u00b7 Apr 2025: Results averaging proposed \u00b7 Jun 2025: Comment period closed \u00b7 Aug 2025: Final 2025 SCBs announced \u00b7 2026: Averaging rule finalization expected"],kp:[]},
+{t:"Key Dates",c:["Mar 2020: SCB final rule \u00b7 Oct 2020: First SCBs effective \u00b7 Apr 2025: Results averaging proposed \u00b7 Jun 2025: Comment period closed \u00b7 Aug 2025: Final 2025 SCBs announced"],kp:[]},
 {t:"Source Documents",c:[],kp:[],src:[
 {t:"SCB Final Rule (85 FR 15576)",d:"Mar 2020",u:"https://www.federalregister.gov/documents/2020/03/18/2020-04838/regulations-q-and-y-regulatory-capital"},
 {t:"SCB Averaging Proposal",d:"Apr 2025",u:"https://www.federalreserve.gov/newsevents/pressreleases/bcreg20250417a.htm"},
@@ -254,7 +254,7 @@ cite:[{type:"reg",auth:"Federal Reserve",pin:"12 CFR Part 252 Subpart E \u2014 S
 "2025 results showed lower SCBs vs. 2024 due to a less severe scenario, though results remain volatile from model updates. {{ref:irrbb}} has become a more prominent dimension of the stress tests post-SVB, with the severely adverse scenario incorporating larger rate movements.",
 "Reflects a philosophical shift under Vice Chair Bowman toward greater regulatory transparency and accountability."],
 kp:["Model transparency proposed: publish models, take public comment","Comment period extended to Feb 21, 2026","Reflects broader shift toward supervisory transparency"]},
-{t:"Key Dates",c:["2011: First CCAR cycle \u00b7 2014: DFAST statutory requirements effective \u00b7 2019: Qualitative objection eliminated \u00b7 2020: SCB integrates stress tests into ongoing capital \u00b7 2024: Exploratory scenarios introduced \u00b7 Feb 2026: Transparency proposal comment deadline \u00b7 Feb 2026: 2026 scenarios expected \u00b7 Jun 2026: 2026 results"],kp:[]},
+{t:"Key Dates",c:["2011: First CCAR cycle \u00b7 2014: DFAST statutory requirements effective \u00b7 2019: Qualitative objection eliminated \u00b7 2020: SCB integrates stress tests into ongoing capital \u00b7 2024: Exploratory scenarios introduced"],kp:[]},
 {t:"Source Documents",c:[],kp:[],src:[
 {t:"Stress Test Transparency Proposal",d:"Oct 2025",u:"https://www.federalreserve.gov/newsevents/pressreleases/bcreg20251024a.htm"},
 {t:"Federal Reserve: Stress Tests Overview",d:"Ongoing",u:"https://www.federalreserve.gov/supervisionreg/stress-tests-capital-planning.htm"},
@@ -424,7 +424,7 @@ kp:["Bail-in converts LTD to equity in resolution","SPOE: only parent enters res
 "The Fed has not proposed changes to the risk-based TLAC requirements, but these will be affected by the {{ref:endgame}} re-proposal (released March 2026) since TLAC is expressed relative to RWAs. Lower RWAs under the single-stack design would mechanically reduce dollar TLAC requirements. Final RWA impacts will depend on the comment period outcome (June 18, 2026).",
 "Industry groups have advocated for TLAC calibration review alongside the broader capital framework, noting that the overall \u2018stack\u2019 of requirements has grown complex."],
 kp:["Leverage TLAC conformed to eSLR recalibration (Nov 2025)","Risk-based TLAC unchanged but could be affected by Endgame","Industry advocates for holistic calibration review"]},
-{t:"Key Dates",c:["Nov 2015: FSB published global TLAC standard \u00b7 Dec 2016: Fed published U.S. TLAC and LTD final rule \u00b7 Jan 2019: Full compliance required \u00b7 Nov 2025: Leverage-based TLAC conformed to eSLR recalibration \u00b7 Apr 2026: Conformed leverage TLAC effective with eSLR"],kp:[]},
+{t:"Key Dates",c:["Nov 2015: FSB published global TLAC standard \u00b7 Dec 2016: Fed published U.S. TLAC and LTD final rule \u00b7 Jan 2019: Full compliance required \u00b7 Nov 2025: Leverage-based TLAC conformed to eSLR recalibration"],kp:[]},
 {t:"Source Documents",c:[],kp:[],src:[
 {t:"TLAC and LTD Final Rule (82 FR 8266)",d:"Dec 2016",u:"https://www.federalregister.gov/documents/2017/01/24/2017-00431/total-loss-absorbing-capacity-long-term-debt-and-clean-holding-company-requirements"},
 {t:"FSB: TLAC Principles and Term Sheet",d:"Nov 2015",u:"https://www.fsb.org/2015/11/total-loss-absorbing-capacity-tlac-principles-and-term-sheet/"},
@@ -462,7 +462,7 @@ kp:["SPOE: parent enters bankruptcy, subsidiaries continue via bridge","Separate
 "There is ongoing debate about whether the resolution framework should be extended or modified for large regional banks following the 2023 failures of Silicon Valley Bank and Signature Bank.",
 "The FDIC has proposed a separate long-term debt requirement for Category II/III banks (banks with \u2265$100B but not G-SIBs), modeled on the G-SIB TLAC rule but calibrated differently. This was proposed in 2023 but has not been finalized."],
 kp:["2024 guidance added separability and reverse stress testing","Post-2023 bank failures: debate on extending framework","FDIC proposed LTD for Category II/III (not yet finalized)"]},
-{t:"Key Dates",c:["Jul 2010: Dodd-Frank Section 165(d) enacted \u00b7 Nov 2011: First resolution plan rule finalized \u00b7 2012\u20132014: First plans submitted by G-SIBs \u00b7 2016\u20132019: Multiple deficiency findings and remediation cycles \u00b7 2024: Updated resolution guidance issued \u00b7 2025: Next G-SIB full-plan submissions · Jul 1, 2026: G-SIB IDI/Group A full-plan submissions due"],kp:[]},
+{t:"Key Dates",c:["Jul 2010: Dodd-Frank Section 165(d) enacted \u00b7 Nov 2011: First resolution plan rule finalized \u00b7 2012\u20132014: First plans submitted by G-SIBs \u00b7 2016\u20132019: Multiple deficiency findings and remediation cycles \u00b7 2024: Updated resolution guidance issued \u00b7 2025: Next G-SIB full-plan submissions"],kp:[]},
 {t:"Source Documents",c:[],kp:[],src:[
 {t:"Resolution Plan Rule (12 CFR Part 243)",d:"Nov 2011",u:"https://www.ecfr.gov/current/title-12/chapter-II/subchapter-A/part-243"},
 {t:"2024 Resolution Planning Guidance",d:"Jun 2024",u:"https://www.federalreserve.gov/newsevents/pressreleases/bcreg20240621a.htm"},
@@ -580,7 +580,7 @@ kp:["Five risk indicators determine category on rolling four-quarter basis","Slo
 "Post-2023 bank failures: The failures of Silicon Valley Bank (Category IV) and Signature Bank prompted calls to strengthen requirements for banks in Categories III and IV, particularly around interest rate risk, uninsured deposits, and liquidity management.",
 "Vice Chair Bowman has indicated a preference for maintaining proportionality in the tailoring framework, while others have argued that the 2023 failures demonstrated that $100B\u2013$250B banks can pose systemic risk."],
 kp:["Endgame re-proposal may revise scope for Cat III/IV banks","2023 bank failures prompted calls to tighten Cat III/IV rules","Debate: proportionality vs. systemic risk from mid-sized banks","Interest rate risk and uninsured deposits under scrutiny"]},
-{t:"Key Dates",c:["May 2018: EGRRCPA enacted (raised threshold from $50B to $250B) \u00b7 Oct 2019: Tailoring final rules published (84 FR 59032) \u00b7 Jan 2020: Tailoring framework effective \u00b7 Mar 2023: SVB and Signature Bank failures \u00b7 Jul 2023: Endgame NPR proposed extending to $100B+ banks \u00b7 2026: Endgame re-proposal to address Cat III/IV scope"],kp:[]},
+{t:"Key Dates",c:["May 2018: EGRRCPA enacted (raised threshold from $50B to $250B) \u00b7 Oct 2019: Tailoring final rules published (84 FR 59032) \u00b7 Jan 2020: Tailoring framework effective \u00b7 Mar 2023: SVB and Signature Bank failures \u00b7 Jul 2023: Endgame NPR proposed extending to $100B+ banks"],kp:[]},
 {t:"Source Documents",c:[],kp:[],src:[
 {t:"Tailoring Final Rule (84 FR 59032)",d:"Oct 2019",u:"https://www.federalregister.gov/documents/2019/11/01/2019-23662/prudential-standards-for-large-bank-holding-companies"},
 {t:"EGRRCPA (S.2155, Public Law 115-174)",d:"May 2018",u:"https://www.congress.gov/bill/115th-congress/senate-bill/2155"},
