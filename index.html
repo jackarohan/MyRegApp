@@ -1028,40 +1028,99 @@ function LtvChart({chart}){
 function B3eImpactSummary(){
   const decColor=cssVar("--dir-decrease");
   const incColor=cssVar("--dir-increase");
+  const mixColor=cssVar("--dir-mixed");
   const simpColor=cssVar("--dir-simplification");
-  const newColor=cssVar("--dir-new");
-  const items=[
-    {label:"Residential Mortgages",val:-30.0},{label:"Securitizations",val:-18.0},{label:"Commitments (unused)",val:-8.0},
-    {label:"Retail Exposures",val:-10.0},{label:"Other Assets",val:-10.0},{label:"Other Corporate",val:-7.0},
-    {label:"CRE",val:-5.0},{label:"MSAs",val:0,note:"~0%"},{label:"AOCI Recognition",val:3.1,isCET1:true},
+
+  /* ── Stat cards: both cohorts, CET1 only ── */
+  const stats=[
+    {label:"Cat I/II Standalone",value:"+1.4%",color:incColor,sub:"credit relief offset by market risk & CVA"},
+    {label:"Cat I/II Cumulative",value:"−4.8%",color:decColor,sub:"with companion proposals"},
+    {label:"Cat III/IV Standalone",value:"−3.0%",color:decColor,sub:"CET1 after AOCI offset"},
+    {label:"Cat III/IV + Stress Tests",value:"−5.3%",color:simpColor,sub:"incl. SCB changes"},
   ];
+
+  /* ── Stage 1: RWA by asset class ── */
+  const rwaItems=[
+    {label:"Residential Mortgages",val:-30.0},
+    {label:"Securitizations",val:-18.0},
+    {label:"Retail Exposures",val:-10.0},
+    {label:"Other Assets",val:-10.0},
+    {label:"Commitments (unused)",val:-8.0},
+    {label:"Other Corporate",val:-7.0},
+    {label:"CRE",val:-5.0},
+    {label:"MSAs",val:0,note:"~0%"},
+  ];
+  const rwaMax=Math.max(...rwaItems.map(d=>Math.abs(d.val)),1);
+
+  /* ── Stage 2: CET1 translation waterfall ── */
+  const cet1Steps=[
+    {label:"Gross RWA Relief",value:-6.1},
+    {label:"AOCI Opt-Out Elimination",value:+3.1},
+    {label:"Equity & Other Increases",value:+0.5},
+    {label:"Net CET1 Impact",value:-2.5,isNet:true},
+  ];
+  const cet1Max=Math.max(...cet1Steps.map(s=>Math.abs(s.value)));
+
   return(
   <div style={{background:"var(--bg2)",border:"1px solid var(--border)",borderRadius:10,padding:20,marginBottom:24}}>
-    <div style={{fontSize:12,fontWeight:700,letterSpacing:.8,color:"var(--text4)",marginBottom:16}}>ESTIMATED IMPACT — CAT III/IV HOLDING COMPANIES (STANDARDIZED)</div>
-    <div style={{display:"flex",gap:20,marginBottom:20,flexWrap:"wrap"}}>
-      {[{label:"Total RWA",value:"\u22126.1%",color:decColor},{label:"Net CET1",value:"\u22123.0%",color:simpColor,sub:"after AOCI offset"},{label:"With Stress Tests",value:"\u22125.3%",color:newColor,sub:"incl. SCB changes"}].map((s,i)=>
-        <div key={i} style={{textAlign:"center",minWidth:100,flex:"1 1 auto"}}>
-          <div style={{fontSize:24,fontWeight:700,color:s.color,fontFamily:"'DM Mono',monospace"}}>{s.value}</div>
-          <div style={{fontSize:11,color:"var(--text3)",marginTop:2}}>{s.label}</div>
-          {s.sub&&<div style={{fontSize:10,color:"var(--text4)"}}>{s.sub}</div>}
+
+    {/* ── Stat cards ── */}
+    <div style={{fontSize:12,fontWeight:700,letterSpacing:.8,color:"var(--text4)",marginBottom:12}}>CET1 IMPACT SUMMARY</div>
+    <div style={{display:"grid",gridTemplateColumns:"repeat(auto-fit,minmax(150px,1fr))",gap:10,marginBottom:24}}>
+      {stats.map((s,i)=>
+        <div key={i} style={{textAlign:"center",padding:"12px 8px",background:"var(--bg)",borderRadius:8,border:"1px solid var(--border)"}}>
+          <div style={{fontSize:22,fontWeight:700,color:s.color,fontFamily:"'DM Mono',monospace"}}>{s.value}</div>
+          <div style={{fontSize:11,color:"var(--text3)",marginTop:3,fontWeight:600}}>{s.label}</div>
+          <div style={{fontSize:10,color:"var(--text4)",marginTop:1}}>{s.sub}</div>
         </div>
       )}
     </div>
-    {items.map((d,i)=>{
-      const isPos=d.val>0,isZero=d.val===0;
-      const pct=isZero?0:(Math.abs(d.val)/35)*100;
-      const color=isZero?"#777":isPos?incColor:decColor;
+
+    {/* ── Stage 1: RWA bars ── */}
+    <div style={{fontSize:11,fontWeight:700,letterSpacing:.8,color:"var(--text4)",marginBottom:12}}>RWA IMPACT — CAT III/IV (STANDARDIZED)</div>
+    {rwaItems.map((d,i)=>{
+      const isZero=d.val===0;
+      const pct=isZero?0:(Math.abs(d.val)/rwaMax)*100;
+      const color=isZero?"#777":d.val>0?incColor:decColor;
       return(
-      <div key={i} style={{marginBottom:8}}>
+      <div key={i} style={{marginBottom:7}}>
         <div style={{display:"flex",justifyContent:"space-between",fontSize:11,color:"var(--text3)",marginBottom:3}}>
-          <span>{d.label}{d.isCET1?" (CET1 offset)":""}</span>
-          <span style={{fontWeight:700,color,fontFamily:"'DM Mono',monospace"}}>{isZero?(d.note||"0%"):(isPos?"+":"")+d.val+"%"}</span>
+          <span>{d.label}</span>
+          <span style={{fontWeight:700,color,fontFamily:"'DM Mono',monospace"}}>{isZero?(d.note||"0%"):(d.val>0?"+":"")+d.val+"%"}</span>
         </div>
-        <div style={{height:5,background:"var(--bg3)",borderRadius:3}} role="img" aria-label={d.label+": "+(isZero?(d.note||"0%"):(isPos?"+":"")+d.val+"% RWA impact")+" (capital impact metric)"}>
-          <div style={{height:5,borderRadius:3,background:color,width:pct+"%",opacity:.7}}/>
+        <div style={{height:5,background:"var(--bg3)",borderRadius:3}} role="img" aria-label={d.label+": "+(isZero?(d.note||"0%"):(d.val>0?"+":"")+d.val+"% RWA change")}>
+          <div style={{height:5,borderRadius:3,background:color,width:pct+"%",opacity:.75}}/>
         </div>
       </div>);
     })}
+    <div style={{display:"flex",justifyContent:"flex-end",marginTop:4,paddingTop:6,borderTop:"1px dashed var(--border)"}}>
+      <span style={{fontSize:11,fontWeight:700,color:decColor,fontFamily:"'DM Mono',monospace"}}>Gross RWA: −6.1%</span>
+    </div>
+
+    {/* ── Divider ── */}
+    <div style={{display:"flex",alignItems:"center",gap:10,margin:"20px 0 16px"}}>
+      <div style={{flex:1,height:1,background:"var(--border)"}}/>
+      <span style={{fontSize:10,fontWeight:700,letterSpacing:.8,color:"var(--text4)",whiteSpace:"nowrap"}}>HOW THIS TRANSLATES TO CAPITAL</span>
+      <div style={{flex:1,height:1,background:"var(--border)"}}/>
+    </div>
+
+    {/* ── Stage 2: CET1 waterfall ── */}
+    {cet1Steps.map((s,i)=>{
+      const barW=(Math.abs(s.value)/cet1Max)*100;
+      const color=s.isNet?simpColor:s.value<0?decColor:incColor;
+      return(
+      <div key={i} style={{marginBottom:7}}>
+        <div style={{display:"flex",justifyContent:"space-between",fontSize:11,color:"var(--text3)",marginBottom:3}}>
+          <span style={{fontWeight:s.isNet?700:400}}>{s.label}</span>
+          <span style={{fontWeight:700,color,fontFamily:"'DM Mono',monospace"}}>{s.value>0?"+":""}{s.value}%</span>
+        </div>
+        <div style={{height:s.isNet?7:5,background:"var(--bg3)",borderRadius:3}} role="img" aria-label={s.label+": "+(s.value>0?"+":"")+s.value+"% CET1 impact"}>
+          <div style={{height:"100%",borderRadius:3,background:color,width:barW+"%",opacity:s.isNet?1:.75}}/>
+        </div>
+      </div>);
+    })}
+
+    {/* ── Source ── */}
     <div style={{marginTop:14,paddingTop:10,borderTop:"1px solid var(--border)",fontSize:10,color:"var(--text4)",lineHeight:1.5}}>
       Source: Federal Reserve Board / OCC / FDIC aggregate estimates based on Q2 2025 balance sheet data. All figures reflect agency-published re-proposal impact analysis; not institution-specific.
     </div>
