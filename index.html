@@ -1079,6 +1079,16 @@ function B3eChangeCard({change,isExpanded,onToggle}){
   const cardId="b3e-card-"+change.title.replace(/\W+/g,"-").toLowerCase();
   const contentId=cardId+"-content";
   const handleKeyDown=e=>{if(e.key==="Enter"||e.key===" "){e.preventDefault();onToggle()}if(e.key==="Escape"&&isExpanded){e.preventDefault();onToggle()}};
+  const SmartField=f=>{
+    if(!f)return null;
+    if(typeof f==="string")return f;
+    return React.createElement(React.Fragment,null,
+      f.text&&React.createElement("div",{style:{marginBottom:f.bullets?8:0}},f.text),
+      f.bullets&&React.createElement("ul",{style:{margin:0,paddingLeft:18,fontSize:12,lineHeight:1.6}},
+        f.bullets.map((b,i)=>React.createElement("li",{key:i,style:{marginBottom:3},dangerouslySetInnerHTML:{__html:b}}))
+      )
+    );
+  };
   return(
   <div style={{background:isExpanded?"var(--bg3)":"var(--bg2)",border:"1px solid "+(isExpanded?dirColor+"44":"var(--border)"),borderRadius:10,marginBottom:6,transition:"border-color 0.25s ease,background 0.25s ease"}}>
     <div id={cardId} role="button" tabIndex={0} aria-expanded={isExpanded} aria-controls={contentId} onClick={onToggle} onKeyDown={handleKeyDown} style={{padding:"16px 18px",display:"flex",alignItems:"center",gap:10,cursor:"pointer",minHeight:48}}>
@@ -1096,16 +1106,16 @@ function B3eChangeCard({change,isExpanded,onToggle}){
         <div style={{display:"grid",gridTemplateColumns:"repeat(auto-fit,minmax(220px,1fr))",gap:10,marginBottom:12}}>
           <div style={{background:"var(--bg)",borderRadius:8,padding:14,borderTop:"2px solid var(--text4)"}}>
             <div style={{fontSize:10,fontWeight:700,letterSpacing:.8,color:"var(--text4)",marginBottom:8}}>TODAY</div>
-            <div style={{fontSize:13,color:"var(--text2)",lineHeight:1.55}}>{change.today}</div>
+            <div style={{fontSize:13,color:"var(--text2)",lineHeight:1.55}}>{SmartField(change.today)}</div>
           </div>
           <div style={{background:"var(--bg)",borderRadius:8,padding:14,borderTop:"2px solid "+dirColor}}>
             <div style={{fontSize:10,fontWeight:700,letterSpacing:.8,color:dirColor,marginBottom:8}}>2026 REPROPOSAL*</div>
-            <div style={{fontSize:13,color:"var(--text2)",lineHeight:1.55}}>{change.newRule}</div>
+            <div style={{fontSize:13,color:"var(--text2)",lineHeight:1.55}}>{SmartField(change.newRule)}</div>
           </div>
         </div>
         <div style={{background:"var(--bg)",borderRadius:8,padding:12,borderLeft:"3px solid "+dirColor+"44"}}>
           <div style={{fontSize:10,fontWeight:700,letterSpacing:.8,color:"var(--text4)",marginBottom:4}}>WHY IT MATTERS</div>
-          <div style={{fontSize:13,color:"var(--text3)",lineHeight:1.55}}>{change.why}</div>
+          <div style={{fontSize:13,color:"var(--text3)",lineHeight:1.55}}>{SmartField(change.why)}</div>
         </div>
         {change.chart&&change.chart.type==="waterfall"&&<WaterfallChart chart={change.chart}/>}
         {change.chart&&change.chart.type!=="waterfall"&&<LtvChart chart={change.chart}/>}
