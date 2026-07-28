@@ -1368,7 +1368,7 @@ function OverviewContent({onNav}){
        {l:"CET1 Minimum",v:"4.5%",pct:30,reg:"cap-adequacy"},
        {l:"SCB (firm-specific)",v:"2.5\u20134.3%",pct:22,reg:"scb"},
        {l:"G-SIB Surcharge",v:"1.0\u20134.5%",pct:22,reg:"gsib"},
-       {l:"CCyB (currently 0%)",v:"0%",pct:1,reg:"cap-adequacy"},
+       {l:"CCyB (never activated)",v:"0%",pct:1,reg:"cap-adequacy"},
      ],total:"Binding CET1: 8.0\u201313.5%"},
     {title:"Leverage Stack",desc:"Non-risk-weighted backstop requirements",color:"#3b82f6",
      layers:[
@@ -1398,7 +1398,7 @@ function OverviewContent({onNav}){
     <div style={{marginBottom:24}}>
       <h2 style={{fontSize:"var(--text-xl)",fontWeight:800,letterSpacing:"-.3px",marginBottom:6}}>Overview</h2>
       <p style={{fontSize:"var(--text-md)",color:"var(--text3)",lineHeight:1.55}}>
-        U.S. bank regulation rests on three pillars: <strong style={{color:"var(--text)"}}>capital adequacy</strong> (do you have enough loss-absorbing resources?), <strong style={{color:"var(--text)"}}>leverage limits</strong> (a non-risk-weighted backstop), and <strong style={{color:"var(--text)"}}>liquidity</strong> (can you meet obligations under stress?). Requirements scale by firm size and complexity through the <button onClick={()=>onNav("tailoring")} style={{color:"var(--amber)",fontWeight:700,padding:0,borderBottom:"1px dashed var(--amber-dot)"}}>tailoring framework</button> (Categories I–IV). Three federal agencies administer the rules jointly — the Federal Reserve (holding companies and consolidated supervision), the OCC (national banks), and the FDIC (state nonmember banks) — through joint interagency rulemaking.
+        U.S. bank regulation rests on three pillars: <strong style={{color:"var(--text)"}}>capital adequacy</strong> (do you have enough loss-absorbing resources?), <strong style={{color:"var(--text)"}}>leverage limits</strong> (a non-risk-weighted backstop), and <strong style={{color:"var(--text)"}}>liquidity</strong> (can you meet obligations under stress?). Requirements scale by firm size and complexity through the <button onClick={()=>onNav("tailoring")} style={{color:"var(--amber)",fontWeight:700,padding:0,borderBottom:"1px dashed var(--amber-dot)"}}>tailoring framework</button> (Categories I–IV). Three federal agencies administer the rules jointly — the Federal Reserve (holding companies and consolidated supervision), the OCC (national banks), and the FDIC (state nonmember banks) — through joint interagency rulemaking. Figures reflect requirements in force as of {META.asOf}.
       </p>
     </div>
 
