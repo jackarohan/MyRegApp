@@ -45,7 +45,7 @@ tables:[{title:"U.S. Standardized Risk Weights (12 CFR \u00a7217.32)",headers:["
 "The risk-based capital framework does not include an explicit Pillar 1 capital charge for {{ref:irrbb}}. Instead, interest rate risk in the banking book is assessed under Pillar 2 supervisory review and the CAMELS examination process. The 2023 bank failures highlighted the potential for unrecognized interest rate risk to erode capital adequacy.",
 "The capital planning governance expectations established in {{ref:sr1519}} guide how large banks assess and maintain these capital ratios prospectively through stress testing and internal capital adequacy processes."],
 kp:["CET1 = common stock + retained earnings \u2212 regulatory deductions","RWAs: Standardized or Advanced Approaches; binding constraint is the higher","CCyB has never been activated in the U.S.","Leverage ratios serve as a backstop to risk-based requirements","PCA: five capital tiers with escalating supervisory consequences; buffer breach \u2192 payout limits"]},
-{kind:"outlook",t:"Pending Changes",c:[
+{kind:"outlook",t:"Outlook",c:[
 "Basel III Endgame Re-Proposal (Released March 19, 2026): Joint NPR issued by Fed (6-1, Barr dissenting), OCC, and FDIC. The 90-day comment period closes June 18, 2026. Capital-neutral design: standalone CET1 +1.4% for Cat I/II BHCs, with cumulative CET1 decrease of ~4.8% when combined with companion proposals (G-SIB surcharge, eSLR, stress test changes). Cat III/IV firms that voluntarily opt into ERBA could see CET1 reductions of 3\u20137% depending on portfolio mix. Key features: single-stack (ERBA for Cat I/II, revised Standardized for Cat III/IV), elimination of dual-stack and internal models (A-IRB, AMA), LTV-based mortgage risk weights, AOCI opt-out eliminated with 5-year phase-in starting Jan 2027.",
 "Scope narrowed from original 2023 NPR: banks with $100\u2013250B excluded from most new requirements but are subject to AOCI recognition. Cat III/IV may voluntarily opt into ERBA. Operational risk handled via explicit SMA charge (ERBA) or embedded in credit risk weights (Standardized).",
 "{{ref:eslr}} Reforms (Finalized Nov 2025, Effective April 2026): Recalibration reduces leverage-based capital for G-SIBs.",
@@ -54,7 +54,20 @@ kp:["CET1 = common stock + retained earnings \u2212 regulatory deductions","RWAs
 "{{ref:stress-testing}} Transparency (Proposed Oct 2025): The Fed proposed publishing stress test models and taking public comment on model changes.",
 "CBLR Reduction (Proposed Nov 2025): Agencies jointly proposed lowering the community bank leverage ratio from 9% to 8% and extending the compliance grace period from two to four quarters. Comments closed January 30, 2026; finalization expected mid-2026 with a potential effective date of October 1, 2026."],
 kp:["Basel III Endgame re-proposal released March 19, 2026; comments due June 18","Standalone CET1 +1.4% Cat I/II BHCs; cumulative \u22124.8% with companion proposals","Four pillars: eSLR (done), SCB (proposed), G-SIB surcharge (review), Endgame (released)","eSLR effective April 1, 2026","CBLR reduction to 8% proposed Nov 2025; finalization expected mid-2026"]},
-{t:"Key Dates",c:["Jan 2015: U.S. Basel III capital minimums effective \u00b7 2016\u20132019: Buffers & G-SIB surcharges phased in \u00b7 Oct 2019: Tailoring framework finalized \u00b7 Oct 2020: First SCB requirements effective \u00b7 Jul 2023: Basel III Endgame NPR published \u00b7 Sep 2024: Fed announced re-proposal \u00b7 Apr 2025: SCB averaging proposed \u00b7 Nov 2025: eSLR final rule \u00b7 Mar 19, 2026: Joint Endgame NPR released \u00b7 Apr 2026: eSLR effective \u00b7 Jun 18, 2026: Endgame comment period closes \u00b7 2027\u20132030: Potential implementation with phase-in"],kp:[]},
+],
+timeline:[
+{y:2015,m:1,label:"U.S. Basel III capital minimums effective"},
+{y:2016,display:"2016\u20132019",label:"Capital buffers and G-SIB surcharges phased in"},
+{y:2019,m:10,label:"Tailoring framework finalized"},
+{y:2020,m:10,label:"First SCB requirements effective"},
+{y:2023,m:7,label:"Basel III Endgame NPR published"},
+{y:2024,m:9,label:"Fed announced Endgame re-proposal"},
+{y:2025,m:4,label:"SCB averaging proposed"},
+{y:2025,m:11,label:"eSLR recalibration final rule"},
+{y:2026,m:3,day:19,label:"Joint Endgame reproposal NPR released"},
+{y:2026,m:4,day:1,label:"eSLR recalibration effective"},
+{y:2026,m:6,day:18,label:"Endgame reproposal comment period closed"},
+{y:2027,display:"2027\u20132030",label:"Potential Endgame implementation with phase-in",kind:"outlook"}
 ],
 src:[
 {t:"Basel III: Finalising post-crisis reforms",d:"Dec 2017",u:"https://www.bis.org/bcbs/publ/d424.htm"},
@@ -98,12 +111,21 @@ cite:[{type:"reg",auth:"Fed/OCC/FDIC",pin:"12 CFR Part 217 \u00a7 217.10 \u2014 
 "Binding Constraint Dynamics: The eSLR was designed as a backstop to risk-based requirements, but the original 5%/6% calibration made it the binding constraint for most G-SIBs. When the leverage ratio binds, banks face a \u2018flat tax\u2019 on all assets regardless of risk, discouraging low-margin activities like Treasury dealing, reserve holding, and client clearing. The recalibration is intended to shift the binding constraint back to risk-based ratios, which better differentiate between risky and safe assets.",
 "Interaction with {{ref:irrbb}}: Because the leverage ratio treats all assets equally, it does not directly capture interest rate risk. However, banks that extend duration to earn spread (a key IRRBB exposure) do not face higher leverage capital. This asymmetry means the SLR can encourage duration extension \u2014 one reason the agencies view risk-based requirements as the appropriate primary constraint."],
 kp:["TLE includes on- and off-balance-sheet items with no risk weighting","Old buffer: flat 2% for all G-SIBs \u2192 New: 50% of Method 1 surcharge (0.5\u20131.25%)","When leverage binds, banks face a flat tax on all assets including safe ones","Recalibration shifts binding constraint back to risk-based ratios"]},
-{kind:"outlook",t:"Pending Changes",c:[
+{kind:"outlook",t:"Outlook",c:[
 "Treasury and Reserve Exclusions: Vice Chair Bowman\u2019s June 2025 proposal sought comment on alternatives including excluding Treasuries and central bank reserves from the SLR denominator (the TLE). The agencies did not adopt any exclusion in the final rule, but it retains broad support \u2014 particularly as the SEC\u2019s Treasury clearing mandate approaches (Dec 2026 / June 2027).",
 "The agencies characterized the eSLR reform as a \u2018first step\u2019 in a broader capital framework review. The {{ref:gsib}}, {{ref:scb}}, and Basel III Endgame are all expected to follow.",
 "Overall capital for G-SIB HCs expected to remain similar despite eSLR reduction, since risk-based requirements will become the binding constraint."],
 kp:["Treasury/reserve SLR exclusion not adopted but under active discussion","SEC Treasury clearing mandate (Dec 2026/Jun 2027) adds urgency","eSLR described as \u2018first step\u2019 \u2014 further reforms expected"]},
-{t:"Key Dates",c:["Apr 2014: SLR and eSLR final rules \u00b7 Apr 2020: Temporary SLR relief (expired Mar 2021) \u00b7 Jun 2025: Recalibration proposed \u00b7 Nov 25, 2025: Recalibration finalized \u00b7 Jan 1, 2026: Early adoption"],kp:[]},
+],
+timeline:[
+{y:2014,m:4,label:"SLR and eSLR final rules adopted"},
+{y:2020,m:4,label:"Temporary SLR relief (expired March 2021)"},
+{y:2025,m:6,label:"Recalibration proposed"},
+{y:2025,m:11,day:25,label:"Recalibration finalized"},
+{y:2026,m:1,day:1,label:"Early adoption available"},
+{y:2026,m:4,day:1,label:"Recalibrated eSLR effective"},
+{y:2026,m:12,label:"SEC Treasury clearing mandate Phase 1 (scheduled)",kind:"outlook"},
+{y:2027,m:6,label:"SEC Treasury clearing mandate Phase 2 (scheduled)",kind:"outlook"}
 ],
 src:[
 {t:"eSLR Recalibration Final Rule",d:"Nov 2025",u:"https://www.federalreserve.gov/newsevents/pressreleases/bcreg20251125b.htm"},
@@ -147,12 +169,18 @@ tables:[{title:"Method 1 \u2014 Score-to-Surcharge",headers:["Score (bps)","Surc
 "Scoring Buckets: G-SIB surcharges are assigned in discrete buckets rather than a continuous scale. Method 1 uses 100 bps-wide buckets: Bucket 1 (130\u2013229 bps) = 1.0% surcharge, Bucket 2 (230\u2013329 bps) = 1.5%, Bucket 3 (330\u2013429 bps) = 2.0%, Bucket 4 (430\u2013529 bps) = 2.5%, and Bucket 5 (530+ bps) = 3.5% (with an additional empty bucket deterring further growth). Method 2 maps higher scores to higher surcharges through a comparable bucket structure, but always produces the binding result for U.S. G-SIBs because of the fixed-denominator inflation effect.",
 "eSLR Interdependency: Following the November 2025 recalibration, the eSLR buffer is set at 50% of the Method 1 surcharge. This creates a direct link between G-SIB scoring and leverage capital requirements. Any future update to Method 1 denominators or indicator weights would flow through to both the risk-based G-SIB surcharge and the leverage-based {{ref:eslr}} buffer, amplifying the impact of methodology reform."],
 kp:["Method 2 fixed denominators cause systematic score inflation","Method 1 uses annually updated BCBS global denominators","Score \u2265 130 bps triggers G-SIB identification"]},
-{kind:"outlook",t:"Pending Changes",c:[
+{kind:"outlook",t:"Outlook",c:[
 "The G-SIB surcharge methodology NPR was issued March 19, 2026 (Federal Register March 23, Vol. 91 No. 55), alongside the Basel III Endgame re-proposal. The comment period closes June 18, 2026. Proposed changes include daily and monthly averaging of systemic indicators, 10 basis-point surcharge buckets (replacing the current 50 bps buckets), and updated coefficients. The combined effect of surcharge reform and Endgame is expected to produce a \u2018modest decrease\u2019 in requirements for the largest banks. Reform also expected to update Method 2\u2019s fixed denominators and recalibrate the STWF coefficient.",
 "Industry groups estimate correcting the fixed-denominator issue could reduce surcharges by ~1 percentage point, expanding lending and market-making capacity by over $1 trillion.",
 "The {{ref:eslr}} final rule now uses Method 1 surcharges to calibrate the leverage buffer \u2014 any Method 1 changes would flow through to eSLR. The November 2025 FSB G-SIB list moved Bank of America from Bucket 2 to Bucket 3, which may increase its U.S. G-SIB surcharge."],
 kp:["G-SIB surcharge NPR released March 19, 2026; comment period closes June 18, 2026","Industry estimates ~1pp reduction if denominators updated","eSLR now tied to Method 1 \u2014 new interdependency"]},
-{t:"Key Dates",c:["Jul 2015: G-SIB surcharge final rule \u00b7 Jan 2016\u20132019: Phased in from 50% to 100% \u00b7 Nov 2025: eSLR ties leverage buffer to Method 1 surcharge \u00b7 Nov 2025: FSB moves BofA to higher bucket"],kp:[]},
+],
+timeline:[
+{y:2015,m:7,label:"G-SIB surcharge final rule"},
+{y:2016,m:1,display:"2016\u20132019",label:"Surcharge phased in from 50% to 100%"},
+{y:2025,m:11,label:"eSLR tied leverage buffer to Method 1 surcharge"},
+{y:2025,m:11,label:"FSB moved Bank of America to a higher bucket"},
+{y:2026,m:3,day:19,label:"G-SIB surcharge methodology NPR released"}
 ],
 src:[
 {t:"G-SIB Surcharge Final Rule (80 FR 49082)",d:"Jul 2015",u:"https://www.federalregister.gov/documents/2015/08/14/2015-18702/regulatory-capital-rules-implementation-of-risk-based-capital-surcharges-for-global-systemically"},
@@ -197,12 +225,18 @@ tables:[{title:"Worked Example \u2014 CET1 Under Stress",headers:["Quarter","Pro
 "Results Averaging: A proposed change (April 2025) to smooth SCB volatility by averaging stress capital declines over two years. See Pending Changes for details.",
 "CCAR-to-SCB Pipeline: The original CCAR framework had both a quantitative component (stress test results) and a qualitative component (capital planning assessment). The qualitative objection was eliminated in 2019, and the quantitative output was converted into the SCB in 2020. This pipeline means that changes to stress testing methodology — including the pending transparency proposal — directly affect ongoing capital requirements."],
 kp:["Stress capital decline = peak-to-trough CET1 drop under severely adverse","Distribution restrictions escalate as buffer shortfall grows","Results averaging would smooth year-to-year volatility"]},
-{kind:"outlook",t:"Pending Changes",c:[
+{kind:"outlook",t:"Outlook",c:[
 "Results Averaging (Proposed April 2025): Two-year average of stress capital declines. The 2.5% floor and dividend add-on unchanged. Would also shift effective date from October 1 to January 1.",
 "Comments due June 23, 2025; awaiting finalization. First averaged SCB would use 2025+2026 {{ref:stress-testing}} results.",
 "This addresses industry criticism that SCB volatility is driven by scenario/model changes, not actual changes in bank risk profiles."],
 kp:["Two-year averaging proposed to reduce volatility","Effective date shift: Oct 1 \u2192 Jan 1","Comment period closed June 2025; awaiting finalization"]},
-{t:"Key Dates",c:["Mar 2020: SCB final rule \u00b7 Oct 2020: First SCBs effective \u00b7 Apr 2025: Results averaging proposed \u00b7 Jun 2025: Comment period closed \u00b7 Aug 2025: Final 2025 SCBs announced"],kp:[]},
+],
+timeline:[
+{y:2020,m:3,label:"SCB final rule"},
+{y:2020,m:10,label:"First SCBs effective"},
+{y:2025,m:4,label:"Two-year results averaging proposed"},
+{y:2025,m:6,label:"Averaging comment period closed"},
+{y:2025,m:8,label:"Final 2025 SCBs announced"}
 ],
 src:[
 {t:"SCB Final Rule (85 FR 15576)",d:"Mar 2020",u:"https://www.federalregister.gov/documents/2020/03/18/2020-04838/regulations-q-and-y-regulatory-capital"},
@@ -245,12 +279,19 @@ cite:[{type:"reg",auth:"Federal Reserve",pin:"12 CFR Part 252 Subpart E \u2014 S
 "Severely Adverse Scenario Design: The Fed designs the severely adverse scenario each year to reflect a plausible but extreme macroeconomic downturn. Key variables include real GDP decline (typically 6\u20138%), unemployment spike (to ~10%), house price drop (~25\u201330%), equity market decline (~50\u201360%), and credit spread widening. The scenario is calibrated to be severe but not to replicate any specific historical crisis.",
 "Capital Planning Expectations: The Fed\u2019s qualitative expectations for how firms conduct capital planning \u2014 including governance, risk management, scenario design, and projection methodologies \u2014 are set forth in {{ref:sr1519}}. Although the qualitative CCAR objection was eliminated in 2019, these expectations remain enforceable through the ongoing supervisory examination process."],
 kp:["PPNR is a critical buffer against stress losses","Global Market Shock applies to large trading firms","Exploratory scenarios (2024+) are informational only"]},
-{kind:"outlook",t:"Pending Changes",c:[
+{kind:"outlook",t:"Outlook",c:[
 "Stress Test Transparency (Proposed Oct 2025): The Fed proposed publishing its supervisory models and taking public comment on model changes before each cycle. A major departure from the historical \u2018black box\u2019 approach. Comment period extended to February 21, 2026.",
 "2025 results showed lower SCBs vs. 2024 due to a less severe scenario, though results remain volatile from model updates. {{ref:irrbb}} has become a more prominent dimension of the stress tests post-SVB, with the severely adverse scenario incorporating larger rate movements.",
 "Reflects a philosophical shift under Vice Chair Bowman toward greater regulatory transparency and accountability."],
 kp:["Model transparency proposed: publish models, take public comment","Comment period extended to Feb 21, 2026","Reflects broader shift toward supervisory transparency"]},
-{t:"Key Dates",c:["2011: First CCAR cycle \u00b7 2014: DFAST statutory requirements effective \u00b7 2019: Qualitative objection eliminated \u00b7 2020: SCB integrates stress tests into ongoing capital \u00b7 2024: Exploratory scenarios introduced"],kp:[]},
+],
+timeline:[
+{y:2011,label:"First CCAR cycle"},
+{y:2014,label:"DFAST statutory requirements effective"},
+{y:2019,label:"Qualitative objection eliminated"},
+{y:2020,label:"SCB integrated stress tests into ongoing requirements"},
+{y:2024,label:"Exploratory scenarios introduced"},
+{y:2026,m:2,day:4,label:"2026 stress test scenarios published"}
 ],
 src:[
 {t:"Stress Test Transparency Proposal",d:"Oct 2025",u:"https://www.federalreserve.gov/newsevents/pressreleases/bcreg20251024a.htm"},
@@ -293,12 +334,20 @@ tables:[{title:"HQLA Classification, Haircuts & Caps",headers:["Level","Assets I
 "Rising interest rates can reduce the market value of fixed-income HQLA, creating a direct link between {{ref:irrbb}} management and the maintenance of adequate liquidity coverage.",
 "{{ref:resolution}} planning imposes additional liquidity positioning requirements beyond business-as-usual LCR compliance, requiring firms to demonstrate access to sufficient liquidity over multi-year resolution periods under assumptions more severe than the standard 30-day LCR stress."],
 kp:["HQLA: Level 1 (no haircut), Level 2A (15%), Level 2B (50%)","Inflows capped at 75% of outflows","Maturity mismatch add-on captures peak-day stress"]},
-{kind:"outlook",t:"Pending Changes",c:[
+{kind:"outlook",t:"Outlook",c:[
 "The liquidity regime has come under scrutiny. The Bank Policy Institute (May 2025) argued the combination of LCR, {{ref:nsfr}}, ILSTs, and resolution liquidity is redundant and internally inconsistent.",
 "Discount Window / SRF: In August 2024, the Fed clarified that banks can incorporate discount window and Standing Repo Facility access in internal liquidity stress tests \u2014 a significant supervisory shift.",
 "No formal LCR amendments proposed, but the broader liquidity framework is on the reform agenda."],
 kp:["No formal LCR amendments proposed; framework under review","Discount window recognized in ILSTs (Aug 2024)","Industry criticism of redundancy across liquidity requirements"]},
-{t:"Key Dates",c:["Jan 2013: Basel III LCR standard \u00b7 Sep 2014: U.S. final LCR rule \u00b7 Jan 2015: Phase-in began (80%) \u00b7 Jan 2017: Full 100% compliance \u00b7 Oct 2019: Tailoring framework \u00b7 Aug 2024: Discount window/SRF recognized in ILSTs \u00b7 May 2025: BPI critique published"],kp:[]},
+],
+timeline:[
+{y:2013,m:1,label:"Basel III LCR standard published"},
+{y:2014,m:9,label:"U.S. final LCR rule"},
+{y:2015,m:1,label:"Phase-in began at 80%"},
+{y:2017,m:1,label:"Full 100% compliance"},
+{y:2019,m:10,label:"Tailoring framework adjusted LCR by category"},
+{y:2024,m:8,label:"Discount window and SRF recognized in ILSTs"},
+{y:2025,m:5,label:"BPI liquidity framework critique published"}
 ],
 src:[
 {t:"U.S. LCR Final Rule (79 FR 61440)",d:"Sep 2014",u:"https://www.federalregister.gov/documents/2014/10/10/2014-22520/liquidity-coverage-ratio"},
@@ -339,12 +388,18 @@ tables:[{title:"Key ASF Factors (12 CFR §249.104)",headers:["ASF Factor","Fundi
 "Interdependencies with {{ref:lcr}}: Known inconsistencies exist. The LCR assumes 100% of Treasuries can be liquidated in 30 days (implying 0% RSF), but NSFR assigns 5% RSF. Operational deposits receive 50% ASF but 25% outflow in the LCR, creating conflicting signals about their stability.",
 "Practical Binding Dynamics: The NSFR rarely binds in isolation for most large U.S. banks. It tends to constrain firms that hold large portfolios of less-liquid assets (commercial real estate, leveraged loans) funded by shorter-term wholesale sources. Banks manage NSFR by adjusting funding mix (issuing longer-term debt) or asset composition (shifting toward higher-RSF assets). The quarterly calculation frequency gives firms more flexibility than the daily LCR."],
 kp:["ASF: stable liabilities weighted 0\u2013100%","RSF: illiquid assets weighted 0\u2013100%","Known calibration inconsistencies with LCR"]},
-{kind:"outlook",t:"Pending Changes",c:[
+{kind:"outlook",t:"Outlook",c:[
 "NSFR is likely part of any broader liquidity review. The BPI argues it\u2019s the weakest link \u2014 finalized without a clearly stated objective.",
 "Known inconsistencies with the {{ref:lcr}} remain unresolved, including the Treasury RSF factor and treatment of operational deposits.",
 "No formal amendments proposed. Any changes likely part of a broader interagency package."],
 kp:["No amendments proposed; likely part of broader review","BCBS\u2019s own analysis found net costs to U.S. economy","Known LCR/NSFR calibration inconsistencies unresolved"]},
-{t:"Key Dates",c:["Oct 2014: BCBS finalized NSFR standard \u00b7 2016: U.S. agencies issued proposal \u00b7 Feb 2021: U.S. final rule \u00b7 Jul 1, 2021: Effective date \u00b7 May 2025: BPI critique published"],kp:[]},
+],
+timeline:[
+{y:2014,m:10,label:"BCBS finalized NSFR standard"},
+{y:2016,label:"U.S. agencies issued proposal"},
+{y:2021,m:2,label:"U.S. final rule adopted"},
+{y:2021,m:7,day:1,label:"NSFR effective"},
+{y:2025,m:5,label:"BPI liquidity framework critique published"}
 ],
 src:[
 {t:"U.S. NSFR Final Rule (86 FR 9120)",d:"Feb 2021",u:"https://www.federalregister.gov/documents/2021/02/11/2020-26546/net-stable-funding-ratio"},
@@ -379,13 +434,23 @@ cite:[{type:"requirement",auth:"FR",pin:"88 FR 64028 (Basel III Endgame NPR, Jul
 "CVA Risk: New standardized framework for credit valuation adjustment risk \u2014 the risk that counterparty credit quality deterioration reduces the value of derivatives portfolios.",
 "The Endgame\u2019s mandatory SA-CCR adoption replaces the Current Exposure Method for derivatives, affecting how counterparty exposures are calculated for {{ref:sccl}} single-counterparty credit limits."],
 kp:["Output floor: Advanced RWAs \u2265 72.5% of Standardized","FRTB: new market risk framework with desk-level approval","Operational risk: standardized approach replaces AMA models","CVA: new framework for counterparty valuation risk"]},
-{kind:"outlook",t:"Pending Changes",c:[
+{kind:"outlook",t:"Outlook",c:[
 "Re-Proposal (Released March 19, 2026): The Fed (6-1 vote, Governor Barr dissenting), OCC, and FDIC jointly issued a Notice of Proposed Rulemaking on March 19, 2026. The 90-day comment period closes June 18, 2026.",
 "The re-proposal is capital-neutral to capital-relieving. On a standalone basis, CET1 requirements increase ~1.4% for Cat I/II BHCs (driven by higher market risk and CVA RWA offsetting credit risk relief) while Cat III/IV firms that voluntarily elect ERBA could see CET1 reductions of 3\u20137% depending on portfolio composition (after AOCI opt-out elimination absorbs roughly half of ~6.1% gross RWA relief). At the DI subsidiary level, the standalone CET1 decrease is larger (~4.8% for Cat I/II DIs) because DIs have less trading activity. Cumulatively with all companion proposals (G-SIB surcharge recalibration, eSLR changes, stress test methodology), CET1 decreases ~4.8% for Cat I/II BHCs. Key features: single-stack approach (ERBA for Cat I/II, revised Standardized for Cat III/IV), elimination of dual-stack and internal models (A-IRB, AMA), LTV-based mortgage risk weights, 45% transactor retail weight, 95% corporate weight (standardized), AOCI opt-out elimination with 5-year phase-in starting January 2027 (25% recognition in Yr 1, 50% Yr 2, 75% Yr 3, 100% by Yr 4; estimated +3.1% CET1 requirement for Cat III/IV; historical AOCI has swung from +$16B to \u2212$112B since 2015), new operational risk SMA for ERBA banks, and embedded op risk in standardized weights.",
 "Implementation timeline: With the comment period closing June 2026, finalization could occur late 2026 or early 2027. A multi-year phase-in is expected, with AOCI recognition beginning January 1, 2027.",
 "International comparisons: The EU\u2019s CRR3 implementing Basel 3.1 took effect January 2025, though the FRTB market risk component is being deferred to 2026\u20132027 amid industry pressure. The UK postponed implementation to January 2027."],
 kp:["Joint NPR released March 19, 2026; comment period closes June 18, 2026","Standalone: CET1 +1.4% Cat I/II BHCs; Cat III/IV opt-in: \u22123\u20137%; cumulative with all proposals: \u22124.8% Cat I/II","Single-stack: ERBA for Cat I/II, revised Standardized for Cat III/IV; dual-stack eliminated","AOCI opt-out eliminated with 5-year phase-in starting Jan 2027"]},
-{t:"Key Dates",c:["Dec 2017: BCBS published final Basel III standards \u00b7 Jul 27, 2023: U.S. agencies published Endgame NPR \u00b7 Jan 2024: Comment period closed (400+ comment letters) \u00b7 Sep 2024: Fed announced materially revised re-proposal \u00b7 Jan 2025: EU CRR3 effective \u00b7 Feb 2026: FDIC/OCC submit drafts to OMB \u00b7 Mar 19, 2026: Joint NPR released (Fed 6-1, FDIC unanimous) \u00b7 Jun 18, 2026: Comment period closes \u00b7 2027\u20132030: Potential U.S. implementation with phase-in"],kp:[]},
+],
+timeline:[
+{y:2017,m:12,label:"BCBS published final Basel III standards"},
+{y:2023,m:7,day:27,label:"U.S. agencies published original Endgame NPR"},
+{y:2024,m:1,label:"Original comment period closed (400+ letters)"},
+{y:2024,m:9,label:"Fed announced materially revised re-proposal"},
+{y:2025,m:1,label:"EU CRR3 effective"},
+{y:2026,m:2,label:"FDIC and OCC submitted drafts to OMB"},
+{y:2026,m:3,day:19,label:"Joint reproposal NPR released (Fed 6\u20131, FDIC unanimous)"},
+{y:2026,m:6,day:18,label:"Reproposal comment period closed"},
+{y:2027,display:"2027\u20132030",label:"Potential implementation with multi-year phase-in",kind:"outlook"}
 ],
 src:[
 {t:"Basel III Endgame NPR (88 FR 64028)",d:"Jul 2023",u:"https://www.federalregister.gov/documents/2023/09/18/2023-19200/regulatory-capital-rule-large-banking-organizations"},
@@ -420,12 +485,18 @@ kp:["External TLAC: \u226518% of RWAs or \u22657.5% of TLE","External LTD: \u226
 "Clean Holding Company: Requirements prohibiting the parent BHC from issuing short-term debt, third-party derivatives, or operational liabilities that could complicate resolution. These restrictions complement {{ref:reg-w}} by ensuring the parent remains structurally simple.",
 "Eligible LTD Criteria: Must be issued by the top-tier BHC (not subsidiaries), plain vanilla fixed or floating rate, unsecured, with no acceleration rights except in bankruptcy, and no structured features."],
 kp:["Bail-in converts LTD to equity in resolution","SPOE: only parent enters resolution; subs continue","Clean holding company restrictions prevent complexity","Strict eligibility criteria for qualifying LTD"]},
-{kind:"outlook",t:"Pending Changes",c:[
+{kind:"outlook",t:"Outlook",c:[
 "The November 2025 {{ref:eslr}} recalibration conformed TLAC and LTD leverage buffers to the new eSLR calibration (50% of Method 1 surcharge), reducing leverage-based TLAC requirements for most G-SIBs.",
 "The Fed has not proposed changes to the risk-based TLAC requirements, but these will be affected by the {{ref:endgame}} re-proposal (released March 2026) since TLAC is expressed relative to RWAs. Lower RWAs under the single-stack design would mechanically reduce dollar TLAC requirements. Final RWA impacts will depend on the comment period outcome (June 18, 2026).",
 "Industry groups have advocated for TLAC calibration review alongside the broader capital framework, noting that the overall \u2018stack\u2019 of requirements has grown complex."],
 kp:["Leverage TLAC conformed to eSLR recalibration (Nov 2025)","Risk-based TLAC unchanged but could be affected by Endgame","Industry advocates for holistic calibration review"]},
-{t:"Key Dates",c:["Nov 2015: FSB published global TLAC standard \u00b7 Dec 2016: Fed published U.S. TLAC and LTD final rule \u00b7 Jan 2019: Full compliance required \u00b7 Nov 2025: Leverage-based TLAC conformed to eSLR recalibration"],kp:[]},
+],
+timeline:[
+{y:2015,m:11,label:"FSB published global TLAC standard"},
+{y:2016,m:12,label:"Fed published U.S. TLAC and LTD final rule"},
+{y:2019,m:1,label:"Full compliance required"},
+{y:2025,m:11,label:"Leverage-based TLAC conformed to eSLR recalibration"},
+{y:2026,m:4,day:1,label:"Conformed TLAC leverage buffers effective"}
 ],
 src:[
 {t:"TLAC and LTD Final Rule (82 FR 8266)",d:"Dec 2016",u:"https://www.federalregister.gov/documents/2017/01/24/2017-00431/total-loss-absorbing-capacity-long-term-debt-and-clean-holding-company-requirements"},
@@ -459,12 +530,20 @@ cite:[{type:"requirement",auth:"DFA",pin:"Dodd-Frank Act §165(d) (resolution pl
 "Recapitalization Mechanism: The plan must detail how operating subsidiaries would be recapitalized using internal {{ref:tlac}} resources from the parent, maintaining capital ratios above minimum requirements.",
 "Resolution liquidity assessments (RLAP and RLEN) use {{ref:lcr}}-like concepts of stressed outflows and liquid asset sufficiency, but impose significantly more severe assumptions \u2014 including immediate loss of market access and extended resolution timelines beyond the LCR\u2019s 30-day horizon."],
 kp:["SPOE: parent enters bankruptcy, subsidiaries continue via bridge","Separate 165(d) Title I plans and FDIC IDI plans required","Separability: demonstrate ability to divest material lines","Recapitalization via internal TLAC must maintain minimum ratios"]},
-{kind:"outlook",t:"Pending Changes",c:[
+{kind:"outlook",t:"Outlook",c:[
 "The Fed and FDIC issued updated resolution guidance for G-SIBs in 2024, adding expectations around separability, derivatives booking models, and reverse stress testing. The next full-plan cycle will incorporate this guidance.",
 "There is ongoing debate about whether the resolution framework should be extended or modified for large regional banks following the 2023 failures of Silicon Valley Bank and Signature Bank.",
 "The FDIC has proposed a separate long-term debt requirement for Category II/III banks (banks with \u2265$100B but not G-SIBs), modeled on the G-SIB TLAC rule but calibrated differently. This was proposed in 2023 but has not been finalized."],
 kp:["2024 guidance added separability and reverse stress testing","Post-2023 bank failures: debate on extending framework","FDIC proposed LTD for Category II/III (not yet finalized)"]},
-{t:"Key Dates",c:["Jul 2010: Dodd-Frank Section 165(d) enacted \u00b7 Nov 2011: First resolution plan rule finalized \u00b7 2012\u20132014: First plans submitted by G-SIBs \u00b7 2016\u20132019: Multiple deficiency findings and remediation cycles \u00b7 2024: Updated resolution guidance issued \u00b7 2025: Next G-SIB full-plan submissions"],kp:[]},
+],
+timeline:[
+{y:2010,m:7,label:"Dodd-Frank Section 165(d) enacted"},
+{y:2011,m:11,label:"First resolution plan rule finalized"},
+{y:2012,display:"2012\u20132014",label:"First plans submitted by G-SIBs"},
+{y:2016,display:"2016\u20132019",label:"Deficiency findings and remediation cycles"},
+{y:2024,label:"Updated resolution guidance issued"},
+{y:2025,label:"G-SIB full-plan submission cycle"},
+{y:2026,m:7,label:"G-SIB resolution plan submissions due"}
 ],
 src:[
 {t:"Resolution Plan Rule (12 CFR Part 243)",d:"Nov 2011",u:"https://www.ecfr.gov/current/title-12/chapter-II/subchapter-A/part-243"},
@@ -497,12 +576,18 @@ cite:[{type:"requirement",auth:"CFR",pin:"12 CFR 252.34(b) (liquidity stress tes
 "Monetization Assumptions: Banks must realistically estimate how quickly and at what haircuts they can convert assets to cash under stress. Supervisors scrutinize overly optimistic assumptions about asset sales and repo market access.",
 "Discount Window Readiness: In August 2024, the Fed clarified that banks can incorporate discount window and Standing Repo Facility (SRF) access in ILSTs, provided they have operational readiness (pre-pledged collateral, tested systems)."],
 kp:["CFP: actionable plan with triggers and escalation procedures","Intraday liquidity expectations heightened after 2023 turmoil","Monetization assumptions scrutinized for realism","Discount window/SRF access now permitted in ILSTs (Aug 2024)"]},
-{kind:"outlook",t:"Pending Changes",c:[
+{kind:"outlook",t:"Outlook",c:[
 "The August 2024 supervisory guidance clarifying that banks can incorporate discount window and SRF access in ILSTs was a significant shift. Previously, supervisory practice discouraged reliance on central bank facilities in stress planning.",
 "The BPI (May 2025) argued that the combination of {{ref:lcr}}, {{ref:nsfr}}, ILST, and resolution liquidity requirements creates overlapping and sometimes inconsistent demands on bank liquidity management.",
 "No formal regulatory changes are pending, but ILST expectations evolve through the supervisory process. The horizontal liquidity reviews conducted by the Fed have increasingly focused on intraday risk and interconnections between liquidity and capital."],
 kp:["Discount window/SRF inclusion in ILSTs is a major 2024 shift","BPI argues overlapping requirements create inconsistencies","No formal changes pending; expectations evolve via supervision","Fed focusing on intraday risk and liquidity-capital interconnections"]},
-{t:"Key Dates",c:["2010: SR 10-6 liquidity risk management guidance issued \u00b7 2014: Enhanced Prudential Standards for large BHCs \u00b7 2019: Tailoring framework adjusted ILST expectations by category \u00b7 Aug 2024: Fed clarified discount window/SRF use in ILSTs \u00b7 May 2025: BPI liquidity framework critique"],kp:[]},
+],
+timeline:[
+{y:2010,label:"SR 10-6 liquidity risk management guidance issued"},
+{y:2014,label:"Enhanced Prudential Standards for large BHCs"},
+{y:2019,label:"Tailoring framework adjusted ILST expectations by category"},
+{y:2024,m:8,label:"Fed clarified discount window and SRF use in ILSTs"},
+{y:2025,m:5,label:"BPI liquidity framework critique published"}
 ],
 src:[
 {t:"SR 10-6: Liquidity Risk Management",d:"2010",u:"https://www.federalreserve.gov/boarddocs/srletters/2010/sr1006.htm"},
@@ -538,13 +623,19 @@ cite:[{type:"requirement",auth:"SR",pin:"SR 10-1 (Interagency advisory on intere
 "Optionality Risk: The risk from embedded options in banking products \u2014 mortgage prepayments accelerate when rates fall (shortening asset duration), while depositors move funds to higher-yielding alternatives when rates rise (shortening liability duration).",
 "Interest rate changes directly affect {{ref:lcr}} calculations \u2014 rising rates reduce the market value of fixed-income HQLA holdings while altering projected net cash outflows, constraining available liquid resources under stress."],
 kp:["Duration gap: core measure of balance sheet rate sensitivity","NMD modeling: behavioral vs. contractual maturity assumptions","AOCI/HTM: unrealized losses may be masked in regulatory capital","Repricing, basis, and optionality risk are the three IRRBB sub-types"]},
-{kind:"outlook",t:"Pending Changes",c:[
+{kind:"outlook",t:"Outlook",c:[
 "Post-2023 supervisory response: The agencies have significantly tightened examination focus on IRRBB. The Fed\u2019s 2024\u20132025 supervisory priorities explicitly cite interest rate risk management, deposit concentration, and unrealized securities losses.",
 "AOCI opt-out elimination: The {{ref:endgame}} re-proposal (March 2026) eliminates the AOCI opt-out for Category III and IV banks with a 5-year phase-in starting January 2027 (25% recognition in year 1, rising to 100% by year 4). This will cause unrealized AFS losses to reduce CET1 directly \u2014 estimated +3.1% CET1 requirement for Cat III/IV, partially offsetting RWA relief.",
 "The Basel Committee\u2019s 2016 IRRBB standard (BCBS 368) has not been formally adopted into U.S. regulation, though many of its principles are reflected in existing supervisory expectations. Full adoption would formalize the six prescribed shock scenarios and the outlier bank threshold. In July 2024, the Basel Committee published a recalibration of IRRBB interest rate shocks (BCBS D578) reflecting the higher-rate environment; U.S. adoption of these updated shocks remains uncertain and is not currently proposed.",
 "Industry groups (BPI, ABA) have advocated for clarity on how {{ref:ilst}} IRRBB scenarios interact with {{ref:lcr}} and {{ref:nsfr}} assumptions, noting that inconsistent deposit runoff assumptions across frameworks create complexity."],
 kp:["Heightened post-2023 exam focus: deposit concentration, unrealized losses","AOCI opt-out removal under consideration in Endgame re-proposal","Basel IRRBB standard (BCBS 368) not yet formally adopted in U.S.","Industry seeking consistency across ILST, LCR, and NSFR deposit assumptions"]},
-{t:"Key Dates",c:["Jun 1996: Joint Policy Statement on Interest Rate Risk (SR 96-13) \u00b7 Jan 2010: Interagency Advisory on Interest Rate Risk (SR 10-1) \u00b7 Apr 2016: Basel IRRBB standard (BCBS 368) published \u00b7 Mar 2023: SVB failure highlights IRRBB vulnerabilities \u00b7 2024\u20132025: Heightened supervisory focus on unrealized losses and deposit modeling \u00b7 TBD: Endgame re-proposal may address AOCI opt-out"],kp:[]},
+],
+timeline:[
+{y:1996,m:6,label:"Joint Policy Statement on Interest Rate Risk (SR 96-13)"},
+{y:2010,m:1,label:"Interagency Advisory on Interest Rate Risk (SR 10-1)"},
+{y:2016,m:4,label:"Basel IRRBB standard (BCBS 368) published"},
+{y:2023,m:3,label:"SVB failure highlighted IRRBB vulnerabilities"},
+{y:2024,display:"2024\u20132025",label:"Heightened supervisory focus on unrealized losses"}
 ],
 src:[
 {t:"Interagency Advisory on Interest Rate Risk (SR 10-1)",d:"Jan 2010",u:"https://www.federalreserve.gov/boarddocs/srletters/2010/sr1001.htm"},
@@ -580,12 +671,18 @@ tables:[{title:"Prudential Requirements by Tailoring Category",type:"comparison"
 "EGRRCPA Section 401: Raised the asset threshold for automatic application of enhanced prudential standards from $50B to $250B, while preserving the Fed\u2019s authority to apply requirements below $250B based on risk.",
 "Interplay with SCB: The SCB applies to all Category I\u2013IV firms. Combined with tailoring, this means firms at the top and bottom of the framework face very different effective capital requirements. (See {{ref:scb}}.)"],
 kp:["Five risk indicators determine category on rolling four-quarter basis","Slope, not cliff: requirements scale within categories","EGRRCPA raised auto-EPS threshold from $50B to $250B","SCB applies to all categories but interacts with different buffer stacks"]},
-{kind:"outlook",t:"Pending Changes",c:[
+{kind:"outlook",t:"Outlook",c:[
 "The {{ref:endgame}} re-proposal (released March 2026) assigns Category III/IV banks to a revised Standardized Approach (single stack), with voluntary opt-in to ERBA. Banks with $100\u2013250B in assets are excluded from the Endgame except for AOCI recognition. The original 2023 NPR\u2019s broader scope was substantially narrowed.",
 "Post-2023 bank failures: The failures of Silicon Valley Bank (Category IV) and Signature Bank prompted calls to strengthen requirements for banks in Categories III and IV, particularly around interest rate risk, uninsured deposits, and liquidity management.",
 "Vice Chair Bowman has indicated a preference for maintaining proportionality in the tailoring framework, while others have argued that the 2023 failures demonstrated that $100B\u2013$250B banks can pose systemic risk."],
 kp:["Endgame re-proposal may revise scope for Cat III/IV banks","2023 bank failures prompted calls to tighten Cat III/IV rules","Debate: proportionality vs. systemic risk from mid-sized banks","Interest rate risk and uninsured deposits under scrutiny"]},
-{t:"Key Dates",c:["May 2018: EGRRCPA enacted (raised threshold from $50B to $250B) \u00b7 Oct 2019: Tailoring final rules published (84 FR 59032) \u00b7 Jan 2020: Tailoring framework effective \u00b7 Mar 2023: SVB and Signature Bank failures \u00b7 Jul 2023: Endgame NPR proposed extending to $100B+ banks"],kp:[]},
+],
+timeline:[
+{y:2018,m:5,label:"EGRRCPA enacted; EPS threshold raised from $50B to $250B"},
+{y:2019,m:10,label:"Tailoring final rules published (84 FR 59032)"},
+{y:2020,m:1,label:"Tailoring framework effective"},
+{y:2023,m:3,label:"SVB and Signature Bank failures"},
+{y:2023,m:7,label:"Endgame NPR proposed extending requirements to $100B+"}
 ],
 src:[
 {t:"Tailoring Final Rule (84 FR 59032)",d:"Oct 2019",u:"https://www.federalregister.gov/documents/2019/11/01/2019-23662/prudential-standards-for-large-bank-holding-companies"},
@@ -620,12 +717,21 @@ cite:[{type:"requirement",auth:"CFR",pin:"12 CFR 248 (Volcker Rule implementing 
 "Covered fund exclusions: The 2020 amendments expanded exclusions for credit funds, qualifying venture capital funds, family wealth management vehicles, customer facilitation vehicles, foreign excluded funds, and foreign public funds.",
 "Super 23A: The rule restricts transactions between a banking entity and its related covered funds in a manner similar to {{ref:reg-w}} (Sections 23A and 23B of the Federal Reserve Act), limiting credit exposure and requiring arm\u2019s-length terms. Unlike Regulation W\u2019s 10%/20% limits, the Volcker Rule\u2019s Super 23A restrictions apply regardless of the size of the transaction relative to capital."],
 kp:["Exemptions for market making, underwriting, hedging, gov\u2019t securities","TOTUS exemption for foreign banking entity trading","2020 rule expanded covered fund exclusions significantly","Super 23A restricts transactions with affiliated covered funds"]},
-{kind:"outlook",t:"Pending Changes",c:[
+{kind:"outlook",t:"Outlook",c:[
 "No major rulemaking is currently pending. The Trump administration has historically favored easing Volcker Rule restrictions, and the 2019/2020 amendments reflected industry calls for simplification.",
 "Some industry groups continue to advocate for broader covered fund exemptions and further narrowing of the proprietary trading definition. Potential for administrative relief through revised FAQ guidance or further rulemaking.",
 "The GENIUS Act\u2019s stablecoin framework creates new considerations for how Volcker applies to digital asset activities of banking entities \u2014 particularly whether stablecoin reserves management or related activities constitute prohibited proprietary trading."],
 kp:["No major pending rulemaking","Industry seeks further easing of covered fund restrictions","Stablecoin activities may create new Volcker questions","2019/2020 revisions represent most recent substantive changes"]},
-{t:"Key Dates",c:["Jul 2010: Dodd-Frank enacted (Section 619) \u00b7 Dec 2013: Five-agency final rule adopted \u00b7 Apr 2014: Rule effective \u00b7 Jul 2015: Full compliance date \u00b7 May 2018: EGRRCPA exempts community banks \u00b7 Oct 2019: Proprietary trading and compliance revisions finalized \u00b7 Jul 2020: Covered fund amendments finalized \u00b7 Oct 2020: Covered fund rule effective"],kp:[]},
+],
+timeline:[
+{y:2010,m:7,label:"Dodd-Frank enacted (Section 619)"},
+{y:2013,m:12,label:"Five-agency final rule adopted"},
+{y:2014,m:4,label:"Rule effective"},
+{y:2015,m:7,label:"Full compliance date"},
+{y:2018,m:5,label:"EGRRCPA exempted community banks"},
+{y:2019,m:10,label:"Proprietary trading and compliance revisions finalized"},
+{y:2020,m:7,label:"Covered fund amendments finalized"},
+{y:2020,m:10,label:"Covered fund rule effective"}
 ],
 src:[
 {t:"Volcker Rule Final Regulations (79 FR 5808)",d:"Jan 2014",u:"https://www.federalregister.gov/documents/2014/01/31/2013-31476/prohibitions-and-restrictions-on-proprietary-trading-and-certain-interests-in-and-relationships-with"},
@@ -661,12 +767,20 @@ cite:[{type:"requirement",auth:"CFR",pin:"12 CFR 223 (Regulation W)"},{type:"req
 "Exemptions: Key exemptions include transactions between affiliated banks that are 80%+ owned by the same parent (\u2018sister bank\u2019 exemption), purchases of assets at readily identifiable market prices, and certain riskless principal transactions. These exemptions are narrowly drawn and subject to conditions.",
 "Dodd-Frank Enhancements (2010): Section 608 expanded the definition of \u2018covered transaction\u2019 to include derivatives, repos, and securities lending/borrowing transactions that create credit exposure to an affiliate. Section 609 tightened collateral requirements and extended restrictions to financial subsidiaries."],
 kp:["Attribution rule prevents indirect affiliate funding via third parties","Valuation rules differ by transaction type","Sister bank exemption: affiliated banks 80%+ common ownership","Dodd-Frank added derivatives and securities lending to covered transactions"]},
-{kind:"outlook",t:"Pending Changes",c:[
+{kind:"outlook",t:"Outlook",c:[
 "The Board noted in the Regulation W preamble that staff would continue to issue interpretive guidance. Recent guidance has addressed {{ref:genius-act}} implications (whether stablecoin subsidiaries are \u2018financial subsidiaries\u2019 treated as affiliates) and {{ref:volcker}} covered fund interactions.",
 "The evolving structure of BHC activities \u2014 including fintech partnerships, crypto-asset subsidiaries, and expanding nonbank affiliates \u2014 continues to raise new questions about the scope of affiliate transaction restrictions.",
 "There is periodic industry discussion about whether the 10%/20% limits should be recalibrated, particularly for well-capitalized institutions with robust risk management. The limits have remained unchanged since the original 1933 enactment."],
 kp:["New guidance on stablecoin and fintech subsidiary treatment","Evolving BHC structures raise new scope questions","10%/20% limits unchanged since 1933","Ongoing interaction with Volcker Rule covered fund provisions"]},
-{t:"Key Dates",c:["1933: Banking Act introduces Section 23A \u00b7 1987: CEBA adds Section 23B (market terms requirement) \u00b7 1999: Gramm-Leach-Bliley Act enhances role of 23A/23B \u00b7 Dec 2002: Regulation W finalized (67 FR 76560) \u00b7 Apr 2003: Regulation W effective \u00b7 Jul 2010: Dodd-Frank Sections 608\u2013609 strengthen framework \u00b7 Jul 2012: Dodd-Frank amendments effective"],kp:[]},
+],
+timeline:[
+{y:1933,label:"Banking Act introduced Section 23A"},
+{y:1987,label:"CEBA added Section 23B market-terms requirement"},
+{y:1999,label:"Gramm-Leach-Bliley Act enhanced role of 23A/23B"},
+{y:2002,m:12,label:"Regulation W finalized (67 FR 76560)"},
+{y:2003,m:4,label:"Regulation W effective"},
+{y:2010,m:7,label:"Dodd-Frank Sections 608\u2013609 strengthened framework"},
+{y:2012,m:7,label:"Dodd-Frank amendments effective"}
 ],
 src:[
 {t:"Regulation W (12 CFR Part 223)",d:"Dec 2002",u:"https://www.ecfr.gov/current/title-12/chapter-II/subchapter-A/part-223"},
@@ -702,12 +816,19 @@ cite:[{type:"requirement",auth:"PL",pin:"Pub. L. 111-203 (Dodd-Frank Wall Street
 "Living Wills and OLA: Resolution plans under Section 165(d) must demonstrate that a firm can be resolved under the Bankruptcy Code. If a firm cannot be resolved through bankruptcy, OLA serves as a fallback with FDIC as receiver.",
 "Systemic Risk Designation: FSOC\u2019s authority to designate non-bank SIFIs was used for AIG, GE Capital, MetLife, and Prudential. All have since been de-designated. The current administration has not pursued new designations."],
 kp:["FSOC has 10 voting members; chaired by Treasury Secretary","OLA is a bankruptcy backstop, not a first resort","SPOE + TLAC designed to avoid ever needing OLA","Non-bank SIFI designations largely unwound; no new ones pending"]},
-{kind:"outlook",t:"Pending Changes",c:[
+{kind:"outlook",t:"Outlook",c:[
 "The current administration has pursued targeted Dodd-Frank modifications rather than wholesale repeal. Key changes flow through subordinate rulemakings: the {{ref:endgame}} re-proposal (released March 2026), eSLR recalibration (effective April 2026), SCB averaging, and stress test transparency.",
 "Section 165 scope questions: The post-2023 bank failures debate about whether the $250B threshold (raised by EGRRCPA from $50B) is appropriate for enhanced prudential standards remains active. Some regulators favor restoring stricter oversight for $100B\u2013$250B banks.",
 "FSOC activity: The Council continues to monitor asset management, digital assets, and climate-related financial risks as potential systemic threats, though formal non-bank designations remain unlikely in the current political environment."],
 kp:["Targeted modifications rather than wholesale repeal","Debate continues on $250B EPS threshold post-SVB failures","FSOC monitoring digital assets and climate-related risks","Key changes flowing through subordinate rulemakings"]},
-{t:"Key Dates",c:["Jul 2010: Dodd-Frank enacted \u00b7 2011\u20132014: Major implementing rules (Volcker, stress testing, eSLR, resolution planning) \u00b7 May 2018: EGRRCPA raises EPS threshold to $250B \u00b7 Oct 2019: Tailoring framework implemented \u00b7 Mar 2023: SVB/Signature failures reignite $250B debate \u00b7 2025\u20132026: Ongoing reforms via subordinate rulemakings"],kp:[]},
+],
+timeline:[
+{y:2010,m:7,label:"Dodd-Frank enacted"},
+{y:2011,display:"2011\u20132014",label:"Major implementing rules adopted"},
+{y:2018,m:5,label:"EGRRCPA raised EPS threshold to $250B"},
+{y:2019,m:10,label:"Tailoring framework implemented"},
+{y:2023,m:3,label:"SVB/Signature failures reignited threshold debate"},
+{y:2025,display:"2025\u20132026",label:"Ongoing reforms via subordinate rulemakings"}
 ],
 src:[
 {t:"Dodd-Frank Wall Street Reform Act (Pub. L. 111-203)",d:"Jul 2010",u:"https://www.congress.gov/bill/111th-congress/house-bill/4173"},
@@ -742,12 +863,21 @@ cite:[{type:"requirement",auth:"CFR",pin:"12 CFR 25 (OCC CRA regulations); 12 CF
 "Community development: Qualifying CRA activities beyond traditional lending, including affordable housing investments, economic development financing, revitalization of LMI areas, and services to LMI communities.",
 "CRA and M&A: A bank\u2019s CRA rating is a practical factor in merger and acquisition approvals. The {{ref:dodd-frank}} preserved CRA\u2019s role in supervisory assessments. A \u2018Needs to Improve\u2019 or \u2018Substantial Non-Compliance\u2019 rating can delay or block applications."],
 kp:["LMI: income below 80% of area median","Assessment areas tied to branches; tension with digital banking","Community development includes affordable housing and economic development","Poor CRA ratings can block M&A applications"]},
-{kind:"outlook",t:"Pending Changes",c:[
+{kind:"outlook",t:"Outlook",c:[
 "July 2025 rescission proposal: The OCC, Fed, and FDIC jointly proposed rescinding the 2023 CRA final rule and reinstating the 1995 regulations with technical updates. The 2023 rule had been enjoined by a Texas federal court since March 2024. Comment period closed August 2025. As of April 2026, no final rescission rule has been published.",
 "The 2023 rule would have modernized CRA evaluations significantly: new metrics and benchmarks for large banks, retail lending assessment areas for online lenders, expanded community development definitions, and new data collection requirements. Its rescission returns the framework to a pre-modernization state.",
 "The regulatory environment suggests the 1995 framework will remain in place for the foreseeable future, with the agencies signaling that they prefer a lighter-touch CRA approach. Some stakeholders have expressed concern that this leaves the digital banking assessment gap unaddressed."],
 kp:["Jul 2025: Agencies propose rescinding 2023 modernization rule","2023 rule enjoined since Mar 2024; effectively dead","1995 framework likely to remain in effect indefinitely","Digital banking assessment gap remains unresolved"]},
-{t:"Key Dates",c:["1977: CRA enacted \u00b7 1995: Interagency CRA regulations adopted \u00b7 Oct 2023: Agencies issue modernized CRA final rule \u00b7 Feb 2024: Rule published in Federal Register \u00b7 Mar 2024: Texas federal court enjoins 2023 rule \u00b7 Mar 2025: Agencies announce intent to rescind 2023 rule \u00b7 Jul 2025: Formal rescission NPR issued \u00b7 Aug 2025: Comment period closed"],kp:[]},
+],
+timeline:[
+{y:1977,label:"CRA enacted"},
+{y:1995,label:"Interagency CRA regulations adopted"},
+{y:2023,m:10,label:"Modernized CRA final rule issued"},
+{y:2024,m:2,label:"Rule published in Federal Register"},
+{y:2024,m:3,label:"Texas federal court enjoined the 2023 rule"},
+{y:2025,m:3,label:"Agencies announced intent to rescind 2023 rule"},
+{y:2025,m:7,label:"Formal rescission NPR issued"},
+{y:2025,m:8,label:"Rescission comment period closed"}
 ],
 src:[
 {t:"CRA (12 U.S.C. \u00a72901\u20132908)",d:"1977",u:"https://www.govinfo.gov/content/pkg/USCODE-2023-title12/pdf/USCODE-2023-title12-chap30.pdf"},
@@ -817,13 +947,21 @@ note:"Total net credit exposure: $9.3B. Applicable limit for major counterparty 
 "Control relationships: Counterparties must be aggregated if one holds \u226525% of voting securities or controls the election of a majority of directors of the other.",
 "Reporting (FR 2590): Covered firms report quarterly to the Fed on their top 50 counterparty exposures, including gross and net credit exposure calculations. G-SIBs and major FBOs must ensure daily compliance."],
 kp:["U.S. government and zero-risk-weight sovereign exposures exempt","Economic interdependence: \u226550% revenue/guarantee triggers aggregation","Control relationship: \u226525% voting securities triggers aggregation","Quarterly FR 2590 reporting; daily compliance for G-SIBs"]},
-{kind:"outlook",t:"Pending Changes",c:[
+{kind:"outlook",t:"Outlook",c:[
 "No major SCCL rulemaking is currently pending. The rule has been stable since the 2019 tailoring amendments aligned its applicability thresholds with the {{ref:tailoring}} framework.",
 "The {{ref:endgame}} re-proposal (released March 2026) will indirectly affect SCCL through changes to credit risk measurement methodologies. Under the re-proposal, SA-CCR becomes mandatory for ERBA banks and optionally available for standardized banks, which would change how derivative exposures are measured for SCCL purposes.",
 "Industry participants have raised questions about how digital asset and stablecoin exposures should be treated under the SCCL framework, particularly given the GENIUS Act\u2019s new stablecoin issuer category.",
 "The Basel III {{ref:endgame}} re-proposal (March 2026) would require Category III and IV banks to adopt SA-CCR for counterparty credit risk, changing how derivative exposures are measured for SCCL compliance."],
 kp:["No pending SCCL rulemaking","Endgame may indirectly affect exposure measurement via SA-CCR","Digital asset/stablecoin exposure treatment under discussion","Rule has been stable since 2019 tailoring adjustments"]},
-{t:"Key Dates",c:["Jul 2010: Dodd-Frank Section 165(e) enacted \u00b7 Apr 2014: Basel Large Exposures Framework published \u00b7 Mar 2016: SCCL re-proposal \u00b7 Jun 2018: SCCL final rule adopted (83 FR 38460) \u00b7 Nov 2019: Tailoring amendments applied to SCCL \u00b7 Jan 2020: SCCL effective for U.S. G-SIBs \u00b7 Mar 2020: First FR 2590 reporting date"],kp:[]},
+],
+timeline:[
+{y:2010,m:7,label:"Dodd-Frank Section 165(e) enacted"},
+{y:2014,m:4,label:"Basel Large Exposures Framework published"},
+{y:2016,m:3,label:"SCCL re-proposal"},
+{y:2018,m:6,label:"SCCL final rule adopted (83 FR 38460)"},
+{y:2019,m:11,label:"Tailoring amendments applied to SCCL"},
+{y:2020,m:1,label:"SCCL effective for U.S. G-SIBs"},
+{y:2020,m:3,label:"First FR 2590 reporting date"}
 ],
 src:[
 {t:"SCCL Final Rule (83 FR 38460)",d:"Aug 2018",u:"https://www.federalregister.gov/documents/2018/08/06/2018-16133/single-counterparty-credit-limits-for-bank-holding-companies-and-foreign-banking-organizations"},
@@ -861,13 +999,24 @@ cite:[{type:"requirement",auth:"PL",pin:"Pub. L. 119-27 (GENIUS Act, signed Jul 
 "Bankruptcy priority: In an insolvency proceeding, stablecoin holders receive a first-priority security interest in segregated reserve assets, which are excluded from the bankruptcy estate. This provides significant protection for retail users, though it is not an absolute priority over all claims against the issuer.",
 "Permitted payment stablecoin issuers face capital and reserve requirements that parallel banking {{ref:cap-adequacy}} rules, including mandatory 1:1 backing with high-quality liquid reserve assets such as cash, short-term Treasuries, and eligible deposits."],
 kp:["$10B threshold for state vs. federal regulation","SCRC (Treasury, Fed, FDIC) oversees state regime certification","Compliant stablecoins are not securities or commodities","Stablecoin holders have first-priority interest in segregated reserves"]},
-{kind:"outlook",t:"Pending Changes",c:[
+{kind:"outlook",t:"Outlook",c:[
 "Implementation is actively underway. Federal agencies must issue final implementing regulations by July 18, 2026. The law becomes effective on the earlier of 18 months after enactment (January 18, 2027) or 120 days after agencies issue final rules.",
 "The FDIC approved the first proposed rulemaking under the act in December 2025, establishing application procedures for FDIC-supervised institutions seeking to issue stablecoins through subsidiaries. The NCUA followed with its own NPR in February 2026 covering credit union subsidiaries. The OCC issued a comprehensive 376-page NPR on February 25, 2026 covering permitted issuers, reserve requirements, foreign issuer obligations, and capital treatment under its jurisdiction. The Federal Reserve has not yet published a formal proposal.",
 "Treasury published an Advance Notice of Proposed Rulemaking (ANPRM) in September 2025 seeking comment on regulatory clarity, AML/sanctions obligations, state supervision, foreign issuers, and tax treatment. Comments closed October 2025.",
 "Key open questions for banking entities: How stablecoin reserves will be treated for {{ref:cap-adequacy}} and {{ref:lcr}} purposes, whether stablecoin activities trigger {{ref:volcker}} concerns, and the {{ref:sccl}} treatment of stablecoin-related exposures."],
 kp:["Final implementing regulations due by Jul 18, 2026","Law effective Jan 18, 2027 (or 120 days after final rules)","FDIC (Dec 2025), NCUA (Feb 2026), OCC (Feb 2026) NPRs issued; Fed pending","Treasury ANPRM issued Sep 2025; comments closed Oct 2025"]},
-{t:"Key Dates",c:["Feb 2025: GENIUS Act introduced in Senate (S.394) \u00b7 Jun 2025: Senate passes bill 68\u201330 \u00b7 Jul 17, 2025: House passes bill \u00b7 Jul 18, 2025: Signed into law \u00b7 Sep 2025: Treasury ANPRM published \u00b7 Oct 2025: Treasury comment period closed \u00b7 Dec 2025: FDIC proposes application procedures \u00b7 Feb 2026: NCUA proposes application procedures \u00b7 Feb 2026: OCC issues comprehensive NPR \u00b7 Jul 18, 2026: Implementing regulations due \u00b7 Jan 18, 2027: Statute effective date (latest)"],kp:[]},
+],
+timeline:[
+{y:2025,m:2,label:"GENIUS Act introduced in Senate (S.394)"},
+{y:2025,m:6,label:"Senate passed bill 68\u201330"},
+{y:2025,m:7,day:17,label:"House passed bill"},
+{y:2025,m:7,day:18,label:"Signed into law"},
+{y:2025,m:9,label:"Treasury ANPRM published"},
+{y:2025,m:10,label:"Treasury ANPRM comment period closed"},
+{y:2025,m:12,label:"FDIC proposed application procedures"},
+{y:2026,m:2,label:"OCC issued comprehensive NPR; NCUA proposed procedures"},
+{y:2026,m:7,day:18,label:"Statutory deadline for implementing regulations"},
+{y:2027,m:1,day:18,label:"Statutory effective date (latest)"}
 ],
 src:[
 {t:"GENIUS Act (S.1582, Public Law 119-27)",d:"Jul 2025",u:"https://www.congress.gov/bill/119th-congress/senate-bill/1582/text"},
@@ -906,12 +1055,21 @@ cite:[{type:"requirement",auth:"SR",pin:"SR 15-18 (Capital planning guidance, Ca
 "ICAAP Equivalence: The capital planning process described in SR 15-18/19 is broadly equivalent to an Internal Capital Adequacy Assessment Process under the advanced approaches capital guidelines. This means the guidance serves double duty: it satisfies both the supervisory expectations for {{ref:stress-testing}} and CCAR capital plan submissions, and the ICAAP requirements under {{ref:cap-adequacy}}.",
 "Interaction with the SCB: The original CCAR framework had both a quantitative component (stress test results) and a qualitative component (capital planning assessment based on SR 15-18/19). The qualitative objection was eliminated in 2019, and the quantitative output was converted into the {{ref:scb}} in 2020. However, the elimination of the qualitative objection did not eliminate the guidance itself \u2014 the Fed continues to use SR 15-18/19 as the benchmark for ongoing supervisory examination of capital planning processes, and deficiencies can still result in MRAs and enforcement actions."],
 kp:["Five key differences between SR 15-18 and SR 15-19","Effective challenge: genuine critical review, not just documentation","Model overlays governed by SR 11-7 standards","ICAAP equivalent: satisfies both CCAR and advanced approaches requirements","Qualitative CCAR objection eliminated 2019; guidance remains enforceable via exams"]},
-{kind:"outlook",t:"Pending Changes",c:[
+{kind:"outlook",t:"Outlook",c:[
 "No direct amendments to SR 15-18/19 are currently pending. However, several related reforms affect the capital planning process. The stress test transparency proposal (October 2025, comment period extended to February 21, 2026) would require the Fed to publish its supervisory models and take public comment before each {{ref:stress-testing}} cycle \u2014 potentially changing how Cat II/III firms adapt Fed scenarios under the SR 15-19 framework.",
 "The {{ref:scb}} results averaging proposal (April 2025) would smooth year-to-year volatility in the binding capital output that the planning process must target. The broader capital reform agenda \u2014 including the {{ref:endgame}} re-proposal (released March 2026) and {{ref:gsib}} methodology review \u2014 will change the capital ratios and requirements that firms must plan against. Under the Endgame\u2019s single-stack design, lower RWAs would mechanically reduce dollar SCB amounts.",
 "Post-2023 bank failures (SVB, Signature, First Republic) have increased supervisory scrutiny of capital planning at large regional banks, which are the primary SR 15-19 population. Examination focus has intensified on the interaction between capital planning and interest rate risk management ({{ref:irrbb}}), particularly unrealized securities losses and deposit concentration assumptions."],
 kp:["No direct amendments pending","Stress test transparency proposal would affect scenario design pillar","SCB averaging and Endgame re-proposal change the planning targets","Post-2023: heightened exam focus on SR 15-19 population (large regionals)"]},
-{t:"Key Dates",c:["Aug 2013: Capital Planning at Large BHCs guidance issued \u00b7 Oct 2014: CCAR 2015 instructions published \u00b7 Dec 2015: SR 15-18 and SR 15-19 issued \u00b7 2019: Qualitative CCAR objection eliminated \u00b7 2019: Tailoring framework finalized (Cat I\u2013IV) \u00b7 2020: SCB replaces fixed conservation buffer \u00b7 Jan 2021: SR 15-18/19 revised to align with tailoring framework \u00b7 2023: SVB failure increases scrutiny of capital planning at regionals \u00b7 Oct 2025: Stress test transparency proposal issued"],kp:[]},
+],
+timeline:[
+{y:2013,m:8,label:"Capital Planning at Large BHCs guidance issued"},
+{y:2014,m:10,label:"CCAR 2015 instructions published"},
+{y:2015,m:12,label:"SR 15-18 and SR 15-19 issued"},
+{y:2019,label:"Qualitative CCAR objection eliminated"},
+{y:2020,label:"SCB replaced fixed conservation buffer"},
+{y:2021,m:1,label:"SR 15-18/19 revised to align with tailoring"},
+{y:2023,label:"SVB failure increased scrutiny of capital planning"},
+{y:2025,m:10,label:"Stress test transparency proposal issued"}
 ],
 src:[
 {t:"SR 15-19: Capital Planning \u2014 Cat II/III",d:"Dec 2015 (rev. Jan 2021)",u:"https://www.federalreserve.gov/supervisionreg/srletters/sr1519.htm"},
