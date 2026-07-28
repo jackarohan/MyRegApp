@@ -339,10 +339,10 @@ tables:[{title:"HQLA Classification, Haircuts & Caps",headers:["Level","Assets I
 "{{ref:resolution}} planning imposes additional liquidity positioning requirements beyond business-as-usual LCR compliance, requiring firms to demonstrate access to sufficient liquidity over multi-year resolution periods under assumptions more severe than the standard 30-day LCR stress."],
 kp:["HQLA: Level 1 (no haircut), Level 2A (15%), Level 2B (50%)","Inflows capped at 75% of outflows","Maturity mismatch add-on captures peak-day stress"]},
 {kind:"outlook",t:"Outlook",c:[
-"The liquidity regime has come under scrutiny. The Bank Policy Institute (May 2025) argued the combination of LCR, {{ref:nsfr}}, ILSTs, and resolution liquidity is redundant and internally inconsistent.",
-"Discount Window / SRF: In August 2024, the Fed clarified that banks can incorporate discount window and Standing Repo Facility access in internal liquidity stress tests \u2014 a significant supervisory shift.",
-"No formal LCR amendments proposed, but the broader liquidity framework is on the reform agenda."],
-kp:["No formal LCR amendments proposed; framework under review","Discount window recognized in ILSTs (Aug 2024)","Industry criticism of redundancy across liquidity requirements"]},
+"As of July 2026, no rulemaking to amend the LCR had been proposed — but reform had moved to the top of the policy agenda. Vice Chair Bowman (March 2026) called the LCR an isolated, unusable buffer and framed a comprehensive liquidity-framework review; Treasury Secretary Bessent endorsed crediting pre-positioned discount-window capacity against the LCR; Governor Barr pushed back in May 2026, calling that approach a way to lower liquidity requirements.",
+"The Bank Policy Institute (May 2025) argued the combination of LCR, {{ref:nsfr}}, ILSTs, and resolution liquidity requirements is redundant and internally inconsistent, and recommended crediting discount-window capacity in net cash outflows.",
+"In August 2024, the Fed had already clarified that banks can incorporate discount window and Standing Repo Facility access in internal liquidity stress tests ({{ref:ilst}}) — a meaningful supervisory shift toward usable central-bank liquidity."],
+kp:["No LCR amendments proposed as of July 2026; reform debate at speech stage","Idea in play: credit pre-positioned discount-window capacity in the LCR","Discount window recognized in ILSTs since Aug 2024"]},
 ],
 timeline:[
 {y:2013,m:1,label:"Basel III LCR standard published"},
@@ -351,14 +351,15 @@ timeline:[
 {y:2017,m:1,label:"Full 100% compliance"},
 {y:2019,m:10,label:"Tailoring framework adjusted LCR by category"},
 {y:2024,m:8,label:"Discount window and SRF recognized in ILSTs"},
-{y:2025,m:5,label:"BPI liquidity framework critique published"}
+{y:2025,m:5,label:"BPI liquidity framework critique published"},
+{y:2026,m:3,label:"Bowman speech framed comprehensive liquidity-framework review"}
 ],
 src:[
 {t:"U.S. LCR Final Rule (79 FR 61440)",d:"Sep 2014",u:"https://www.federalregister.gov/documents/2014/10/10/2014-22520/liquidity-coverage-ratio"},
 {t:"Basel III: The Liquidity Coverage Ratio",d:"Jan 2013",u:"https://www.bis.org/publ/bcbs238.htm"},
 {t:"Federal Reserve: LCR FAQs",d:"Ongoing",u:"https://www.federalreserve.gov/supervisionreg/topics/liquidity-coverage-ratio-faqs.htm"}]},
 {id:"nsfr",cat:"Liquidity",title:"Net Stable Funding Ratio",st:"NSFR",icon:"\u{1F504}",
-sum:"Requires large banks to maintain stable funding sufficient to support their assets over a one-year horizon. Complements the LCR\u2019s 30-day focus. The last major post-crisis reform.",
+sum:"The one-year structural funding rule: illiquid assets must be financed with stable liabilities, so a 30-day shock never becomes a funding cliff. The most contested — and least binding — piece of the liquidity stack.",
 subs:[
 {t:"Overview",c:[
 "The NSFR ensures stable funding over a one-year horizon, complementing the {{ref:lcr}}\u2019s 30-day focus. Formula: ASF / RSF \u2265 100%.",
@@ -393,10 +394,10 @@ tables:[{title:"Key ASF Factors (12 CFR §249.104)",headers:["ASF Factor","Fundi
 "Practical Binding Dynamics: The NSFR rarely binds in isolation for most large U.S. banks. It tends to constrain firms that hold large portfolios of less-liquid assets (commercial real estate, leveraged loans) funded by shorter-term wholesale sources. Banks manage NSFR by adjusting funding mix (issuing longer-term debt) or asset composition (shifting toward higher-RSF assets). The quarterly calculation frequency gives firms more flexibility than the daily LCR."],
 kp:["ASF: stable liabilities weighted 0\u2013100%","RSF: illiquid assets weighted 0\u2013100%","Known calibration inconsistencies with LCR"]},
 {kind:"outlook",t:"Outlook",c:[
-"NSFR is likely part of any broader liquidity review. The BPI argues it\u2019s the weakest link \u2014 finalized without a clearly stated objective.",
+"As of July 2026, no NSFR amendments had been proposed, but in the liquidity-reform debate it was the piece most often nominated for elimination: the BPI's May 2025 critique called it the weakest link — finalized without a clearly stated objective — and Fed leadership's March 2026 framing of a comprehensive review put its future in play.",
 "Known inconsistencies with the {{ref:lcr}} remain unresolved, including the Treasury RSF factor and treatment of operational deposits.",
-"No formal amendments proposed. Any changes likely part of a broader interagency package."],
-kp:["No amendments proposed; likely part of broader review","BCBS\u2019s own analysis found net costs to U.S. economy","Known LCR/NSFR calibration inconsistencies unresolved"]},
+"Any changes were expected to come as part of a broader interagency liquidity package rather than a standalone NSFR rulemaking."],
+kp:["No amendments proposed as of July 2026; elimination floated in reform debate","BCBS's own analysis found net costs to the U.S. economy","Known LCR/NSFR calibration inconsistencies unresolved"]},
 ],
 timeline:[
 {y:2014,m:10,label:"BCBS finalized NSFR standard"},
@@ -583,8 +584,8 @@ kp:["CFP: actionable plan with triggers and escalation procedures","Intraday liq
 {kind:"outlook",t:"Outlook",c:[
 "The August 2024 supervisory guidance clarifying that banks can incorporate discount window and SRF access in ILSTs was a significant shift. Previously, supervisory practice discouraged reliance on central bank facilities in stress planning.",
 "The BPI (May 2025) argued that the combination of {{ref:lcr}}, {{ref:nsfr}}, ILST, and resolution liquidity requirements creates overlapping and sometimes inconsistent demands on bank liquidity management.",
-"No formal regulatory changes are pending, but ILST expectations evolve through the supervisory process. The horizontal liquidity reviews conducted by the Fed have increasingly focused on intraday risk and interconnections between liquidity and capital."],
-kp:["Discount window/SRF inclusion in ILSTs is a major 2024 shift","BPI argues overlapping requirements create inconsistencies","No formal changes pending; expectations evolve via supervision","Fed focusing on intraday risk and liquidity-capital interconnections"]},
+"As of July 2026, no formal regulatory changes were pending — ILST expectations evolve through supervision, and the Fed's horizontal liquidity reviews increasingly focused on intraday risk and the interconnection between liquidity and capital. The 2026 liquidity-framework review ({{ref:lcr}}) contemplated freeing ILST assumptions from LCR parameters."],
+kp:["Discount window/SRF inclusion in ILSTs was a major 2024 shift","BPI argues overlapping requirements create inconsistencies","No formal changes pending as of July 2026; expectations evolve via exams"]},
 ],
 timeline:[
 {y:2010,label:"SR 10-6 liquidity risk management guidance issued"},
@@ -629,10 +630,10 @@ cite:[{type:"requirement",auth:"SR",pin:"SR 10-1 (Interagency advisory on intere
 kp:["Duration gap: core measure of balance sheet rate sensitivity","NMD modeling: behavioral vs. contractual maturity assumptions","AOCI/HTM: unrealized losses may be masked in regulatory capital","Repricing, basis, and optionality risk are the three IRRBB sub-types"]},
 {kind:"outlook",t:"Outlook",c:[
 "Post-2023 supervisory response: The agencies have significantly tightened examination focus on IRRBB. The Fed\u2019s 2024\u20132025 supervisory priorities explicitly cite interest rate risk management, deposit concentration, and unrealized securities losses.",
-"AOCI opt-out elimination: The {{ref:endgame}} re-proposal (March 2026) eliminates the AOCI opt-out for Category III and IV banks with a 5-year phase-in starting January 2027 (25% recognition in year 1, rising to 100% by year 4). This will cause unrealized AFS losses to reduce CET1 directly \u2014 estimated +3.1% CET1 requirement for Cat III/IV, partially offsetting RWA relief.",
-"The Basel Committee\u2019s 2016 IRRBB standard (BCBS 368) has not been formally adopted into U.S. regulation, though many of its principles are reflected in existing supervisory expectations. Full adoption would formalize the six prescribed shock scenarios and the outlier bank threshold. In July 2024, the Basel Committee published a recalibration of IRRBB interest rate shocks (BCBS D578) reflecting the higher-rate environment; U.S. adoption of these updated shocks remains uncertain and is not currently proposed.",
+"AOCI opt-out elimination: The {{ref:endgame}} reproposal (March 2026, pending as of July 2026) would eliminate the AOCI opt-out for Category III and IV banks, with a five-year transition running from the final rule's effective date. Unrealized AFS losses would then reduce CET1 directly — an estimated +3.1% CET1 requirement for Cat III/IV, partially offsetting RWA relief.",
+"The Basel Committee's 2016 IRRBB standard (BCBS 368) has not been formally adopted into U.S. regulation, though many of its principles are reflected in supervisory expectations. Full adoption would formalize the six prescribed shock scenarios and the outlier bank threshold. In July 2024 the Basel Committee published recalibrated IRRBB shocks (BCBS D578) reflecting the higher-rate environment; as of July 2026, U.S. adoption of the updated shocks had not been proposed.",
 "Industry groups (BPI, ABA) have advocated for clarity on how {{ref:ilst}} IRRBB scenarios interact with {{ref:lcr}} and {{ref:nsfr}} assumptions, noting that inconsistent deposit runoff assumptions across frameworks create complexity."],
-kp:["Heightened post-2023 exam focus: deposit concentration, unrealized losses","AOCI opt-out removal under consideration in Endgame re-proposal","Basel IRRBB standard (BCBS 368) not yet formally adopted in U.S.","Industry seeking consistency across ILST, LCR, and NSFR deposit assumptions"]},
+kp:["Heightened post-2023 exam focus: deposit concentration, unrealized losses","AOCI recognition for Cat III/IV proposed in the Endgame reproposal","Basel IRRBB standard (BCBS 368) not formally adopted in the U.S.","Industry seeking consistency across ILST, LCR, and NSFR deposit assumptions"]},
 ],
 timeline:[
 {y:1996,m:6,label:"Joint Policy Statement on Interest Rate Risk (SR 96-13)"},
