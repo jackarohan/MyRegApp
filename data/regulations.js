@@ -73,25 +73,25 @@ src:[
 {t:"Federal Reserve: Capital & Stress Testing",d:"Ongoing",u:"https://www.federalreserve.gov/supervisionreg/stress-tests-capital-planning.htm"},
 {t:"Tailoring Rules Final Rule (84 FR 59032)",d:"Oct 2019",u:"https://www.federalregister.gov/documents/2019/11/01/2019-23662/prudential-standards-for-large-bank-holding-companies"}]},
 {id:"eslr",cat:"Capital",title:"Enhanced Supplementary Leverage Ratio",st:"eSLR",icon:"\u2696\uFE0F",
-sum:"A higher leverage capital standard for U.S. G-SIBs, recently recalibrated to function as a backstop rather than a binding constraint. Final rule effective April 2026.",
+sum:"The leverage backstop for U.S. G-SIBs: a buffer above the 3% SLR, recalibrated in 2026 from a flat 2% to half of each firm's Method 1 G-SIB surcharge — so that risk-based ratios, not leverage, are the binding constraint.",
 subs:[
 {t:"Overview",c:[
 "The eSLR is a leverage-based capital requirement for U.S. G-SIBs and their insured depository institution subsidiaries, sitting on top of the baseline 3% SLR for all large banks. (See {{ref:cap-adequacy}} for the risk-based capital framework and {{ref:gsib}} for the surcharge that now calibrates the eSLR buffer.)",
 "Unlike risk-based ratios, the leverage ratio treats all assets equally \u2014 a dollar of Treasuries requires the same capital as a dollar of corporate loans. This makes it a simple backstop, but also means it can penalize low-risk activities.",
 "In November 2025, the agencies finalized a major recalibration designed to ensure the leverage ratio serves as a backstop to \u2014 rather than a binding constraint on \u2014 risk-based capital requirements."],
-kp:["Applies to 8 U.S. G-SIBs and their covered depository institution subsidiaries","Major recalibration finalized November 2025; effective April 1, 2026","Designed as a backstop, not a binding constraint","Early adoption available since January 1, 2026"]},
+kp:["Applies to 8 U.S. G-SIBs and their covered depository institution subsidiaries","Recalibration finalized November 2025; in force since April 1, 2026","Designed as a backstop, not a binding constraint"]},
 {t:"Scope & Applicability",c:[
-"The eSLR applies exclusively to U.S. G-SIBs (Category I) at the holding company level and to their covered insured depository institution subsidiaries. There are currently eight U.S. G-SIBs.",
+"The eSLR applies exclusively to U.S. G-SIBs (Category I) at the holding company level and to their covered insured depository institution subsidiaries — eight firms as of 2026.",
 "The baseline SLR of 3% applies more broadly to all banking organizations with \u2265$250B in total consolidated assets or \u2265$10B in on-balance-sheet foreign exposures (generally Categories I\u2013III). Category IV firms are not subject to SLR.",
 "The eSLR buffer is not an election \u2014 it is automatic for all G-SIBs. Breach of the buffer triggers distribution restrictions identical to those for risk-based capital buffers."],
 kp:["eSLR: G-SIBs (Category I) only \u2014 8 firms","Baseline 3% SLR: Categories I\u2013III (\u2265$250B or significant foreign exposure)","Category IV firms not subject to SLR","Buffer breach triggers automatic distribution restrictions"]},
 {kind:"requirements",t:"Current Requirements",c:[
-"Prior Rule (through March 2026): G-SIB holding companies: SLR \u2265 5% (3% min + 2% fixed buffer). Covered depository institution subsidiaries: SLR \u2265 6% to be \u2018well capitalized.\u2019",
-"New Rule (effective April 1, 2026): G-SIB HCs: SLR minimum remains 3%. Buffer = 50% of Method 1 G-SIB surcharge. Current Method 1 surcharges (1.0%\u20132.5%) yield new eSLR of 3.5%\u20134.25%.",
-"Covered Depository Institutions: Buffer = 50% of parent\u2019s Method 1 surcharge, capped at 1%. The cap was added in the final rule \u2014 not in the proposal.",
-"TLAC and LTD leverage-based components have been conformed to the recalibrated eSLR buffer."],
+"Requirements in force since April 1, 2026: G-SIB holding companies must maintain SLR \u2265 3% plus an eSLR buffer equal to 50% of the firm's Method 1 G-SIB surcharge. With Method 1 surcharges of 1.0%\u20132.5%, total requirements run 3.5%\u20134.25%.",
+"Covered depository institution subsidiaries: buffer = 50% of the parent's Method 1 surcharge, capped at 1% (total \u2264 4%). The cap was added in the final rule — it was not in the June 2025 proposal — and replaced the prior 6% well-capitalized threshold.",
+"Before April 2026, the rule was a flat add-on: 5% at the holding company (3% + 2% fixed buffer) and 6% for well-capitalized bank subsidiaries. The recalibration replaced the fixed buffers with firm-specific ones tied to systemic risk.",
+"TLAC and LTD leverage-based components were conformed to the recalibrated eSLR buffer on the same schedule ({{ref:tlac}})."],
 cite:[{type:"requirement",auth:"FR",pin:"90 FR 78050 (eSLR recalibration final rule, Nov 2025)"},{type:"requirement",auth:"CFR",pin:"12 CFR 217.10(a)(5) (SLR 3% minimum)"}],
-kp:["Old: 5% HCs, 6% bank subs \u2192 New: 3.5%\u20134.25% HCs","Bank subsidiary buffer capped at 1% \u2014 final-rule change from proposal","TLAC and LTD leverage buffers aligned to new calibration"]},
+kp:["In force since Apr 1, 2026: HoldCo total 3.5%\u20134.25% (was flat 5%)","Bank subsidiary buffer capped at 1% — a final-rule change from the proposal","TLAC and LTD leverage buffers aligned to the same calibration"]},
 {kind:"calc",t:"How It\u2019s Calculated",
 c:[
 "The Supplementary Leverage Ratio measures a bank\u2019s Tier 1 capital against its total leverage exposure, providing a non-risk-weighted backstop to the risk-based capital framework. The formula is: SLR = Tier 1 Capital \u00f7 Total Leverage Exposure (TLE). All Category I\u2013III banking organizations must maintain an SLR of at least 3%, while G-SIBs must hold an additional eSLR buffer above that minimum.",
@@ -105,15 +105,15 @@ cite:[{type:"reg",auth:"Fed/OCC/FDIC",pin:"12 CFR Part 217 \u00a7 217.10 \u2014 
 {t:"Key Concepts",c:[
 "Total Leverage Exposure (TLE): The SLR denominator. TLE includes on-balance-sheet assets measured under U.S. GAAP plus off-balance-sheet exposures: derivatives (SA-CCR), repo-style transactions (gross + counterparty credit), undrawn commitments, and other items. Unlike RWAs, TLE assigns no risk weighting \u2014 Treasuries and corporate loans contribute equally. This is why a binding SLR can discourage banks from holding low-risk assets like Treasuries and central bank reserves.",
 "SLR vs. eSLR Buffer: The baseline SLR (3% of TLE) applies to all Category I\u2013III banks. The eSLR adds a G-SIB-specific buffer on top of the 3% minimum. Prior to April 2026, the buffer was a fixed 2 percentage points for all G-SIBs (5% total at the HC level). The recalibrated eSLR replaces the flat buffer with a firm-specific one tied to each G-SIB\u2019s systemic risk profile.",
-"April 2026 Recalibration Math: Under the new rule, the eSLR buffer = 50% of the firm\u2019s Method 1 {{ref:gsib}} surcharge. Current Method 1 surcharges range from 1.0% to 2.5%, yielding eSLR buffers of 0.5% to 1.25% and total eSLR requirements of 3.5% to 4.25%. For covered depository institution subsidiaries, the buffer = 50% of the parent\u2019s Method 1 surcharge, capped at 1%.",
+"April 2026 Recalibration Math: Under the rule in force, the eSLR buffer = 50% of the firm's Method 1 {{ref:gsib}} surcharge. Method 1 surcharges of 1.0%\u20132.5% (as of 2026) yield eSLR buffers of 0.5% to 1.25% and total eSLR requirements of 3.5% to 4.25%. For covered depository institution subsidiaries, the buffer = 50% of the parent's Method 1 surcharge, capped at 1%.",
 "Binding Constraint Dynamics: The eSLR was designed as a backstop to risk-based requirements, but the original 5%/6% calibration made it the binding constraint for most G-SIBs. When the leverage ratio binds, banks face a \u2018flat tax\u2019 on all assets regardless of risk, discouraging low-margin activities like Treasury dealing, reserve holding, and client clearing. The recalibration is intended to shift the binding constraint back to risk-based ratios, which better differentiate between risky and safe assets.",
 "Interaction with {{ref:irrbb}}: Because the leverage ratio treats all assets equally, it does not directly capture interest rate risk. However, banks that extend duration to earn spread (a key IRRBB exposure) do not face higher leverage capital. This asymmetry means the SLR can encourage duration extension \u2014 one reason the agencies view risk-based requirements as the appropriate primary constraint."],
 kp:["TLE includes on- and off-balance-sheet items with no risk weighting","Old buffer: flat 2% for all G-SIBs \u2192 New: 50% of Method 1 surcharge (0.5\u20131.25%)","When leverage binds, banks face a flat tax on all assets including safe ones","Recalibration shifts binding constraint back to risk-based ratios"]},
 {kind:"outlook",t:"Outlook",c:[
-"Treasury and Reserve Exclusions: Vice Chair Bowman\u2019s June 2025 proposal sought comment on alternatives including excluding Treasuries and central bank reserves from the SLR denominator (the TLE). The agencies did not adopt any exclusion in the final rule, but it retains broad support \u2014 particularly as the SEC\u2019s Treasury clearing mandate approaches (Dec 2026 / June 2027).",
-"The agencies characterized the eSLR reform as a \u2018first step\u2019 in a broader capital framework review. The {{ref:gsib}}, {{ref:scb}}, and Basel III Endgame are all expected to follow.",
-"Overall capital for G-SIB HCs expected to remain similar despite eSLR reduction, since risk-based requirements will become the binding constraint."],
-kp:["Treasury/reserve SLR exclusion not adopted but under active discussion","SEC Treasury clearing mandate (Dec 2026/Jun 2027) adds urgency","eSLR described as \u2018first step\u2019 \u2014 further reforms expected"]},
+"Treasury and reserve exclusions: the June 2025 proposal sought comment on excluding Treasuries and central bank reserves from the leverage denominator. The agencies did not adopt an exclusion in the final rule, but the idea retained broad support as of July 2026 — particularly with the SEC's Treasury clearing mandate scheduled for December 2026 (cash trades) and June 2027 (repo).",
+"The agencies characterized the eSLR reform as a first step in a broader capital-framework review; the {{ref:gsib}} methodology NPR and {{ref:endgame}} reproposal followed in March 2026 and were pending as of July 2026.",
+"Because risk-based ratios are expected to become the binding constraint, the agencies projected overall capital for G-SIB holding companies would remain broadly similar despite the lower leverage requirement."],
+kp:["Treasury/reserve SLR exclusion not adopted but under active discussion","SEC Treasury clearing deadlines (Dec 2026/Jun 2027) keep the issue live","Framed as a first step; G-SIB and Endgame NPRs followed in 2026"]},
 ],
 timeline:[
 {y:2014,m:4,label:"SLR and eSLR final rules adopted"},
@@ -130,13 +130,13 @@ src:[
 {t:"eSLR Recalibration Proposed Rule",d:"Jun 2025",u:"https://www.federalreserve.gov/newsevents/pressreleases/bcreg20250627a.htm"},
 {t:"Supplementary Leverage Ratio Final Rule (79 FR 24528)",d:"Apr 2014",u:"https://www.federalregister.gov/documents/2014/05/01/2014-09367/regulatory-capital-rules"}]},
 {id:"gsib",cat:"Capital",title:"G-SIB Capital Surcharge",st:"G-SIB Surcharge",icon:"\u{1F3E6}",
-sum:"An additional CET1 capital requirement (1.0%\u20135.0%) for the eight U.S. Global Systemically Important Banks. Method 1 surcharges range 1.0%\u20132.5%. The binding Method 2 surcharge currently ranges from 1.0% to 5.0% across U.S. G-SIBs, with no fixed cap. Methodology under review.",
+sum:"The systemic-risk surcharge on the eight U.S. G-SIBs: added CET1 of 1.0%\u20134.5% (as of 2026), computed under two methods with the stricter U.S.-only Method 2 always binding. A March 2026 NPR would overhaul the methodology.",
 subs:[
 {t:"Overview",c:[
 "The G-SIB surcharge is an additional layer of CET1 capital that the eight U.S. G-SIBs must hold above generally applicable minimums. Its purpose is to internalize the costs that these firms\u2019 failure would impose on the broader financial system.",
 "The eight U.S. G-SIBs: JPMorgan Chase, Bank of America, Citigroup, Wells Fargo, Goldman Sachs, Morgan Stanley, Bank of New York Mellon, and State Street.",
 "The surcharge is part of the capital conservation buffer. If a G-SIB\u2019s CET1 falls below its combined buffer (SCB + G-SIB surcharge + CCyB), automatic distribution restrictions apply. (See {{ref:cap-adequacy}} for the full capital stack.)"],
-kp:["Applies to 8 U.S. G-SIBs identified annually by the Fed","Method 1 surcharges: 1.0%–2.5%; binding Method 2 surcharges currently range 1.0%–5.0% (no fixed cap)","Breach triggers automatic restrictions on dividends and buybacks"]},
+kp:["Applies to 8 U.S. G-SIBs identified annually by the Fed","Method 1: 1.0%\u20132.5%; binding Method 2 surcharges 1.0%\u20134.5% as of 2026 (no fixed cap)","Breach triggers automatic restrictions on dividends and buybacks"]},
 {t:"Scope & Applicability",c:[
 "The G-SIB surcharge applies to the eight U.S. bank holding companies identified as G-SIBs: JPMorgan Chase, Bank of America, Citigroup, Wells Fargo, Goldman Sachs, Morgan Stanley, Bank of New York Mellon, and State Street.",
 "G-SIB identification is determined annually using the Method 1 systemic indicator framework. A firm with a systemic risk score \u2265130 basis points is identified as a G-SIB. The surcharge applies at the consolidated BHC level.",
@@ -144,11 +144,11 @@ kp:["Applies to 8 U.S. G-SIBs identified annually by the Fed","Method 1 surcharg
 kp:["Applies to 8 named U.S. G-SIBs only","Identification based on annual systemic risk score (\u2265130 bps)","Applies at consolidated BHC level","Non-G-SIBs not subject regardless of size"]},
 
 {kind:"requirements",t:"Current Requirements",c:[
-"Each G-SIB calculates under two methods and is subject to the higher. Method 1 (Basel/FSB): five systemic indicator categories \u2014 size, interconnectedness, cross-jurisdictional activity, substitutability, complexity. Current range: 1.0%\u20132.5%. Method 2 (U.S.-only): replaces substitutability with STWF. Always binding for U.S. G-SIBs.",
-"Individual G-SIB surcharges (as of October 2025): JPMorgan Chase 4.5%, Citigroup 3.5%, Goldman Sachs 3.0%, Morgan Stanley 3.0%, Bank of America 3.0%, Wells Fargo 1.5%, Bank of New York Mellon 1.5%, State Street 1.0%. JPMorgan Chase carries the highest surcharge, reflecting its dominant position across all five systemic indicators. Surcharges are updated annually in the first quarter of each year.",
+"Each G-SIB calculates under two methods and is subject to the higher. Method 1 (Basel/FSB): five systemic indicator categories — size, interconnectedness, cross-jurisdictional activity, substitutability, complexity; surcharges of 1.0%\u20132.5% as of 2026. Method 2 (U.S.-only): replaces substitutability with STWF. Always binding for U.S. G-SIBs.",
+"Individual binding surcharges (in effect since January 1, 2026): JPMorgan Chase 4.5%, Citigroup 3.5%, Goldman Sachs 3.5% (raised from 3.0% at the January 2026 annual update), Bank of America 3.0%, Morgan Stanley 3.0%, Bank of New York Mellon 1.5%, Wells Fargo 1.5%, State Street 1.0%. JPMorgan Chase carries the highest surcharge, reflecting its position across all five systemic indicators. Surcharges are updated annually.",
 "Timing is asymmetric: increases take effect one full calendar year after calculation; decreases take effect the following January 1."],
 cite:[{type:"requirement",auth:"CFR",pin:"12 CFR 217.403\u2013217.405 (G-SIB surcharge calculation)"},{type:"requirement",auth:"FR",pin:"80 FR 49082 (G-SIB surcharge final rule)"}],
-kp:["Method 2 (U.S.-only) always produces the binding surcharge","JPMorgan Chase: highest at 4.5%","Increases delayed one extra year vs. decreases"]},
+kp:["Method 2 (U.S.-only) always produces the binding surcharge","In effect since Jan 2026: 1.0% (State Street) to 4.5% (JPMorgan)","Increases delayed one extra year vs. decreases"]},
 {kind:"calc",t:"How It\u2019s Calculated",c:[
 "Dual Calculation: U.S. G-SIBs must calculate surcharges under both Method 1 (Basel/FSB framework) and Method 2 (U.S.-enhanced framework), then hold capital against the higher result. In practice, Method 2 has produced the binding surcharge for every U.S. G-SIB in every year since the rule took effect.",
 "Method 1 (12 CFR \u00a7217.404): Five equally weighted categories (20% each) with 12 indicators. Size: total exposures (SLR denominator). Interconnectedness: intra-financial-system assets, intra-FS liabilities, securities outstanding. Substitutability: payments activity, assets under custody, underwritten transactions (capped at 100 bps in U.S. implementation). Complexity: OTC derivatives notional, Level 3 assets, trading and AFS securities. Cross-jurisdictional activity: cross-jurisdictional claims and liabilities.",
@@ -168,17 +168,19 @@ tables:[{title:"Method 1 \u2014 Score-to-Surcharge",headers:["Score (bps)","Surc
 "eSLR Interdependency: Following the November 2025 recalibration, the eSLR buffer is set at 50% of the Method 1 surcharge. This creates a direct link between G-SIB scoring and leverage capital requirements. Any future update to Method 1 denominators or indicator weights would flow through to both the risk-based G-SIB surcharge and the leverage-based {{ref:eslr}} buffer, amplifying the impact of methodology reform."],
 kp:["Method 2 fixed denominators cause systematic score inflation","Method 1 uses annually updated BCBS global denominators","Score \u2265 130 bps triggers G-SIB identification"]},
 {kind:"outlook",t:"Outlook",c:[
-"The G-SIB surcharge methodology NPR was issued March 19, 2026 (Federal Register March 23, Vol. 91 No. 55), alongside the Basel III Endgame re-proposal. The comment period closes June 18, 2026. Proposed changes include daily and monthly averaging of systemic indicators, 10 basis-point surcharge buckets (replacing the current 50 bps buckets), and updated coefficients. The combined effect of surcharge reform and Endgame is expected to produce a \u2018modest decrease\u2019 in requirements for the largest banks. Reform also expected to update Method 2\u2019s fixed denominators and recalibrate the STWF coefficient.",
+"The G-SIB surcharge methodology NPR was issued March 19, 2026 (Federal Register March 27, 2026), alongside the {{ref:endgame}} reproposal; its comment period closed June 18, 2026, with no further action as of July 2026. Proposed changes: Method 2 coefficients divided by 1.2 (a one-time ~20% reduction), automatic indexing of denominators to nominal GDP, daily/monthly averaging of systemic indicators, a recalibrated STWF measure, and 10-basis-point surcharge increments replacing 50 bp bands. The agencies estimated the surcharge proposal alone would reduce Cat I/II CET1 requirements by about 2.4%.",
 "Industry groups estimate correcting the fixed-denominator issue could reduce surcharges by ~1 percentage point, expanding lending and market-making capacity by over $1 trillion.",
-"The {{ref:eslr}} final rule now uses Method 1 surcharges to calibrate the leverage buffer \u2014 any Method 1 changes would flow through to eSLR. The November 2025 FSB G-SIB list moved Bank of America from Bucket 2 to Bucket 3, which may increase its U.S. G-SIB surcharge."],
-kp:["G-SIB surcharge NPR released March 19, 2026; comment period closes June 18, 2026","Industry estimates ~1pp reduction if denominators updated","eSLR now tied to Method 1 \u2014 new interdependency"]},
+"The {{ref:eslr}} final rule uses Method 1 surcharges to calibrate the leverage buffer, so any Method 1 change flows through to leverage requirements. The November 2025 FSB list moved Bank of America to a higher global bucket (effective January 2027), which could lift its Method 1-based requirements."],
+kp:["Methodology NPR pending as of July 2026 (comments closed Jun 18)","Proposal: coefficients \u00f71.2, GDP indexing, 10 bp increments; est. \u22122.4% CET1","eSLR now tied to Method 1 — methodology changes flow through"]},
 ],
 timeline:[
 {y:2015,m:7,label:"G-SIB surcharge final rule"},
 {y:2016,m:1,display:"2016\u20132019",label:"Surcharge phased in from 50% to 100%"},
 {y:2025,m:11,label:"eSLR tied leverage buffer to Method 1 surcharge"},
 {y:2025,m:11,label:"FSB moved Bank of America to a higher bucket"},
-{y:2026,m:3,day:19,label:"G-SIB surcharge methodology NPR released"}
+{y:2026,m:1,day:1,label:"Goldman Sachs surcharge rose to 3.5% at annual update"},
+{y:2026,m:3,day:19,label:"G-SIB surcharge methodology NPR released"},
+{y:2026,m:6,day:18,label:"Methodology NPR comment period closed"}
 ],
 src:[
 {t:"G-SIB Surcharge Final Rule (80 FR 49082)",d:"Jul 2015",u:"https://www.federalregister.gov/documents/2015/08/14/2015-18702/regulatory-capital-rules-implementation-of-risk-based-capital-surcharges-for-global-systemically"},
@@ -408,22 +410,22 @@ src:[
 {t:"Basel III: Net Stable Funding Ratio",d:"Oct 2014",u:"https://www.bis.org/bcbs/publ/d295.htm"},
 {t:"NSFR Final Rule Press Release",d:"Oct 2020",u:"https://www.federalreserve.gov/newsevents/pressreleases/bcreg20201020b.htm"}]},
 {id:"endgame",cat:"Capital",title:"Basel III Endgame",st:"Basel III Endgame",icon:"\u{1F3AF}",
-sum:"The final phase of Basel III implementation in the U.S., overhauling how banks calculate risk-weighted assets for credit, market, and operational risk. Original 2023 proposal set aside after industry opposition; capital-neutral re-proposal jointly issued by Fed, OCC, and FDIC on March 19, 2026. Comment period closes June 18, 2026.",
+sum:"The U.S. translation of Basel's final post-crisis reforms — a full overhaul of how risk-weighted assets are computed. The 2023 proposal died under opposition; the roughly capital-neutral March 2026 reproposal was pending as of July 2026.",
 subs:[
 {t:"Overview",c:[
 "The Basel III Endgame is the U.S. implementation of the final set of reforms published by the Basel Committee in December 2017 (often called \u2018Basel 3.1\u2019 internationally). It overhauls how banks calculate RWAs across credit risk, market risk (FRTB), operational risk, and the credit valuation adjustment (CVA) framework.",
 "The original U.S. NPR, published in July 2023, would have increased aggregate capital requirements for G-SIBs by approximately 16% and extended risk-based requirements to banks with $100B\u2013$250B in assets. After intense industry and political opposition, the Fed announced in September 2024 that it would issue a \u2018materially revised\u2019 re-proposal.",
-"The re-proposal, issued March 19, 2026, is broadly capital-neutral. On a standalone basis, CET1 requirements increase ~1.4% for Cat I/II BHCs (market risk and CVA increases offset credit risk relief) while Cat III/IV firms that voluntarily opt into ERBA could see CET1 reductions of 3\u20137% depending on portfolio composition (after the AOCI opt-out elimination absorbs roughly half of ~6.1% gross RWA relief). Cumulatively with companion proposals (G-SIB surcharge, eSLR, stress test changes), CET1 decreases ~4.8% for Cat I/II. It is the most consequential piece of the current capital reform agenda. (See {{ref:cap-adequacy}} for the broader capital stack.)"],
-kp:["Overhauls credit, market, operational risk RWA calculations","Original 2023 NPR would have raised G-SIB capital ~16%","Re-proposed March 19, 2026; standalone: +1.4% Cat I/II BHCs; Cat III/IV opt-in: \u22123\u20137%; cumulative with companion proposals: \u22124.8%","90-day comment period closes June 18, 2026"]},
+"The re-proposal, issued March 19, 2026, is broadly capital-neutral. On a standalone basis, CET1 requirements increase ~1.4% for Cat I/II BHCs (market risk and CVA increases offset credit risk relief) while Cat III/IV firms that voluntarily opt into ERBA could see CET1 reductions of 3\u20137% depending on portfolio composition (after the AOCI opt-out elimination absorbs roughly half of ~6.1% gross RWA relief). Cumulatively with companion proposals (G-SIB surcharge, eSLR, stress test changes), CET1 decreases ~4.8% for Cat I/II. It became the most consequential piece of the 2026 capital reform agenda. (See {{ref:cap-adequacy}} for the broader capital stack.)"],
+kp:["Overhauls credit, market, operational risk RWA calculations","Original 2023 NPR would have raised G-SIB capital ~16%","Reproposed March 19, 2026: +1.4% standalone Cat I/II; ~\u22124.8% cumulative","Comment period closed June 18, 2026; finalization expected Q4 2026"]},
 {t:"Scope & Applicability",c:[
 "The original July 2023 NPR proposed applying the Expanded Risk-Based Approach to all banking organizations with \u2265$100B in total consolidated assets (Categories I\u2013IV). This significantly expanded scope beyond the current Advanced Approaches population (Categories I\u2013II only).",
 "The March 2026 re-proposal narrows scope: Cat I/II banks use the mandatory Expanded Risk-Based Approach (ERBA), while Cat III/IV banks use a revised Standardized Approach. Banks with $100\u2013250B in assets are excluded from most new requirements but are subject to AOCI recognition. Cat III/IV banks may voluntarily opt into ERBA.",
-"International context: The Basel III final reforms apply globally. The EU\u2019s CRR3 implementation took effect January 2025. The UK postponed to January 2027. U.S. timing remains uncertain.",
+"International context: The Basel III final reforms apply globally. The EU's CRR3 implementation took effect January 2025. The UK postponed to January 2027. As of July 2026, U.S. finalization was expected in Q4 2026.",
 "How the re-proposal differs from the 2023 NPR: mandatory scope narrowed from Cat I\u2013IV to Cat I/II only; aggregate CET1 impact reduced from +19% to +1.4% standalone; dual-stack eliminated entirely (2023 NPR would have retained it); advanced approaches (A-IRB, AMA) removed rather than modified; AOCI recognition limited to Cat I/II and voluntary opt-in firms (2023 NPR required it for all Cat I\u2013IV); and Cat III/IV given a voluntary opt-in path rather than mandatory compliance."],
 kp:["Original NPR: all banks \u2265$100B (Cat I\u2013IV); re-proposal: mandatory Cat I/II only","Cat III/IV voluntary opt-in to ERBA; estimated 3\u20137% CET1 reduction if elected","2023 NPR: +19% aggregate CET1 impact \u2192 2026 re-proposal: +1.4% standalone","International peers already implementing (EU Jan 2025, UK Jan 2027)"]},
 
 {kind:"requirements",t:"Current Requirements",c:[
-"As of March 2026, the Endgame re-proposal has been issued but not finalized. Banks continue to operate under the existing dual-stack framework: Standardized Approach (all banks) and Advanced Approaches (Category I/II) with a binding-constraint rule.",
+"As of July 2026 the reproposal had not been finalized, and banks continued to operate under the existing dual-stack framework: Standardized Approach (all banks) and Advanced Approaches (Category I/II) with a binding-constraint rule.",
 "The re-proposal eliminates the dual-stack system entirely. Cat I/II banks would use only ERBA (single stack), while Cat III/IV would use only the revised Standardized Approach. Internal models for credit risk (A-IRB) and operational risk (AMA) are removed.",
 "The 72.5% output floor \u2014 which ensures Advanced Approaches capital cannot fall below 72.5% of the Standardized result \u2014 becomes moot under the single-stack design. The re-proposal replaces the floor concept with framework-specific calibrations."],
 kp:["Re-proposed March 2026 \u2014 existing dual-stack framework still in effect until finalized","Re-proposal eliminates dual-stack: ERBA for Cat I/II, revised Standardized for Cat III/IV","Output floor replaced by single-stack design with framework-specific calibrations"],
@@ -431,17 +433,16 @@ cite:[{type:"requirement",auth:"FR",pin:"88 FR 64028 (Basel III Endgame NPR, Jul
 },
 {t:"Key Concepts",c:[
 "Output Floor: A floor ensuring that total RWAs under internal models cannot be less than 72.5% of the Standardized Approach RWAs. Prevents banks from using models to excessively reduce capital. Central to the Basel agreement but contentious in the U.S.",
-"FRTB: Replaces the current market risk framework. Introduces the Standardized Approach (SA) and Internal Models Approach (IMA) with stricter desk-level model approval. Significantly increases market risk capital for trading firms.",
+"FRTB: Replaces the prior market risk framework for Category I/II firms and any bank with significant trading activity (\u2265$5B in trading assets/liabilities or \u226510% of assets). Under the reproposal the standardized approach is the default, with internal models permitted desk-by-desk under supervisory approval — a deliberate loosening from the 2023 proposal. Market risk capital rises for large trading firms.",
 "Operational Risk: The Endgame replaces the AMA (model-based) with a standardized approach based on a Business Indicator Component and historical losses. Eliminates internal-model discretion.",
 "CVA Risk: New standardized framework for credit valuation adjustment risk \u2014 the risk that counterparty credit quality deterioration reduces the value of derivatives portfolios.",
 "The Endgame\u2019s mandatory SA-CCR adoption replaces the Current Exposure Method for derivatives, affecting how counterparty exposures are calculated for {{ref:sccl}} single-counterparty credit limits."],
 kp:["Output floor: Advanced RWAs \u2265 72.5% of Standardized","FRTB: new market risk framework with desk-level approval","Operational risk: standardized approach replaces AMA models","CVA: new framework for counterparty valuation risk"]},
 {kind:"outlook",t:"Outlook",c:[
-"Re-Proposal (Released March 19, 2026): The Fed (6-1 vote, Governor Barr dissenting), OCC, and FDIC jointly issued a Notice of Proposed Rulemaking on March 19, 2026. The 90-day comment period closes June 18, 2026.",
-"The re-proposal is capital-neutral to capital-relieving. On a standalone basis, CET1 requirements increase ~1.4% for Cat I/II BHCs (driven by higher market risk and CVA RWA offsetting credit risk relief) while Cat III/IV firms that voluntarily elect ERBA could see CET1 reductions of 3\u20137% depending on portfolio composition (after AOCI opt-out elimination absorbs roughly half of ~6.1% gross RWA relief). At the DI subsidiary level, the standalone CET1 decrease is larger (~4.8% for Cat I/II DIs) because DIs have less trading activity. Cumulatively with all companion proposals (G-SIB surcharge recalibration, eSLR changes, stress test methodology), CET1 decreases ~4.8% for Cat I/II BHCs. Key features: single-stack approach (ERBA for Cat I/II, revised Standardized for Cat III/IV), elimination of dual-stack and internal models (A-IRB, AMA), LTV-based mortgage risk weights, 45% transactor retail weight, 95% corporate weight (standardized), AOCI opt-out elimination with 5-year phase-in starting January 2027 (25% recognition in Yr 1, 50% Yr 2, 75% Yr 3, 100% by Yr 4; estimated +3.1% CET1 requirement for Cat III/IV; historical AOCI has swung from +$16B to \u2212$112B since 2015), new operational risk SMA for ERBA banks, and embedded op risk in standardized weights.",
-"Implementation timeline: With the comment period closing June 2026, finalization could occur late 2026 or early 2027. A multi-year phase-in is expected, with AOCI recognition beginning January 1, 2027.",
-"International comparisons: The EU\u2019s CRR3 implementing Basel 3.1 took effect January 2025, though the FRTB market risk component is being deferred to 2026\u20132027 amid industry pressure. The UK postponed implementation to January 2027."],
-kp:["Joint NPR released March 19, 2026; comment period closes June 18, 2026","Standalone: CET1 +1.4% Cat I/II BHCs; Cat III/IV opt-in: \u22123\u20137%; cumulative with all proposals: \u22124.8% Cat I/II","Single-stack: ERBA for Cat I/II, revised Standardized for Cat III/IV; dual-stack eliminated","AOCI opt-out eliminated with 5-year phase-in starting Jan 2027"]},
+"Status as of July 2026: the joint NPR (Fed 6\u20131, Barr dissenting; FDIC unanimous) was published in the Federal Register on March 27, 2026, and the 90-day comment period closed June 18, 2026. The agencies were evaluating comments; Vice Chair Bowman said in July 2026 she hoped to finalize by year-end, and outside analysts converged on Q4 2026 finalization with implementation from about 2027. Amendments would take effect two calendar quarters after adoption of a final rule.",
+"Estimated impacts published with the NPR: standalone CET1 +1.4% for Cat I/II BHCs (higher market-risk and CVA RWA offsetting credit-risk relief); roughly \u22124.8% for Cat I/II cumulatively with the companion G-SIB surcharge and stress-testing proposals; and reductions of roughly 3\u20137% for the three Cat III/IV firms that would benefit from electing ERBA. Key features: single stack (ERBA for Cat I/II, revised Standardized otherwise), internal models eliminated (A-IRB, AMA), LTV-based mortgage weights, a 45% transactor retail weight, a 95% corporate weight in the revised Standardized Approach, an explicit SMA-style operational risk charge in ERBA (embedded in risk weights under the Standardized), and elimination of the AOCI opt-out for Cat III/IV with a five-year transition running from the final rule's effective date (estimated +3.1% CET1 for those firms).",
+"Comment themes: industry letters (SIFMA, ISDA, ICI) were broadly supportive of the capital-neutral design while pressing for changes to trading-book calibration. The EU's CRR3 took effect January 2025 (FRTB deferred toward 2026\u20132027); the UK targeted January 2027."],
+kp:["Comment period closed June 18, 2026; finalization expected Q4 2026","+1.4% standalone Cat I/II; ~\u22124.8% cumulative; ~3\u20137% relief for 3 opt-in firms","Single stack: ERBA (Cat I/II) / revised Standardized; internal models out","AOCI opt-out eliminated for Cat III/IV; five-year transition from effective date"]},
 ],
 timeline:[
 {y:2017,m:12,label:"BCBS published final Basel III standards"},
@@ -452,6 +453,7 @@ timeline:[
 {y:2026,m:2,label:"FDIC and OCC submitted drafts to OMB"},
 {y:2026,m:3,day:19,label:"Joint reproposal NPR released (Fed 6\u20131, FDIC unanimous)"},
 {y:2026,m:6,day:18,label:"Reproposal comment period closed"},
+{y:2026,m:11,label:"Finalization expected",kind:"outlook",display:"Q4 2026"},
 {y:2027,display:"2027\u20132030",label:"Potential implementation with multi-year phase-in",kind:"outlook"}
 ],
 src:[
@@ -461,7 +463,7 @@ src:[
 {t:"Basel III Endgame Re-Proposal (Mar 2026)",d:"Mar 2026",u:"https://www.federalreserve.gov/newsevents/pressreleases/bcreg20260319a.htm"},
 {t:"PwC: Basel III Endgame Re-Proposal Summary",d:"Mar 2026",u:"https://www.pwc.com/us/en/services/consulting/risk-regulatory/library/endgame-re-proposal.html"}]},
 {id:"tlac",cat:"Capital",title:"TLAC & Long-Term Debt",st:"TLAC & LTD",icon:"\u{1F6E1}\uFE0F",
-sum:"Requires U.S. G-SIBs to maintain sufficient total loss-absorbing capacity and long-term debt to support orderly resolution without taxpayer bailout. Recently conformed to eSLR recalibration.",
+sum:"Bail-in fuel for the eight U.S. G-SIBs: enough equity plus long-term debt at the holding company to recapitalize the firm in resolution without taxpayer support.",
 subs:[
 {t:"Overview",c:[
 "TLAC ensures U.S. G-SIBs hold enough loss-absorbing resources \u2014 equity plus eligible long-term debt \u2014 to be recapitalized in resolution without public funds. The FSB established the global TLAC standard in 2015; the Fed\u2019s U.S. implementation took effect in 2019.",
@@ -469,16 +471,16 @@ subs:[
 "TLAC works in tandem with {{ref:resolution}} planning. The resolution strategy assumes the parent holding company enters bankruptcy while operating subsidiaries continue under the \u2018Single Point of Entry\u2019 (SPOE) approach."],
 kp:["Applies to 8 U.S. G-SIBs at the holding company level","External TLAC + internal TLAC for material subsidiaries","Ensures recapitalization in resolution without taxpayer bailout","LTD specifically designed to facilitate bail-in"]},
 {t:"Scope & Applicability",c:[
-"External TLAC and LTD requirements apply exclusively to the eight U.S. G-SIBs at the top-tier holding company level. No other U.S. banking organizations are currently subject to TLAC.",
+"External TLAC and LTD requirements apply exclusively to the eight U.S. G-SIBs at the top-tier holding company level. No other U.S. banking organizations are subject to TLAC.",
 "Internal TLAC applies to \u2018covered material subsidiaries\u2019 of G-SIBs \u2014 significant operating subsidiaries that must be pre-positioned with loss-absorbing resources from the parent.",
-"The FDIC has proposed (but not finalized) a separate long-term debt requirement for Category II/III banks. If finalized, this would extend a modified version of LTD to non-G-SIB large banks."],
-kp:["External TLAC/LTD: 8 U.S. G-SIBs only","Internal TLAC: covered material subsidiaries of G-SIBs","No TLAC for non-G-SIBs (proposed FDIC LTD rule pending)","Applies at top-tier holding company level"]},
+"In August 2023 the agencies jointly proposed a separate long-term debt requirement for large non-G-SIB banks (Categories II/III). As of July 2026 that proposal remained dormant — neither finalized, re-proposed, nor withdrawn."],
+kp:["External TLAC/LTD: 8 U.S. G-SIBs only","Internal TLAC: covered material subsidiaries of G-SIBs","Non-G-SIB LTD: 2023 joint proposal dormant as of July 2026","Applies at top-tier holding company level"]},
 
 {kind:"requirements",t:"Current Requirements",c:[
 "External TLAC: Eligible instruments (CET1 + AT1 + Tier 2 + eligible LTD) must be \u2265 the greater of: 18% of RWAs, or 7.5% of TLE. These are in addition to applicable regulatory capital buffers.",
 "External LTD: Must be \u2265 the greater of: 6% of RWAs + buffer, or 4.5% of TLE + buffer. Eligible LTD must be plain vanilla, unsecured, issued by the top-tier BHC, with remaining maturity \u2265 1 year.",
 "Internal TLAC: Covered material subsidiaries must pre-position a portion of TLAC resources from the parent to ensure they can be recapitalized without going through separate resolution.",
-"Leverage-based TLAC and LTD components were conformed to the recalibrated {{ref:eslr}} buffer in November 2025. This reduced the leverage-based requirements for most G-SIBs."],
+"Leverage-based TLAC and LTD components were conformed to the recalibrated {{ref:eslr}} buffer by the November 2025 final rule, effective April 1, 2026. This reduced leverage-based requirements for most G-SIBs."],
 cite:[{type:"requirement",auth:"CFR",pin:"12 CFR 252.160(a) (external TLAC)"},{type:"requirement",auth:"CFR",pin:"12 CFR 252.162(a) (external LTD)"}],
 kp:["External TLAC: \u226518% of RWAs or \u22657.5% of TLE","External LTD: \u22656% of RWAs or \u22654.5% of TLE + buffers","LTD must be plain vanilla, unsecured, \u22651yr maturity","Leverage TLAC conformed to eSLR recalibration Nov 2025"]},
 {t:"Key Concepts",c:[
@@ -489,7 +491,7 @@ kp:["External TLAC: \u226518% of RWAs or \u22657.5% of TLE","External LTD: \u226
 kp:["Bail-in converts LTD to equity in resolution","SPOE: only parent enters resolution; subs continue","Clean holding company restrictions prevent complexity","Strict eligibility criteria for qualifying LTD"]},
 {kind:"outlook",t:"Outlook",c:[
 "The November 2025 {{ref:eslr}} recalibration conformed TLAC and LTD leverage buffers to the new eSLR calibration (50% of Method 1 surcharge), reducing leverage-based TLAC requirements for most G-SIBs.",
-"The Fed has not proposed changes to the risk-based TLAC requirements, but these will be affected by the {{ref:endgame}} re-proposal (released March 2026) since TLAC is expressed relative to RWAs. Lower RWAs under the single-stack design would mechanically reduce dollar TLAC requirements. Final RWA impacts will depend on the comment period outcome (June 18, 2026).",
+"The Fed did not propose changes to risk-based TLAC, but the {{ref:endgame}} reproposal (pending as of July 2026) would affect it mechanically, since TLAC is expressed relative to RWAs — lower RWAs under the single-stack design would reduce dollar TLAC requirements.",
 "Industry groups have advocated for TLAC calibration review alongside the broader capital framework, noting that the overall \u2018stack\u2019 of requirements has grown complex."],
 kp:["Leverage TLAC conformed to eSLR recalibration (Nov 2025)","Risk-based TLAC unchanged but could be affected by Endgame","Industry advocates for holistic calibration review"]},
 ],

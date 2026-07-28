@@ -2,12 +2,12 @@
 
 const B3E = {
   SECTIONS: [
-    {id:"overview",icon:"◉",label:"Overview",heading:"What\u2019s Changing",intro:"The 2026 re-proposal replaces the 2023 NPR with a broadly capital-neutral framework \u2014 a sharp reversal from the original +19% capital increase. Two approaches: ERBA (mandatory for Cat I/II) and revised Standardized (Cat III/IV), with voluntary opt-in available."},
+    {id:"overview",icon:"◉",label:"Overview",heading:"What the Reproposal Changes",intro:"The 2026 re-proposal replaces the 2023 NPR with a broadly capital-neutral framework \u2014 a sharp reversal from the original +19% capital increase. Two approaches: ERBA (mandatory for Cat I/II) and revised Standardized (Cat III/IV), with voluntary opt-in available."},
     {id:"lending",icon:"\u{1F3E0}",label:"Lending & Credit",heading:"Lending & Credit Risk",intro:"Risk weights are recalibrated across all major lending asset classes. Residential mortgages see the largest changes, moving from flat weights to granular LTV-based schedules."},
     {id:"offbs",icon:"\u{1F4D1}",label:"Off-Balance Sheet",heading:"Off-Balance Sheet & Derivatives",intro:"Credit conversion factors are restructured, commitment definitions broadened, and counterparty credit risk methodology updated. These changes materially affect how off-balance sheet exposures translate into RWA."},
     {id:"trading",icon:"\u{1F4C8}",label:"Trading & Market Risk",heading:"Trading & Market Risk",intro:"The trading activity threshold rises fivefold, the FRTB sensitivities-based method replaces VaR for standardized firms, and a new CVA risk charge is introduced."},
     {id:"oprisk",icon:"\u2699\uFE0F",label:"Operational Risk",heading:"Operational Risk",intro:"Operational risk treatment diverges sharply by bank category: ERBA introduces an explicit SMA charge, while the standardized approach embeds it in credit risk weights."},
-    {id:"capital",icon:"\u{1F3E6}",label:"Capital & Structure",heading:"Capital Framework & Structure",intro:"AOCI opt-out is eliminated for Cat III/IV, the dual-stack calculation is removed, MSA deduction thresholds are replaced, and buffers are unified. AOCI phase-in will partially offset gross RWA relief from risk weight reductions."},
+    {id:"capital",icon:"\u{1F3E6}",label:"Capital & Structure",heading:"Capital Framework & Structure",intro:"AOCI opt-out is eliminated for Cat III/IV, the dual-stack calculation is removed, MSA deduction thresholds are replaced, and buffers are unified. As proposed, AOCI phase-in partially offsets gross RWA relief from risk weight reductions."},
   ],
 
   CHANGES: [
