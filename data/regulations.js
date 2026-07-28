@@ -536,19 +536,21 @@ cite:[{type:"requirement",auth:"DFA",pin:"Dodd-Frank Act §165(d) (resolution pl
 "Resolution liquidity assessments (RLAP and RLEN) use {{ref:lcr}}-like concepts of stressed outflows and liquid asset sufficiency, but impose significantly more severe assumptions \u2014 including immediate loss of market access and extended resolution timelines beyond the LCR\u2019s 30-day horizon."],
 kp:["SPOE: parent enters bankruptcy, subsidiaries continue via bridge","Separate 165(d) Title I plans and FDIC IDI plans required","Separability: demonstrate ability to divest material lines","Recapitalization via internal TLAC must maintain minimum ratios"]},
 {kind:"outlook",t:"Outlook",c:[
-"The Fed and FDIC issued updated resolution guidance for G-SIBs in 2024, adding expectations around separability, derivatives booking models, and reverse stress testing. The next full-plan cycle will incorporate this guidance.",
-"There is ongoing debate about whether the resolution framework should be extended or modified for large regional banks following the 2023 failures of Silicon Valley Bank and Signature Bank.",
-"The FDIC has proposed a separate long-term debt requirement for Category II/III banks (banks with \u2265$100B but not G-SIBs), modeled on the G-SIB TLAC rule but calibrated differently. This was proposed in 2023 but has not been finalized."],
-kp:["2024 guidance added separability and reverse stress testing","Post-2023 bank failures: debate on extending framework","FDIC proposed LTD for Category II/III (not yet finalized)"]},
+"In May 2026 the Fed and FDIC published feedback on the G-SIBs' 2025 targeted plans (filed July 1, 2025): no shortcomings or deficiencies, and the derivatives-related weaknesses flagged for Bank of America, Goldman Sachs, JPMorgan, and Citigroup in the 2023 cycle were deemed resolved. The next G-SIB full plans are due in 2027, incorporating the 2024 guidance on separability, derivatives booking models, and reverse stress testing.",
+"On the FDIC side, the agency relaxed 2026 IDI-plan filings for G-SIB bank subsidiaries (interim-supplement content instead of full plans) and on June 30, 2026 proposed an overhaul of the IDI resolution-plan rule — pending as of July 2026. The 2023 joint long-term debt proposal for large non-G-SIB banks remained dormant ({{ref:tlac}}).",
+"The debate over extending or modifying the resolution framework for large regional banks after the 2023 failures continued, unresolved, as of July 2026."],
+kp:["May 2026 feedback on 2025 G-SIB plans: no shortcomings or deficiencies","Next G-SIB full plans due 2027 under the 2024 guidance","FDIC proposed IDI-rule overhaul June 30, 2026 (pending)","Non-G-SIB LTD proposal (2023) dormant as of July 2026"]},
 ],
 timeline:[
 {y:2010,m:7,label:"Dodd-Frank Section 165(d) enacted"},
 {y:2011,m:11,label:"First resolution plan rule finalized"},
 {y:2012,display:"2012\u20132014",label:"First plans submitted by G-SIBs"},
 {y:2016,display:"2016\u20132019",label:"Deficiency findings and remediation cycles"},
-{y:2024,label:"Updated resolution guidance issued"},
-{y:2025,label:"G-SIB full-plan submission cycle"},
-{y:2026,m:7,label:"G-SIB resolution plan submissions due"}
+{y:2024,m:6,label:"Updated resolution guidance issued"},
+{y:2025,m:7,day:1,label:"G-SIB targeted plans filed"},
+{y:2026,m:5,day:22,label:"Agencies' feedback: no shortcomings or deficiencies"},
+{y:2026,m:6,day:30,label:"FDIC proposed IDI resolution-plan rule overhaul"},
+{y:2027,label:"Next G-SIB full plans due",kind:"outlook"}
 ],
 src:[
 {t:"Resolution Plan Rule (12 CFR Part 243)",d:"Nov 2011",u:"https://www.ecfr.gov/current/title-12/chapter-II/subchapter-A/part-243"},
@@ -724,10 +726,10 @@ cite:[{type:"requirement",auth:"CFR",pin:"12 CFR 248 (Volcker Rule implementing 
 "Super 23A: The rule restricts transactions between a banking entity and its related covered funds in a manner similar to {{ref:reg-w}} (Sections 23A and 23B of the Federal Reserve Act), limiting credit exposure and requiring arm\u2019s-length terms. Unlike Regulation W\u2019s 10%/20% limits, the Volcker Rule\u2019s Super 23A restrictions apply regardless of the size of the transaction relative to capital."],
 kp:["Exemptions for market making, underwriting, hedging, gov\u2019t securities","TOTUS exemption for foreign banking entity trading","2020 rule expanded covered fund exclusions significantly","Super 23A restricts transactions with affiliated covered funds"]},
 {kind:"outlook",t:"Outlook",c:[
-"No major rulemaking is currently pending. The Trump administration has historically favored easing Volcker Rule restrictions, and the 2019/2020 amendments reflected industry calls for simplification.",
-"Some industry groups continue to advocate for broader covered fund exemptions and further narrowing of the proprietary trading definition. Potential for administrative relief through revised FAQ guidance or further rulemaking.",
-"The GENIUS Act\u2019s stablecoin framework creates new considerations for how Volcker applies to digital asset activities of banking entities \u2014 particularly whether stablecoin reserves management or related activities constitute prohibited proprietary trading."],
-kp:["No major pending rulemaking","Industry seeks further easing of covered fund restrictions","Stablecoin activities may create new Volcker questions","2019/2020 revisions represent most recent substantive changes"]},
+"As of July 2026, no Volcker rulemaking was pending — 2025\u20132026 Federal Register activity shows no proposals from any of the five agencies. The rule has operated in its current form since the 2019 (proprietary trading) and 2020 (covered funds) amendments.",
+"Industry groups continue to advocate for broader covered fund exemptions and further narrowing of the proprietary trading definition; the July 2025 EGRPRA regulatory-review notice invited comment on existing regulations generally, including Volcker.",
+"The {{ref:genius-act}} stablecoin framework raises new questions about how Volcker applies to digital-asset activities — particularly whether stablecoin reserve management constitutes prohibited proprietary trading."],
+kp:["No rulemaking pending as of July 2026; stable since 2019/2020 revisions","Industry seeks further easing of covered fund restrictions","Stablecoin activities raise new Volcker questions"]},
 ],
 timeline:[
 {y:2010,m:7,label:"Dodd-Frank enacted (Section 619)"},
@@ -774,10 +776,10 @@ cite:[{type:"requirement",auth:"CFR",pin:"12 CFR 223 (Regulation W)"},{type:"req
 "Dodd-Frank Enhancements (2010): Section 608 expanded the definition of \u2018covered transaction\u2019 to include derivatives, repos, and securities lending/borrowing transactions that create credit exposure to an affiliate. Section 609 tightened collateral requirements and extended restrictions to financial subsidiaries."],
 kp:["Attribution rule prevents indirect affiliate funding via third parties","Valuation rules differ by transaction type","Sister bank exemption: affiliated banks 80%+ common ownership","Dodd-Frank added derivatives and securities lending to covered transactions"]},
 {kind:"outlook",t:"Outlook",c:[
-"The Board noted in the Regulation W preamble that staff would continue to issue interpretive guidance. Recent guidance has addressed {{ref:genius-act}} implications (whether stablecoin subsidiaries are \u2018financial subsidiaries\u2019 treated as affiliates) and {{ref:volcker}} covered fund interactions.",
+"The Board noted in the Regulation W preamble that staff would continue to issue interpretive guidance. As of July 2026 the Fed had issued no Reg W rulemaking in the 2025\u20132026 cycle; stablecoin-affiliate questions were instead being addressed through {{ref:genius-act}} rulemakings — the OCC's 2026 proposal would create a rebuttable presumption against affiliate-paid yield on stablecoins.",
 "The evolving structure of BHC activities \u2014 including fintech partnerships, crypto-asset subsidiaries, and expanding nonbank affiliates \u2014 continues to raise new questions about the scope of affiliate transaction restrictions.",
 "There is periodic industry discussion about whether the 10%/20% limits should be recalibrated, particularly for well-capitalized institutions with robust risk management. The limits have remained unchanged since the original 1933 enactment."],
-kp:["New guidance on stablecoin and fintech subsidiary treatment","Evolving BHC structures raise new scope questions","10%/20% limits unchanged since 1933","Ongoing interaction with Volcker Rule covered fund provisions"]},
+kp:["No Reg W rulemaking in 2025\u20132026; guidance evolves interpretively","Stablecoin-affiliate questions routed through GENIUS Act rules","10%/20% limits unchanged since 1933","Ongoing interaction with Volcker covered fund provisions"]},
 ],
 timeline:[
 {y:1933,label:"Banking Act introduced Section 23A"},
@@ -820,13 +822,13 @@ cite:[{type:"requirement",auth:"PL",pin:"Pub. L. 111-203 (Dodd-Frank Wall Street
 "Financial Stability Oversight Council (FSOC): 10 voting members including heads of all major financial regulators plus an independent insurance expert. Monitors systemic risk and can designate non-bank financial companies for enhanced supervision.",
 "Orderly Liquidation Authority vs. Bankruptcy: OLA is a backup to bankruptcy. In practice, the SPOE resolution strategy (see {{ref:tlac}}) is designed to resolve G-SIBs through bankruptcy rather than OLA. TLAC and LTD requirements support this approach.",
 "Living Wills and OLA: Resolution plans under Section 165(d) must demonstrate that a firm can be resolved under the Bankruptcy Code. If a firm cannot be resolved through bankruptcy, OLA serves as a fallback with FDIC as receiver.",
-"Systemic Risk Designation: FSOC\u2019s authority to designate non-bank SIFIs was used for AIG, GE Capital, MetLife, and Prudential. All have since been de-designated. The current administration has not pursued new designations."],
+"Systemic Risk Designation: FSOC's authority to designate non-bank SIFIs was used for AIG, GE Capital, MetLife, and Prudential. All have since been de-designated, and no new designations had been pursued as of July 2026."],
 kp:["FSOC has 10 voting members; chaired by Treasury Secretary","OLA is a bankruptcy backstop, not a first resort","SPOE + TLAC designed to avoid ever needing OLA","Non-bank SIFI designations largely unwound; no new ones pending"]},
 {kind:"outlook",t:"Outlook",c:[
-"The current administration has pursued targeted Dodd-Frank modifications rather than wholesale repeal. Key changes flow through subordinate rulemakings: the {{ref:endgame}} re-proposal (released March 2026), eSLR recalibration (effective April 2026), SCB averaging, and stress test transparency.",
+"Through mid-2026, the administration pursued targeted Dodd-Frank modifications rather than wholesale repeal, flowing through subordinate rulemakings: the {{ref:endgame}} reproposal (pending as of July 2026), the eSLR recalibration (in force since April 2026), the {{ref:scb}} freeze, and the stress-test transparency overhaul.",
 "Section 165 scope questions: The post-2023 bank failures debate about whether the $250B threshold (raised by EGRRCPA from $50B) is appropriate for enhanced prudential standards remains active. Some regulators favor restoring stricter oversight for $100B\u2013$250B banks.",
-"FSOC activity: The Council continues to monitor asset management, digital assets, and climate-related financial risks as potential systemic threats, though formal non-bank designations remain unlikely in the current political environment."],
-kp:["Targeted modifications rather than wholesale repeal","Debate continues on $250B EPS threshold post-SVB failures","FSOC monitoring digital assets and climate-related risks","Key changes flowing through subordinate rulemakings"]},
+"FSOC continued to monitor asset management, digital assets, and climate-related financial risks; as of July 2026 no new non-bank designations were in train."],
+kp:["Targeted modifications rather than wholesale repeal","Debate continues on the $250B EPS threshold post-SVB","FSOC monitoring digital assets and climate risks; no new designations","Key changes flowing through subordinate rulemakings"]},
 ],
 timeline:[
 {y:2010,m:7,label:"Dodd-Frank enacted"},
@@ -954,11 +956,10 @@ note:"Total net credit exposure: $9.3B. Applicable limit for major counterparty 
 "Reporting (FR 2590): Covered firms report quarterly to the Fed on their top 50 counterparty exposures, including gross and net credit exposure calculations. G-SIBs and major FBOs must ensure daily compliance."],
 kp:["U.S. government and zero-risk-weight sovereign exposures exempt","Economic interdependence: \u226550% revenue/guarantee triggers aggregation","Control relationship: \u226525% voting securities triggers aggregation","Quarterly FR 2590 reporting; daily compliance for G-SIBs"]},
 {kind:"outlook",t:"Outlook",c:[
-"No major SCCL rulemaking is currently pending. The rule has been stable since the 2019 tailoring amendments aligned its applicability thresholds with the {{ref:tailoring}} framework.",
-"The {{ref:endgame}} re-proposal (released March 2026) will indirectly affect SCCL through changes to credit risk measurement methodologies. Under the re-proposal, SA-CCR becomes mandatory for ERBA banks and optionally available for standardized banks, which would change how derivative exposures are measured for SCCL purposes.",
-"Industry participants have raised questions about how digital asset and stablecoin exposures should be treated under the SCCL framework, particularly given the GENIUS Act\u2019s new stablecoin issuer category.",
-"The Basel III {{ref:endgame}} re-proposal (March 2026) would require Category III and IV banks to adopt SA-CCR for counterparty credit risk, changing how derivative exposures are measured for SCCL compliance."],
-kp:["No pending SCCL rulemaking","Endgame may indirectly affect exposure measurement via SA-CCR","Digital asset/stablecoin exposure treatment under discussion","Rule has been stable since 2019 tailoring adjustments"]},
+"As of July 2026, no SCCL rulemaking was pending — the rule has operated in its current form since the 2019 tailoring amendments aligned its thresholds with the {{ref:tailoring}} framework. The March 2026 capital proposals touch SCCL only through conforming cross-references.",
+"The {{ref:endgame}} reproposal (pending as of July 2026) would indirectly affect SCCL by making SA-CCR the required approach for measuring derivative counterparty exposures at more firms, changing the inputs to SCCL calculations.",
+"Industry participants have raised questions about how digital-asset and stablecoin exposures should be treated under the SCCL framework, particularly given the {{ref:genius-act}}'s new stablecoin issuer category."],
+kp:["No SCCL rulemaking pending as of July 2026; stable since 2019","Endgame would change exposure measurement via SA-CCR","Digital asset/stablecoin exposure treatment under discussion"]},
 ],
 timeline:[
 {y:2010,m:7,label:"Dodd-Frank Section 165(e) enacted"},
