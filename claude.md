@@ -4,9 +4,11 @@
 
 MyRegApp is a free Progressive Web App (PWA) — a searchable reference guide to U.S. banking capital and liquidity regulations. It covers 20 regulations across capital, liquidity, structural/prudential, and legislative categories. The app is a side project by Jack Rohan (jackarohan@gmail.com), deployed as a static site on Netlify.
 
-**Live features:** cross-references between regulations, calculation deep dives with worked examples, structured data tables, a glossary with tooltip system, a "What's Changing" section with timeline view, dark/light mode, print stylesheet, PWA/offline support.
+**Live features:** cross-references between regulations, calculation deep dives with worked examples, structured data tables, a glossary with tooltip system, a regulatory Timeline (historical + outlook), the Basel III Endgame Explorer (a labeled snapshot of the March 2026 reproposal), dark/light mode, print stylesheet, PWA/offline support.
 
-**Current version:** v6.2 (content current as of March 2026).
+**Current version:** v8.0.0 (content as of July 2026 — see `META` in `data/regulations.js`).
+
+**Design stance:** the site is a *static reference through time*, not a news site. Content is written to stay true without maintenance (see `docs/content-style-guide.md`). There is exactly one freshness anchor — `META.asOf` — and no "new"/"pending"-style live signals.
 
 ---
 
@@ -14,30 +16,21 @@ MyRegApp is a free Progressive Web App (PWA) — a searchable reference guide to
 
 ### Stack
 - **Frontend:** React 18 (via CDN) with in-browser Babel compilation — no build step
-- **Entry point:** Single `index.html` (~975 lines) containing all CSS, React components, and app logic
+- **Entry point:** Single `index.html` (~1,640 lines) containing all CSS, React components, and app logic
 - **Data files:** Three JS files loaded via `<script>` tags, each exporting a global variable:
-  - `data/regulations.js` → `const R = [...]` (array of regulation objects)
-  - `data/glossary.js` → `const G = {...}` (term → definition map, ~87 terms)
-  - `data/whatschanging.js` → `const WC = [...]` (array of upcoming regulatory changes) + `const ST = {...}` (status badge config)
+  - `data/regulations.js` → `const META = {version, asOf}` + `const R = [...]` (array of regulation objects)
+  - `data/glossary.js` → `const G = {...}` (term → definition map, ~101 terms)
+  - `data/basel3explorer.js` → `const B3E = {...}` (Endgame Explorer sections/changes data)
 - **PWA:** `sw.js` (service worker) + `manifest.json` + icon PNGs at root
 - **Fonts:** DM Sans + DM Mono via Google Fonts CDN
 - **Hosting:** Netlify static deployment (no server, no database)
 
 ### Deployment File Structure
-```
-/
-├── index.html
-├── sw.js
-├── manifest.json
-├── icon192.png
-├── icon512.png
-└── data/
-    ├── regulations.js
-    ├── glossary.js
-    └── whatschanging.js
-```
 
-> **CRITICAL:** Data files must live ONLY in `data/`. Duplicating them at root causes black-screen deployment failures. The service worker's `APP_SHELL` array references `/data/regulations.js`, `/data/glossary.js`, `/data/whatschanging.js`.
+> **CRITICAL:** Data files must live ONLY in `data/`. Duplicating them at root causes black-screen deployment failures. The service worker's `APP_SHELL` array references `/data/regulations.js`, `/data/glossary.js`, `/data/basel3explorer.js`.
+
+### Views
+`RegulationsView` (browse + detail), `TimelineView` (single chronology, built from `reg.timeline` data), `BaselExplorer`, `GlossaryView`. Desktop nav: Regulations · Timeline · Basel Explorer · Glossary. Mobile bottom tabs: Regs · Timeline · Glossary · More (Explorer lives in the More sheet). Legacy `#/changing` hashes redirect to the Timeline.
 
 ---
 
@@ -62,6 +55,9 @@ Terms in content are wrapped in `<span class="gterm">` elements. The tooltip sys
 ### Subsection Navigation
 Uses multi-layer defensive guards: clamping, fallbacks, and null checks to prevent out-of-bounds crashes when navigating subsections.
 
+### Subsection Badges
+`SUB_BADGES` in `index.html` keys badges on the sub's `kind` field (`requirements` / `calc` / `outlook`) — never on title strings, which silently break on typographic changes.
+
 ### Theming
 - CSS custom properties on `:root` (dark) and `[data-theme="light"]` (light)
 - Color palette: amber (`#f59e0b`) as accent on dark (`#0a0a0e`) background
@@ -69,32 +65,42 @@ Uses multi-layer defensive guards: clamping, fallbacks, and null checks to preve
 - Icon and structural sizes remain fixed in `px`
 
 ### Unicode in JSX
-`\uXXXX` escape sequences in JSX text content and string attributes render literally as the escape string. Always use actual Unicode characters instead (e.g., `—` not `\u2014` in JSX text, though `{"\u2014"}` in JSX expressions is fine).
+`\uXXXX` escape sequences in JSX text content and string attributes render literally as the escape string. Always use actual Unicode characters instead (e.g., the real `—` character, not the six characters `\u2014`, in JSX text — though a `{"\u2014"}` JSX expression is fine).
 
 ---
 
 ## Data File Schemas
 
-### regulations.js — `R` array
+### regulations.js — `META` + `R` array
 ```js
+const META = {version: "8.0.0", asOf: "July 2026"};  // single source for footer version + as-of date
+
+// R entries:
 {
   id: "cap-adequacy",       // URL-safe slug, used in hash routes and cross-refs
-  cat: "Capital",            // Category: "Capital" | "Liquidity" | "Structural & Prudential" | "Legislative"
+  cat: "Capital",            // "Capital" | "Liquidity" | "Structural & Prudential" | "Legislation & Community"
   title: "Capital Adequacy Requirements",  // Full display title
   st: "Capital Adequacy",   // Short title for nav/sidebar
   icon: "🏛",               // Emoji icon
-  sum: "...",                // One-paragraph summary
-  subs: [                    // Ordered array of subsections
-    {
+  sum: "...",                // One-sentence abstract (must NOT restate Overview's first paragraph)
+  subs: [                    // Canonical order: Overview → Scope & Applicability → Requirements
+    {                        //   → How It's Calculated (optional) → Key Concepts → Outlook
+      kind: "requirements",  // Optional: "requirements" | "calc" | "outlook" — drives badges + Outlook timeline block
       t: "Overview",         // Subsection title
-      c: ["...", "..."],     // Array of content paragraphs (may contain {{ref:id}} tags and glossary terms)
-      kp: ["...", "..."],    // Key points (bullet summaries)
+      c: ["...", "..."],     // Content paragraphs (may contain {{ref:id}} tags and glossary terms)
+      kp: ["...", "..."],    // Key points (skim layer — intentionally restates paragraphs)
       cite: [{type, auth, pin}],  // Optional regulatory citations
-      calc: { ... }          // Optional calculation deep-dive object
+      tables: [{...}]        // Optional structured tables
     }
-  ]
+  ],
+  timeline: [                // Per-reg chronology; feeds both TimelineView and the Outlook section's Key Dates block
+    {y: 2026, m: 3, day: 19, label: "..."},                       // historical fact (m/day optional)
+    {y: 2026, m: 11, label: "...", kind: "outlook", display: "Q4 2026"}  // forward-looking as of META.asOf
+  ],
+  src: [{t, d, u}]           // Source documents, rendered as a block at the bottom of the reg (not a subsection)
 }
 ```
+Timeline sort key is computed as `y*10000 + (m||6)*100 + (day||0)`; `display` overrides date formatting for ranges/quarters.
 
 ### glossary.js — `G` object
 ```js
@@ -102,49 +108,19 @@ Uses multi-layer defensive guards: clamping, fallbacks, and null checks to preve
 ```
 Plain key-value: term → definition string.
 
-### whatschanging.js — `WC` array + `ST` object
-```js
-// WC entries:
-{ date: "Apr 1, 2026", status: "final", title: "...", reg: "eslr", desc: "..." }
-// status values: "final" | "expected" | "deadline" | "proposed" | "effective"
-
-// ST: status badge display config
-{ final: { label, color, bg }, ... }
-```
-
----
-
-## React Component Map
-
-| Component | Role |
-|---|---|
-| `App` | Root. Manages view state, theme, search, hash routing |
-| `NavBar` | Top nav with view tabs, search input, theme/font controls |
-| `RegulationsView` | Main content view. Sidebar list + detail panel with subsections |
-| `StartHereView` | Landing page with category cards |
-| `WhatsChangingView` | Upcoming regulatory changes list |
-| `TimelineView` | Visual timeline of regulation history |
-| `GlossaryView` | Searchable glossary grid |
-| `ErrorBoundary` | Class component catch-all for render errors |
-| `OfflineBanner` | Fixed banner shown when navigator is offline |
-| `SmartText` | Parses `{{ref:id}}` cross-references and renders glossary term tooltips |
-
 ---
 
 ## Version Bump Checklist
 
-When updating the version number, ALL of these must be updated together:
-1. **Footer** in `index.html` — `MyRegApp v6.x`
-2. **File headers** — comment at top of `index.html`, `regulations.js`, `glossary.js`, `whatschanging.js`
-3. **Service worker** — `CACHE_VERSION` in `sw.js`
-4. **Content date** — footer text ("Content current as of ...") and `<meta name="description">` in `<head>`
+When updating the version number or as-of date, use the `version-bump` skill. `META` in `data/regulations.js` is the single source for the UI; the service worker cache version and file headers move with it. **Changing `META.asOf` is a content event** — it requires re-verifying every Outlook section and outlook timeline entry, not just editing the label.
 
 ---
 
 ## Content Update Guidelines
 
-- Always verify regulatory content accuracy via web search before making edits
-- The "What's Changing" section (`whatschanging.js`) tracks upcoming regulatory milestones — update dates, statuses, and descriptions as events unfold
+- **Follow `docs/content-style-guide.md`** — the timeless-writing rules (past-anchored dates, no live deadlines, anchored expectations only, single-ownership dedup) govern all content edits
+- Always verify regulatory content accuracy via web search before making edits; log verified facts in `docs/factcheck-*.md`
+- Forward-looking material lives ONLY in Outlook subsections and `kind:"outlook"` timeline entries, anchored to `META.asOf`
 - Glossary terms referenced in regulation content should have matching entries in `glossary.js`
 - Cross-references (`{{ref:regId}}`) must use valid `id` values from the `R` array
 
@@ -165,3 +141,5 @@ When updating the version number, ALL of these must be updated together:
 - **Don't use `\uXXXX` escapes in JSX text** — use real Unicode characters
 - **Don't use CSS `::after` for tooltip arrows** — the tooltip system uses inline `<span>` elements via `createPortal`
 - **Don't skip defensive guards** on subsection index navigation — always clamp and null-check
+- **Don't reintroduce freshness signals** — no "NEW"/"UPDATED"/"pending" badges, counters, or unanchored future tense; `META.asOf` is the only clock
+- **Don't key UI on subsection title strings** — use the `kind` field
