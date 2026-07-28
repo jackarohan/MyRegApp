@@ -10,7 +10,6 @@ const APP_SHELL = [
   '/manifest.json',
   '/data/regulations.js',
   '/data/glossary.js',
-  '/data/whatschanging.js',
   '/data/basel3explorer.js'
 ];
 

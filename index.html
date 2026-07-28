@@ -108,15 +108,14 @@ button,a,input,[role="button"],.gterm,.tl-reg,.ref-link{touch-action:manipulatio
 <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
 <script src="data/regulations.js"></script>
 <script src="data/glossary.js"></script>
-<script src="data/whatschanging.js"></script>
 <script src="data/basel3explorer.js"></script>
 <script>
-if(typeof R==="undefined"||typeof META==="undefined"||typeof G==="undefined"||typeof WC==="undefined"||typeof B3E==="undefined"){
+if(typeof R==="undefined"||typeof META==="undefined"||typeof G==="undefined"||typeof B3E==="undefined"){
   document.getElementById("root").innerHTML='<div style="display:flex;align-items:center;justify-content:center;height:100vh;font-family:system-ui;color:#f59e0b;text-align:center"><div><h2>Failed to load data</h2><p style="color:#999">One or more data files could not be loaded.</p><button onclick="location.reload()" style="margin-top:12px;padding:8px 20px;background:#f59e0b;color:#000;border:none;border-radius:6px;cursor:pointer;font-weight:600">Reload</button></div></div>';
 }
 </script>
 <script type="text/babel">
-if(typeof R==="undefined"||typeof META==="undefined"||typeof G==="undefined"||typeof WC==="undefined"||typeof B3E==="undefined") throw new Error("Data files not loaded");
+if(typeof R==="undefined"||typeof META==="undefined"||typeof G==="undefined"||typeof B3E==="undefined") throw new Error("Data files not loaded");
 const {useState,useMemo,useEffect,useRef,useCallback}=React;
 
 /*═══════════════ PERSISTENCE ═══════════════*/
@@ -309,9 +308,6 @@ const GT=Object.keys(G).sort((a,b)=>b.length-a.length);
 const GRE=new RegExp("\\b("+GT.map(t=>t.replace(/[.*+?^${}()|[\]\\]/g,'\\$&')).join("|")+")\\b","g");
 const REF=/\{\{ref:([a-z0-9-]+)\}\}/g;
 
-// Build map of pending WC entries per regulation
-const WC_BY_REG={};
-WC.forEach(w=>{if(w.reg){if(!WC_BY_REG[w.reg])WC_BY_REG[w.reg]=[];WC_BY_REG[w.reg].push(w)}});
 
 
 // Build reverse cross-reference index (backlinks)
@@ -425,7 +421,7 @@ function NavBar({view,setView,search,setSearch,theme,toggleTheme,fontSize,setFon
   const settingsRef=useRef(null);
   const isMob=useIsMobile();
   const fSizes=[{id:"sm",l:"A\u207B",al:"A\u207B Small font size"},{id:"md",l:"A",al:"A Medium font size"},{id:"lg",l:"A\u207A",al:"A\u207A Large font size"}];
-  const tabs=[{id:"regulations",l:"Regulations"},{id:"changing",l:"What\u2019s Changing"},{id:"timeline",l:"Timeline"},{id:"glossary",l:"Glossary"}];
+  const tabs=[{id:"regulations",l:"Regulations"},{id:"timeline",l:"Timeline"},{id:"explorer",l:"Basel Explorer"},{id:"glossary",l:"Glossary"}];
   useEffect(()=>{if(!settingsOpen)return;const h=e=>{if(settingsRef.current&&!settingsRef.current.contains(e.target))setSettingsOpen(false)};document.addEventListener("mousedown",h);return()=>document.removeEventListener("mousedown",h)},[settingsOpen]);
 
   if(isMob){
@@ -485,7 +481,6 @@ function NavBar({view,setView,search,setSearch,theme,toggleTheme,fontSize,setFon
 function RegCard({reg,active,onClick,search}){
   const hits=useMemo(()=>search?matchedSubs(reg,search):[],[reg,search]);
   const snippet=useMemo(()=>searchSnippet(reg,search),[reg,search]);
-  const wcCount=WC_BY_REG[reg.id]?WC_BY_REG[reg.id].length:0;
   return(
   <button onClick={onClick} data-reg-active={active?"true":undefined} className="reg-card" style={{display:"block",width:"100%",textAlign:"left",padding:"16px 18px",borderRadius:10,marginBottom:6,border:active?"1px solid var(--amber-border2)":"1px solid var(--border)",background:active?"var(--amber-bg2)":"var(--bg2)"}}>
     <div style={{display:"flex",alignItems:"center",gap:10,marginBottom:6}}>
@@ -493,7 +488,6 @@ function RegCard({reg,active,onClick,search}){
       <span style={{fontSize:"var(--text-lg)",fontWeight:700,color:active?"var(--amber2)":"var(--text)",flex:1}}>{reg.st}</span>
       {reg.crossCutting&&<span style={{fontSize:9,padding:"2px 6px",borderRadius:3,background:"rgba(139,92,246,.1)",color:"#a78bfa",fontWeight:700,letterSpacing:".3px",whiteSpace:"nowrap",flexShrink:0}}>CROSS-CUTTING</span>}
       {reg.tag&&<span style={{fontSize:9,padding:"2px 6px",borderRadius:3,background:"rgba(6,182,212,.1)",color:"#22d3ee",fontWeight:700,letterSpacing:".3px",whiteSpace:"nowrap",flexShrink:0}}>{reg.tag.toUpperCase()}</span>}
-      {wcCount>0&&<span style={{fontSize:"var(--text-xs)",padding:"2px 7px",borderRadius:4,background:"var(--amber-bg3)",color:"var(--amber)",fontWeight:700,whiteSpace:"nowrap",flexShrink:0}}>{wcCount} pending</span>}
     </div>
     <p style={{fontSize:"var(--text-sm)",color:"var(--text3)",lineHeight:1.45,margin:0,display:"-webkit-box",WebkitLineClamp:2,WebkitBoxOrient:"vertical",overflow:"hidden"}}>{stripRefs(reg.sum)}</p>
     {snippet&&<div style={{marginTop:6,padding:"6px 10px",borderRadius:6,background:"var(--bg3)",fontSize:"var(--text-sm)",color:"var(--text3)",lineHeight:1.4}}>
@@ -653,29 +647,6 @@ function SubContent({sub,reg,onNav,search,subIdx}){
   </div>);
 }
 
-function WCPanel({regId}){
-  const items=WC_BY_REG[regId];
-  const[open,setOpen]=useState(false);
-  if(!items||!items.length)return null;
-  return(
-  <div style={{marginBottom:16,borderRadius:10,border:"1px solid "+ST.expected.bg,background:ST.expected.bg+"22",overflow:"hidden"}}>
-    <button onClick={()=>setOpen(!open)} style={{display:"flex",alignItems:"center",gap:8,width:"100%",padding:"10px 14px",minHeight:44,textAlign:"left",fontSize:"var(--text-sm)",fontWeight:700,color:"var(--amber)"}}>
-      <span>{open?"\u25BC":"\u25B6"}</span>
-      <span>{items.length} Pending Change{items.length!==1?"s":""}</span>
-    </button>
-    {open&&<div style={{padding:"0 14px 12px"}}>
-      {items.map((w,i)=>{const s=ST[w.status];return <div key={i} style={{padding:"8px 0",borderTop:i?"1px solid var(--border)":"none"}}>
-        <div style={{display:"flex",alignItems:"center",gap:8,marginBottom:4}}>
-          <span style={{fontSize:"var(--text-xs)",fontWeight:700,padding:"1px 6px",borderRadius:3,background:s.bg,color:s.tx}}>{s.lb}</span>
-          <span style={{fontSize:"var(--text-xs)",color:"var(--text4)"}}>{w.date}</span>
-        </div>
-        <div style={{fontSize:"var(--text-sm)",fontWeight:600,color:"var(--text)",marginBottom:2}}>{w.title}</div>
-        <div style={{fontSize:"var(--text-sm)",color:"var(--text3)",lineHeight:1.45}}>{w.desc}</div>
-      </div>})}
-    </div>}
-  </div>);
-}
-
 function RegSources({src}){
   if(!src||!src.length)return null;
   return(
@@ -696,12 +667,11 @@ function RegDetailBody({reg,idx,onSelectSub,onNav,search}){
       <button className="action-btn" onClick={()=>printRegulation(reg)} data-tooltip="Print" aria-label="Print this regulation">{"\uD83D\uDDA8\uFE0F"}</button>
     </div>
     <p style={{fontSize:"var(--text-md)",color:"var(--text3)",lineHeight:1.55,marginBottom:reg.id==="endgame"?12:24}}>{stripRefs(reg.sum)}</p>
-    <WCPanel regId={reg.id}/>
     {reg.id==="endgame"&&<button onClick={()=>{window.location.hash="#/explorer"}} aria-label="Open Basel III Endgame interactive explorer" style={{display:"flex",alignItems:"center",gap:10,width:"100%",padding:"12px 16px",borderRadius:10,border:"1px solid var(--amber-border)",background:"var(--amber-bg3)",marginBottom:16,textAlign:"left",cursor:"pointer",transition:"border-color .15s,background .15s,color .15s"}}>
       <span style={{fontSize:20}}>{"\uD83D\uDD0D"}</span>
       <div style={{flex:1}}>
         <div style={{fontSize:"var(--text-md)",fontWeight:700,color:"var(--amber)"}}>B3E Explorer</div>
-        <div style={{fontSize:"var(--text-sm)",color:"var(--text3)"}}>Interactive deep-dive: 41 rule changes with before/after comparisons</div>
+        <div style={{fontSize:"var(--text-sm)",color:"var(--text3)"}}>{"Interactive deep-dive: "+B3E.CHANGES.length+" rule changes with before/after comparisons"}</div>
       </div>
       <span style={{color:"var(--amber)",fontSize:16}}>{"\u2192"}</span>
     </button>}
@@ -942,26 +912,6 @@ function RegulationsView({search,onNavigate,navTick,hashRoute,pushHash,navHeight
   </div>);
 }
 
-function WhatsChangingView({onNav}){
-  return(
-  <div style={{maxWidth:700}} className="fade-up">
-    <h2 style={{fontSize:"var(--text-xl)",fontWeight:800,letterSpacing:"-.3px",marginBottom:6}}>What{"\u2019"}s Changing</h2>
-    <p style={{fontSize:"var(--text-md)",color:"var(--text3)",marginBottom:28}}>Pending and upcoming regulatory changes affecting U.S. banking capital and liquidity.</p>
-    {WC.map((item,i)=>{const s=ST[item.status];const linked=item.reg?R.find(r=>r.id===item.reg):null;
-      return(
-      <div key={i} className="wc-card" style={{padding:"18px 22px",borderRadius:10,marginBottom:10,border:"1px solid var(--border)",background:"var(--bg2)"}}>
-        <div style={{display:"flex",alignItems:"center",gap:10,marginBottom:8,flexWrap:"wrap"}}>
-          <span style={{fontSize:"var(--text-xs)",fontWeight:700,padding:"2px 7px",borderRadius:4,background:s.bg,border:"1px solid "+s.bd,color:s.tx,letterSpacing:".3px"}}>{s.lb}</span>
-          <span style={{fontSize:"var(--text-sm)",color:"var(--text4)",fontWeight:600}}>{item.date}</span>
-          {linked&&<button onClick={()=>onNav(item.reg)} style={{fontSize:"var(--text-sm)",color:"var(--amber)",fontWeight:600,padding:"4px 0",minHeight:44,display:"inline-flex",alignItems:"center",borderBottom:"1px dashed var(--amber-dot)"}}>{linked.st} {"\u2192"}</button>}
-          {item.reg==="endgame"&&<button onClick={()=>{window.location.hash="#/explorer"}} style={{fontSize:"var(--text-sm)",color:"var(--dir-decrease)",fontWeight:600,padding:"4px 0",minHeight:44,display:"inline-flex",alignItems:"center",borderBottom:"1px dashed var(--dir-decrease)"}}>B3E Explorer {"\u2192"}</button>}
-        </div>
-        <h3 style={{fontSize:"var(--text-lg)",fontWeight:700,marginBottom:5}}>{item.title}</h3>
-        <p style={{fontSize:"var(--text-md)",color:"var(--text3)",lineHeight:1.55,margin:0}}>{item.desc}</p>
-      </div>)})}
-  </div>);
-}
-
 function GlossaryView({search,onNav}){
   const isMob=useIsMobile();
   const entries=useMemo(()=>{
@@ -1128,7 +1078,7 @@ function B3eImpactSummary(){
 
     {/* ── Source ── */}
     <div style={{marginTop:14,paddingTop:10,borderTop:"1px solid var(--border)",fontSize:10,color:"var(--text4)",lineHeight:1.5}}>
-      Source: Federal Reserve Board / OCC / FDIC aggregate estimates based on Q2 2025 balance sheet data. All figures reflect agency-published re-proposal impact analysis; not institution-specific.
+      Source: Federal Reserve Board / OCC / FDIC impact analysis (Q2 2025 balance sheet data) published with the March 2026 NPR. All figures are as proposed; not institution-specific.
     </div>
   </div>);
 }
@@ -1170,7 +1120,7 @@ function B3eChangeCard({change,isExpanded,onToggle}){
       <div ref={ref} style={{padding:"0 18px 18px"}}>
         <div style={{display:"grid",gridTemplateColumns:"repeat(auto-fit,minmax(220px,1fr))",gap:10,marginBottom:12}}>
           <div style={{background:"var(--bg)",borderRadius:8,padding:14,borderTop:"2px solid var(--text4)"}}>
-            <div style={{fontSize:10,fontWeight:700,letterSpacing:.8,color:"var(--text4)",marginBottom:8}}>TODAY</div>
+            <div style={{fontSize:10,fontWeight:700,letterSpacing:.8,color:"var(--text4)",marginBottom:8}}>RULE IN FORCE</div>
             <div style={{fontSize:13,color:"var(--text2)",lineHeight:1.55}}>{SmartField(change.today)}</div>
           </div>
           <div style={{background:"var(--bg)",borderRadius:8,padding:14,borderTop:"2px solid "+dirColor}}>
@@ -1249,13 +1199,13 @@ function BaselExplorer({onNav}){
     <div style={{marginBottom:16}}>
       <div style={{display:"flex",alignItems:"center",gap:10,marginBottom:6}}>
         <h2 style={{margin:0,fontSize:"var(--text-xl)",fontWeight:800,letterSpacing:"-.3px"}}>Basel III Endgame</h2>
-        <span title="As of April 2026, the reproposal is expected to be finalized. Dates subject to regulatory changes." style={{fontSize:10,fontWeight:600,padding:"2px 8px",borderRadius:4,background:decColor+"15",color:decColor,letterSpacing:.5,cursor:"help"}}>2026 Reproposal*</span>
+        <span title={"Snapshot of the March 2026 reproposal as proposed. Not a final rule; see the Basel III Endgame page for status as of "+META.asOf+"."} style={{fontSize:10,fontWeight:600,padding:"2px 8px",borderRadius:4,background:decColor+"15",color:decColor,letterSpacing:.5,cursor:"help"}}>March 2026 Reproposal — Snapshot*</span>
       </div>
       <p style={{margin:0,fontSize:"var(--text-md)",color:"var(--text3)",lineHeight:1.5}}>
-        Current rule {"\u2192"} 2026 re-proposal. Click any change to see the before/after and why it matters.
+        Rule in force {"\u2192"} the March 2026 reproposal, as proposed. Click any change to see the before/after and why it matters.
       </p>
       <p style={{margin:"4px 0 0",fontSize:10,color:"var(--text5)",lineHeight:1.4}}>
-        * As of April 2026, the reproposal is expected to be finalized. Dates subject to regulatory changes.
+        * This explorer presents the March 2026 reproposal as proposed \u2014 not a final rule. See the Basel III Endgame page for status as of {META.asOf}.
       </p>
     </div>
 
@@ -1524,11 +1474,11 @@ class ErrorBoundary extends React.Component{
 }
 
 function BottomTabBar({view,setView,onMoreTap}){
-  const isMoreView=view==="glossary"||view==="explorer";
+  const isMoreView=view==="explorer";
   const tabs=[
     {id:"regulations",icon:"📑",label:"Regs"},
-    {id:"changing",icon:"🔔",label:"Changes"},
     {id:"timeline",icon:"⏳",label:"Timeline"},
+    {id:"glossary",icon:"📖",label:"Glossary"},
     {id:"__more",icon:"•••",label:"More"},
   ];
   return(
@@ -1559,7 +1509,6 @@ function MoreSheet({open,onClose,onNavigate,theme,toggleTheme,fontSize,setFontSi
   },[open,onClose]);
   const fSizes=[{id:"sm",l:"A⁻",al:"A⁻ Small font size"},{id:"md",l:"A",al:"A Medium font size"},{id:"lg",l:"A⁺",al:"A⁺ Large font size"}];
   const items=[
-    {id:"glossary",icon:"📖",label:"Glossary",desc:Object.keys(G).length+" regulatory terms defined"},
     {id:"explorer",icon:"🧮",label:"Basel III Explorer",desc:"Interactive B3E impact analysis"},
   ];
   return(<>
@@ -1609,7 +1558,7 @@ function useIsTablet(){
 
 function App(){
   const{route,push:pushHash}=useHashRoute();
-  const[view,setView]=useState(route.view==="start"?"regulations":(route.view||"regulations"));
+  const[view,setView]=useState(route.view==="start"?"regulations":route.view==="changing"?"timeline":(route.view||"regulations"));
   const[search,setSearch]=useState(route.q||"");
   const navTarget=useRef(null);
   const[navTick,setNavTick]=useState(0);
@@ -1639,7 +1588,8 @@ function App(){
   useEffect(()=>{
     if(route.view&&route.view!==view){
       if(route.view==="start"){setView("regulations");pushHash("regulations")}
-      else if(["regulations","explorer","changing","glossary","timeline"].includes(route.view))setView(route.view);
+      else if(route.view==="changing"){setView("timeline");pushHash("timeline")}
+      else if(["regulations","explorer","glossary","timeline"].includes(route.view))setView(route.view);
     }
   },[route.view]);
 
@@ -1668,7 +1618,6 @@ function App(){
     <NavBar view={view} setView={handleSetView} search={search} setSearch={setSearch} theme={theme} toggleTheme={toggleTheme} fontSize={fontSize} setFontSize={setFontSize} searchRef={searchRef} navRef={navRef}/>
     <main id="main-content" style={{paddingTop:navHeight+20,paddingBottom:isMob?100:40,paddingLeft:isMob?16:24,paddingRight:isMob?16:24,maxWidth:1120,margin:"0 auto"}}>
       {view==="regulations"&&<RegulationsView search={debouncedSearch} onNavigate={navTarget} navTick={navTick} hashRoute={route} pushHash={pushHash} navHeight={navHeight}/>}
-      {view==="changing"&&<WhatsChangingView onNav={navToReg}/>}
       {view==="timeline"&&<TimelineView onNav={navToReg}/>}
       {view==="explorer"&&<BaselExplorer onNav={navToReg}/>}
       {view==="glossary"&&<GlossaryView search={debouncedSearch} onNav={navToReg}/>}
