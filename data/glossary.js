@@ -1,4 +1,4 @@
-/* MyRegApp v7.0 — Glossary Terms
+/* MyRegApp v8.0 — Glossary Terms
    101 regulatory terms and definitions.
    Loaded by index.html via <script> tag. */
 

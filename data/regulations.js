@@ -1,8 +1,8 @@
-/* MyRegApp v7.0 — Regulation Data
+/* MyRegApp v8.0 — Regulation Data
    20 banking regulations with full subsection content.
    Loaded by index.html via <script> tag. */
 
-const META={version:"7.0.1",asOf:"April 2026"};
+const META={version:"8.0.0",asOf:"July 2026"};
 
 const R=[
 {id:"cap-adequacy",cat:"Capital",title:"Capital Adequacy Requirements",st:"Capital Adequacy",icon:"\u{1F3DB}",
@@ -928,28 +928,7 @@ kp:[
 "Collateral reduces counterparty exposure but adds exposure to collateral issuer (risk-shifting principle)",
 "Aggregation triggers: \u226525% voting control or economic interdependence (\u226550% revenue/guarantees)",
 "25% of Tier 1 limit (general); 15% of Tier 1 limit (G-SIB to major counterparty)",
-"Daily compliance for G-SIBs; quarterly for others; breaches remedied next business day"],
-calc:{
-title:"SCCL Net Credit Exposure Calculation",
-steps:[
-"1. Identify and classify all exposures to the counterparty across seven categories.",
-"2. Measure each exposure: on-balance sheet at book value; derivatives via SA-CCR; commitments using CCF (20%/50%/100%).",
-"3. Sum gross exposures across all seven categories.",
-"4. Reduce gross exposure by eligible collateral and apply netting where QMNAs are in place and enforceable.",
-"5. Assess whether the counterparty should be aggregated with affiliated or economically dependent entities (\u226525% voting control or \u226550% revenue dependence).",
-"6. Compare net credit exposure to the applicable limit (25% or 15% of Tier 1 capital)."],
-example:{
-title:"G-SIB with $50B Tier 1 Capital Exposed to a Major Counterparty",
-headers:["Exposure Category","Gross Exposure ($ billions)","Collateral/Netting Reduction","Net Exposure ($ billions)"],
-rows:[
-["1. On-balance sheet loans and advances","2.8","(0.2 eligible collateral)","2.6"],
-["2. Deposits with counterparty","1.2","\u2014","1.2"],
-["3. Debt and equity securities held","0.9","\u2014","0.9"],
-["4. Derivatives (SA-CCR: RC=$0.6B, PFE=$1.2B; EAD=1.4\u00d71.8=$2.52B)","2.5","(0.3 QMNA netting)","2.2"],
-["5. Securities financing transactions (repos)","1.1","\u2014","1.1"],
-["6. Unfunded commitments: $2.0B at >12mo \u2192 50% CCF","1.0","\u2014","1.0"],
-["7. Guarantees and letters of credit","0.3","\u2014","0.3"]],
-note:"Total net credit exposure: $9.3B. Applicable limit for major counterparty (15% of $50B Tier 1): $7.5B. Result: Exposure exceeds limit by $1.8B. The bank must reduce its exposure to the counterparty by selling loans, unwinding derivatives, or reducing commitments to bring net exposure below $7.5B. If this were a non-major counterparty, the limit would be 25% ($12.5B), and the bank would be in compliance. The calculation demonstrates why the 15% G-SIB-to-G-SIB limit is more restrictive and why measurement precision matters in derivative netting."}}},
+"Daily compliance for G-SIBs; quarterly for others; breaches remedied next business day"]},
 {t:"Key Concepts",c:[
 "Exemptions: Exposures to the U.S. government and agencies (including GSEs in conservatorship) are exempt. Exposures to foreign sovereigns with zero risk weight are also exempt. Intraday exposures and certain pre-settlement exposures receive special treatment.",
 "Economic interdependence: Two counterparties are economically interdependent when financial distress at one would cause distress at the other. Factors include revenue dependence (\u226550% from the other), guarantees (\u226550% of exposure), and shared funding sources. Note that intra-affiliate exposures are governed separately by {{ref:reg-w}} (Sections 23A/23B); the SCCL applies to unaffiliated counterparties.",

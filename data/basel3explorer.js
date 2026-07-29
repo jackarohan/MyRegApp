@@ -1,4 +1,4 @@
-/* MyRegApp v7.0 — Basel III Endgame Explorer Data */
+/* MyRegApp v8.0 — Basel III Endgame Explorer Data */
 
 const B3E = {
   SECTIONS: [
