@@ -48,7 +48,7 @@ a{color:var(--amber);text-decoration:none}a:hover{text-decoration:underline}
 .sh{background:var(--sel);border-radius:2px;padding:0 1px}
 .sub-badge{font-size:var(--text-xs);padding:1px 5px;border-radius:3px;background:var(--amber-bg3);color:var(--amber);font-weight:600;white-space:nowrap}
 .action-btn{display:inline-flex;align-items:center;justify-content:center;width:44px;height:44px;border-radius:8px;color:var(--text4);transition:background .12s,color .12s,transform .12s;flex-shrink:0;position:relative}.action-btn:hover{background:var(--bg3);color:var(--amber)}.action-btn:active{transform:scale(.92)}@media(pointer:fine){.action-btn::after{content:attr(data-tooltip);position:absolute;bottom:-26px;left:50%;transform:translateX(-50%);font-size:10px;white-space:nowrap;padding:2px 8px;border-radius:4px;background:var(--tooltip-bg);border:1px solid var(--border);color:var(--text3);opacity:0;pointer-events:none;transition:opacity .15s;z-index:10}.action-btn:hover::after{opacity:1}}
-.wc-card{transition:border-color .15s,box-shadow .15s,transform .15s}.wc-card:hover{border-color:var(--amber-border);box-shadow:0 2px 12px var(--shadow);transform:translateY(-1px)}
+
 .gl-card{transition:border-color .15s,box-shadow .15s,transform .15s}.gl-card:hover{border-color:var(--amber-border);box-shadow:0 2px 12px var(--shadow);transform:translateY(-1px)}
 .reg-card{transition:border-color .15s,background .15s,box-shadow .15s,transform .15s}.reg-card:hover{border-color:var(--amber-border)!important;background:var(--amber-bg)!important;box-shadow:0 2px 8px var(--shadow);transform:translateY(-1px)}
 table tbody tr:hover{background:var(--bg3)!important}
@@ -1284,7 +1284,7 @@ function TimelineView({onNav}){
     return list;
   },[allEvents]);
 
-  const d=new Date();const now=d.getFullYear()*10000+(d.getMonth()+1)*100;
+  const d=new Date();const now=d.getFullYear()*10000+(d.getMonth()+1)*100+d.getDate();
   const filtered=allEvents.filter(e=>{
     if(filter!=="all"&&e.regId!==filter)return false;
     if(era==="past"&&e.sortKey>=now)return false;
@@ -1369,7 +1369,7 @@ function OverviewContent({onNav}){
        {l:"SCB (firm-specific)",v:"2.5\u20134.3%",pct:22,reg:"scb"},
        {l:"G-SIB Surcharge",v:"1.0\u20134.5%",pct:22,reg:"gsib"},
        {l:"CCyB (never activated)",v:"0%",pct:1,reg:"cap-adequacy"},
-     ],total:"Binding CET1: 8.0\u201313.5%"},
+     ],total:"Binding CET1: 8.0\u201313.3%"},
     {title:"Leverage Stack",desc:"Non-risk-weighted backstop requirements",color:"#3b82f6",
      layers:[
        {l:"Tier 1 Leverage",v:"4.0%",pct:40,reg:"cap-adequacy"},

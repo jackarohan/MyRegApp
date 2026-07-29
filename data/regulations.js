@@ -19,7 +19,7 @@ kp:["CET1 is the core measure: common stock + retained earnings, net of regulato
 "Advanced Approaches (internal models for credit and operational risk) apply only to Category I and II firms. All other banks use the Standardized Approach exclusively. The Collins Amendment floor ensures Advanced Approaches never produce lower requirements than Standardized."],
 kp:["All IDIs, BHCs, and SLHCs subject to minimum capital ratios","SCB replaces fixed conservation buffer for banks \u2265$100B","Banks <$10B may elect the simplified 8% CBLR (lowered from 9% in 2026)","Advanced Approaches: Category I/II only; Collins floor applies"]},
 
-{kind:"requirements",t:"Current Requirements",c:[
+{kind:"requirements",t:"Requirements",c:[
 "Minimum Risk-Based Capital Ratios (applicable to all banks): CET1 / RWAs \u2265 4.5% \u00b7 Tier 1 Capital / RWAs \u2265 6.0% \u00b7 Total Capital / RWAs \u2265 8.0%",
 "The SCB replaces the standard 2.5% capital conservation buffer for firms subject to supervisory stress testing. The SCB is floored at 2.5% and is determined annually from stress test results. (See {{ref:scb}}.)",
 "Total CET1 requirement for large banks = 4.5% (minimum) + SCB (\u22652.5%) + G-SIB surcharge (if applicable, 1.0%\u20134.5% across the eight U.S. G-SIBs as of 2026) + CCyB (0%, never activated). Under the SCB determinations effective October 2025 — which the Fed froze through September 2027 — total CET1 requirements for the largest banks range from 7.0% to 16.0%.",
@@ -85,7 +85,7 @@ kp:["Applies to 8 U.S. G-SIBs and their covered depository institution subsidiar
 "The baseline SLR of 3% applies more broadly to all banking organizations with \u2265$250B in total consolidated assets or \u2265$10B in on-balance-sheet foreign exposures (generally Categories I\u2013III). Category IV firms are not subject to SLR.",
 "The eSLR buffer is not an election \u2014 it is automatic for all G-SIBs. Breach of the buffer triggers distribution restrictions identical to those for risk-based capital buffers."],
 kp:["eSLR: G-SIBs (Category I) only \u2014 8 firms","Baseline 3% SLR: Categories I\u2013III (\u2265$250B or significant foreign exposure)","Category IV firms not subject to SLR","Buffer breach triggers automatic distribution restrictions"]},
-{kind:"requirements",t:"Current Requirements",c:[
+{kind:"requirements",t:"Requirements",c:[
 "Requirements in force since April 1, 2026: G-SIB holding companies must maintain SLR \u2265 3% plus an eSLR buffer equal to 50% of the firm's Method 1 G-SIB surcharge. With Method 1 surcharges of 1.0%\u20132.5%, total requirements run 3.5%\u20134.25%.",
 "Covered depository institution subsidiaries: buffer = 50% of the parent's Method 1 surcharge, capped at 1% (total \u2264 4%). The cap was added in the final rule — it was not in the June 2025 proposal — and replaced the prior 6% well-capitalized threshold.",
 "Before April 2026, the rule was a flat add-on: 5% at the holding company (3% + 2% fixed buffer) and 6% for well-capitalized bank subsidiaries. The recalibration replaced the fixed buffers with firm-specific ones tied to systemic risk.",
@@ -143,7 +143,7 @@ kp:["Applies to 8 U.S. G-SIBs identified annually by the Fed","Method 1: 1.0%\u2
 "Non-G-SIB banks are not subject to the surcharge regardless of size. Category II\u2013IV firms face other enhanced requirements but not the G-SIB surcharge."],
 kp:["Applies to 8 named U.S. G-SIBs only","Identification based on annual systemic risk score (\u2265130 bps)","Applies at consolidated BHC level","Non-G-SIBs not subject regardless of size"]},
 
-{kind:"requirements",t:"Current Requirements",c:[
+{kind:"requirements",t:"Requirements",c:[
 "Each G-SIB calculates under two methods and is subject to the higher. Method 1 (Basel/FSB): five systemic indicator categories — size, interconnectedness, cross-jurisdictional activity, substitutability, complexity; surcharges of 1.0%\u20132.5% as of 2026. Method 2 (U.S.-only): replaces substitutability with STWF. Always binding for U.S. G-SIBs.",
 "Individual binding surcharges (in effect since January 1, 2026): JPMorgan Chase 4.5%, Citigroup 3.5%, Goldman Sachs 3.5% (raised from 3.0% at the January 2026 annual update), Bank of America 3.0%, Morgan Stanley 3.0%, Bank of New York Mellon 1.5%, Wells Fargo 1.5%, State Street 1.0%. JPMorgan Chase carries the highest surcharge, reflecting its position across all five systemic indicators. Surcharges are updated annually.",
 "Timing is asymmetric: increases take effect one full calendar year after calculation; decreases take effect the following January 1."],
@@ -201,7 +201,7 @@ kp:["Firm-specific: varies by bank based on stress test performance","Floored at
 "Banks below $100B in assets are not subject to the SCB. They use the standard 2.5% capital conservation buffer instead."],
 kp:["Applies to BHCs/SLHCs \u2265$100B (Categories I\u2013IV)","Category IV: stress tested every other year","Banks <$100B use standard 2.5% conservation buffer","SCB is firm-specific; floored at 2.5%"]},
 
-{kind:"requirements",t:"Current Requirements",c:[
+{kind:"requirements",t:"Requirements",c:[
 "Calculation: SCB = max(peak-to-trough CET1 decline under severely adverse scenario + four quarters of planned dividends as % of RWAs, 2.5%). The peak-to-trough decline is the maximum cumulative drop in projected CET1 at any point during the nine-quarter stress horizon, measured using the Fed’s supervisory models (not the firm’s own models).",
 "Levels in force (set October 1, 2025, and frozen by the Fed's February 2026 action until October 1, 2027): G-SIB SCBs range from 2.5% to 4.3%. Most domestic non-G-SIBs are at or near the 2.5% floor. Several foreign bank subsidiaries have higher SCBs, with DB USA Corporation the highest at 11.5%. The SCB's variance primarily reflects differences in portfolio risk — firms with larger trading books or concentrated credit exposures tend to have higher stress losses and thus higher SCBs.",
 "Annual cycle (as designed): DFAST results (June) → preliminary SCB (August) → reconsideration window (15 business days, limited to whether the Fed correctly applied its own models) → final SCBs effective October 1 through September 30. In February 2026 the Fed suspended this recalculation: existing SCBs remain in effect until October 1, 2027, and the June 2026 stress-test results did not change any firm's SCB.",
@@ -217,7 +217,7 @@ cite:[{type:"requirement",auth:"CFR",pin:"12 CFR 225.8(f); 238.170(f) (SCB deter
 "Total CET1 Requirement Stack: Minimum CET1 (4.5%) + SCB (firm-specific, \u22652.5%) + G-SIB surcharge (0%\u20134.5%) + CCyB (0%). For the example bank with a 2.0% G-SIB surcharge: 4.5% + 3.8% + 2.0% + 0.0% = 10.3%. Falling below this threshold triggers automatic capital distribution restrictions \u2014 limitations on dividends, buybacks, and discretionary bonuses \u2014 that scale proportionally with how far below the requirement the bank falls.",
 "Distribution Restrictions: The buffer zone (from the minimum 4.5% up to the total requirement) is divided into four quartiles. Maximum payout ratio decreases from 60% of eligible retained income (top quartile) to 40%, 20%, and finally 0% (bottom quartile). This creates a graduated penalty that incentivizes banks to rebuild capital rather than imposing an abrupt cliff effect."],
 kp:["SCB = Max(peak-to-trough CET1 decline + dividend add-on, 2.5%)","Uses Fed\u2019s supervisory models over 9 stress quarters; firm models not used","Full CET1 stack: 4.5% min + SCB + G-SIB surcharge + CCyB","Breaching buffer triggers graduated distribution restrictions (60%/40%/20%/0% payout caps)"],
-tables:[{title:"Worked Example \u2014 CET1 Under Stress",headers:["Quarter","Projected CET1",""],rows:[["Q4 2024 (starting)","12.8%",""],["Q1 2025","12.0%",""],["Q2 2025","11.1%",""],["Q3 2025","10.2%",""],["Q4 2025","9.6%",""],["Q1 2026","9.3%","\u2190 Trough"],["Q2 2026","9.5%",""],["Q3 2026","9.8%",""],["Q4 2026","10.2%",""]],footnote:"Decline = 12.8% \u2212 9.3% = 3.5%. + Dividend add-on 0.27% = 3.77%, rounded 3.8%. SCB = Max(3.8%, 2.5%) = 3.8%"},{title:"Total CET1 Requirement Stack (Example G-SIB)",headers:["Component","Rate","Source"],rows:[["CET1 Minimum","4.5%","12 CFR \u00a7217.10"],["Stress Capital Buffer","3.8%","Firm-specific (\u22652.5%)"],["G-SIB Surcharge","2.0%","12 CFR \u00a7217.403"],["Countercyclical Buffer","0.0%","Currently 0% in U.S."],["Total CET1 Requirement","10.3%",""]],footnote:"Falling below triggers distribution restrictions: 60%/40%/20%/0% max payout by quartile"},{title:"Distribution Restriction Quartiles",headers:["Buffer Zone","Payout Cap"],rows:[["Top quartile (>75% of buffer)","60%"],["Second quartile (50\u201375%)","40%"],["Third quartile (25\u201350%)","20%"],["Bottom quartile (<25% of buffer)","0%"]],footnote:"Applies to dividends, share repurchases, and discretionary bonus payments"}]},
+tables:[{title:"Worked Example \u2014 CET1 Under Stress",headers:["Quarter","Projected CET1",""],rows:[["Q4 2024 (starting)","12.8%",""],["Q1 2025","12.0%",""],["Q2 2025","11.1%",""],["Q3 2025","10.2%",""],["Q4 2025","9.6%",""],["Q1 2026","9.3%","\u2190 Trough"],["Q2 2026","9.5%",""],["Q3 2026","9.8%",""],["Q4 2026","10.2%",""]],footnote:"Decline = 12.8% \u2212 9.3% = 3.5%. + Dividend add-on 0.27% = 3.77%, rounded 3.8%. SCB = Max(3.8%, 2.5%) = 3.8%"},{title:"Total CET1 Requirement Stack (Example G-SIB)",headers:["Component","Rate","Source"],rows:[["CET1 Minimum","4.5%","12 CFR \u00a7217.10"],["Stress Capital Buffer","3.8%","Firm-specific (\u22652.5%)"],["G-SIB Surcharge","2.0%","12 CFR \u00a7217.403"],["Countercyclical Buffer","0.0%","Never activated in U.S."],["Total CET1 Requirement","10.3%",""]],footnote:"Falling below triggers distribution restrictions: 60%/40%/20%/0% max payout by quartile"},{title:"Distribution Restriction Quartiles",headers:["Buffer Zone","Payout Cap"],rows:[["Top quartile (>75% of buffer)","60%"],["Second quartile (50\u201375%)","40%"],["Third quartile (25\u201350%)","20%"],["Bottom quartile (<25% of buffer)","0%"]],footnote:"Applies to dividends, share repurchases, and discretionary bonus payments"}]},
 {t:"Key Concepts",c:[
 "Stress Capital Decline: The maximum peak-to-trough drop in projected CET1 under the severely adverse scenario, using the Fed\u2019s supervisory models.",
 "Dividend Add-On: Four quarters of planned common stock dividends as a % of RWAs, added to ensure banks can maintain distributions even under stress.",
@@ -258,7 +258,7 @@ kp:["Annual exercise for banks \u2265$100B","Fed\u2019s severely adverse scenari
 "Company-run stress tests: Firms with \u2265$250B must also conduct their own stress tests using the Fed\u2019s scenarios and report results to the Fed and their primary regulator."],
 kp:["BHCs, SLHCs, and IHCs \u2265$100B","Cat I\u2013III: annual; Cat IV: biennial","Company-run tests required for firms \u2265$250B","Fed may require additional tests in heightened risk periods"]},
 
-{kind:"requirements",t:"Current Requirements",c:[
+{kind:"requirements",t:"Requirements",c:[
 "Participation: Category I\u2013III annually; Category IV every other year. The Fed publishes a Baseline and a Severely Adverse scenario each year (the separate Adverse scenario was eliminated in 2019; informational exploratory scenarios were added in 2024). The severely adverse scenario determines the SCB.",
 "The Fed projects revenues, losses, and capital ratios over a nine-quarter horizon using its own proprietary models. Firms also run company-run tests with the same scenarios.",
 "Firm-specific results published each June, including projected capital ratios, PPNR, and loss estimates by portfolio segment."],
@@ -315,7 +315,7 @@ kp:["HQLA / Net Cash Outflows \u2265 100% for the largest banks","Daily calculat
 "The requirement is calculated and must be maintained on each business day. There is no election or opt-out \u2014 compliance is mandatory for all covered firms."],
 kp:["Cat I/II: 100%; Cat III: 85\u2013100%; Cat IV: 70%","Below $100B: not subject","Daily calculation and compliance required","No election or opt-out available"]},
 
-{kind:"requirements",t:"Current Requirements",c:[
+{kind:"requirements",t:"Requirements",c:[
 "Applicability: Category I/II \u2014 100%. Category III \u2014 100% or 85% (depending on wholesale funding). Category IV \u2014 70%. Below $100B \u2014 not subject.",
 "HQLA: Level 1 (no haircut): reserves, Treasuries, Ginnie Mae. Level 2A (15% haircut, 40% cap): GSE debt & MBS. Level 2B (50% haircut, 15% cap): investment-grade corporate debt, publicly traded common equity, qualifying municipal GO bonds (per EGRRCPA Section 403; treatment may vary by prudential regulator).",
 "Net Cash Outflows: Prescribed outflow rates per funding type. Retail deposits: 3\u201310%. Financial institution wholesale: 100%. Inflows capped at 75% of outflows \u2014 banks must always hold \u226525% as HQLA.",
@@ -373,7 +373,7 @@ kp:["ASF / RSF \u2265 100%","One-year horizon, complementing LCR\u2019s 30 days"
 "Unlike the LCR\u2019s daily requirement, the NSFR is calculated and reported quarterly, though firms are expected to maintain ongoing compliance."],
 kp:["Same population as LCR: \u2265$100B total assets","Cat I/II: 100%; Cat III: 85\u2013100%; Cat IV: 70%","Calculated quarterly (vs. LCR\u2019s daily)","Modified NSFR applies to certain bank subsidiaries"]},
 
-{kind:"requirements",t:"Current Requirements",c:[
+{kind:"requirements",t:"Requirements",c:[
 "ASF Factors: Regulatory capital & liabilities \u22651yr \u2014 100%. Stable retail (FDIC-insured) \u2014 95%. Less stable retail \u2014 90%. Operational deposits \u2014 50%. Short-term secured from financials \u2014 0%.",
 "RSF Factors: Cash & reserves \u2014 0%. Treasuries \u2014 5%. Level 2A HQLA \u2014 15%. Residential mortgages \u2014 65%. Most other assets \u2014 85\u2013100%. Off-balance-sheet commitments \u2014 5%.",
 "Tailoring: Category I/II \u2014 100%. Category III \u2014 100% or 85%. Category IV \u2014 70%. Below $100B \u2014 not subject."],
@@ -425,7 +425,7 @@ kp:["Overhauls credit, market, operational risk RWA calculations","Original 2023
 "How the re-proposal differs from the 2023 NPR: mandatory scope narrowed from Cat I\u2013IV to Cat I/II only; aggregate CET1 impact reduced from +19% to +1.4% standalone; dual-stack eliminated entirely (2023 NPR would have retained it); advanced approaches (A-IRB, AMA) removed rather than modified; AOCI recognition limited to Cat I/II and voluntary opt-in firms (2023 NPR required it for all Cat I\u2013IV); and Cat III/IV given a voluntary opt-in path rather than mandatory compliance."],
 kp:["Original NPR: all banks \u2265$100B (Cat I\u2013IV); re-proposal: mandatory Cat I/II only","Cat III/IV voluntary opt-in to ERBA; estimated 3\u20137% CET1 reduction if elected","2023 NPR: +19% aggregate CET1 impact \u2192 2026 re-proposal: +1.4% standalone","International peers already implementing (EU Jan 2025, UK Jan 2027)"]},
 
-{kind:"requirements",t:"Current Requirements",c:[
+{kind:"requirements",t:"Requirements",c:[
 "As of July 2026 the reproposal had not been finalized, and banks continued to operate under the existing dual-stack framework: Standardized Approach (all banks) and Advanced Approaches (Category I/II) with a binding-constraint rule.",
 "The re-proposal eliminates the dual-stack system entirely. Cat I/II banks would use only ERBA (single stack), while Cat III/IV would use only the revised Standardized Approach. Internal models for credit risk (A-IRB) and operational risk (AMA) are removed.",
 "The 72.5% output floor \u2014 which ensures Advanced Approaches capital cannot fall below 72.5% of the Standardized result \u2014 becomes moot under the single-stack design. The re-proposal replaces the floor concept with framework-specific calibrations."],
@@ -477,7 +477,7 @@ kp:["Applies to 8 U.S. G-SIBs at the holding company level","External TLAC + int
 "In August 2023 the agencies jointly proposed a separate long-term debt requirement for large non-G-SIB banks (Categories II/III). As of July 2026 that proposal remained dormant — neither finalized, re-proposed, nor withdrawn."],
 kp:["External TLAC/LTD: 8 U.S. G-SIBs only","Internal TLAC: covered material subsidiaries of G-SIBs","Non-G-SIB LTD: 2023 joint proposal dormant as of July 2026","Applies at top-tier holding company level"]},
 
-{kind:"requirements",t:"Current Requirements",c:[
+{kind:"requirements",t:"Requirements",c:[
 "External TLAC: Eligible instruments (CET1 + AT1 + Tier 2 + eligible LTD) must be \u2265 the greater of: 18% of RWAs, or 7.5% of TLE. These are in addition to applicable regulatory capital buffers.",
 "External LTD: Must be \u2265 the greater of: 6% of RWAs + buffer, or 4.5% of TLE + buffer. Eligible LTD must be plain vanilla, unsecured, issued by the top-tier BHC, with remaining maturity \u2265 1 year.",
 "Internal TLAC: Covered material subsidiaries must pre-position a portion of TLAC resources from the parent to ensure they can be recapitalized without going through separate resolution.",
@@ -521,7 +521,7 @@ kp:["Required for BHCs \u2265$250B and designated nonbanks","Must demonstrate or
 "Separate FDIC IDI resolution plans are required for insured depository institutions with \u2265$100B in total assets, covering resolution under FDIC receivership rather than the Bankruptcy Code."],
 kp:["Title I plans: BHCs \u2265$250B (raised from $50B by EGRRCPA)","G-SIBs: two-year cycle; Cat II/III: ~three-year cycle","Separate FDIC IDI plans for banks \u2265$100B","FSOC-designated nonbanks also subject"]},
 
-{kind:"requirements",t:"Current Requirements",c:[
+{kind:"requirements",t:"Requirements",c:[
 "Submission Cycle: G-SIBs file on a two-year alternating cycle \u2014 full plans and targeted/interim plans in alternating years. Category II/III firms file less frequently (generally every three years).",
 "Key elements required: corporate governance and resolution governance, resolution strategy, operational continuity, financial interconnections, shared services, derivatives and trading portfolios, payment clearing and settlement activities, and public section summary. Plans must also demonstrate that the firm can maintain sufficient liquidity through resolution, including compliance with {{ref:lcr}} and {{ref:nsfr}} requirements at material operating subsidiaries.",
 "The agencies evaluate plans for \u2018obstacles to rapid and orderly resolution.\u2019 Credibility depends on demonstrating that {{ref:tlac}} is sufficient, critical operations continue, and systemic disruption is minimized."],
@@ -570,7 +570,7 @@ kp:["Firm-specific stress scenarios, not standardized like LCR/NSFR","Required f
 "Banks below $100B are still expected to maintain sound liquidity risk management practices, including contingency funding plans, but are not subject to the formal ILST supervisory expectations."],
 kp:["All banks \u2265$100B (Cat I\u2013IV)","Expectations scale with size and complexity","G-SIBs: most granular requirements","Banks <$100B: general liquidity management standards apply"]},
 
-{kind:"requirements",t:"Current Requirements",c:[
+{kind:"requirements",t:"Requirements",c:[
 "Banks must maintain a Contingency Funding Plan (CFP) that identifies stress triggers, available liquidity sources, and action plans. The CFP must be tested regularly through ILST exercises.",
 "ILST results inform internal liquidity buffers \u2014 the amount of HQLA or other liquid assets that management holds above regulatory minimums. Supervisors expect internal buffers to exceed {{ref:lcr}} minimums under stress.",
 "Key modeling inputs include deposit runoff rates (which may differ from LCR\u2019s standardized rates), secured and unsecured funding availability, derivatives collateral calls, and intraday payment obligations."],
@@ -614,7 +614,7 @@ kp:["Arises from core banking: lending, deposits, securities portfolios","U.S. u
 "Large banks (\u2265$100B, Categories I\u2013IV) face the most detailed supervisory expectations through {{ref:ilst}} and are expected to use sophisticated EVE and NII models with multiple rate scenarios. G-SIBs must integrate IRRBB into capital planning.",
 "Community banks are expected to measure IRRBB commensurate with their risk profile. The agencies have issued specific guidance (e.g., FDIC Financial Institution Letters, OCC Bulletin 2010-1) tailored to smaller institutions."],
 kp:["All insured depository institutions subject to IRRBB expectations","Sophistication scales with size: G-SIBs most detailed, community banks proportional","Large banks: integrated into ILST and capital planning","No exemptions: even simple balance sheets carry IRRBB"]},
-{kind:"requirements",t:"Current Requirements",c:[
+{kind:"requirements",t:"Requirements",c:[
 "Two primary measurement frameworks: Economic Value of Equity (EVE) measures the change in the net present value of assets minus liabilities under rate shocks \u2014 a long-term, full balance sheet view. Net Interest Income (NII) measures the impact on earnings over a defined horizon (typically 1\u20132 years) \u2014 a nearer-term, earnings-at-risk view.",
 "Banks must measure IRRBB under multiple scenarios including parallel shifts (\u00b1100, \u00b1200, \u00b1300 bps), yield curve twists (steepening, flattening, inversion), and firm-specific stress scenarios. The Basel IRRBB standard prescribes six standardized scenarios.",
 "Key modeling inputs include deposit repricing assumptions (especially for non-maturity deposits where behavioral duration may differ from contractual terms), prepayment speeds on mortgages and other loans, and the treatment of embedded options (caps, floors, call provisions).",
@@ -663,7 +663,7 @@ kp:["Four categories (I\u2013IV) based on size and risk indicators","Category I 
 "Banks below $100B are generally outside the scope of enhanced prudential standards (no LCR, NSFR, stress testing, or resolution planning requirements), though they remain subject to general capital and safety-and-soundness standards and {{ref:cra}} obligations."],
 kp:["All BHCs, SLHCs, IHCs \u2265$100B","Five indicators determine category on rolling four-quarter basis","Banks <$100B: outside enhanced prudential standards","Category assignment reviewed periodically by the Fed"]},
 
-{kind:"requirements",t:"Current Requirements",c:[
+{kind:"requirements",t:"Requirements",c:[
 "Category I (G-SIBs): Full suite \u2014 {{ref:lcr}} 100%, {{ref:nsfr}} 100%, annual {{ref:stress-testing}}, {{ref:eslr}}, {{ref:gsib}} surcharge, {{ref:tlac}}, {{ref:resolution}} plans.",
 "Category II (\u2265$700B assets or \u2265$75B cross-jurisdictional): Full LCR, NSFR, annual stress tests. No eSLR, G-SIB surcharge, or TLAC.",
 "Category III (\u2265$250B or \u2265$75B in STWF/nonbank assets/off-BS): LCR 100% or 85%, NSFR 100% or 85%, annual stress tests. Requirements vary based on specific risk indicators.",
@@ -711,7 +711,7 @@ kp:["Prohibits proprietary trading by banking entities","Restricts ownership/spo
 "Compliance programs are tiered by trading activity: >$10B in trading assets/liabilities requires a full six-pillar program; $1B\u2013$10B requires a simplified program; <$1B receives a presumption of compliance."],
 kp:["Applies to all banking entities (very broad scope)","Community banks \u2264$10B fully exempt under EGRRCPA","Compliance tiered by trading activity level","Five agencies jointly implement (Fed, OCC, FDIC, SEC, CFTC)"]},
 
-{kind:"requirements",t:"Current Requirements",c:[
+{kind:"requirements",t:"Requirements",c:[
 "Proprietary trading prohibition: Banking entities may not engage in short-term trading of securities, derivatives, commodity futures, and options on these instruments for the bank\u2019s own account. The rule uses three tests to define \u2018trading account\u2019: the purpose test, market-risk capital test, and dealer status test.",
 "Covered fund restrictions: Banking entities generally cannot acquire ownership interests in, or serve as sponsor to, hedge funds or PE funds (defined as issuers that would be investment companies but for 3(c)(1) or 3(c)(7) exclusions). Banks may invest up to 3% of Tier 1 capital in aggregate and 3% per fund.",
 "Compliance program: Three-tiered approach based on trading activity \u2014 banks with >$10B in trading assets/liabilities need full six-pillar programs; $1B\u2013$10B require simplified programs; <$1B receive a presumption of compliance.",
@@ -761,7 +761,7 @@ kp:["Protects deposit insurance fund from affiliate risk transfer","Section 23A:
 "An \u2018affiliate\u2019 includes: any company that controls the bank (parent BHC), any company under common control with the bank (sister subsidiaries), and any company controlled by a bank\u2019s own subsidiary that is also controlled by a non-bank affiliate. Operating subsidiaries wholly owned by the bank are generally not affiliates.",
 "Financial subsidiaries of a bank (engaged in activities permissible under GLB Act Section 5136A) are treated as affiliates, not subsidiaries, for Regulation W purposes \u2014 a critical distinction that subjects bank-financial subsidiary transactions to the quantitative limits."],
 kp:["All insured depository institutions subject (member and nonmember)","Affiliate = parent, sister subs, entities under common control","Bank\u2019s own operating subsidiaries generally exempt","Financial subsidiaries treated as affiliates (key GLB Act provision)"]},
-{kind:"requirements",t:"Current Requirements",c:[
+{kind:"requirements",t:"Requirements",c:[
 "Quantitative limits (Section 23A): Covered transactions with any single affiliate may not exceed 10% of the bank\u2019s capital stock and surplus. Aggregate covered transactions with all affiliates may not exceed 20% of capital stock and surplus.",
 "Covered transactions include: extensions of credit to an affiliate, purchases of assets from an affiliate, purchases of securities issued by an affiliate, acceptance of securities issued by an affiliate as collateral, issuance of a guarantee, acceptance, or letter of credit on behalf of an affiliate, and derivatives transactions that create credit exposure to an affiliate.",
 "Collateral requirements: Extensions of credit to affiliates and guarantees on behalf of affiliates must be secured by specified collateral at prescribed margins: 100% U.S. government obligations, 110% state/municipal obligations, 120% other eligible collateral, or 130% low-quality assets.",
@@ -810,7 +810,7 @@ kp:["Most sweeping financial reform since the 1930s","Created FSOC, OFR, and Ord
 "Many Dodd-Frank provisions are implemented through subordinate rulemakings (stress testing, resolution planning, SCCL, etc.) that have their own specific applicability thresholds as defined by the tailoring framework."],
 kp:["Section 165 EPS: BHCs \u2265$250B (per EGRRCPA)","Fed retains authority to apply below $250B","Other provisions have varying scope","Subordinate rulemakings define specific thresholds"]},
 
-{kind:"requirements",t:"Current Requirements",c:[
+{kind:"requirements",t:"Requirements",c:[
 "Section 165 \u2014 Enhanced Prudential Standards: Requires the Fed to impose heightened capital, liquidity, risk management, and stress testing requirements on BHCs with \u2265$250B in assets (as amended by EGRRCPA). The {{ref:tailoring}} framework implements this section.",
 "Title II \u2014 Orderly Liquidation Authority (OLA): Provides the FDIC with authority to resolve systemically important financial firms outside of bankruptcy. Requires a \u2018systemic risk determination\u2019 by the Treasury Secretary, Fed, and the company’s primary federal regulator (FDIC or OCC) — the ‘Three Keys.’ The SEC plays a role only for broker-dealer subsidiaries resolved under SIPA. Costs borne by the financial industry, not taxpayers.",
 "FSOC: Financial Stability Oversight Council monitors systemic risk, can designate non-bank financial companies for Fed supervision, and makes recommendations to primary regulators. Chaired by the Treasury Secretary.",
@@ -857,7 +857,7 @@ kp:["Enacted 1977 to combat redlining","Public ratings affect merger/acquisition
 "Assessment areas are defined around branches and deposit-taking locations. Banks operating primarily online face a gap in the current 1995 framework, which the enjoined 2023 rule attempted to address."],
 kp:["All insured depository institutions (not credit unions)","Three evaluation tiers based on asset size","Assessment areas tied to physical branch locations","Online-only banks face framework gap under 1995 rules"]},
 
-{kind:"requirements",t:"Current Requirements",c:[
+{kind:"requirements",t:"Requirements",c:[
 "Assessment areas: Banks delineate facility-based assessment areas around branches and deposit-taking locations. The 1995 regulations (in effect as of July 2026) evaluate performance within these areas.",
 "Performance tests vary by bank size: Large banks face a three-part evaluation (lending, investment, and service tests). Small banks (\u2264$1.649B in 2026) face a simplified lending test. Intermediate small banks receive both the lending test and a community development test.",
 "Qualifying activities: CRA credit is given for mortgage lending, small business and small farm lending, consumer lending, community development loans, investments, and services that benefit LMI individuals, areas, or other targeted populations.",
@@ -908,7 +908,7 @@ kp:["Implements Dodd-Frank Section 165(e)","Applies to BHCs/SLHCs \u2265$250B an
 "Category IV firms ($100B\u2013$250B) are not subject to the SCCL. Banks below $100B are subject to general lending limits under national banking law but not the SCCL framework."],
 kp:["BHCs/SLHCs \u2265$250B and FBOs \u2265$250B (+ IHCs \u2265$50B)","15% limit between G-SIBs and major counterparties","Category IV ($100B\u2013$250B) not subject","Daily compliance required for G-SIBs; quarterly for others"]},
 
-{kind:"requirements",t:"Current Requirements",c:[
+{kind:"requirements",t:"Requirements",c:[
 "General limit: A covered company may not have aggregate net credit exposure to any single counterparty exceeding 25% of its Tier 1 capital.",
 "Major counterparty limit: A U.S. G-SIB\u2019s aggregate net credit exposure to another G-SIB, major FBO, or FSOC-designated non-bank SIFI may not exceed 15% of Tier 1 capital. This stricter limit addresses systemic interconnectedness.",
 "Credit exposure measurement: The rule covers loans, deposits, debt and equity securities, derivatives (using SA-CCR or internal models), securities financing transactions, guarantees, and commitments. Eligible collateral and guarantees reduce gross exposure to net exposure. The {{ref:endgame}} re-proposal would make SA-CCR mandatory for ERBA banks and optionally available for standardized banks, which will affect how derivative exposures are measured for SCCL purposes.",
@@ -970,7 +970,7 @@ kp:["Signed July 18, 2025 with bipartisan support","First comprehensive federal 
 "Banking entities considering stablecoin activities should evaluate implications across the capital, liquidity, and activity restriction frameworks: potential impacts on {{ref:cap-adequacy}}, LCR/NSFR, Volcker Rule compliance, and {{ref:sccl}} exposure measurement. Banks issuing stablecoins should also consider {{ref:cra}} implications, as stablecoin activities could affect assessment area determinations and digital delivery channel analysis."],
 kp:["Three categories of permitted issuers","$10B threshold for state vs. federal regulation","Banks may issue through approved subsidiaries","Cross-cutting implications for capital, liquidity, and Volcker"]},
 
-{kind:"requirements",t:"Current Requirements",c:[
+{kind:"requirements",t:"Requirements",c:[
 "Permitted issuers: Three categories \u2014 (1) subsidiaries of insured depository institutions supervised by their federal banking agency, (2) federal-qualified nonbank issuers supervised by the OCC, and (3) state-qualified issuers under substantially similar state regimes.",
 "Reserve requirements: Issuers must maintain 1:1 reserve backing using high-quality liquid assets: U.S. dollars, Treasury bills, repurchase agreements (\u226493 days, cleared), central bank reserves, and demand deposits. Reserves may not be pledged, rehypothecated, or reused except for narrow purposes.",
 "Transparency: Monthly public attestations by a registered public accounting firm and annual independent audits of reserves are required. Issuers must disclose redemption policies and fee structures clearly.",
@@ -1028,7 +1028,7 @@ kp:["Six-pillar framework: governance, risk management, controls, policy, scenar
 "Category IV firms (\u2265$100B but below the Category III thresholds) are not directly subject to SR 15-18 or SR 15-19, though they remain subject to the capital plan rule (Reg Y \u00a7225.8), stress test rules under {{ref:stress-testing}}, and general supervisory expectations for sound capital planning. The guidance does not apply to FSOC-designated nonbank financial companies."],
 kp:["SR 15-18: Category I (U.S. G-SIBs) \u2014 highest expectations","SR 15-19: Category II/III \u2014 scaled but comprehensive","Category IV not directly subject; capital plan rule still applies","Does not apply to FSOC-designated nonbanks"]},
 
-{kind:"requirements",t:"Current Requirements",c:[
+{kind:"requirements",t:"Requirements",c:[
 "Governance: The board of directors must review and periodically approve the capital planning process and capital policy. Senior management establishes the process and briefs the board on results, uncertainties, and problem areas. Under SR 15-18, senior management must review the capital planning process at least quarterly; under SR 15-19, semi-annual review is acceptable. The board should incorporate uncertainties in projections and limitations in the firm\u2019s capital planning into its decisions on capital actions.",
 "Risk Management and Internal Controls: Firms must maintain a dynamic, inclusive, and comprehensive risk identification process that drives the capital adequacy analysis. Material risks must be captured in scenario design and projection methodologies. Firms should follow the Fed's model risk management guidance — SR 26-2 (April 2026), which superseded SR 11-7 — for all models used in capital planning, including governance of model overlays (judgmental adjustments applied to model output). Internal audit must independently evaluate the capital planning process, covering model risk, data quality, and governance effectiveness.",
 "Capital Policy and Scenario Design: The firm\u2019s capital policy \u2014 approved by the board and reviewed at least annually \u2014 must cover capital issuance, usage, and distributions, including internal post-stress capital goals and strategies for addressing potential shortfalls. SR 15-18 firms must use quantitative payout ratios in distribution decision-making; SR 15-19 firms are exempt from this requirement. On scenario design, SR 15-18 firms must develop independent baseline and severely adverse scenarios; SR 15-19 firms may adopt the Fed\u2019s baseline scenario and adjust the Fed\u2019s severely adverse scenario to reflect firm-specific risks.",

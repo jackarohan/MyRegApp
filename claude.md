@@ -37,13 +37,13 @@ MyRegApp is a free Progressive Web App (PWA) — a searchable reference guide to
 ## Key Patterns & Conventions
 
 ### Cross-References
-Regulation content uses `{{ref:regId}}` tags in text strings. The `SmartText` component parses these and renders them as clickable links that navigate to the referenced regulation. A `stripRefTags()` utility strips them for plain-text contexts (search, print).
+Regulation content uses `{{ref:regId}}` tags in text strings. The `SmartText` component parses these and renders them as clickable links that navigate to the referenced regulation. A `stripRefs()` utility strips them for plain-text contexts (search, print).
 
 ### Glossary Tooltips
 Terms in content are wrapped in `<span class="gterm">` elements. The tooltip system uses `ReactDOM.createPortal` with `getBoundingClientRect()`-based positioning and an inline arrow `<span>` (not CSS `::after` pseudo-elements).
 
 ### Navigation
-- Hash-based routing (`#regId` and `#regId/subsectionIndex`)
+- Hash-based routing: `#/regulations/<regId>/<subIdx>` for regulation detail, plus `#/timeline`, `#/explorer`, `#/glossary` (legacy `#/changing` redirects to the timeline)
 - A `navTick` state counter pattern prevents cursor-flickering `useEffect` bugs — increment `navTick` to trigger navigation side effects rather than depending on the target ID directly
 - `navTarget` ref holds the pending regulation ID for cross-view navigation
 
