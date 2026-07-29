@@ -76,7 +76,7 @@ src:[
 sum:"The leverage backstop for U.S. G-SIBs: a buffer above the 3% SLR, recalibrated in 2026 from a flat 2% to half of each firm's Method 1 G-SIB surcharge — so that risk-based ratios, not leverage, are the binding constraint.",
 subs:[
 {t:"Overview",c:[
-"The eSLR is a leverage-based capital requirement for U.S. G-SIBs and their insured depository institution subsidiaries, sitting on top of the baseline 3% SLR for all large banks. (See {{ref:cap-adequacy}} for the risk-based capital framework and {{ref:gsib}} for the surcharge that now calibrates the eSLR buffer.)",
+"The eSLR is a leverage-based capital requirement for U.S. G-SIBs and their insured depository institution subsidiaries, sitting on top of the baseline 3% SLR for all large banks. (See {{ref:cap-adequacy}} for the risk-based capital framework and {{ref:gsib}} for the surcharge that calibrates the eSLR buffer.)",
 "Unlike risk-based ratios, the leverage ratio treats all assets equally \u2014 a dollar of Treasuries requires the same capital as a dollar of corporate loans. This makes it a simple backstop, but also means it can penalize low-risk activities.",
 "In November 2025, the agencies finalized a major recalibration designed to ensure the leverage ratio serves as a backstop to \u2014 rather than a binding constraint on \u2014 risk-based capital requirements."],
 kp:["Applies to 8 U.S. G-SIBs and their covered depository institution subsidiaries","Recalibration finalized November 2025; in force since April 1, 2026","Designed as a backstop, not a binding constraint"]},
@@ -138,7 +138,7 @@ subs:[
 "The surcharge is part of the capital conservation buffer. If a G-SIB\u2019s CET1 falls below its combined buffer (SCB + G-SIB surcharge + CCyB), automatic distribution restrictions apply. (See {{ref:cap-adequacy}} for the full capital stack.)"],
 kp:["Applies to 8 U.S. G-SIBs identified annually by the Fed","Method 1: 1.0%\u20132.5%; binding Method 2 surcharges 1.0%\u20134.5% as of 2026 (no fixed cap)","Breach triggers automatic restrictions on dividends and buybacks"]},
 {t:"Scope & Applicability",c:[
-"The G-SIB surcharge applies to the eight U.S. bank holding companies identified as G-SIBs: JPMorgan Chase, Bank of America, Citigroup, Wells Fargo, Goldman Sachs, Morgan Stanley, Bank of New York Mellon, and State Street.",
+"The G-SIB surcharge applies to the eight U.S. bank holding companies identified as G-SIBs; the roster has been stable since designations began.",
 "G-SIB identification is determined annually using the Method 1 systemic indicator framework. A firm with a systemic risk score \u2265130 basis points is identified as a G-SIB. The surcharge applies at the consolidated BHC level.",
 "Non-G-SIB banks are not subject to the surcharge regardless of size. Category II\u2013IV firms face other enhanced requirements but not the G-SIB surcharge."],
 kp:["Applies to 8 named U.S. G-SIBs only","Identification based on annual systemic risk score (\u2265130 bps)","Applies at consolidated BHC level","Non-G-SIBs not subject regardless of size"]},
@@ -171,7 +171,7 @@ kp:["Method 2 fixed denominators cause systematic score inflation","Method 1 use
 "The G-SIB surcharge methodology NPR was issued March 19, 2026 (Federal Register March 27, 2026), alongside the {{ref:endgame}} reproposal; its comment period closed June 18, 2026, with no further action as of July 2026. Proposed changes: Method 2 coefficients divided by 1.2 (a one-time ~20% reduction), automatic indexing of denominators to nominal GDP, daily/monthly averaging of systemic indicators, a recalibrated STWF measure, and 10-basis-point surcharge increments replacing 50 bp bands. The agencies estimated the surcharge proposal alone would reduce Cat I/II CET1 requirements by about 2.4%.",
 "Industry groups estimate correcting the fixed-denominator issue could reduce surcharges by ~1 percentage point, expanding lending and market-making capacity by over $1 trillion.",
 "The {{ref:eslr}} final rule uses Method 1 surcharges to calibrate the leverage buffer, so any Method 1 change flows through to leverage requirements. The November 2025 FSB list moved Bank of America to a higher global bucket (effective January 2027), which could lift its Method 1-based requirements."],
-kp:["Methodology NPR pending as of July 2026 (comments closed Jun 18)","Proposal: coefficients \u00f71.2, GDP indexing, 10 bp increments; est. \u22122.4% CET1","eSLR now tied to Method 1 — methodology changes flow through"]},
+kp:["Methodology NPR pending as of July 2026 (comments closed Jun 18)","Proposal: coefficients \u00f71.2, GDP indexing, 10 bp increments; est. \u22122.4% CET1","eSLR tied to Method 1 since Apr 2026 — methodology changes flow through"]},
 ],
 timeline:[
 {y:2015,m:7,label:"G-SIB surcharge final rule"},
@@ -223,7 +223,7 @@ tables:[{title:"Worked Example \u2014 CET1 Under Stress",headers:["Quarter","Pro
 "Dividend Add-On: Four quarters of planned common stock dividends as a % of RWAs, added to ensure banks can maintain distributions even under stress.",
 "Maximum Payout Ratio: The percentage of eligible retained income distributable when capital falls within the buffer zone. Decreases from 60% (top quartile) to 0% (bottom quartile).",
 "Results Averaging: An April 2025 proposal to smooth SCB volatility by averaging stress capital declines over two years. It had not been finalized as of July 2026 — overtaken in practice by the February 2026 decision to freeze SCBs while the stress-testing framework is revised.",
-"CCAR-to-SCB Pipeline: The original CCAR framework had both a quantitative component (stress test results) and a qualitative component (capital planning assessment). The qualitative objection was eliminated in 2019, and the quantitative output was converted into the SCB in 2020. This pipeline means that changes to stress testing methodology — including the pending transparency proposal — directly affect ongoing capital requirements."],
+"CCAR-to-SCB Pipeline: CCAR's qualitative objection was eliminated in 2019 and its quantitative output became the SCB in 2020 — so changes to {{ref:stress-testing}} methodology flow directly into ongoing capital requirements. (Fuller history in {{ref:sr1519}}.)"],
 kp:["Stress capital decline = peak-to-trough CET1 drop under severely adverse","Distribution restrictions escalate as buffer shortfall grows","Results averaging would smooth year-to-year volatility"]},
 {kind:"outlook",t:"Outlook",c:[
 "As of July 2026, the SCB was in a transition period: on February 4, 2026 the Fed announced that current SCB requirements remain in effect until October 1, 2027, with new requirements to be calculated under revised, publicly vetted supervisory models emerging from the {{ref:stress-testing}} transparency reforms. The June 2026 stress-test results did not change any firm's SCB; new entrants (First Citizens, Synchrony) received the 2.5% floor.",
@@ -249,7 +249,7 @@ sum:"Annual Federal Reserve stress tests assess whether large banks can maintain
 subs:[
 {t:"Overview",c:[
 "The Federal Reserve conducts annual supervisory stress tests to evaluate whether large banks have sufficient capital to absorb losses during a severe recession.",
-"Two components: DFAST (Dodd-Frank Act Stress Test) is the quantitative assessment using the Fed\u2019s own supervisory models. CCAR (Comprehensive Capital Analysis and Review) is the broader capital planning framework through which firms submit capital plans, request planned dividends and share repurchases, and demonstrate adequacy of capital planning processes. The qualitative CCAR objection was eliminated in 2019, so CCAR no longer serves as an independent veto \u2014 the SCB is now the sole binding output.",
+"Two components: DFAST (Dodd-Frank Act Stress Test) is the quantitative assessment using the Fed\u2019s own supervisory models. CCAR (Comprehensive Capital Analysis and Review) is the broader capital planning framework through which firms submit capital plans, request planned dividends and share repurchases, and demonstrate adequacy of capital planning processes. The qualitative CCAR objection was eliminated in 2019, so CCAR no longer serves as an independent veto \u2014 the SCB became the sole binding output.",
 "Stress tests serve primarily as the mechanism for determining the {{ref:scb}}. Applies to banks with \u2265$100B in total consolidated assets."],
 kp:["Annual exercise for banks \u2265$100B","Fed\u2019s severely adverse scenario; applied uniformly","Results directly determine the SCB","Qualitative objection eliminated 2019"]},
 {t:"Scope & Applicability",c:[
@@ -582,7 +582,7 @@ cite:[{type:"requirement",auth:"CFR",pin:"12 CFR 252.34(b) (liquidity stress tes
 "Intraday Liquidity: A critical dimension of ILST. Banks must ensure they can meet payment, clearing, and settlement obligations throughout the business day, even under stress. The Fed has heightened expectations after the 2023 banking turmoil.",
 "Monetization Assumptions: Banks must realistically estimate how quickly and at what haircuts they can convert assets to cash under stress. Supervisors scrutinize overly optimistic assumptions about asset sales and repo market access.",
 "Discount Window Readiness: In August 2024, the Fed clarified that banks can incorporate discount window and Standing Repo Facility (SRF) access in ILSTs, provided they have operational readiness (pre-pledged collateral, tested systems)."],
-kp:["CFP: actionable plan with triggers and escalation procedures","Intraday liquidity expectations heightened after 2023 turmoil","Monetization assumptions scrutinized for realism","Discount window/SRF access now permitted in ILSTs (Aug 2024)"]},
+kp:["CFP: actionable plan with triggers and escalation procedures","Intraday liquidity expectations heightened after 2023 turmoil","Monetization assumptions scrutinized for realism","Discount window/SRF access permitted in ILSTs since Aug 2024"]},
 {kind:"outlook",t:"Outlook",c:[
 "The August 2024 supervisory guidance clarifying that banks can incorporate discount window and SRF access in ILSTs was a significant shift. Previously, supervisory practice discouraged reliance on central bank facilities in stress planning.",
 "The BPI (May 2025) argued that the combination of {{ref:lcr}}, {{ref:nsfr}}, ILST, and resolution liquidity requirements creates overlapping and sometimes inconsistent demands on bank liquidity management.",
@@ -749,7 +749,7 @@ src:[
 
 
 {id:"reg-w",cat:"Structural & Prudential",title:"Regulation W (Affiliate Transactions)",st:"Reg W",icon:"\u{1F517}",
-sum:"Implements Sections 23A and 23B of the Federal Reserve Act, limiting transactions between insured banks and their affiliates to protect the deposit insurance fund from affiliate risk exposure.",
+sum:"The firewall between an insured bank and its corporate family: Sections 23A/23B cap how much a bank can lend to affiliates and force every affiliate deal onto market terms, so the safety net never subsidizes the rest of the group.",
 subs:[
 {t:"Overview",c:[
 "Regulation W (12 CFR Part 223) implements Sections 23A and 23B of the Federal Reserve Act, which restrict transactions between insured depository institutions and their affiliates. The core policy objective is to prevent a bank from transferring the federal safety net subsidy (deposit insurance, Fed lending) to non-insured affiliates.",
@@ -844,7 +844,7 @@ src:[
 {t:"FSOC: About",d:"Ongoing",u:"https://home.treasury.gov/policy-issues/financial-markets-financial-institutions-and-fiscal-service/fsoc"}]},
 
 {id:"cra",cat:"Legislation & Community",title:"Community Reinvestment Act",st:"CRA",icon:"\u{1F3D8}\uFE0F",
-sum:"The CRA (1977) requires federal banking agencies to assess insured depository institutions\u2019 records of meeting credit needs in their communities, including low- and moderate-income neighborhoods. Applies to all insured depository institutions regardless of tailoring category. Currently in regulatory flux.",
+sum:"The 1977 anti-redlining law: regulators grade every insured bank on how it serves its communities, and the grade has teeth at merger time. Exams run under the 1995 framework — the 2023 modernization died in court.",
 subs:[
 {t:"Overview",c:[
 "The Community Reinvestment Act (CRA), enacted in 1977, was a response to \u2018redlining\u2019 \u2014 the systematic denial of credit and financial services to certain neighborhoods based on racial or ethnic composition. It requires the OCC, Fed, and FDIC to evaluate how well banks serve the credit needs of the communities where they are chartered.",
@@ -858,11 +858,11 @@ kp:["Enacted 1977 to combat redlining","Public ratings affect merger/acquisition
 kp:["All insured depository institutions (not credit unions)","Three evaluation tiers based on asset size","Assessment areas tied to physical branch locations","Online-only banks face framework gap under 1995 rules"]},
 
 {kind:"requirements",t:"Current Requirements",c:[
-"Assessment areas: Banks delineate facility-based assessment areas around branches and deposit-taking locations. The 1995 regulations (currently in effect) evaluate performance within these areas.",
+"Assessment areas: Banks delineate facility-based assessment areas around branches and deposit-taking locations. The 1995 regulations (in effect as of July 2026) evaluate performance within these areas.",
 "Performance tests vary by bank size: Large banks face a three-part evaluation (lending, investment, and service tests). Small banks (\u2264$1.649B in 2026) face a simplified lending test. Intermediate small banks receive both the lending test and a community development test.",
 "Qualifying activities: CRA credit is given for mortgage lending, small business and small farm lending, consumer lending, community development loans, investments, and services that benefit LMI individuals, areas, or other targeted populations.",
-"Banks are currently evaluated under the 1995 regulations (as amended). The agencies\u2019 comprehensive 2023 modernization rule has never taken effect due to a court injunction and a July 2025 proposal to formally rescind it."],
-kp:["1995 regulations currently in effect","Large banks: lending, investment, and service tests","Small banks: simplified lending test only","2023 modernization rule enjoined; rescission proposed Jul 2025"],
+"As of July 2026, banks are evaluated under the 1995 regulations (as amended). The agencies' comprehensive 2023 modernization rule never took effect: it was enjoined by a federal court in March 2024, and a July 2025 proposal to rescind it remained pending as of July 2026."],
+kp:["1995 framework governs exams (as of July 2026)","Large banks: lending, investment, and service tests","Small banks: simplified lending test only","2023 rule enjoined Mar 2024; rescission proposed Jul 2025, not final as of Jul 2026"],
 cite:[{type:"requirement",auth:"CFR",pin:"12 CFR 25 (OCC CRA regulations); 12 CFR 228 (Fed); 12 CFR 345 (FDIC)"},{type:"requirement",auth:"PL",pin:"Pub. L. 95-128 Title VIII (Community Reinvestment Act, 1977)"}],
 },
 {t:"Key Concepts",c:[
@@ -872,10 +872,10 @@ cite:[{type:"requirement",auth:"CFR",pin:"12 CFR 25 (OCC CRA regulations); 12 CF
 "CRA and M&A: A bank\u2019s CRA rating is a practical factor in merger and acquisition approvals. The {{ref:dodd-frank}} preserved CRA\u2019s role in supervisory assessments. A \u2018Needs to Improve\u2019 or \u2018Substantial Non-Compliance\u2019 rating can delay or block applications."],
 kp:["LMI: income below 80% of area median","Assessment areas tied to branches; tension with digital banking","Community development includes affordable housing and economic development","Poor CRA ratings can block M&A applications"]},
 {kind:"outlook",t:"Outlook",c:[
-"July 2025 rescission proposal: The OCC, Fed, and FDIC jointly proposed rescinding the 2023 CRA final rule and reinstating the 1995 regulations with technical updates. The 2023 rule had been enjoined by a Texas federal court since March 2024. Comment period closed August 2025. As of April 2026, no final rescission rule has been published.",
+"July 2025 rescission proposal: The OCC, Fed, and FDIC jointly proposed rescinding the 2023 CRA final rule and reinstating the 1995 regulations with technical updates. The 2023 rule had been enjoined by a Texas federal court since March 2024 and never took effect. The comment period closed in August 2025; as of July 2026, no final rescission rule had been published.",
 "The 2023 rule would have modernized CRA evaluations significantly: new metrics and benchmarks for large banks, retail lending assessment areas for online lenders, expanded community development definitions, and new data collection requirements. Its rescission returns the framework to a pre-modernization state.",
-"The regulatory environment suggests the 1995 framework will remain in place for the foreseeable future, with the agencies signaling that they prefer a lighter-touch CRA approach. Some stakeholders have expressed concern that this leaves the digital banking assessment gap unaddressed."],
-kp:["Jul 2025: Agencies propose rescinding 2023 modernization rule","2023 rule enjoined since Mar 2024; effectively dead","1995 framework likely to remain in effect indefinitely","Digital banking assessment gap remains unresolved"]},
+"As of July 2026 the agencies had signaled a preference for a lighter-touch CRA approach, leaving the 1995 framework in place indefinitely — and the digital-banking assessment gap unaddressed, a concern raised by several stakeholders."],
+kp:["Rescission of the 2023 rule proposed Jul 2025; not final as of Jul 2026","2023 rule enjoined since Mar 2024; never took effect","1995 framework governs for the foreseeable future","Digital banking assessment gap remains unresolved"]},
 ],
 timeline:[
 {y:1977,label:"CRA enacted"},
@@ -885,7 +885,8 @@ timeline:[
 {y:2024,m:3,label:"Texas federal court enjoined the 2023 rule"},
 {y:2025,m:3,label:"Agencies announced intent to rescind 2023 rule"},
 {y:2025,m:7,label:"Formal rescission NPR issued"},
-{y:2025,m:8,label:"Rescission comment period closed"}
+{y:2025,m:8,label:"Rescission comment period closed"},
+{y:2026,m:1,label:"2026 asset thresholds set (small bank <$1.649B)"}
 ],
 src:[
 {t:"CRA (12 U.S.C. \u00a72901\u20132908)",d:"1977",u:"https://www.govinfo.gov/content/pkg/USCODE-2023-title12/pdf/USCODE-2023-title12-chap30.pdf"},
@@ -977,7 +978,7 @@ src:[
 {t:"Basel Large Exposures Framework",d:"Apr 2014",u:"https://www.bis.org/publ/bcbs283.htm"}]},
 
 {id:"genius-act",cat:"Legislation & Community",title:"GENIUS Act (Stablecoin Framework)",st:"GENIUS Act",icon:"\u{1F4B1}",tag:"Digital Assets",
-sum:"The GENIUS Act (July 2025) establishes the first comprehensive federal framework for payment stablecoins, requiring 1:1 reserve backing, federal or state licensing, and monthly attestations. Implementation ongoing through 2026\u20132027.",
+sum:"The 2025 law that made stablecoins a regulated payments instrument: 1:1 reserves, licensed issuers, monthly attestations. Agencies missed the July 2026 rulemaking deadline, leaving January 18, 2027 as the operative effective date.",
 subs:[
 {t:"Overview",c:[
 "The Guiding and Establishing National Innovation for U.S. Stablecoins (GENIUS) Act was signed into law on July 18, 2025, after passing the Senate 68\u201330 and the House with bipartisan support. It is the first comprehensive federal regulatory framework for cryptocurrency in the United States.",
@@ -997,7 +998,7 @@ kp:["Three categories of permitted issuers","$10B threshold for state vs. federa
 "AML/BSA compliance: Permitted issuers are financial institutions under the Bank Secrecy Act, subject to full KYC, transaction monitoring, and sanctions compliance requirements.",
 "The GENIUS Act\u2019s 40% per-counterparty reserve asset diversification limits parallel {{ref:sccl}} principles of limiting large credit exposures, though they apply to stablecoin reserve composition rather than bank counterparty risk."],
 kp:["Three categories of permitted issuers (bank sub, OCC nonbank, state)","1:1 reserve backing with HQLA (T-bills, cash, repos, central bank reserves)","Monthly attestations + annual independent audits","Full BSA/AML/KYC obligations"],
-cite:[{type:"requirement",auth:"PL",pin:"Pub. L. 119-27 (GENIUS Act, signed Jul 2025)"},{type:"requirement",auth:"CFR",pin:"Implementing regulations pending (due Jul 18, 2026)"}],
+cite:[{type:"requirement",auth:"PL",pin:"Pub. L. 119-27 (GENIUS Act, signed Jul 2025)"},{type:"requirement",auth:"REG",pin:"Implementing regulations proposed 2025\u20132026; none final as of July 2026"}],
 },
 {t:"Key Concepts",c:[
 "State vs. federal regime: Issuers with \u2264$10B in outstanding stablecoins may opt for state regulation if the state\u2019s framework is certified as \u2018substantially similar\u2019 to the federal regime. Certification is managed by the Stablecoin Certification Review Committee (SCRC), comprising the Treasury Secretary, Fed Chair (or Vice Chair for Supervision), and FDIC Chair.",
@@ -1007,11 +1008,10 @@ cite:[{type:"requirement",auth:"PL",pin:"Pub. L. 119-27 (GENIUS Act, signed Jul 
 "Permitted payment stablecoin issuers face capital and reserve requirements that parallel banking {{ref:cap-adequacy}} rules, including mandatory 1:1 backing with high-quality liquid reserve assets such as cash, short-term Treasuries, and eligible deposits."],
 kp:["$10B threshold for state vs. federal regulation","SCRC (Treasury, Fed, FDIC) oversees state regime certification","Compliant stablecoins are not securities or commodities","Stablecoin holders have first-priority interest in segregated reserves"]},
 {kind:"outlook",t:"Outlook",c:[
-"Implementation is actively underway. Federal agencies must issue final implementing regulations by July 18, 2026. The law becomes effective on the earlier of 18 months after enactment (January 18, 2027) or 120 days after agencies issue final rules.",
-"The FDIC approved the first proposed rulemaking under the act in December 2025, establishing application procedures for FDIC-supervised institutions seeking to issue stablecoins through subsidiaries. The NCUA followed with its own NPR in February 2026 covering credit union subsidiaries. The OCC issued a comprehensive 376-page NPR on February 25, 2026 covering permitted issuers, reserve requirements, foreign issuer obligations, and capital treatment under its jurisdiction. The Federal Reserve has not yet published a formal proposal.",
-"Treasury published an Advance Notice of Proposed Rulemaking (ANPRM) in September 2025 seeking comment on regulatory clarity, AML/sanctions obligations, state supervision, foreign issuers, and tax treatment. Comments closed October 2025.",
-"Key open questions for banking entities: How stablecoin reserves will be treated for {{ref:cap-adequacy}} and {{ref:lcr}} purposes, whether stablecoin activities trigger {{ref:volcker}} concerns, and the {{ref:sccl}} treatment of stablecoin-related exposures."],
-kp:["Final implementing regulations due by Jul 18, 2026","Law effective Jan 18, 2027 (or 120 days after final rules)","FDIC (Dec 2025), NCUA (Feb 2026), OCC (Feb 2026) NPRs issued; Fed pending","Treasury ANPRM issued Sep 2025; comments closed Oct 2025"]},
+"The statute set a July 18, 2026 deadline for final implementing regulations. The agencies missed it: roughly ten proposals had been issued but none finalized as of late July 2026. With no final rules, the law's effective date defaults to the statutory backstop of January 18, 2027 (the earlier of 18 months after enactment or 120 days after final regulations).",
+"Rulemakings through July 2026: Treasury ANPRM (September 2025); FDIC application-procedures NPR (December 2025, comments extended to May 2026) and a second NPR on issuer standards and custody (April 2026); the OCC's comprehensive NPR creating a new 12 CFR 15 (February 2026); NCUA proposals (February and May 2026); Treasury NPRs on substantially-similar state regimes and on BSA/sanctions compliance (both April 2026); and a joint five-agency customer identification program NPR (June 2026). The Federal Reserve issued no standalone framework — its only participation was the joint CIP proposal.",
+"Key open questions for banking entities as of July 2026: how stablecoin reserves will be treated for {{ref:cap-adequacy}} and {{ref:lcr}} purposes, whether stablecoin activities trigger {{ref:volcker}} concerns, and the {{ref:sccl}} treatment of stablecoin-related exposures."],
+kp:["Jul 18, 2026 rulemaking deadline missed: ~10 proposals, zero final","Effective date defaults to Jan 18, 2027 statutory backstop","OCC, FDIC, NCUA, Treasury, FinCEN proposals out; Fed joined only the CIP NPR","State-regime certification criteria proposed Apr 2026"]},
 ],
 timeline:[
 {y:2025,m:2,label:"GENIUS Act introduced in Senate (S.394)"},
@@ -1022,8 +1022,10 @@ timeline:[
 {y:2025,m:10,label:"Treasury ANPRM comment period closed"},
 {y:2025,m:12,label:"FDIC proposed application procedures"},
 {y:2026,m:2,label:"OCC issued comprehensive NPR; NCUA proposed procedures"},
-{y:2026,m:7,day:18,label:"Statutory deadline for implementing regulations"},
-{y:2027,m:1,day:18,label:"Statutory effective date (latest)"}
+{y:2026,m:4,label:"Treasury state-regime and BSA/sanctions NPRs; FDIC standards NPR"},
+{y:2026,m:6,day:18,label:"Joint five-agency CIP proposal issued"},
+{y:2026,m:7,day:18,label:"Rulemaking deadline passed with no final regulations"},
+{y:2027,m:1,day:18,label:"Statutory effective date (backstop)"}
 ],
 src:[
 {t:"GENIUS Act (S.1582, Public Law 119-27)",d:"Jul 2025",u:"https://www.congress.gov/bill/119th-congress/senate-bill/1582/text"},
